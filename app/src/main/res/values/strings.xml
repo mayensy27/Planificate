@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Planifícate</string>
+    <string name="bienvenida">Bienvenida a Planifícate</string>
+    <string name="Explicacion">Hola, ¿Qué tal?
+    Hemos creado esta aplicación para ti y, para ayudarte e informarte sobre la toma de las pildoras (ACOs).
+    Para ello, te realizaremos algunas preguntas para poder conocerte e indicarte correctamente… </string>
+    <string name="ADELANTE">¡ADELANTE!</string>
+    <string name="primera_pregunta">¿Has elegido tomar los ACOs por Decisión Propia o Recomendación Sanitaria? </string>
+    <string name="decision_propia">Decisión Propia</string>
+    <string name="recomendacion_sanitaria">Recomendación Sanitaria</string>
+</resources>
