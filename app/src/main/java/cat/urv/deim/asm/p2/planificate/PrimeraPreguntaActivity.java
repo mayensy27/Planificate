@@ -2,7 +2,9 @@ package cat.urv.deim.asm.p2.planificate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +28,13 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
 
     public void onclick(View view) {
 
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor objEditor = preferences.edit();
+
         if(r1.isChecked()){
+
+            objEditor.putBoolean("bool", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();
 
                  Intent miIntent2= new Intent(PrimeraPreguntaActivity.this,
                     MainActivity.class);
@@ -34,11 +42,14 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
             Intent miIntent= new Intent(PrimeraPreguntaActivity.this,
                     WebDecisionesCompartidas.class);
             startActivity(miIntent);
-            InformacionGlobal.setVisto(true);
+
                    }
 
         if(r2.isChecked()){
-            InformacionGlobal.setVisto(true);
+
+            objEditor.putBoolean("bool", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();
+
             Intent miIntent= new Intent(PrimeraPreguntaActivity.this,
                     MainActivity.class);
             startActivity(miIntent);
