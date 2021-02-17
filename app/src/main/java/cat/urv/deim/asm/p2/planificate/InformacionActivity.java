@@ -23,5 +23,7 @@ public class InformacionActivity extends AppCompatActivity {
         Intent miIntent= new Intent(InformacionActivity.this,
                 PrimeraPreguntaActivity.class);
         startActivity(miIntent);
+
     }
+
 }

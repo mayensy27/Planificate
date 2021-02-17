@@ -7,6 +7,7 @@
 
     <application
 
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,11 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Planificate"
         tools:ignore="AllowBackup">
+
         <activity android:name=".WebDecisionesCompartidas" />
+
         <activity android:name=".PrimeraPreguntaActivity" />
+
         <activity
             android:name=".InformacionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -28,7 +34,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".MainActivity" />
+
     </application>
 
 </manifest>
+
+<!--        android:usesCleartextTraffic="true"  === SOLUCION AL TRAFICO NO PERMITIDO
+
+            <uses-permission android:name="android.permission.INTERNET"/> == ACCESO A INTERNET
+
+
+
+
+            -->
