@@ -3,28 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cat.urv.deim.asm.p2.planificate">
 
-<uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Planificate"
+        android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-
+        <activity android:name=".SegudaPreguntaActivity" />
         <activity android:name=".WebDecisionesCompartidas" />
-
         <activity android:name=".PrimeraPreguntaActivity" />
-
         <activity
             android:name=".InformacionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
-
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -34,18 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".MainActivity" />
-
     </application>
 
 </manifest>
-
-<!--        android:usesCleartextTraffic="true"  === SOLUCION AL TRAFICO NO PERMITIDO
-
-            <uses-permission android:name="android.permission.INTERNET"/> == ACCESO A INTERNET
-
-
-
-
-            -->

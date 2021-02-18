@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".SegudaPreguntaActivity">
+
+    <TextView
+        android:id="@+id/pildoras"
+        android:layout_width="337dp"
+        android:layout_height="87dp"
+        android:text="@string/segunda_pregunta"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.057" />
+
+    <TextView
+        android:id="@+id/comprimidos"
+        android:layout_width="337dp"
+        android:layout_height="87dp"
+        android:layout_marginBottom="304dp"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
+        android:text="@string/tercera_pregunta"
+        android:textAlignment="textStart"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pildoras"
+        app:layout_constraintVertical_bias="0.986" />
+
+    <Spinner
+        android:id="@+id/tipo_pildoras"
+        android:layout_width="322dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/comprimidos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pildoras"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/tipo_comprimidos"
+        android:layout_width="322dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/siguiente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comprimidos"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/siguiente"
+        android:layout_width="155dp"
+        android:layout_height="91dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/boton_redondo"
+        android:onClick="onClick"
+        android:text="@string/SIGUIENTE"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comprimidos"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

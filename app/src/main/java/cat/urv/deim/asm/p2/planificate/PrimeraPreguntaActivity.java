@@ -37,7 +37,7 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
             objEditor.apply();
 
                  Intent miIntent2= new Intent(PrimeraPreguntaActivity.this,
-                    MainActivity.class);
+                    SegudaPreguntaActivity.class);
             startActivity(miIntent2);
             Intent miIntent= new Intent(PrimeraPreguntaActivity.this,
                     WebDecisionesCompartidas.class);
@@ -51,7 +51,7 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
             objEditor.apply();
 
             Intent miIntent= new Intent(PrimeraPreguntaActivity.this,
-                    MainActivity.class);
+                    SegudaPreguntaActivity.class);
             startActivity(miIntent);
 
 

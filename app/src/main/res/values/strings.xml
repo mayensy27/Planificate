@@ -5,7 +5,13 @@
     Hemos creado esta aplicación para ti y, para ayudarte e informarte sobre la toma de las pildoras (ACOs).
     Para ello, te realizaremos algunas preguntas para poder conocerte e indicarte correctamente… </string>
     <string name="ADELANTE">¡ADELANTE!</string>
+    <string name="SIGUIENTE">SIGUIENTE</string>
     <string name="primera_pregunta">¿Has elegido tomar los ACOs por Decisión Propia o Recomendación Sanitaria? </string>
+    <string name="segunda_pregunta">¿Qué tipo de Anticonceptivos Orales Combinados utilizas? </string>
+    <string name="tercera_pregunta">¿Que formato de Anticonceptivos Orales Combinados tomas? </string>
     <string name="decision_propia">Decisión Propia</string>
     <string name="recomendacion_sanitaria">Recomendación Sanitaria</string>
+
+
+
 </resources>
