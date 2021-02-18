@@ -31,12 +31,12 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
 
         //Desplegable pildoras
         String [] tipos_pildoras ={"Píldoras DIM (Diindolilmetano) 120 Caps.","Píldoras Prenavant Concepción Ella 30 Caps."};
-        ArrayAdapter <String> adapter_pildoras = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, tipos_pildoras);
+        ArrayAdapter <String> adapter_pildoras = new ArrayAdapter<>(this, R.layout.spinner_item, tipos_pildoras);
         spinner1.setAdapter(adapter_pildoras);
 
         //Desplegable comprimidos
         String [] tipos_comprimidos ={"Blister 27+1.","Blister 28."}; //Desplegable
-        ArrayAdapter <String> adapter_comprimidos = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, tipos_comprimidos);
+        ArrayAdapter <String> adapter_comprimidos = new ArrayAdapter<>(this, R.layout.spinner_item, tipos_comprimidos);
         spinner2.setAdapter(adapter_comprimidos);
 
     }
