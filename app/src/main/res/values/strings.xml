@@ -11,7 +11,8 @@
     <string name="tercera_pregunta">¿Que formato de Anticonceptivos Orales Combinados tomas? </string>
     <string name="decision_propia">Decisión Propia</string>
     <string name="recomendacion_sanitaria">Recomendación Sanitaria</string>
-
+    <string name="name">Name</string>
+    <string name="iconocentral">iconoCentral</string>
 
 
 </resources>

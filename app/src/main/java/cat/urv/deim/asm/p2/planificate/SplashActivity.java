@@ -16,7 +16,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-       primeraVez = preferences.getBoolean("bool", true); // por defecto es true
+       primeraVez = preferences.getBoolean("primeravez", true); // por defecto es true
 
         if (primeraVez) {
 //            SharedPreferences.Editor objEditor = preferences.edit();

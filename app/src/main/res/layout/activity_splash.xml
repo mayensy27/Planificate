@@ -11,7 +11,7 @@
         android:id="@+id/iconoCentral"
         android:layout_width="242dp"
         android:layout_height="298dp"
-        android:contentDescription="iconoCentral"
+        android:contentDescription="@string/iconocentral"
         android:src="@mipmap/pastillas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -28,13 +28,13 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
 
     public void onclick(View view) {
 
-        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor objEditor = preferences.edit();
+//        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor objEditor = preferences.edit();
 
         if(r1.isChecked()){
-
-            objEditor.putBoolean("bool", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
+//
+//            objEditor.putBoolean("bool", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+//            objEditor.apply();
 
                  Intent miIntent2= new Intent(PrimeraPreguntaActivity.this,
                     SegudaPreguntaActivity.class);
@@ -46,9 +46,9 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
                    }
 
         if(r2.isChecked()){
-
-            objEditor.putBoolean("bool", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
+//
+//            objEditor.putBoolean("bool", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+//            objEditor.apply();
 
             Intent miIntent= new Intent(PrimeraPreguntaActivity.this,
                     SegudaPreguntaActivity.class);
@@ -59,6 +59,8 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
 //
     }
 
+
+    //METODO PARA DESAPARECER BARRA DE NAVEGACION
 //  public void hideNavigationBar(){
 //
 //        this.getWindow().getDecorView().setSystemUiVisibility(

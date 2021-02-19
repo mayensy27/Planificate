@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <string-array name="tipos_comprimidos">
+            <item>Blister 27+1.</item>
+            <item>Blister 28.</item>
+
+        </string-array>
+
+
+</resources>
