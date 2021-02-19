@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 
 public class SegudaPreguntaActivity extends AppCompatActivity {
@@ -32,15 +30,15 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
 
 
 
-        //Desplegable pildoras
-//        String [] tipos_pildoras ={"Píldoras DIM (Diindolilmetano) 120 Caps.","Píldoras Prenavant Concepción Ella 30 Caps."};
-//        ArrayAdapter <String> adapter_pildoras = new ArrayAdapter<>(this, R.layout.spinner_item, tipos_pildoras);
-//        spinner1.setAdapter(adapter_pildoras);
+  /*      Desplegable pildoras
+        String [] tipos_pildoras ={"Píldoras DIM (Diindolilmetano) 120 Caps.","Píldoras Prenavant Concepción Ella 30 Caps."};
+        ArrayAdapter <String> adapter_pildoras = new ArrayAdapter<>(this, R.layout.spinner_item, tipos_pildoras);
+        spinner1.setAdapter(adapter_pildoras);
 
-        //Desplegable comprimidos
-//        String [] tipos_comprimidos ={"Blister 27+1.","Blister 28."}; //Desplegable
-//        ArrayAdapter <String> adapter_comprimidos = new ArrayAdapter<>(this, R.layout.spinner_item, tipos_comprimidos);
-//        spinner2.setAdapter(adapter_comprimidos);
+        Desplegable comprimidos
+        String [] tipos_comprimidos ={"Blister 27+1.","Blister 28."}; //Desplegable
+        ArrayAdapter <String> adapter_comprimidos = new ArrayAdapter<>(this, R.layout.spinner_item, tipos_comprimidos);
+        spinner2.setAdapter(adapter_comprimidos);*/
 
 
         //Desplegable pildoras

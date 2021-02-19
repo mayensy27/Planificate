@@ -19,9 +19,9 @@ public class SplashActivity extends AppCompatActivity {
        primeraVez = preferences.getBoolean("primeravez", true); // por defecto es true
 
         if (primeraVez) {
-//            SharedPreferences.Editor objEditor = preferences.edit();
-//            objEditor.putBoolean("bool", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-//            objEditor.apply();
+         /*   SharedPreferences.Editor objEditor = preferences.edit();
+            objEditor.putBoolean("bool", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();*/
 
             new Handler().postDelayed(() -> {
 

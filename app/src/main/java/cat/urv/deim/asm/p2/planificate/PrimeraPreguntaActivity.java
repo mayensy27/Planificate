@@ -21,9 +21,9 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
         r1= findViewById(R.id.decision_propia); //Referenciar
         r2= findViewById(R.id.recomendacion_sanitaria);
 
-//        this.getWindow().setNavigationBarColor(Color.parseColor("#B48ABC"));
-//        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
-      //  hideNavigationBar();
+        /*this.getWindow().setNavigationBarColor(Color.parseColor("#B48ABC"));
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+        hideNavigationBar();*/
     }
 
     public void onclick(View view) {
@@ -32,7 +32,7 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
 //        SharedPreferences.Editor objEditor = preferences.edit();
 
         if(r1.isChecked()){
-//
+
 //            objEditor.putBoolean("bool", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
 //            objEditor.apply();
 
@@ -46,7 +46,7 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
                    }
 
         if(r2.isChecked()){
-//
+
 //            objEditor.putBoolean("bool", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
 //            objEditor.apply();
 
@@ -60,24 +60,26 @@ public class PrimeraPreguntaActivity extends AppCompatActivity {
     }
 
 
-    //METODO PARA DESAPARECER BARRA DE NAVEGACION
-//  public void hideNavigationBar(){
-//
-//        this.getWindow().getDecorView().setSystemUiVisibility(
-//               View.SYSTEM_UI_FLAG_FULLSCREEN|
-//                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
-//                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|
-//                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
-//                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|
-//                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-//        );
-//    }
-//    @Override
-//    public void onWindowFocusChanged(boolean hasFocus) {
-//        super.onWindowFocusChanged(hasFocus);
-//        if (hasFocus) {
-//            hideNavigationBar();
-//        }
-//    }
+/*
+   // METODO PARA DESAPARECER BARRA DE NAVEGACION
+  public void hideNavigationBar(){
+
+        this.getWindow().getDecorView().setSystemUiVisibility(
+               View.SYSTEM_UI_FLAG_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|
+                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+        );
+    }
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            hideNavigationBar();
+        }
+    }
+*/
 
 }
