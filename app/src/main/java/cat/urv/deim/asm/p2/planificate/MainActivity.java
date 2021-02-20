@@ -13,12 +13,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
+
 import cat.urv.deim.asm.p2.planificate.ui.main.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity{
     //    String texto;
     //    String texto2;
-        Fragment fragment_blister1= new BlisterFragment1();
+    Fragment blisterFragment1=new BlisterFragment1();
+    Fragment blisterFragment2=new BlisterFragment2();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,23 +50,27 @@ public class MainActivity extends AppCompatActivity{
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
 
 
+//        getSupportFragmentManager().beginTransaction().add(R.id.view_pager,blisterFragment).commit();
 
-        }
+    }
 
 
-    public void onClick(View view) {
+    public void pulsar_blister0(View view) {
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.linearLayout0,fragment_blister1);
+        fragmentTransaction.replace(R.id.linearLayout,blisterFragment1);
+            fragmentTransaction.commit();
+
+    }
+
+    public void pulsar_blister1(View view) {
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.linearLayout1,blisterFragment2);
         fragmentTransaction.commit();
+
     }
 }
 

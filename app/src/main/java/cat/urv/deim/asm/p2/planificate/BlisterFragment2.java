@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BlisterFragment1#newInstance} factory method to
+ * Use the {@link BlisterFragment2#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BlisterFragment1 extends Fragment {
+public class BlisterFragment2 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,7 +23,7 @@ public class BlisterFragment1 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BlisterFragment1() {
+    public BlisterFragment2() {
         // Required empty public constructor
     }
 
@@ -36,8 +36,8 @@ public class BlisterFragment1 extends Fragment {
      * @return A new instance of fragment BlisterFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BlisterFragment1 newInstance(String param1, String param2) {
-        BlisterFragment1 fragment = new BlisterFragment1();
+    public static BlisterFragment2 newInstance(String param1, String param2) {
+        BlisterFragment2 fragment = new BlisterFragment2();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,7 +59,7 @@ public class BlisterFragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blister1, container, false);
+        return inflater.inflate(R.layout.fragment_blister2, container, false);
     }
 
 }

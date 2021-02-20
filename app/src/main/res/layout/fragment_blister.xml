@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".BlisterFragment0">
+    tools:context=".BlisterFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout0"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -37,13 +37,13 @@
             android:layout_marginStart="13dp"
             android:layout_marginBottom="10dp"
             android:background="@color/fondo"
-            android:onClick="onClick"
-            android:contentDescription="@string/imagen_pildora_28"
+            android:onClick="pulsar_blister0"
+            android:contentDescription="@string/imagen_pildora_0"
             android:src="@mipmap/boton_pildora_0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-             />
+            tools:ignore="OnClick" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
