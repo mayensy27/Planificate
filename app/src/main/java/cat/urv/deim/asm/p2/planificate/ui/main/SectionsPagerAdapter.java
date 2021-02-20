@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import cat.urv.deim.asm.p2.planificate.AlarmasAcosFragment;
-import cat.urv.deim.asm.p2.planificate.BlisterFragment;
+import cat.urv.deim.asm.p2.planificate.BlisterFragment0;
 import cat.urv.deim.asm.p2.planificate.CalendarioFragment;
 import cat.urv.deim.asm.p2.planificate.DatosPersonalesFragment;
 import cat.urv.deim.asm.p2.planificate.InformacionWebFragment;
@@ -42,7 +42,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment=null;
         switch (position){
             case 0:
-                fragment=new BlisterFragment();
+                fragment=new BlisterFragment0();
                 break;
             case 1:
                 fragment=new InformacionWebFragment();

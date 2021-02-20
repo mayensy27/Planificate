@@ -1,12 +1,13 @@
 package cat.urv.deim.asm.p2.planificate;
 
-import android.app.Fragment;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,10 +18,12 @@ import cat.urv.deim.asm.p2.planificate.ui.main.SectionsPagerAdapter;
 public class MainActivity extends AppCompatActivity{
     //    String texto;
     //    String texto2;
+        Fragment fragment_blister1= new BlisterFragment1();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         /*///////////////////////////    VISUALIZACION/COMPROBACION QUE SE GUARDA OPCION SPINNER (PILDORAS/COMPRIMIDOS))
         TextView x1= findViewById(R.id.textView);
@@ -55,7 +58,14 @@ public class MainActivity extends AppCompatActivity{
 
 
         }
+
+
+    public void onClick(View view) {
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.linearLayout0,fragment_blister1);
+        fragmentTransaction.commit();
     }
+}
 
 
 

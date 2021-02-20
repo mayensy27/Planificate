@@ -25,7 +25,7 @@
 
    <!-- TODO: Remove or change this placeholder text -->
     <string name="Texto_AlarmasACOS">Alarmas ACOS</string>
-    <string name="Texto_BlisterACOS">! Ei, toca el blíster para indicar la toma de la píldora !</string>
+    <string name="Texto_BlisterACOS">! Ei, toca el blíster para indicar toma de la píldora !</string>
     <string name="Texto_Calendario_EstadosACOS">Calendario de Estados/Tomas</string>
     <string name="Texto_Datos_PersolaesACOS">Datos Personales</string>
     <string name="Texto_Informacion_WEBACOS">Página gencat</string>
