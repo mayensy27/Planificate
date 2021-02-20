@@ -22,8 +22,8 @@ import cat.urv.deim.asm.p2.planificate.R;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.Blister, R.string.Pagina_Informacion,R.string.Datos_Personales,
-    R.string.Calendario,R.string.Alarma};
+    private static final int[] TAB_TITLES = new int[]{R.string.Blister, R.string.Pagina_Informacion,
+    R.string.Calendario,R.string.Datos_Personales,R.string.Alarma};
 
     private final Context mContext;
 

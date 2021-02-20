@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,12 +8,45 @@
     tools:context=".BlisterFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/Texto_BlisterACOS"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="16dp"/>
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textoFragmentoBlister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/Texto_BlisterACOS"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView_pildoras0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView_pildoras0"
+            android:layout_width="405dp"
+            android:layout_height="447dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/imagen_pildora_28"
+            android:src="@drawable/boton_pildora_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.275" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

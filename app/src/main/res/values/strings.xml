@@ -17,17 +17,18 @@
     //Swipe (menu)
     <string name="name">Name</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="Blister">Mi Blister</string>
+    <string name="Blister">Mi Blíster</string>
     <string name="Datos_Personales">Datos Personales</string>
-    <string name="Pagina_Informacion">Informate</string>
+    <string name="Pagina_Informacion">Infórmate</string>
     <string name="Calendario">Calendario/Estados</string>
     <string name="Alarma">Alarma de Toma</string>
 
    <!-- TODO: Remove or change this placeholder text -->
     <string name="Texto_AlarmasACOS">Alarmas ACOS</string>
-    <string name="Texto_BlisterACOS">Dibujo Blister</string>
+    <string name="Texto_BlisterACOS">! Ei, toca el blíster para indicar la toma de la píldora !</string>
     <string name="Texto_Calendario_EstadosACOS">Calendario de Estados/Tomas</string>
     <string name="Texto_Datos_PersolaesACOS">Datos Personales</string>
-    <string name="Texto_Informacion_WEBACOS">Página gencat</string>-->
+    <string name="Texto_Informacion_WEBACOS">Página gencat</string>
+    <string name="imagen_pildora_28">imagen_pildora_28</string>-->
 
 </resources>
