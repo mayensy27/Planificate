@@ -11,13 +11,23 @@
     <string name="tercera_pregunta">¿Que formato de Anticonceptivos Orales Combinados tomas? </string>
     <string name="decision_propia">Decisión Propia</string>
     <string name="recomendacion_sanitaria">Recomendación Sanitaria</string>
-    <string name="name">Name</string>
     <string name="iconocentral">iconoCentral</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    //Swipe (menu)
+    <string name="name">Name</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="Blister">Mi Blister</string>
+    <string name="Datos_Personales">Datos Personales</string>
+    <string name="Pagina_Informacion">Informate</string>
+    <string name="Calendario">Calendario/Estados</string>
+    <string name="Alarma">Alarma de Toma</string>
+
+   <!-- TODO: Remove or change this placeholder text -->
+    <string name="Texto_AlarmasACOS">Alarmas ACOS</string>
+    <string name="Texto_BlisterACOS">Dibujo Blister</string>
+    <string name="Texto_Calendario_EstadosACOS">Calendario de Estados/Tomas</string>
+    <string name="Texto_Datos_PersolaesACOS">Datos Personales</string>
+    <string name="Texto_Informacion_WEBACOS">Página gencat</string>-->
 
 </resources>

@@ -1,5 +1,6 @@
 package cat.urv.deim.asm.p2.planificate;
 
+import android.app.Fragment;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -13,7 +14,7 @@ import android.view.View;
 
 import cat.urv.deim.asm.p2.planificate.ui.main.SectionsPagerAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     //    String texto;
     //    String texto2;
     @Override
@@ -31,13 +32,18 @@ public class MainActivity extends AppCompatActivity {
         x2.setText(texto);
 ////////////////////////////////////////////////////////////////////////////////*/
 
+        //Se cargan los diferentes fragmentos (pantallas) en la pantalla que observa el espectador
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
+
+        //Se genera los tab's
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        tabs.setTabMode(TabLayout.MODE_SCROLLABLE); //Para que los tabs salgan en una linea!!
 
+
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,7 +51,12 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+
+        }
     }
-}
+
+
 
 

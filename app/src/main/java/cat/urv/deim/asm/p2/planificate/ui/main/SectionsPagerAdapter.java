@@ -8,6 +8,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import cat.urv.deim.asm.p2.planificate.AlarmasAcosFragment;
+import cat.urv.deim.asm.p2.planificate.BlisterFragment;
+import cat.urv.deim.asm.p2.planificate.CalendarioFragment;
+import cat.urv.deim.asm.p2.planificate.DatosPersonalesFragment;
+import cat.urv.deim.asm.p2.planificate.InformacionWebFragment;
 import cat.urv.deim.asm.p2.planificate.R;
 
 /**
@@ -17,7 +22,9 @@ import cat.urv.deim.asm.p2.planificate.R;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
+    private static final int[] TAB_TITLES = new int[]{R.string.Blister, R.string.Pagina_Informacion,R.string.Datos_Personales,
+    R.string.Calendario,R.string.Alarma};
+
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -25,11 +32,32 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         mContext = context;
     }
 
+    //ME DEVUELVE EL FRAGMENTO QUE ESTA EN AQUELLA POSICION
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
+        /*// getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        return PlaceholderFragment.newInstance(position + 1);*/
+
+        Fragment fragment=null;
+        switch (position){
+            case 0:
+                fragment=new BlisterFragment();
+                break;
+            case 1:
+                fragment=new InformacionWebFragment();
+                break;
+            case 2:
+                fragment=new DatosPersonalesFragment();
+                break;
+            case 3:
+                fragment=new CalendarioFragment();
+                break;
+            case 4:
+                fragment=new AlarmasAcosFragment();
+                break;
+        }
+        return fragment;
     }
 
     @Nullable
@@ -38,9 +66,11 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         return mContext.getResources().getString(TAB_TITLES[position]);
     }
 
+
+    // DEVUELVE EL TOTAL DE LAS PAGINAS(PESTAÑAS)
     @Override
     public int getCount() {
-        // Show 2 total pages.
-        return 2;
+        // Show 5 total pages.
+        return 5;
     }
 }

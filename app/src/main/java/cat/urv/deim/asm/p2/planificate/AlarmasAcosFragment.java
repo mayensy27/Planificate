@@ -55,6 +55,7 @@ public class AlarmasAcosFragment extends Fragment {
         }
     }
 
+    // Se rellena el diseño de la pantalla con el layout de este fragmento
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

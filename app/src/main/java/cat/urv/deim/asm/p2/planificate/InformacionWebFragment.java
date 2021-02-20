@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link PantallaInformacionFragment#newInstance} factory method to
+ * Use the {@link InformacionWebFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PantallaInformacionFragment extends Fragment {
+public class InformacionWebFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class PantallaInformacionFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public PantallaInformacionFragment() {
+    public InformacionWebFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +34,11 @@ public class PantallaInformacionFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment PantallaInformacionFragment.
+     * @return A new instance of fragment InformacionWebFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PantallaInformacionFragment newInstance(String param1, String param2) {
-        PantallaInformacionFragment fragment = new PantallaInformacionFragment();
+    public static InformacionWebFragment newInstance(String param1, String param2) {
+        InformacionWebFragment fragment = new InformacionWebFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -55,10 +55,11 @@ public class PantallaInformacionFragment extends Fragment {
         }
     }
 
+    // Se rellena el diseño de la pantalla con el layout de este fragmento
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pantalla_informacion, container, false);
+        return inflater.inflate(R.layout.fragment_informacion_web, container, false);
     }
 }
