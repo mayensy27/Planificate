@@ -37,11 +37,13 @@
             android:layout_marginStart="13dp"
             android:layout_marginBottom="10dp"
             android:background="@color/fondo"
+            android:onClick="onclick2"
             android:contentDescription="@string/imagen_pildora_2"
             android:src="@mipmap/boton_pildora_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="OnClick" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

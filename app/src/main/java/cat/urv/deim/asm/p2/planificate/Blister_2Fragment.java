@@ -1,5 +1,7 @@
 package cat.urv.deim.asm.p2.planificate;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,6 +58,10 @@ public class Blister_2Fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        SharedPreferences preferences= this.getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor objEditor = preferences.edit();
+        objEditor.putBoolean("primeravez_blister2", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.apply();
     }
 
     @Override
@@ -72,9 +78,9 @@ public class Blister_2Fragment extends Fragment {
         ImageButton blister2 = view.findViewById(R.id.boton_blister2);
 
         blister2.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            Navigation.findNavController(v).navigate(R.id.nav_blister);
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_blister);
                                         }
                                     }
         );

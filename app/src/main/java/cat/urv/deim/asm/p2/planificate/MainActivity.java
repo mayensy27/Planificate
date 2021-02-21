@@ -51,12 +51,7 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
-        navigationView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(         //Aqui si cargan los id de los fragmentos que seran mostrados en pantalla
@@ -92,13 +87,23 @@ public class MainActivity extends AppCompatActivity {
                         } else if (id == R.id.nav_blister) {
                             SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
                             primeraVez = preferences.getBoolean("primeravez_blister1", true); // por defecto es true
+
                             if (primeraVez) {
                                 fragment = new BlisterFragment();
                                 fTransaction = true;
                             }
                             else{
-                                fragment = new Blister_1Fragment();
-                                fTransaction = true;
+
+                                primeraVez = preferences.getBoolean("primeravez_blister2", true); // por defecto es true
+                                if(primeraVez) {
+                                    fragment = new Blister_1Fragment();
+                                    fTransaction = true;
+
+                                }
+                               else{
+                                    fragment = new Blister_2Fragment();
+                                    fTransaction = true;
+                                }
                             }
 
                      /*   } else if (id == R.id.nav_profile) {
@@ -141,4 +146,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void onclick(View view) {
+        SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor objEditor = preferences.edit();
+        objEditor.putBoolean("primeravez_blister1", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.apply();
+    }
+
+    public void onclick2(View view) {
+        SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor objEditor = preferences.edit();
+        objEditor.putBoolean("primeravez_blister2", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.apply();
+    }
 }
