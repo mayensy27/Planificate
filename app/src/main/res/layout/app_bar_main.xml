@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    BARRA DE ARRIBA-->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,6 +21,8 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
+<!--    CONTENEDOR QUE VEMOS Y QUE ENSEÑA LOS DIFERENTES FRAGMENTOS DEL MENU-->
     <include layout="@layout/content_main" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

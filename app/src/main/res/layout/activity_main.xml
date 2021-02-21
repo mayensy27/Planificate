@@ -8,11 +8,15 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+
+    <!--  Barra de arriba-->
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
+<!--    MENU LATERAL-->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--CONTIENE TODOS LOS ITEMS QUE SE ENSEÑAN EN EL MENU LATERAL-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
@@ -16,5 +18,10 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+
+        <item
+            android:id="@+id/nav_blister"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/Blister" />
     </group>
 </menu>
