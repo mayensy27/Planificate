@@ -1,5 +1,7 @@
 package cat.urv.deim.asm.p2.planificate;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +28,7 @@ public class BlisterFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
     public BlisterFragment() {
         // Required empty public constructor
@@ -57,6 +60,11 @@ public class BlisterFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
+        SharedPreferences preferences= this.getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor objEditor = preferences.edit();
+        objEditor.putBoolean("primeravez_blister1", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.apply();
     }
 
     @Override
@@ -76,6 +84,8 @@ public class BlisterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(v).navigate(R.id.nav_blister1);
+
+
             }
         }
 

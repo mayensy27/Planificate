@@ -1,12 +1,17 @@
 package cat.urv.deim.asm.p2.planificate;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,9 +21,18 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
+
+import cat.urv.deim.asm.p2.planificate.ui.gallery.GalleryFragment;
+import cat.urv.deim.asm.p2.planificate.ui.home.HomeFragment;
+import cat.urv.deim.asm.p2.planificate.ui.slideshow.SlideshowFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    Boolean primeraVez;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+        navigationView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(         //Aqui si cargan los id de los fragmentos que seran mostrados en pantalla
@@ -47,7 +68,61 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
 
+                    @Override
+                    public boolean onNavigationItemSelected(@NotNull MenuItem item) {
+                        int id = item.getItemId();
+                        boolean fTransaction = false;
+                        Fragment fragment = null;
+
+                        if (id == R.id.nav_home) {
+                            fragment = new HomeFragment();
+                            fTransaction = true;
+
+                        } else if (id == R.id.nav_gallery) {
+                            fragment = new GalleryFragment();
+                            fTransaction = true;
+
+                        } else if (id == R.id.nav_slideshow) {
+                            fragment = new SlideshowFragment();
+                            fTransaction = true;
+
+                        } else if (id == R.id.nav_blister) {
+                            SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
+                            primeraVez = preferences.getBoolean("primeravez_blister1", true); // por defecto es true
+                            if (primeraVez) {
+                                fragment = new BlisterFragment();
+                                fTransaction = true;
+                            }
+                            else{
+                                fragment = new Blister_1Fragment();
+                                fTransaction = true;
+                            }
+
+                     /*   } else if (id == R.id.nav_profile) {
+                            Intent i = new Intent(MainLoginActivity.this, Profile.class);
+                            startActivity(i);
+
+                        }else if (id == R.id.nav_faqs) {
+                            Intent i = new Intent(MainLoginActivity.this, FAQ.class);
+                            startActivity(i);
+*/
+                        }
+
+                        if (fTransaction) {
+                            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, fragment).commit();
+                        }
+                        item.setChecked(false);
+                        Objects.requireNonNull(getSupportActionBar()).setTitle(item.getTitle());
+
+                        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+                        drawer.closeDrawer(GravityCompat.START);
+                        return true;
+                    }
+                }
+        );
 
     }
 
