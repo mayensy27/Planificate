@@ -33,5 +33,19 @@
         android:id="@+id/nav_blister1"
         android:name="cat.urv.deim.asm.p2.planificate.Blister_1Fragment"
         android:label="@string/Blister"
-        tools:layout="@layout/fragment_blister_1" />
+        tools:layout="@layout/fragment_blister_1" >
+        <action
+            android:id="@+id/action_nav_blister1_to_nav_blister2"
+            app:destination="@id/nav_blister2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister2"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_2Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_2" >
+        <action
+            android:id="@+id/action_nav_blister2_to_nav_blister"
+            app:destination="@id/nav_blister" />
+    </fragment>
 </navigation>
