@@ -57,7 +57,6 @@ public class BlisterFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
     }
 
     @Override
@@ -79,6 +78,8 @@ public class BlisterFragment extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.nav_blister1);
             }
         }
+
     );
+
     }
 }
