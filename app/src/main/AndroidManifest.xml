@@ -14,7 +14,10 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main3"
+            android:theme="@style/Theme.Planificate.NoActionBar"></activity>
         <activity android:name=".SegudaPreguntaActivity" />
         <activity android:name=".WebDecisionesCompartidas" />
         <activity android:name=".PrimeraPreguntaActivity" />
