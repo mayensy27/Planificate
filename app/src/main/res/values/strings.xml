@@ -23,7 +23,7 @@
     <string name="Calendario">Calendario/Estados</string>
     <string name="Alarma">Alarma de Toma</string>
 
-   <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="Texto_AlarmasACOS">Alarmas ACOS</string>
     <string name="Texto_BlisterACOS">! Ei, toca el blíster para indicar toma de la píldora !</string>
     <string name="Texto_Calendario_EstadosACOS">Calendario de Estados/Tomas</string>
@@ -31,6 +31,9 @@
     <string name="Texto_Informacion_WEBACOS">Página gencat</string>
     <string name="imagen_pildora_0">imagen_pildora_0</string>
     <string name="imagen_pildora_1">imagen_pildora_1</string>
-    <string name="imagen_pildora_2">imagen_pildora_2</string>-->
+    <string name="imagen_pildora_2">imagen_pildora_2</string>
+    <string name="fab">fab</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>-->
 
 </resources>

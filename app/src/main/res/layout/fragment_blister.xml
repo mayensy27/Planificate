@@ -31,19 +31,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/blister0"
+            android:id="@+id/boton_blister0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
+            android:layout_marginStart="15dp"
             android:layout_marginBottom="10dp"
             android:background="@color/fondo"
-            android:onClick="pulsar_blister0"
             android:contentDescription="@string/imagen_pildora_0"
             android:src="@mipmap/boton_pildora_0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="OnClick" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

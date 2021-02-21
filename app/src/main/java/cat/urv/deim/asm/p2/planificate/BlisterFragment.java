@@ -2,11 +2,15 @@ package cat.urv.deim.asm.p2.planificate;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,7 +59,6 @@ public class BlisterFragment extends Fragment {
         }
     }
 
-// Se rellena el diseño de la pantalla con el layout de este fragmento
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,4 +66,18 @@ public class BlisterFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_blister, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        ImageButton blister0=view.findViewById(R.id.boton_blister0);
+
+        blister0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.blister_1Fragment);
+            }
+        }
+    );
+    }
 }
