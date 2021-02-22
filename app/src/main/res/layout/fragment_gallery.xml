@@ -7,5 +7,9 @@
     android:background="@color/black"
     tools:context=".ui.gallery.GalleryFragment">
 
-
+    <WebView
+        android:id="@+id/web_decisiones_compartidas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

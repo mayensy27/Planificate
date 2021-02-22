@@ -1,7 +1,6 @@
 package cat.urv.deim.asm.p2.planificate;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 import cat.urv.deim.asm.p2.planificate.ui.gallery.GalleryFragment;
+import cat.urv.deim.asm.p2.planificate.ui.home.HomeFragment;
 import cat.urv.deim.asm.p2.planificate.ui.slideshow.SlideshowFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -67,14 +67,14 @@ public class MainActivity extends AppCompatActivity {
                         boolean fTransaction = false;
                         Fragment fragment = null;
                         if (id == R.id.nav_home) {
-                          /*  fragment = new HomeFragment();
-                            fTransaction = true;*/
-                            Intent i = new Intent(MainActivity.this, WebDecisionesCompartidas.class);
-                            startActivity(i);
+                            fragment = new HomeFragment();
+                            fTransaction = true;
+
 
                         } else if (id == R.id.nav_gallery) {
                             fragment = new GalleryFragment();
                             fTransaction = true;
+
 
                         } else if (id == R.id.nav_slideshow) {
                             fragment = new SlideshowFragment();
