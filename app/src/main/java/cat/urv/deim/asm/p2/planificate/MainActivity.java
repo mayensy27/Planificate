@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(         //Aqui si cargan los id de los fragmentos que seran mostrados en pantalla
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_blister,R.id.nav_blister1,R.id.nav_blister2)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_blister,R.id.nav_blister1,R.id.nav_blister2,R.id.nav_blister3)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                             if (primeraVez) {
                                 fragment = new BlisterFragment();
                                 fTransaction = true;
-                            }
+                           }
                             else{
 
                                 primeraVez = preferences.getBoolean("primeravez_blister2", true); // por defecto es true
@@ -96,9 +96,18 @@ public class MainActivity extends AppCompatActivity {
                                     fTransaction = true;
 
                                 }
-                               else{
-                                    fragment = new Blister_2Fragment();
-                                    fTransaction = true;
+                               else {
+
+                                    primeraVez = preferences.getBoolean("primeravez_blister3", true); // por defecto es true
+                                    if (primeraVez) {
+                                        fragment = new Blister_2Fragment();
+                                        fTransaction = true;
+
+                                    } else {
+                                        fragment = new Blister_3Fragment();
+                                        fTransaction = true;
+                                    }
+
                                 }
                             }
 
