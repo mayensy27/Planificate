@@ -80,7 +80,7 @@ public class BlisterFragment extends Fragment {
         blister0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.nav_blister1);
+              Navigation.findNavController(v).navigate(R.id.nav_blister1);
 
 
             }

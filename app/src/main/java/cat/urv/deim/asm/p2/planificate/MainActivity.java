@@ -1,11 +1,11 @@
 package cat.urv.deim.asm.p2.planificate;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -26,7 +26,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 import cat.urv.deim.asm.p2.planificate.ui.gallery.GalleryFragment;
-import cat.urv.deim.asm.p2.planificate.ui.home.HomeFragment;
 import cat.urv.deim.asm.p2.planificate.ui.slideshow.SlideshowFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,13 +40,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show());
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
@@ -66,15 +60,17 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
 
+
                     @Override
                     public boolean onNavigationItemSelected(@NotNull MenuItem item) {
                         int id = item.getItemId();
                         boolean fTransaction = false;
                         Fragment fragment = null;
-
                         if (id == R.id.nav_home) {
-                            fragment = new HomeFragment();
-                            fTransaction = true;
+                          /*  fragment = new HomeFragment();
+                            fTransaction = true;*/
+                            Intent i = new Intent(MainActivity.this, WebDecisionesCompartidas.class);
+                            startActivity(i);
 
                         } else if (id == R.id.nav_gallery) {
                             fragment = new GalleryFragment();
@@ -84,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                             fragment = new SlideshowFragment();
                             fTransaction = true;
 
-                        } else if (id == R.id.nav_blister) {
+                        }else if (id == R.id.nav_blister) {
                             SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
                             primeraVez = preferences.getBoolean("primeravez_blister1", true); // por defecto es true
 
@@ -106,28 +102,32 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
 
-                     /*   } else if (id == R.id.nav_profile) {
+
+   } /*else if (id == R.id.nav_profile) {
                             Intent i = new Intent(MainLoginActivity.this, Profile.class);
                             startActivity(i);
 
                         }else if (id == R.id.nav_faqs) {
                             Intent i = new Intent(MainLoginActivity.this, FAQ.class);
                             startActivity(i);
-*/
-                        }
+
+                        }*/
 
                         if (fTransaction) {
+                            getSupportFragmentManager().beginTransaction().addToBackStack(null);
                             getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, fragment).commit();
+
                         }
                         item.setChecked(false);
                         Objects.requireNonNull(getSupportActionBar()).setTitle(item.getTitle());
 
-                        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+                       // DrawerLayout drawer = findViewById(R.id.drawer_layout);
                         drawer.closeDrawer(GravityCompat.START);
                         return true;
                     }
                 }
         );
+
 
     }
 
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-
+/*
     public void onclick(View view) {
         SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
@@ -158,5 +158,5 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor objEditor = preferences.edit();
         objEditor.putBoolean("primeravez_blister2", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
-    }
+    }*/
 }

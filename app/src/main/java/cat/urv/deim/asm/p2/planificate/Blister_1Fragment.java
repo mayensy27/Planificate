@@ -69,7 +69,8 @@ public class Blister_1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blister_1, container, false);
+       return inflater.inflate(R.layout.fragment_blister_1, container, false);
+
     }
 
     @Override
@@ -78,12 +79,9 @@ public class Blister_1Fragment extends Fragment {
 
         ImageButton blister1 = view.findViewById(R.id.boton_blister1);
 
-        blister1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.nav_blister2);
+        blister1.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.nav_blister2);
 
-            }
         }
         );
 

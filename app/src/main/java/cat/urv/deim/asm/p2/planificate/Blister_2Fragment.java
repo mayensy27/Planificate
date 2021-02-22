@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -58,7 +56,7 @@ public class Blister_2Fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        SharedPreferences preferences= this.getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+       SharedPreferences preferences= this.getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
         objEditor.putBoolean("primeravez_blister2", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
@@ -68,11 +66,26 @@ public class Blister_2Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blister_2, container, false);
+       final View view= inflater.inflate(R.layout.fragment_blister_2, container, false);
+
+                ImageButton blister2 = view.findViewById(R.id.boton_blister2);
+
+        blister2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Navigation.findNavController(v).navigate(R.id.nav_blister);
+              /*  getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new BlisterFragment()).commit();
+                SharedPreferences preferences= getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+                SharedPreferences.Editor objEditor = preferences.edit();
+                objEditor.putBoolean("primeravez_blister2", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();*/
+            }
+        });
+        return view;
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    /*@Override
+   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         ImageButton blister2 = view.findViewById(R.id.boton_blister2);
@@ -84,5 +97,5 @@ public class Blister_2Fragment extends Fragment {
                                         }
                                     }
         );
-    }
+    }*/
 }
