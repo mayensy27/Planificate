@@ -7,6 +7,20 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/nav_home">
 
+
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
     <fragment
         android:id="@+id/nav_gallery"
         android:name="cat.urv.deim.asm.p2.planificate.ui.gallery.GalleryFragment"
@@ -50,17 +64,20 @@
         tools:layout="@layout/fragment_blister_3" >
         <action
             android:id="@+id/action_nav_blister3_to_nav_blister"
+            app:destination="@id/nav_blister4" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_blister4"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_4Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_4" >
+        <action
+            android:id="@+id/action_nav_blister3_to_nav_blister4"
             app:destination="@id/nav_blister" />
     </fragment>
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="cat.urv.deim.asm.p2.planificate.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="cat.urv.deim.asm.p2.planificate.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+
+
 
 </navigation>

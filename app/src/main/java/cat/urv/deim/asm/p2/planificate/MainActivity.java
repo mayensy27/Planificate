@@ -88,15 +88,14 @@ public class MainActivity extends AppCompatActivity {
                                 fragment = new BlisterFragment();
                                 fTransaction = true;
                            }
-                            else{
+                            else {
 
                                 primeraVez = preferences.getBoolean("primeravez_blister2", true); // por defecto es true
-                                if(primeraVez) {
+                                if (primeraVez) {
                                     fragment = new Blister_1Fragment();
                                     fTransaction = true;
 
-                                }
-                               else {
+                                } else {
 
                                     primeraVez = preferences.getBoolean("primeravez_blister3", true); // por defecto es true
                                     if (primeraVez) {
@@ -104,13 +103,202 @@ public class MainActivity extends AppCompatActivity {
                                         fTransaction = true;
 
                                     } else {
-                                        fragment = new Blister_3Fragment();
-                                        fTransaction = true;
-                                    }
+                                        primeraVez = preferences.getBoolean("primeravez_blister4", true); // por defecto es true
+                                        if (primeraVez) {
+                                            fragment = new Blister_3Fragment();
+                                            fTransaction = true;
 
+                                        } else {
+                                            primeraVez = preferences.getBoolean("primeravez_blister5", true); // por defecto es true
+                                            if (primeraVez) {
+                                                fragment = new Blister_4Fragment();
+                                                fTransaction = true;
+
+                                            } else {
+                                                primeraVez = preferences.getBoolean("primeravez_blister6", true); // por defecto es true
+                                                if (primeraVez) {
+                                                    fragment = new Blister_5Fragment();
+                                                    fTransaction = true;
+
+                                                } else {
+                                                    primeraVez = preferences.getBoolean("primeravez_blister7", true); // por defecto es true
+                                                    if (primeraVez) {
+                                                        fragment = new Blister_6Fragment();
+                                                        fTransaction = true;
+                                                    } else {
+                                                        primeraVez = preferences.getBoolean("primeravez_blister8", true); // por defecto es true
+                                                        if (primeraVez) {
+                                                            fragment = new Blister_7Fragment();
+                                                            fTransaction = true;
+
+                                                        } else {
+                                                            primeraVez = preferences.getBoolean("primeravez_blister9", true); // por defecto es true
+                                                            if (primeraVez) {
+                                                                fragment = new Blister_8Fragment();
+                                                                fTransaction = true;
+
+                                                            } else {
+                                                                primeraVez = preferences.getBoolean("primeravez_blister10", true); // por defecto es true
+                                                                if (primeraVez) {
+                                                                    fragment = new Blister_9Fragment();
+                                                                    fTransaction = true;
+
+                                                                } else {
+                                                                    primeraVez = preferences.getBoolean("primeravez_blister11", true); // por defecto es true
+                                                                    if (primeraVez) {
+                                                                        fragment = new Blister_10Fragment();
+                                                                        fTransaction = true;
+
+                                                                    } else {
+                                                                        primeraVez = preferences.getBoolean("primeravez_blister12", true); // por defecto es true
+                                                                        if (primeraVez) {
+                                                                            fragment = new Blister_11Fragment();
+                                                                            fTransaction = true;
+
+                                                                        } else {
+                                                                            primeraVez = preferences.getBoolean("primeravez_blister13", true); // por defecto es true
+                                                                            if (primeraVez) {
+                                                                                fragment = new Blister_12Fragment();
+                                                                                fTransaction = true;
+
+                                                                            } else {
+                                                                                primeraVez = preferences.getBoolean("primeravez_blister14", true); // por defecto es true
+                                                                                if (primeraVez) {
+                                                                                    fragment = new Blister_13Fragment();
+                                                                                    fTransaction = true;
+
+                                                                                }
+                                                                                else{
+                                                                                    primeraVez = preferences.getBoolean("primeravez_blister15", true); // por defecto es true
+                                                                                    if (primeraVez) {
+                                                                                        fragment = new Blister_14Fragment();
+                                                                                        fTransaction = true;
+
+                                                                                    }
+                                                                                    else{
+                                                                                        primeraVez = preferences.getBoolean("primeravez_blister16", true); // por defecto es true
+                                                                                        if (primeraVez) {
+                                                                                            fragment = new Blister_15Fragment();
+                                                                                            fTransaction = true;
+
+                                                                                        }
+                                                                                        else{
+                                                                                            primeraVez = preferences.getBoolean("primeravez_blister17", true); // por defecto es true
+                                                                                            if (primeraVez) {
+                                                                                                fragment = new Blister_16Fragment();
+                                                                                                fTransaction = true;
+
+                                                                                            }
+                                                                                            else{
+                                                                                                primeraVez = preferences.getBoolean("primeravez_blister18", true); // por defecto es true
+                                                                                                if (primeraVez) {
+                                                                                                    fragment = new Blister_17Fragment();
+                                                                                                    fTransaction = true;
+
+                                                                                                }
+                                                                                                else{
+                                                                                                    primeraVez = preferences.getBoolean("primeravez_blister19", true); // por defecto es true
+                                                                                                    if (primeraVez) {
+                                                                                                        fragment = new Blister_18Fragment();
+                                                                                                        fTransaction = true;
+
+                                                                                                    }
+                                                                                                    else{
+                                                                                                        primeraVez = preferences.getBoolean("primeravez_blister20", true); // por defecto es true
+                                                                                                        if (primeraVez) {
+                                                                                                            fragment = new Blister_19Fragment();
+                                                                                                            fTransaction = true;
+
+                                                                                                        }
+                                                                                                        else{
+                                                                                                            primeraVez = preferences.getBoolean("primeravez_blister21", true); // por defecto es true
+                                                                                                            if (primeraVez) {
+                                                                                                                fragment = new Blister_20Fragment();
+                                                                                                                fTransaction = true;
+
+                                                                                                            }
+                                                                                                            else{
+                                                                                                                primeraVez = preferences.getBoolean("primeravez_blister22", true); // por defecto es true
+                                                                                                                if (primeraVez) {
+                                                                                                                    fragment = new Blister_21Fragment();
+                                                                                                                    fTransaction = true;
+
+                                                                                                                }
+                                                                                                                else{
+                                                                                                                    primeraVez = preferences.getBoolean("primeravez_blister23", true); // por defecto es true
+                                                                                                                    if (primeraVez) {
+                                                                                                                        fragment = new Blister_22Fragment();
+                                                                                                                        fTransaction = true;
+
+                                                                                                                    }
+                                                                                                                    else{
+                                                                                                                        primeraVez = preferences.getBoolean("primeravez_blister24", true); // por defecto es true
+                                                                                                                        if (primeraVez) {
+                                                                                                                            fragment = new Blister_23Fragment();
+                                                                                                                            fTransaction = true;
+
+                                                                                                                        }
+                                                                                                                        else{
+                                                                                                                            primeraVez = preferences.getBoolean("primeravez_blister25", true); // por defecto es true
+                                                                                                                            if (primeraVez) {
+                                                                                                                                fragment = new Blister_24Fragment();
+                                                                                                                                fTransaction = true;
+
+                                                                                                                            }
+                                                                                                                            else{
+                                                                                                                                primeraVez = preferences.getBoolean("primeravez_blister26", true); // por defecto es true
+                                                                                                                                if (primeraVez) {
+                                                                                                                                    fragment = new Blister_25Fragment();
+                                                                                                                                    fTransaction = true;
+
+                                                                                                                                }
+                                                                                                                                ellse{
+                                                                                                                                    primeraVez = preferences.getBoolean("primeravez_blister27", true); // por defecto es true
+                                                                                                                                    if (primeraVez) {
+                                                                                                                                        fragment = new Blister_26Fragment();
+                                                                                                                                        fTransaction = true;
+
+                                                                                                                                    }
+                                                                                                                                    else{
+                                                                                                                                        primeraVez = preferences.getBoolean("primeravez_blister28", true); // por defecto es true
+                                                                                                                                        if (primeraVez) {
+                                                                                                                                            fragment = new Blister_27Fragment();
+                                                                                                                                            fTransaction = true;
+
+                                                                                                                                        }
+                                                                                                                                        else{
+                                                                                                                                            fragment = new Blister_28Fragment();
+                                                                                                                                            fTransaction = true;
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
                                 }
                             }
-
 
    } /*else if (id == R.id.nav_profile) {
                             Intent i = new Intent(MainLoginActivity.this, Profile.class);
