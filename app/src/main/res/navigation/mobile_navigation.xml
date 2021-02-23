@@ -75,9 +75,237 @@
         tools:layout="@layout/fragment_blister_4" >
         <action
             android:id="@+id/action_nav_blister3_to_nav_blister4"
-            app:destination="@id/nav_blister" />
+            app:destination="@id/nav_blister5" />
     </fragment>
 
+    <fragment
+        android:id="@+id/nav_blister5"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_5Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_5" >
+        <action
+            android:id="@+id/action_nav_blister4_to_nav_blister5"
+            app:destination="@id/nav_blister6" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/nav_blister6"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_6Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_6" >
+        <action
+            android:id="@+id/action_nav_blister5_to_nav_blister6"
+            app:destination="@id/nav_blister7" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister7"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_7Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_7" >
+        <action
+            android:id="@+id/action_nav_blister6_to_nav_blister7"
+            app:destination="@id/nav_blister8" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister8"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_8Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_8" >
+        <action
+            android:id="@+id/action_nav_blister7_to_nav_blister8"
+            app:destination="@id/nav_blister9" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister9"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_9Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_9" >
+        <action
+            android:id="@+id/action_nav_blister8_to_nav_blister9"
+            app:destination="@id/nav_blister10" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister10"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_10Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_10" >
+        <action
+            android:id="@+id/action_nav_blister9_to_nav_blister10"
+            app:destination="@id/nav_blister11" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister11"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_11Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_11" >
+        <action
+            android:id="@+id/action_nav_blister10_to_nav_blister11"
+            app:destination="@id/nav_blister12" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister12"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_12Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_12" >
+        <action
+            android:id="@+id/action_nav_blister11_to_nav_blister12"
+            app:destination="@id/nav_blister13" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister13"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_13Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_13" >
+        <action
+            android:id="@+id/action_nav_blister12_to_nav_blister13"
+            app:destination="@id/nav_blister14" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister14"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_14Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_14" >
+        <action
+            android:id="@+id/action_nav_blister13_to_nav_blister14"
+            app:destination="@id/nav_blister15" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister15"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_15Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_15" >
+        <action
+            android:id="@+id/action_nav_blister14_to_nav_blister15"
+            app:destination="@id/nav_blister16" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister16"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_16Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_16" >
+        <action
+            android:id="@+id/action_nav_blister15_to_nav_blister16"
+            app:destination="@id/nav_blister17" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister17"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_17Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_17" >
+        <action
+            android:id="@+id/action_nav_blister16_to_nav_blister17"
+            app:destination="@id/nav_blister18" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister18"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_18Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_18" >
+        <action
+            android:id="@+id/action_nav_blister17_to_nav_blister18"
+            app:destination="@id/nav_blister19" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister19"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_19Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_19" >
+        <action
+            android:id="@+id/action_nav_blister18_to_nav_blister19"
+            app:destination="@id/nav_blister20" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister20"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_20Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_20" >
+        <action
+            android:id="@+id/action_nav_blister19_to_nav_blister20"
+            app:destination="@id/nav_blister21" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister21"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_21Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_21" >
+        <action
+            android:id="@+id/action_nav_blister20_to_nav_blister21"
+            app:destination="@id/nav_blister22" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister22"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_22Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_22" >
+        <action
+            android:id="@+id/action_nav_blister21_to_nav_blister22"
+            app:destination="@id/nav_blister23" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister23"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_23Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_23" >
+        <action
+            android:id="@+id/action_nav_blister22_to_nav_blister23"
+            app:destination="@id/nav_bliste24" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister24"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_24Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_24" >
+        <action
+            android:id="@+id/action_nav_blister23_to_nav_blister24"
+            app:destination="@id/nav_blister25" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister25"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_25Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_25" >
+        <action
+            android:id="@+id/action_nav_blister24_to_nav_blister25"
+            app:destination="@id/nav_blister26" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister26"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_26Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_26" >
+        <action
+            android:id="@+id/action_nav_blister25_to_nav_blister26"
+            app:destination="@id/nav_blister27" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_blister27"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_27Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_27" >
+        <action
+            android:id="@+id/action_nav_blister26_to_nav_blister27"
+            app:destination="@id/nav_blister28" />
+    </fragment>
 
 </navigation>
