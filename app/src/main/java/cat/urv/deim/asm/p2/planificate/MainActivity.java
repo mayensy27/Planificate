@@ -49,7 +49,10 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(         //Aqui si cargan los id de los fragmentos que seran mostrados en pantalla
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_blister,R.id.nav_blister1,R.id.nav_blister2,R.id.nav_blister3)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_blister,R.id.nav_blister1,R.id.nav_blister2,R.id.nav_blister3,R.id.nav_blister4,R.id.nav_blister5,R.id.nav_blister6
+                ,R.id.nav_blister7,R.id.nav_blister8,R.id.nav_blister9,R.id.nav_blister10,R.id.nav_blister11,R.id.nav_blister12,R.id.nav_blister13,R.id.nav_blister14,R.id.nav_blister15,R.id.nav_blister16
+                ,R.id.nav_blister17,R.id.nav_blister18,R.id.nav_blister19,R.id.nav_blister20,R.id.nav_blister21,R.id.nav_blister22,R.id.nav_blister23,R.id.nav_blister24,R.id.nav_blister25,R.id.nav_blister26
+                ,R.id.nav_blister27,R.id.nav_blister28)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -81,10 +84,13 @@ public class MainActivity extends AppCompatActivity {
                             fTransaction = true;
 
                         }else if (id == R.id.nav_blister) {
+
+
                             SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
                             primeraVez = preferences.getBoolean("primeravez_blister1", true); // por defecto es true
 
                             if (primeraVez) {
+
                                 fragment = new BlisterFragment();
                                 fTransaction = true;
                            }

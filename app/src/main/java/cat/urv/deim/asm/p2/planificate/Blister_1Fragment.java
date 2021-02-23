@@ -78,9 +78,11 @@ public class Blister_1Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ImageButton blister1 = view.findViewById(R.id.boton_blister1);
-
+     //   Boolean hasolvidadotomaslaanterior=false;
         blister1.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(R.id.nav_blister2);
+
+                Navigation.findNavController(v).navigate(R.id.nav_blister2);
+
 
         }
         );
