@@ -265,7 +265,7 @@
         tools:layout="@layout/fragment_blister_23" >
         <action
             android:id="@+id/action_nav_blister22_to_nav_blister23"
-            app:destination="@id/nav_bliste24" />
+            app:destination="@id/nav_blister24" />
     </fragment>
 
     <fragment
@@ -308,4 +308,10 @@
             app:destination="@id/nav_blister28" />
     </fragment>
 
+    <fragment
+        android:id="@+id/nav_blister28"
+        android:name="cat.urv.deim.asm.p2.planificate.Blister_28Fragment"
+        android:label="@string/Blister"
+        tools:layout="@layout/fragment_blister_28" >
+    </fragment>
 </navigation>

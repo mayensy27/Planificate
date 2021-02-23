@@ -252,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
                                                                                                                                     fTransaction = true;
 
                                                                                                                                 }
-                                                                                                                                ellse{
+                                                                                                                                else{
                                                                                                                                     primeraVez = preferences.getBoolean("primeravez_blister27", true); // por defecto es true
                                                                                                                                     if (primeraVez) {
                                                                                                                                         fragment = new Blister_26Fragment();
@@ -342,8 +342,7 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-/*
-    public void onclick(View view) {
+/*    public void onclick(View view) {
         SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
         objEditor.putBoolean("primeravez_blister1", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false

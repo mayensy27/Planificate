@@ -15,10 +15,10 @@ import androidx.navigation.Navigation;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Blister_4Fragment#newInstance} factory method to
+ * Use the {@link Blister_17Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Blister_4Fragment extends Fragment {
+public class Blister_17Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +29,7 @@ public class Blister_4Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Blister_4Fragment() {
+    public Blister_17Fragment() {
         // Required empty public constructor
     }
 
@@ -42,8 +42,8 @@ public class Blister_4Fragment extends Fragment {
      * @return A new instance of fragment Blister_1Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Blister_4Fragment newInstance(String param1, String param2) {
-        Blister_4Fragment fragment = new Blister_4Fragment();
+    public static Blister_17Fragment newInstance(String param1, String param2) {
+        Blister_17Fragment fragment = new Blister_17Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,7 +60,7 @@ public class Blister_4Fragment extends Fragment {
         }
         SharedPreferences preferences= this.getActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
-        objEditor.putBoolean("primeravez_blister4", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.putBoolean("primeravez_blister17", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
     }
 
@@ -68,7 +68,7 @@ public class Blister_4Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blister_4, container, false);
+        return inflater.inflate(R.layout.fragment_blister_17, container, false);
 
     }
 
@@ -76,14 +76,14 @@ public class Blister_4Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ImageButton blister4= view.findViewById(R.id.boton_blister4);
+        ImageButton blister17= view.findViewById(R.id.boton_blister17);
 
-        blister4.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v) {
-                                            Navigation.findNavController(v).navigate(R.id.nav_blister5);
-                                        }
-                                    }
+        blister17.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View v) {
+                                             Navigation.findNavController(v).navigate(R.id.nav_blister18);
+                                         }
+                                     }
         );
     }
 }
