@@ -1,11 +1,8 @@
 package cat.urv.deim.asm.p2.planificate;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -97,22 +94,9 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
             objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
 
-           Intent intent = new Intent(SegudaPreguntaActivity.this, MainActivity.class);
+           Intent intent = new Intent(SegudaPreguntaActivity.this, TimePickerDialog.class);
            startActivity(intent);
         }
     }
 
-
-
-
-
-    private static void setAlarm (int i, long timestamp, Context ctx){                                                       //ALARMA
-        AlarmManager alarmManager= ( AlarmManager)ctx.getSystemService(ALARM_SERVICE);
-        Intent alarmIntent =new Intent (ctx,AlarmReceiver.class);
-        PendingIntent pendingIntent;
-        pendingIntent= PendingIntent.getBroadcast(ctx,i,alarmIntent,PendingIntent.FLAG_ONE_SHOT);
-        alarmIntent.setData(Uri.parse("custom://"+System.currentTimeMillis()));
-        alarmManager.set(AlarmManager.RTC_WAKEUP,timestamp,pendingIntent);
-
-    }
     }
