@@ -77,23 +77,20 @@ public class BlisterFragment extends Fragment {
 
         ImageButton blister0=view.findViewById(R.id.boton_blister0);
 
-           Boolean hasolvidadotomaslaanterior=true; // variable_provisional para simular en el caso de haber olvidado toma
+       //    Boolean hasolvidadotomaslaanterior=true; // variable_provisional para simular en el caso de haber olvidado toma
 
-        blister0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!hasolvidadotomaslaanterior) {
-                    Navigation.findNavController(v).navigate(R.id.nav_blister1);//*** PARTE -> OK_PASO A lA SIGUIENTE TOMA (MANTENER)
-                }
-                else{
+        blister0.setOnClickListener(v -> {
+         //   if(!hasolvidadotomaslaanterior) {
+                Navigation.findNavController(v).navigate(R.id.nav_blister1);//*** PARTE -> OK_PASO A lA SIGUIENTE TOMA (MANTENER)
+         //   }
+           // else{
 
-                    Navigation.findNavController(v).navigate(R.id.nav_blister28); //caso de haber olvidado tom
-                }
+          //      Navigation.findNavController(v).navigate(R.id.nav_blister28); //caso de haber olvidado tom
+           // }
 
-            }
         }
 
-    );
+        );
 
     }
 }

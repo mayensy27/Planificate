@@ -1,10 +1,11 @@
 package cat.urv.deim.asm.p2.planificate;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,12 +13,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class SegudaPreguntaActivity extends AppCompatActivity {
 
     private Spinner spinner1;
     private Spinner spinner2;
     private Button siguiente;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +31,6 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
         spinner1= findViewById(R.id.tipo_pildoras);
         spinner2= findViewById(R.id.tipo_comprimidos);
         siguiente=findViewById(R.id.siguiente);
-
-
 
   /*      Desplegable pildoras
         String [] tipos_pildoras ={"Píldoras DIM (Diindolilmetano) 120 Caps.","Píldoras Prenavant Concepción Ella 30 Caps."};
@@ -98,5 +100,19 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
            Intent intent = new Intent(SegudaPreguntaActivity.this, MainActivity.class);
            startActivity(intent);
         }
+    }
+
+
+
+
+
+    private static void setAlarm (int i, long timestamp, Context ctx){                                                       //ALARMA
+        AlarmManager alarmManager= ( AlarmManager)ctx.getSystemService(ALARM_SERVICE);
+        Intent alarmIntent =new Intent (ctx,AlarmReceiver.class);
+        PendingIntent pendingIntent;
+        pendingIntent= PendingIntent.getBroadcast(ctx,i,alarmIntent,PendingIntent.FLAG_ONE_SHOT);
+        alarmIntent.setData(Uri.parse("custom://"+System.currentTimeMillis()));
+        alarmManager.set(AlarmManager.RTC_WAKEUP,timestamp,pendingIntent);
+
     }
     }
