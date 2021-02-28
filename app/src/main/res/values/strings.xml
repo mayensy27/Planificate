@@ -6,6 +6,10 @@
     Para ello, te realizaremos algunas preguntas para poder conocerte e indicarte correctamente… </string>
     <string name="ADELANTE">¡ADELANTE!</string>
     <string name="SIGUIENTE">SIGUIENTE</string>
+    <string name="establecer_alarma">ESTABLECER ALARMA</string>
+    <string name="eliminar_alarma">ELIMINAR ALARMA</string>
+
+
     <string name="primera_pregunta">¿Has elegido tomar los ACOs por Decisión Propia o Recomendación Sanitaria? </string>
     <string name="segunda_pregunta">¿Qué tipo de Anticonceptivos Orales Combinados utilizas? </string>
     <string name="tercera_pregunta">¿Que formato de Anticonceptivos Orales Combinados tomas? </string>

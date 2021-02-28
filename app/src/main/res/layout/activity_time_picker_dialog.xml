@@ -28,11 +28,11 @@
 
     <Button
         android:id="@+id/boton_hora"
-        android:layout_width="164dp"
-        android:layout_height="72dp"
+        android:layout_width="195dp"
+        android:layout_height="71dp"
         android:layout_marginBottom="250dp"
         android:background="@drawable/boton_redondo"
-        android:text="@string/ADELANTE"
+        android:text="@string/establecer_alarma"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,5 +41,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/establecer_alarma"
         app:layout_constraintVertical_bias="0.804" />
+
+    <Button
+        android:id="@+id/boton_cancelar"
+        android:layout_width="164dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="150dp"
+        android:background="@drawable/boton_redondo"
+        android:text="@string/eliminar_alarma"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/establecer_alarma"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
