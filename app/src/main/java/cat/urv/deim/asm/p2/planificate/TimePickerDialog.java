@@ -54,8 +54,8 @@ private  TextView establecer_alarma;
 
 
     private void updateTimeText (Calendar c){
-        String timeText ="Tu alarma de Planifícate es: ";
-        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
+        String timeText ="Tu alarma de Planifícate está puesta a las: \n";
+        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime())+" h";
 
         establecer_alarma.setText(timeText);
     }
