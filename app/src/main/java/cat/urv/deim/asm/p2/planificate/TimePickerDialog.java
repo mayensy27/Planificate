@@ -35,6 +35,8 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
         });
 
         boton_cancelar.setOnClickListener(v -> cancelAlarm());
+
+
     }
 
 
@@ -84,6 +86,8 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
         stackBuilder.addNextIntent(intent1);
         pendingIntent=stackBuilder.getPendingIntent(1, PendingIntent.FLAG_UPDATE_CURRENT);
         ///////////
+
+
     }
 
     @SuppressLint("SetTextI18n")

@@ -7,6 +7,8 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
+import static cat.urv.deim.asm.p2.planificate.NotificationHelper.NOTIFICATION_ID;
+
 
 public class AlertReceiver extends BroadcastReceiver {
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -15,7 +17,7 @@ public class AlertReceiver extends BroadcastReceiver {
 
                 NotificationHelper notificationHelper = new NotificationHelper(context);
                 NotificationCompat.Builder nb = notificationHelper.getChannelNotification("!Es hora de PLANIFÍCATE!", "Tómate la píldora");
-                notificationHelper.getManager().notify(1, nb.build());
+                notificationHelper.getManager().notify(NOTIFICATION_ID, nb.build());
 
     }
 }

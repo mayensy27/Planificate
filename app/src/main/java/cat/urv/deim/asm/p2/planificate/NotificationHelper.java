@@ -16,6 +16,8 @@ public class NotificationHelper extends ContextWrapper {
 
     public static final String channel1ID="channel1ID";
     public static final String channel1Name="Channel 1";
+    public static final int NOTIFICATION_ID=0;
+
     private  NotificationManager mManager;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
