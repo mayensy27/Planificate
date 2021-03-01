@@ -1,10 +1,12 @@
 package cat.urv.deim.asm.p2.planificate;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.graphics.Color;
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
@@ -43,10 +45,14 @@ public class NotificationHelper extends ContextWrapper {
         return mManager;
     }
 
+    @SuppressLint("ResourceAsColor")
     public NotificationCompat.Builder getChannelNotification (String title, String message){
         return new NotificationCompat.Builder(getApplicationContext(),channel1ID)
                 .setContentTitle(title)
                 .setContentText(message)
+                .setColor(Color.MAGENTA)
+                .setLights(Color.MAGENTA,1000,1000)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setSmallIcon(R.drawable.ic_one);
 
     }
