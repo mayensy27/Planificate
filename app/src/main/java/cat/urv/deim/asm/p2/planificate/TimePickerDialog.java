@@ -71,12 +71,12 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
         Intent intent = new Intent(this,AlertReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
 
-
         if(c.before(Calendar.getInstance())){
             c.add(Calendar.DATE,1);
         }
         assert alarmManager != null;
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(), pendingIntent);
+        //alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(), pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),1000*3600*24, pendingIntent);
 
 
         //OJO
@@ -94,7 +94,7 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
     private void cancelAlarm(){
         AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this,AlertReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
+        pendingIntent = PendingIntent.getBroadcast(this,1,intent,PendingIntent.FLAG_NO_CREATE);
 
         assert alarmManager != null;
         alarmManager.cancel(pendingIntent);
