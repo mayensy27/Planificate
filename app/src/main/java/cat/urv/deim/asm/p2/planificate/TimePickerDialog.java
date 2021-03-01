@@ -23,18 +23,18 @@ private  TextView establecer_alarma;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_picker_dialog);
 
-        Button boton_hora = (Button) findViewById(R.id.boton_hora);
-        Button boton_cancelar = (Button) findViewById(R.id.boton_cancelar);
-        establecer_alarma = (TextView) findViewById(R.id.establecer_alarma);
+        Button boton_hora = findViewById(R.id.boton_hora);
+        Button boton_cancelar = findViewById(R.id.boton_cancelar);
+        establecer_alarma = findViewById(R.id.establecer_alarma);
 
         boton_hora.setOnClickListener(v -> {
             DialogFragment timePicker = new TimePickerFragment();
             timePicker.show(getSupportFragmentManager(),"time picker");
-
         });
 
         boton_cancelar.setOnClickListener(v -> cancelAlarm());
     }
+
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -68,7 +68,8 @@ private  TextView establecer_alarma;
         if(c.before(Calendar.getInstance())){
             c.add(Calendar.DATE,1);
         }
-       alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pendingIntent);
+        assert alarmManager != null;
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pendingIntent);
 
     }
 
@@ -78,6 +79,7 @@ private  TextView establecer_alarma;
         Intent intent = new Intent(this,AlertReceiver.class);
         PendingIntent pendingIntent= PendingIntent.getBroadcast(this,1,intent,0);
 
+        assert alarmManager != null;
         alarmManager.cancel(pendingIntent);
         establecer_alarma.setText("La alarma ha sido cancelada");
     }

@@ -12,8 +12,10 @@ public class AlertReceiver extends BroadcastReceiver {
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onReceive(Context context, Intent intent) {
-        NotificationHelper notificationHelper = new NotificationHelper(context);
-        NotificationCompat.Builder nb =notificationHelper.getChannelNotification("!Es hora de PLANIFÍCATE!","Tómate la píldora");
-        notificationHelper.getManager().notify(1,nb.build());
+
+                NotificationHelper notificationHelper = new NotificationHelper(context);
+                NotificationCompat.Builder nb = notificationHelper.getChannelNotification("!Es hora de PLANIFÍCATE!", "Tómate la píldora");
+                notificationHelper.getManager().notify(1, nb.build());
+
     }
 }
