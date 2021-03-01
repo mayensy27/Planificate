@@ -3,6 +3,7 @@ package cat.urv.deim.asm.p2.planificate;
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +18,8 @@ import java.text.DateFormat;
 import java.util.Calendar;
 
 public class TimePickerDialog extends AppCompatActivity implements android.app.TimePickerDialog.OnTimeSetListener {
-private  TextView establecer_alarma;
+    public static PendingIntent pendingIntent;
+    private  TextView establecer_alarma;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,23 +63,34 @@ private  TextView establecer_alarma;
     }
 
     private void startAlarm(Calendar c){
+
+
         AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this,AlertReceiver.class);
-        PendingIntent pendingIntent= PendingIntent.getBroadcast(this,1,intent,0);
+        pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
+
 
         if(c.before(Calendar.getInstance())){
             c.add(Calendar.DATE,1);
         }
         assert alarmManager != null;
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pendingIntent);
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(), pendingIntent);
 
+
+        //OJO
+        Intent intent1=new Intent (this,MainActivity.class);
+        TaskStackBuilder stackBuilder =TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(MainActivity.class);
+        stackBuilder.addNextIntent(intent1);
+        pendingIntent=stackBuilder.getPendingIntent(1, PendingIntent.FLAG_UPDATE_CURRENT);
+        ///////////
     }
 
     @SuppressLint("SetTextI18n")
     private void cancelAlarm(){
         AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this,AlertReceiver.class);
-        PendingIntent pendingIntent= PendingIntent.getBroadcast(this,1,intent,0);
+        pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
 
         assert alarmManager != null;
         alarmManager.cancel(pendingIntent);

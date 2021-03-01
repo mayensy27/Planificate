@@ -16,10 +16,18 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity android:name=".TimePickerDialog" />
+
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main3"
-            android:theme="@style/Theme.Planificate.NoActionBar" />
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.Planificate.NoActionBar"
+            android:parentActivityName=".TimePickerDialog" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TimePickerDialog">
+            </meta-data>
+        </activity>
+
         <activity android:name=".SegudaPreguntaActivity" />
         <activity android:name=".WebDecisionesCompartidas" />
         <activity android:name=".PrimeraPreguntaActivity" />

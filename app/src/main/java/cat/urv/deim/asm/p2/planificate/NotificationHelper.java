@@ -53,6 +53,7 @@ public class NotificationHelper extends ContextWrapper {
                 .setColor(Color.MAGENTA)
                 .setLights(Color.MAGENTA,1000,1000)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setContentIntent(TimePickerDialog.pendingIntent)
                 .setSmallIcon(R.drawable.ic_one);
 
     }
