@@ -22,6 +22,35 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Objects;
 
+import cat.urv.deim.asm.p2.planificate.blister28.BlisterFragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_10Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_11Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_12Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_13Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_14Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_15Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_16Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_17Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_18Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_19Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_1Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_20Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_21Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_22Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_23Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_24Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_25Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_26Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_27Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_28Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_2Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_3Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_4Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_5Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_6Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_7Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_8Fragment;
+import cat.urv.deim.asm.p2.planificate.blister28.Blister_9Fragment;
 import cat.urv.deim.asm.p2.planificate.ui.gallery.GalleryFragment;
 import cat.urv.deim.asm.p2.planificate.ui.home.HomeFragment;
 import cat.urv.deim.asm.p2.planificate.ui.slideshow.SlideshowFragment;
@@ -60,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        //*
+        //*PARA QUE DESAPAREZCA LA NOTIFICACION
         NotificationManagerCompat notificationManagerCompat= NotificationManagerCompat.from(getApplicationContext());
         notificationManagerCompat.cancel(NOTIFICATION_ID);
 

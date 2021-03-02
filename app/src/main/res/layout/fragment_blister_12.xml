@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".Blister_12Fragment">
+    tools:context=".blister28.Blister_12Fragment">
 
     <!-- TODO: Update blank fragment layout -->
 

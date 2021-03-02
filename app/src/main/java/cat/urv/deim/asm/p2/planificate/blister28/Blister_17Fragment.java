@@ -1,4 +1,4 @@
-package cat.urv.deim.asm.p2.planificate;
+package cat.urv.deim.asm.p2.planificate.blister28;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+import cat.urv.deim.asm.p2.planificate.R;
 
 /**
  * A simple {@link Fragment} subclass.

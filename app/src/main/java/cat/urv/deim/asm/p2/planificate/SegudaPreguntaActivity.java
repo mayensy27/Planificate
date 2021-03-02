@@ -89,12 +89,12 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
     public void onClick(View view) {
 
         if(siguiente.isClickable()) {
-            SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+            /*SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
             SharedPreferences.Editor objEditor = preferences.edit();
             objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
+            objEditor.apply();*/
 
-           Intent intent = new Intent(SegudaPreguntaActivity.this, TimePickerDialog.class);
+           Intent intent = new Intent(SegudaPreguntaActivity.this, MainActivity.class);
            startActivity(intent);
         }
     }

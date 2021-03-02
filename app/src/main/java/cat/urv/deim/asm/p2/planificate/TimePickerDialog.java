@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -77,7 +78,8 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
         assert alarmManager != null;
         //alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(), pendingIntent);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),1000*3600*24, pendingIntent);
-
+        Intent intent2=new Intent (this,MainActivity.class);
+        startActivity(intent2);
 
         //OJO
         Intent intent1=new Intent (this,MainActivity.class);
@@ -87,7 +89,10 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
         pendingIntent=stackBuilder.getPendingIntent(1, PendingIntent.FLAG_UPDATE_CURRENT);
         ///////////
 
-
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor objEditor = preferences.edit();
+        objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.apply();
     }
 
     @SuppressLint("SetTextI18n")
