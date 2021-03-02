@@ -8,12 +8,12 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Popup extends AppCompatActivity {
+public class Popup2 extends AppCompatActivity {
     Button boton_si,boton_no;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popup);
+        setContentView(R.layout.activity_popup2);
 
         DisplayMetrics medidasVentana= new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(medidasVentana);
@@ -22,15 +22,18 @@ public class Popup extends AppCompatActivity {
         int alto=medidasVentana.heightPixels;
 
         getWindow().setLayout((int) (ancho*0.85),(int)(alto*0.5));
+        MainActivity.contador_blsiter28=28;
 
     }
 
 
     public void onClick(View view) {
 
-        Intent i = new Intent(this, PrimeraPreguntaActivity.class);
-        startActivity(i);
-        finish();
+   if(MainActivity.contador_blsiter28==28) {
 
+       Intent i = new Intent(this, InformacionActivity.class);
+       startActivity(i);
+       finish();
+   }
     }
 }

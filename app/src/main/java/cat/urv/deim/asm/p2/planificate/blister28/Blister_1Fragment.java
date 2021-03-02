@@ -90,6 +90,7 @@ public class Blister_1Fragment extends Fragment {
 
                 Navigation.findNavController(v).navigate(R.id.nav_blister2);
 
+
         }
         );
 

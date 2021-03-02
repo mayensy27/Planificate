@@ -61,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     Boolean primeraVez;
+    public static  int contador_blsiter28=1;
+    public static int contador_blsiter21=0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

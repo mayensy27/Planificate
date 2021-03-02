@@ -1,7 +1,6 @@
 package cat.urv.deim.asm.p2.planificate.blister28;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.R;
 
 /**
@@ -84,8 +82,8 @@ public class Blister_27Fragment extends Fragment {
 
         blister27.setOnClickListener(v -> {
 
-            Intent i = new Intent(getContext(), Popup.class);
-            startActivity(i);
+           /* Intent i = new Intent(getContext(), Popup.class);
+            startActivity(i);*/
                     Navigation.findNavController(v).navigate(R.id.nav_blister28);
                 }
         );

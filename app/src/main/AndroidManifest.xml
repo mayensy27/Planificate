@@ -20,6 +20,11 @@
             android:theme="@style/Theme.Planificate.Popup"
             />
 
+        <activity
+            android:name=".Popup2"
+            android:theme="@style/Theme.Planificate.Popup"
+            />
+
 
         <activity android:name=".TimePickerDialog" />
 
