@@ -14,10 +14,15 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
+
         <activity
             android:name=".Popup"
-            android:theme="@style/Theme.Planificate.NoActionBar" />
+            android:theme="@style/Theme.Planificate.Popup"
+            />
+
+
         <activity android:name=".TimePickerDialog" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
@@ -27,12 +32,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".TimePickerDialog" />
         </activity>
+
         <activity android:name=".SegudaPreguntaActivity" />
+
         <activity android:name=".WebDecisionesCompartidas" />
+
         <activity android:name=".PrimeraPreguntaActivity" />
+
         <activity
             android:name=".InformacionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -44,6 +54,7 @@
         </activity>
 
         <receiver android:name=".AlertReceiver" />
+
     </application>
 
 </manifest>
