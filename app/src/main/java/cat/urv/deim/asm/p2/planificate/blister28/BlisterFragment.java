@@ -1,5 +1,6 @@
 package cat.urv.deim.asm.p2.planificate.blister28;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.R;
 
 /**
@@ -79,17 +81,14 @@ public class BlisterFragment extends Fragment {
 
         ImageButton blister0=view.findViewById(R.id.boton_blister0);
 
-       //    Boolean hasolvidadotomaslaanterior=true; // variable_provisional para simular en el caso de haber olvidado toma
 
         blister0.setOnClickListener(v -> {
-         //   if(!hasolvidadotomaslaanterior) {
-                Navigation.findNavController(v).navigate(R.id.nav_blister1);//*** PARTE -> OK_PASO A lA SIGUIENTE TOMA (MANTENER)
-         //   }
-           // else{
 
-          //      Navigation.findNavController(v).navigate(R.id.nav_blister28); //caso de haber olvidado tom
-           // }
+                    Intent i = new Intent(getContext(), Popup.class);
+                    startActivity(i);
 
+
+                    Navigation.findNavController(v).navigate(R.id.nav_blister1);
         }
 
         );
