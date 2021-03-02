@@ -83,10 +83,10 @@ public class Blister_2Fragment extends Fragment {
 
         blister2.setOnClickListener(v -> {
 
-            Intent i = new Intent(getContext(), Popup.class);
-            startActivity(i);
+            Intent i = new Intent(Blister_2Fragment.this.getContext(), Popup.class);
+            Blister_2Fragment.this.startActivity(i);
             Navigation.findNavController(v).navigate(R.id.nav_blister3);
-                                    }
+        }
         );
     }
 }
