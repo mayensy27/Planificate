@@ -85,6 +85,7 @@
     <string name="no">No</string>
     <string name="genial_nos_vemos_en_la_proxima_toma">! Genial, nos vemos en la proxima toma !</string>
     <string name="imagen_afirmacion">imagen_afirmacion</string>
+    <string name="indicaEstado">Clica para indicar tu estado de ánimo.</string>
 
 
 </resources>

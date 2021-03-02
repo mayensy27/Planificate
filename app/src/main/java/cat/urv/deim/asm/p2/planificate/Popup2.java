@@ -1,6 +1,8 @@
 package cat.urv.deim.asm.p2.planificate;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -23,7 +25,10 @@ public class Popup2 extends AppCompatActivity {
 
         getWindow().setLayout((int) (ancho*0.85),(int)(alto*0.5));
         MainActivity.contador_blsiter28=28;
-
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor objEditor = preferences.edit();
+        objEditor.putInt("contador_blister28", 28); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.apply();
     }
 
 
