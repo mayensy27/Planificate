@@ -33,16 +33,49 @@
 
     </TextView>-->
 
-    <com.hsalf.smilerating.SmileRating
-        android:id="@+id/valoracion_estado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+  <TextView
+      android:id="@+id/indicacion_estado"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/selecciona_en_que_estado_de_animo_te_encuentras"
+      android:textSize="25sp"
+      android:textColor="@color/white"
+      android:textAlignment="center"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.255" />
 
-    </com.hsalf.smilerating.SmileRating>
+  <com.hsalf.smilerating.SmileRating
+      android:id="@+id/valoracion_estado"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/indicacion_estado"
+      app:layout_constraintVertical_bias="0.258">
+
+  </com.hsalf.smilerating.SmileRating>
+
+  <Button
+      android:id="@+id/enviar"
+      android:layout_width="155dp"
+      android:layout_height="91dp"
+      android:layout_marginBottom="80dp"
+      android:background="@drawable/boton_redondo"
+      android:text="@string/ENVIAR"
+      android:textColor="@color/white"
+      android:textSize="18sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/valoracion_estado"
+      app:layout_constraintVertical_bias="1.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hsalf.smilerating.BaseRating;
 import com.hsalf.smilerating.SmileRating;
 
 public class EstadoDeAnimoActivity extends AppCompatActivity {
@@ -35,6 +36,14 @@ public class EstadoDeAnimoActivity extends AppCompatActivity {
 
 //Creacion de barra de valoracion de estados
         SmileRating valoracion_estado= findViewById(R.id.valoracion_estado);
+        valoracion_estado.setNameForSmile(BaseRating.TERRIBLE,"TERRIBLE");
+        valoracion_estado.setNameForSmile(BaseRating.BAD,"MAL");
+        valoracion_estado.setNameForSmile(BaseRating.GOOD,"BIEN");
+        valoracion_estado.setNameForSmile(BaseRating.OKAY,"MUY BIEN");
+        valoracion_estado.setNameForSmile(BaseRating.GREAT,"GENIAL");
+        valoracion_estado.setPlaceholderBackgroundColor(getColor(R.color.colorPrimary));
+        valoracion_estado.setTextNonSelectedColor(getColor(R.color.colorPrimary));
+
         valoracion_estado.setOnSmileySelectionListener((smiley, reselected) -> {
             switch (smiley){
                 case SmileRating.BAD:
@@ -50,10 +59,12 @@ public class EstadoDeAnimoActivity extends AppCompatActivity {
                     break;
 
                 case SmileRating.GREAT:
+              
                     Toast.makeText(EstadoDeAnimoActivity.this,"GENIAL",Toast.LENGTH_LONG).show();
                     break;
 
                 case SmileRating.TERRIBLE:
+
                     Toast.makeText(EstadoDeAnimoActivity.this,"TERRIBLE",Toast.LENGTH_LONG).show();
                     break;
             }

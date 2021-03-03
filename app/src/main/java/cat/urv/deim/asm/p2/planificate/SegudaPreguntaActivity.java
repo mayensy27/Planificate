@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SegudaPreguntaActivity extends AppCompatActivity {
 
-    private Spinner spinner1;
+   // private Spinner spinner1;
     private Spinner spinner2;
     private Button siguiente;
 
@@ -25,7 +25,7 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seguda_pregunta);
 
-        spinner1= findViewById(R.id.tipo_pildoras);
+      //  spinner1= findViewById(R.id.tipo_pildoras);
         spinner2= findViewById(R.id.tipo_comprimidos);
         siguiente=findViewById(R.id.siguiente);
 
@@ -40,10 +40,10 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
         spinner2.setAdapter(adapter_comprimidos);*/
 
 
-        //Desplegable pildoras
+     /*   //Desplegable pildoras
         ArrayAdapter <CharSequence> adapter_pildoras =ArrayAdapter.createFromResource(this,
                 R.array.tipos_pildoras,R.layout.spinner_item);  //opciones_pildoras
-        spinner1.setAdapter(adapter_pildoras);
+        spinner1.setAdapter(adapter_pildoras);*/
 
         //Desplegable comprimidos
         ArrayAdapter <CharSequence> adapter_comprimidos =ArrayAdapter.createFromResource(this,
@@ -54,7 +54,7 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
         SharedPreferences tipos_pildoras_comprimidos = getSharedPreferences("tipos_pildoras_comprimidos", Context.MODE_PRIVATE);
         SharedPreferences.Editor tipos = tipos_pildoras_comprimidos.edit();
 
-        //GUARDAR DATO PILDORA
+      /*  //GUARDAR DATO PILDORA
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -68,7 +68,7 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
             }
         });
 
-
+*/
         //GUARDAR DATO COMPRIMIDOS
 
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

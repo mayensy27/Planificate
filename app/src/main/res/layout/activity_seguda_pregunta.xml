@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/fondo"
     tools:context=".SegudaPreguntaActivity">
-
+<!--
     <TextView
         android:id="@+id/pildoras"
         android:layout_width="337dp"
@@ -19,26 +19,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.057" />-->
 
-    <TextView
-        android:id="@+id/comprimidos"
-        android:layout_width="337dp"
-        android:layout_height="87dp"
-        android:layout_marginBottom="304dp"
-        android:paddingStart="3dp"
-        android:paddingEnd="3dp"
-        android:text="@string/tercera_pregunta"
-        android:textAlignment="textStart"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pildoras"
-        app:layout_constraintVertical_bias="0.986" />
-
-    <Spinner
+    <!--<Spinner
         android:id="@+id/tipo_pildoras"
         android:layout_width="322dp"
         android:layout_height="90dp"
@@ -48,7 +31,23 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pildoras"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0" />-->
+
+    <TextView
+        android:id="@+id/comprimidos"
+        android:layout_width="338dp"
+        android:layout_height="111dp"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
+        android:text="@string/tercera_pregunta"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.273" />
 
     <Spinner
         android:id="@+id/tipo_comprimidos"
@@ -60,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/comprimidos"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.059" />
 
     <Button
         android:id="@+id/siguiente"

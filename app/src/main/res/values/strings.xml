@@ -11,7 +11,7 @@
 
 
     <string name="primera_pregunta">¿Has elegido tomar los ACOs por Decisión Propia o Recomendación Sanitaria? </string>
-    <string name="segunda_pregunta">¿Qué tipo de Anticonceptivos Orales Combinados utilizas? </string>
+<!--    <string name="segunda_pregunta">¿Qué tipo de Anticonceptivos Orales Combinados utilizas? </string>-->
     <string name="tercera_pregunta">¿Que formato de Anticonceptivos Orales Combinados tomas? </string>
     <string name="decision_propia">Decisión Propia</string>
     <string name="recomendacion_sanitaria">Recomendación Sanitaria</string>
@@ -87,6 +87,8 @@
     <string name="imagen_afirmacion">imagen_afirmacion</string>
     <string name="indicaEstado">Clica para indicar tu estado de ánimo.</string>
     <string name="provisional">PROVISIONAL</string>
+    <string name="selecciona_en_que_estado_de_animo_te_encuentras">Selecciona en que estado de ánimo te encuentras: </string>
+    <string name="ENVIAR">enviar</string>
 
 
 </resources>
