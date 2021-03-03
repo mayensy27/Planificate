@@ -379,17 +379,4 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-/*    public void onclick(View view) {
-        SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor objEditor = preferences.edit();
-        objEditor.putBoolean("primeravez_blister1", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-        objEditor.apply();
-    }
-
-    public void onclick2(View view) {
-        SharedPreferences preferences= getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor objEditor = preferences.edit();
-        objEditor.putBoolean("primeravez_blister2", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-        objEditor.apply();
-    }*/
 }

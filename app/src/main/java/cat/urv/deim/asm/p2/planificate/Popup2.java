@@ -36,7 +36,7 @@ public class Popup2 extends AppCompatActivity {
 
    if(MainActivity.contador_blsiter28==28) {
 
-       Intent i = new Intent(this, InformacionActivity.class);
+       Intent i = new Intent(this, EstadoDeAnimoActivity.class);
        startActivity(i);
        finish();
    }

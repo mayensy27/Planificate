@@ -28,7 +28,7 @@ public class Popup extends AppCompatActivity {
 
     public void onClick(View view) {
 
-        Intent i = new Intent(this, PrimeraPreguntaActivity.class);
+        Intent i = new Intent(this, EstadoDeAnimoActivity.class);
         startActivity(i);
         finish();
 
