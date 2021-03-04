@@ -1,10 +1,14 @@
 package cat.urv.deim.asm.p2.planificate.ui.informate;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.VideoView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import cat.urv.deim.asm.p2.planificate.R;
@@ -15,6 +19,8 @@ import cat.urv.deim.asm.p2.planificate.R;
  * create an instance of this fragment.
  */
 public class VideosCastFragment extends Fragment {
+
+    VideoView videoCast_1;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,6 +60,8 @@ public class VideosCastFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -61,5 +69,15 @@ public class VideosCastFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_videos_cast, container, false);
+    }
+
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        videoCast_1 = view.findViewById(R.id.videoCast_1);
+        String path ="android.resource://"+requireActivity().getPackageName()+"/"+ R.raw.videocat_1;
+        videoCast_1.setVideoURI(Uri.parse(path));
+        videoCast_1.start();
     }
 }
