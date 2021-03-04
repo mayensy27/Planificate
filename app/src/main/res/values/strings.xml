@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Planifícate</string>
-    <string name="bienvenida">Bienvenida a Planifícate</string>
+    <string name="app_name">Pill Plan</string>
+    <string name="bienvenida">Bienvenida a</string>
     <string name="Explicacion">Hola, ¿Qué tal?
     Hemos creado esta aplicación para ti y, para ayudarte e informarte sobre la toma de las pildoras (ACOs).
     Para ello, te realizaremos algunas preguntas para poder conocerte e indicarte correctamente… </string>
@@ -78,12 +78,11 @@
     <string name="imagen_pildora_27">imagen_pildora_27</string>
     <string name="imagen_pildora_28">imagen_pildora_28</string>
     <string name="establece_tu_alarma_diaria">Establece tu alarma diaria</string>
-    <string name="tomate_la_p_ldora">¡ Tomate la píldora !</string>
+    <string name="tomate_la_p_ldora">¡ Tómate la píldora !</string>
     <string name="acabado_blister">¡ Ole, Has acabado tu Blíster! Ahora te cargaremos uno nuevo.</string>
     <string name="imagen_popup">imagen_popup</string>
     <string name="si">Sí</string>
     <string name="no">No</string>
-    <string name="genial_nos_vemos_en_la_proxima_toma">! Genial, nos vemos en la proxima toma !</string>
     <string name="imagen_afirmacion">imagen_afirmacion</string>
     <string name="indicaEstado">Clica para indicar tu estado de ánimo.</string>
     <string name="provisional">PROVISIONAL</string>
