@@ -41,15 +41,20 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nombre_persona" />
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+
+<!--    Pestañas menú lateral-->
+    <string name="menu_informate">Infórmate</string>
+    <string name="menu_datos">Datos Personales</string>
+    <string name="menu_Calendario">Mi Calendario</string>
+    <string name="menu_alarmas">Mis Alarmas</string>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu_blister0">menu_blister0</string>
     <string name="imagen_pildora_3">imagen_pildora_3</string>
     <string name="imagen_pildora_4">imagen_pildora_4</string>

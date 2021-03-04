@@ -16,7 +16,7 @@
         android:layout_height="114dp"
         android:layout_marginTop="28dp"
         android:contentDescription="@string/imagen_popup"
-        android:src="@drawable/ic_two"
+        android:src="@drawable/ic_confirmacion_toma_pildora"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

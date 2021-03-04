@@ -5,31 +5,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_home">
+    app:startDestination="@id/nav_informate">
 
 
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="cat.urv.deim.asm.p2.planificate.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_informate"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.informate.InformateFragment"
+        android:label="@string/menu_informate"
+        tools:layout="@layout/fragment_informate" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="cat.urv.deim.asm.p2.planificate.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_calendario"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.calendario.CaledarioFragment"
+        android:label="@string/menu_Calendario"
+        tools:layout="@layout/fragment_calendario" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="cat.urv.deim.asm.p2.planificate.ui.gallery.GalleryFragment"
-        android:label="@string/Pagina_Informacion"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_datos_personales"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.datos_personales.DatosPersonalesFragment"
+        android:label="@string/menu_datos"
+        tools:layout="@layout/fragment_datos_personales" />
+    <fragment
+        android:id="@+id/nav_alarmas"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.datos_personales.DatosPersonalesFragment"
+        android:label="@string/menu_alarmas"
+        tools:layout="@layout/fragment_datos_personales" />
 
     <fragment
         android:id="@+id/nav_blister"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.BlisterFragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.BlisterFragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister" >
         <action
@@ -39,7 +44,7 @@
 
     <fragment
         android:id="@+id/nav_blister1"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_1Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_1Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_1" >
         <action
@@ -49,7 +54,7 @@
 
     <fragment
         android:id="@+id/nav_blister2"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_2Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_2Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_2" >
         <action
@@ -59,7 +64,7 @@
 
     <fragment
         android:id="@+id/nav_blister3"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_3Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_3Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_3" >
         <action
@@ -70,7 +75,7 @@
 
     <fragment
         android:id="@+id/nav_blister4"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_4Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_4Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_4" >
         <action
@@ -80,7 +85,7 @@
 
     <fragment
         android:id="@+id/nav_blister5"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_5Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_5Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_5" >
         <action
@@ -90,7 +95,7 @@
 
     <fragment
         android:id="@+id/nav_blister6"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_6Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_6Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_6" >
         <action
@@ -100,7 +105,7 @@
 
     <fragment
         android:id="@+id/nav_blister7"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_7Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_7Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_7" >
         <action
@@ -110,7 +115,7 @@
 
     <fragment
         android:id="@+id/nav_blister8"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_8Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_8Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_8" >
         <action
@@ -120,7 +125,7 @@
 
     <fragment
         android:id="@+id/nav_blister9"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_9Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_9Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_9" >
         <action
@@ -130,7 +135,7 @@
 
     <fragment
         android:id="@+id/nav_blister10"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_10Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_10Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_10" >
         <action
@@ -140,7 +145,7 @@
 
     <fragment
         android:id="@+id/nav_blister11"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_11Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_11Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_11" >
         <action
@@ -150,7 +155,7 @@
 
     <fragment
         android:id="@+id/nav_blister12"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_12Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_12Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_12" >
         <action
@@ -160,7 +165,7 @@
 
     <fragment
         android:id="@+id/nav_blister13"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_13Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_13Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_13" >
         <action
@@ -170,7 +175,7 @@
 
     <fragment
         android:id="@+id/nav_blister14"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_14Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_14Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_14" >
         <action
@@ -180,7 +185,7 @@
 
     <fragment
         android:id="@+id/nav_blister15"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_15Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_15Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_15" >
         <action
@@ -190,7 +195,7 @@
 
     <fragment
         android:id="@+id/nav_blister16"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_16Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_16Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_16" >
         <action
@@ -200,7 +205,7 @@
 
     <fragment
         android:id="@+id/nav_blister17"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_17Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_17Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_17" >
         <action
@@ -210,7 +215,7 @@
 
     <fragment
         android:id="@+id/nav_blister18"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_18Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_18Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_18" >
         <action
@@ -220,7 +225,7 @@
 
     <fragment
         android:id="@+id/nav_blister19"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_19Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_19Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_19" >
         <action
@@ -230,7 +235,7 @@
 
     <fragment
         android:id="@+id/nav_blister20"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_20Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_20Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_20" >
         <action
@@ -240,7 +245,7 @@
 
     <fragment
         android:id="@+id/nav_blister21"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_21Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_21Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_21" >
         <action
@@ -250,7 +255,7 @@
 
     <fragment
         android:id="@+id/nav_blister22"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_22Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_22Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_22" >
         <action
@@ -260,7 +265,7 @@
 
     <fragment
         android:id="@+id/nav_blister23"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_23Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_23Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_23" >
         <action
@@ -270,7 +275,7 @@
 
     <fragment
         android:id="@+id/nav_blister24"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_24Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_24Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_24" >
         <action
@@ -280,7 +285,7 @@
 
     <fragment
         android:id="@+id/nav_blister25"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_25Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_25Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_25" >
         <action
@@ -290,7 +295,7 @@
 
     <fragment
         android:id="@+id/nav_blister26"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_26Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_26Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_26" >
         <action
@@ -300,7 +305,7 @@
 
     <fragment
         android:id="@+id/nav_blister27"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_27Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_27Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_27" >
         <action
@@ -310,7 +315,7 @@
 
     <fragment
         android:id="@+id/nav_blister28"
-        android:name="cat.urv.deim.asm.p2.planificate.blister28.Blister_28Fragment"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_28Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_28" >
     </fragment>
