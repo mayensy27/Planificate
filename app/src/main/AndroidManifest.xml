@@ -14,7 +14,8 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".EstadoDeAnimoActivity"></activity>
+        <activity android:name=".Prueba" />
+        <activity android:name=".EstadoDeAnimoActivity" />
         <activity
             android:name=".Popup"
             android:theme="@style/Theme.Planificate.Popup" />

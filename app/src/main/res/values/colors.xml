@@ -9,4 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#261129</color>
 
+    <color name="color_fragm_informate">#F4F1BB</color>
+    <color name="color_fragm_datosPersonales">#A2E6EF</color>
+    <color name="color_fragm_calendario">#EFA6A2</color>
+    <color name="color_fragm_alarmas">#BEF5C6</color>
+    <color name="color_fragm_global">#BED2F5</color>
+
+
+
 </resources>

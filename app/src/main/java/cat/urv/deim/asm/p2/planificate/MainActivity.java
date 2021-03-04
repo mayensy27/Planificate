@@ -53,6 +53,9 @@ import cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_9Fragment;
 import cat.urv.deim.asm.p2.planificate.ui.calendario.CaledarioFragment;
 import cat.urv.deim.asm.p2.planificate.ui.datos_personales.DatosPersonalesFragment;
 import cat.urv.deim.asm.p2.planificate.ui.informate.InformateFragment;
+import cat.urv.deim.asm.p2.planificate.ui.informate.VideosCastFragment;
+import cat.urv.deim.asm.p2.planificate.ui.informate.VideosCatFragment;
+import cat.urv.deim.asm.p2.planificate.ui.informate.VideosInglesFragment;
 
 import static cat.urv.deim.asm.p2.planificate.NotificationHelper.NOTIFICATION_ID;
 
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     Boolean primeraVez;
     public static  int contador_blsiter28=0;
-    public static int contador_blsiter21=0;
+   // public static int contador_blsiter21=0;
 
 
     @Override
@@ -86,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_informate, R.id.nav_datos_personales, R.id.nav_calendario,R.id.nav_alarmas,R.id.nav_blister,R.id.nav_blister1,R.id.nav_blister2,R.id.nav_blister3,R.id.nav_blister4,R.id.nav_blister5,R.id.nav_blister6
                 ,R.id.nav_blister7,R.id.nav_blister8,R.id.nav_blister9,R.id.nav_blister10,R.id.nav_blister11,R.id.nav_blister12,R.id.nav_blister13,R.id.nav_blister14,R.id.nav_blister15,R.id.nav_blister16
                 ,R.id.nav_blister17,R.id.nav_blister18,R.id.nav_blister19,R.id.nav_blister20,R.id.nav_blister21,R.id.nav_blister22,R.id.nav_blister23,R.id.nav_blister24,R.id.nav_blister25,R.id.nav_blister26
-                ,R.id.nav_blister27,R.id.nav_blister28)
+                ,R.id.nav_blister27,R.id.nav_blister28,R.id.nav_informate,R.id.nav_informate_espanol,R.id.nav_informate_catalan,R.id.nav_informate_ingles)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -104,10 +107,21 @@ public class MainActivity extends AppCompatActivity {
                     boolean fTransaction = false;
                     Fragment fragment = null;
 
-
+                    //Fragmento Informate!
                     if (id == R.id.nav_informate) {
                         fragment = new InformateFragment();
                         fTransaction = true;
+                    } else if (id == R.id.nav_informate_espanol) {
+                        fragment = new VideosCastFragment();
+                        fTransaction = true;
+                    } else if (id == R.id.nav_informate_catalan) {
+                        fragment = new VideosCatFragment();
+                        fTransaction = true;
+                    } else if (id == R.id.nav_informate_ingles) {
+                        fragment = new VideosInglesFragment();
+                        fTransaction = true;
+
+
 
 
                     } else if (id == R.id.nav_datos_personales) {

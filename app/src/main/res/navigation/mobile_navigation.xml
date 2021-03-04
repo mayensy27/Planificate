@@ -13,7 +13,43 @@
         android:id="@+id/nav_informate"
         android:name="cat.urv.deim.asm.p2.planificate.ui.informate.InformateFragment"
         android:label="@string/menu_informate"
-        tools:layout="@layout/fragment_informate" />
+        tools:layout="@layout/fragment_informate">
+       <!-- <action
+            android:id="@+id/action_nav_informate_to_nav_informate_espanol"
+            app:destination="@id/nav_informate_espanol" />-->
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_informate_espanol"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.informate.VideosCastFragment"
+        android:label="@string/menu_informate"
+        tools:layout="@layout/fragment_videos_cast">
+       <!-- <action
+            android:id="@+id/action_nav_informate_espanol_to_nav_informate_espanol"
+            app:destination="@id/nav_informate_catalan" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_informate_catalan"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.informate.VideosCatFragment"
+        android:label="@string/menu_informate"
+        tools:layout="@layout/fragment_videos_cat">
+       <!-- <action
+            android:id="@+id/action_nav_informate_catalan_to_nav_informate_ingles"
+            app:destination="@id/nav_informate_ingles" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_informate_ingles"
+        android:name="cat.urv.deim.asm.p2.planificate.ui.informate.VideosInglesFragment"
+        android:label="@string/menu_informate"
+        tools:layout="@layout/fragment_videos_ingles">
+      <!--  <action
+            android:id="@+id/action_nav_informate_ingles_to_nav_informate"
+            app:destination="@id/nav_informate" />-->
+    </fragment>
+
 
     <fragment
         android:id="@+id/nav_calendario"

@@ -11,7 +11,7 @@
 
 
     <string name="primera_pregunta">¿Has elegido tomar los ACOs por Decisión Propia o Recomendación Sanitaria? </string>
-<!--    <string name="segunda_pregunta">¿Qué tipo de Anticonceptivos Orales Combinados utilizas? </string>-->
+    <!--    <string name="segunda_pregunta">¿Qué tipo de Anticonceptivos Orales Combinados utilizas? </string>-->
     <string name="tercera_pregunta">¿Que formato de Anticonceptivos Orales Combinados tomas? </string>
     <string name="decision_propia">Decisión Propia</string>
     <string name="recomendacion_sanitaria">Recomendación Sanitaria</string>
@@ -46,12 +46,11 @@
     <string name="action_settings">Settings</string>
 
 
-<!--    Pestañas menú lateral-->
+    <!--    Pestañas menú lateral-->
     <string name="menu_informate">Infórmate</string>
     <string name="menu_datos">Datos Personales</string>
     <string name="menu_Calendario">Mi Calendario</string>
     <string name="menu_alarmas">Mis Alarmas</string>
-
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -93,6 +92,12 @@
     <string name="provisional">PROVISIONAL</string>
     <string name="selecciona_en_que_estado_de_animo_te_encuentras">Selecciona en que estado de ánimo te encuentras: </string>
     <string name="ENVIAR">enviar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="espanol">Español</string>
+    <string name="catalan">Catalán</string>
+    <string name="ingles">Inglés</string>
+    <string name="escoge_en_qu_idioma_ver_la_informacion">Escoge en qué idioma ver la información:</string>
 
 
 </resources>

@@ -19,6 +19,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
+
+<!--    tema para modificar el tamaño de la letra del menu lateral-->
+    <style name="Theme.Planificate.ModificarLetraNavDrawer">
+        <item name="android:textSize">100sp</item>
+
+    </style>
+
     <style name="Theme.Planificate.Popup">
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowIsTranslucent">true</item>
