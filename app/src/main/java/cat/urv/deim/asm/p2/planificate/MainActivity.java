@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
                             primeraVez = preferences.getBoolean("primeravez_blister2", true); // por defecto es true
                             if (primeraVez) {
+
                                 fragment = new Blister_1Fragment();
 
                             } else {

@@ -87,7 +87,6 @@ public class BlisterFragment extends Fragment {
                     Intent i = new Intent(getContext(), Popup.class);
                     startActivity(i);
 
-
                     Navigation.findNavController(v).navigate(R.id.nav_blister1);
         }
 

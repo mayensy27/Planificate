@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.MediaController;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
@@ -20,7 +21,8 @@ import cat.urv.deim.asm.p2.planificate.R;
  */
 public class VideosCastFragment extends Fragment {
 
-    VideoView videoCast_1;
+    VideoView videoCast_1,videoCast_2,videoCast_3;
+    MediaController controladorVideo;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -75,9 +77,41 @@ public class VideosCastFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        controladorVideo= new MediaController( getContext());
         videoCast_1 = view.findViewById(R.id.videoCast_1);
-        String path ="android.resource://"+requireActivity().getPackageName()+"/"+ R.raw.videocat_1;
+        videoCast_2 = view.findViewById(R.id.videoCast_2);
+
+
+        //video 1
+        String path ="android.resource://"+requireActivity().getPackageName()+"/"+ R.raw.videocast_1;
         videoCast_1.setVideoURI(Uri.parse(path));
+        videoCast_1.setMediaController(controladorVideo);
+        controladorVideo.setAnchorView(videoCast_1);
         videoCast_1.start();
+
+        //Video 2
+        videoCast_1.setOnCompletionListener(mp -> {
+            videoCast_1.stopPlayback();
+            String path2 ="android.resource://"+requireActivity().getPackageName()+"/"+ R.raw.videocast_1;
+            videoCast_2.setVideoURI(Uri.parse(path2));
+            videoCast_2.setMediaController(controladorVideo);
+            controladorVideo.setAnchorView(videoCast_2);
+
+            videoCast_2.start();
+        });
+
+
+/*
+
+        //Video 3
+        String path3 ="android.resource://"+requireActivity().getPackageName()+"/"+ R.raw.videocast_1;
+        videoCast_2.setVideoURI(Uri.parse(path2));
+        videoCast_2.setMediaController(controladorVideo);
+        controladorVideo.setAnchorView(videoCast_2);
+
+        videoCast_2.start();
+*/
+
     }
 }

@@ -14,9 +14,15 @@
         android:name="cat.urv.deim.asm.p2.planificate.ui.informate.InformateFragment"
         android:label="@string/menu_informate"
         tools:layout="@layout/fragment_informate">
-       <!-- <action
+        <action
             android:id="@+id/action_nav_informate_to_nav_informate_espanol"
-            app:destination="@id/nav_informate_espanol" />-->
+            app:destination="@id/nav_informate_espanol" />
+        <action
+            android:id="@+id/action_nav_informate_to_nav_informate_catalan"
+            app:destination="@id/nav_informate_catalan" />
+        <action
+            android:id="@+id/action_nav_informate_to_nav_informate_ingles"
+            app:destination="@id/nav_informate_ingles" />
     </fragment>
 
 
@@ -25,9 +31,9 @@
         android:name="cat.urv.deim.asm.p2.planificate.ui.informate.VideosCastFragment"
         android:label="@string/menu_informate"
         tools:layout="@layout/fragment_videos_cast">
-       <!-- <action
-            android:id="@+id/action_nav_informate_espanol_to_nav_informate_espanol"
-            app:destination="@id/nav_informate_catalan" />-->
+        <action
+            android:id="@+id/action_nav_informate_espanol_to_nav_informate"
+            app:destination="@id/nav_informate" />
     </fragment>
 
     <fragment
@@ -35,9 +41,9 @@
         android:name="cat.urv.deim.asm.p2.planificate.ui.informate.VideosCatFragment"
         android:label="@string/menu_informate"
         tools:layout="@layout/fragment_videos_cat">
-       <!-- <action
-            android:id="@+id/action_nav_informate_catalan_to_nav_informate_ingles"
-            app:destination="@id/nav_informate_ingles" />-->
+        <action
+            android:id="@+id/action_nav_informate_catalan_to_nav_informate"
+            app:destination="@id/nav_informate" />
     </fragment>
 
     <fragment
@@ -45,9 +51,9 @@
         android:name="cat.urv.deim.asm.p2.planificate.ui.informate.VideosInglesFragment"
         android:label="@string/menu_informate"
         tools:layout="@layout/fragment_videos_ingles">
-      <!--  <action
+        <action
             android:id="@+id/action_nav_informate_ingles_to_nav_informate"
-            app:destination="@id/nav_informate" />-->
+            app:destination="@id/nav_informate" />
     </fragment>
 
 

@@ -74,9 +74,12 @@ public class VideosCatFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
         videoCat_1 = view.findViewById(R.id.videoCat_1);
         String path ="android.resource://"+requireActivity().getPackageName()+"/"+ R.raw.videocast_1;
         videoCat_1.setVideoURI(Uri.parse(path));
         videoCat_1.start();
+
     }
 }

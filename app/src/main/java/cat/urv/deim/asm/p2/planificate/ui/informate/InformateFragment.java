@@ -1,5 +1,6 @@
 package cat.urv.deim.asm.p2.planificate.ui.informate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +9,11 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import cat.urv.deim.asm.p2.planificate.Prueba;
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class InformateFragment extends Fragment {
@@ -40,7 +43,12 @@ public class InformateFragment extends Fragment {
         Button boton_catalan=view.findViewById(R.id.boton_catalan);
         Button boton_ingles=view.findViewById(R.id.boton_ingles);
 
-    boton_espanol.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.nav_informate_espanol)
+    boton_espanol.setOnClickListener(v -> {
+
+        Intent x=new Intent(getContext(), Prueba.class);
+        startActivity(x);
+                /*Navigation.findNavController(v).navigate(R.id.nav_informate_espanol);*/
+            }
     );
         boton_catalan.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.nav_informate_catalan)
         );
