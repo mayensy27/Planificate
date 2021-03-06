@@ -15,7 +15,31 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.blister28.BlisterActivity28"></activity>
+
+
+        <activity android:name=".ui.blister21.Blister21Activity21" />
+        <activity android:name=".ui.blister21.Blister21Activity20" />
+        <activity android:name=".ui.blister21.Blister21Activity19" />
+        <activity android:name=".ui.blister21.Blister21Activity18" />
+        <activity android:name=".ui.blister21.Blister21Activity17" />
+        <activity android:name=".ui.blister21.Blister21Activity16" />
+        <activity android:name=".ui.blister21.Blister21Activity15" />
+        <activity android:name=".ui.blister21.Blister21Activity14" />
+        <activity android:name=".ui.blister21.Blister21Activity13" />
+        <activity android:name=".ui.blister21.Blister21Activity12" />
+        <activity android:name=".ui.blister21.Blister21Activity11" />
+        <activity android:name=".ui.blister21.Blister21Activity10" />
+        <activity android:name=".ui.blister21.Blister21Activity9" />
+        <activity android:name=".ui.blister21.Blister21Activity8" />
+        <activity android:name=".ui.blister21.Blister21Activity7" />
+        <activity android:name=".ui.blister21.Blister21Activity6" />
+        <activity android:name=".ui.blister21.Blister21Activity5" />
+        <activity android:name=".ui.blister21.Blister21Activity4" />
+        <activity android:name=".ui.blister21.Blister21Activity3" />
+        <activity android:name=".ui.blister21.Blister21Activity2" />
+        <activity android:name=".ui.blister21.Blister21Activity1" />
+        <activity android:name=".ui.blister21.Blister21Activity" />
+        <activity android:name=".ui.blister28.BlisterActivity28" />
         <activity android:name=".ui.blister28.BlisterActivity27" />
         <activity android:name=".ui.blister28.BlisterActivity26" />
         <activity android:name=".ui.blister28.BlisterActivity25" />
@@ -44,7 +68,8 @@
         <activity android:name=".ui.blister28.BlisterActivity2" />
         <activity android:name=".ui.blister28.BlisterActivity1" />
         <activity android:name=".ui.blister28.BlisterActivity" />
-        <activity android:name=".ui.blister28.BlisterActivity" />
+
+
         <activity android:name=".ui.informate.VideoInglesActivity_2" />
         <activity android:name=".ui.informate.VideoInglesActivity_1" />
         <activity android:name=".ui.informate.VideoCatActivity_2" />

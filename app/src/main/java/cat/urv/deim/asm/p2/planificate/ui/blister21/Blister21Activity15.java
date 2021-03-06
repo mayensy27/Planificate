@@ -1,4 +1,4 @@
-package cat.urv.deim.asm.p2.planificate.ui.blister28;
+package cat.urv.deim.asm.p2.planificate.ui.blister21;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,20 +11,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.ui.blister28.BlisterActivity16;
 
-public class BlisterActivity10 extends AppCompatActivity {
+public class Blister21Activity15 extends AppCompatActivity {
     ImageButton cargarBlisterSiguiente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_blister10);
-
-        cargarBlisterSiguiente=findViewById(R.id.boton_blister10);
+        setContentView(R.layout.activity_blister44);
+        cargarBlisterSiguiente=findViewById(R.id.boton_blister44);
 
         SharedPreferences preferences=getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
-        objEditor.putBoolean("primeravez_blister10", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.putBoolean("primeravez_blister15", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
 
     }
@@ -32,7 +32,7 @@ public class BlisterActivity10 extends AppCompatActivity {
         if(cargarBlisterSiguiente.isClickable()){
 
 
-            Intent x = new Intent(this, BlisterActivity11.class);
+            Intent x = new Intent(this, Blister21Activity16.class);
             startActivity(x);
             finish();
             Intent i = new Intent(this, Popup.class);

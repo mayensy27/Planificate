@@ -1,5 +1,7 @@
 package cat.urv.deim.asm.p2.planificate;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 
@@ -19,6 +21,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.Objects;
 
 import cat.urv.deim.asm.p2.planificate.ui.alarmas.AlarmasFragment;
+import cat.urv.deim.asm.p2.planificate.ui.blister21.Blister21Fragment;
 import cat.urv.deim.asm.p2.planificate.ui.blister28.BlisterFragment;
 import cat.urv.deim.asm.p2.planificate.ui.calendario.CaledarioFragment;
 import cat.urv.deim.asm.p2.planificate.ui.datos_personales.DatosPersonalesFragment;
@@ -29,7 +32,6 @@ import static cat.urv.deim.asm.p2.planificate.NotificationHelper.NOTIFICATION_ID
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    Boolean primeraVez;
     public static  int contador_blsiter28=0;
    // public static int contador_blsiter21=0;
 
@@ -53,10 +55,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(         //Aqui si cargan los id de los fragmentos que seran mostrados en pantalla
-                R.id.nav_informate, R.id.nav_datos_personales, R.id.nav_calendario,R.id.nav_alarmas,R.id.nav_blister,/*R.id.nav_blister1,R.id.nav_blister2,R.id.nav_blister3,R.id.nav_blister4,R.id.nav_blister5,R.id.nav_blister6
-                ,R.id.nav_blister7,R.id.nav_blister8,R.id.nav_blister9,R.id.nav_blister10,R.id.nav_blister11,R.id.nav_blister12,R.id.nav_blister13,R.id.nav_blister14,R.id.nav_blister15,R.id.nav_blister16
-                ,R.id.nav_blister17,R.id.nav_blister18,R.id.nav_blister19,R.id.nav_blister20,R.id.nav_blister21,R.id.nav_blister22,R.id.nav_blister23,R.id.nav_blister24,R.id.nav_blister25,R.id.nav_blister26
-                ,R.id.nav_blister27,R.id.nav_blister28,*/R.id.nav_informate)
+                R.id.nav_informate, R.id.nav_datos_personales, R.id.nav_calendario,R.id.nav_alarmas,R.id.nav_blister,R.id.nav_informate)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -74,31 +73,40 @@ public class MainActivity extends AppCompatActivity {
                     boolean fTransaction = false;
                     Fragment fragment = null;
 
-                    //Fragmento Informate!
+                    //Fragmento INFORMATE!
                     if (id == R.id.nav_informate) {
                         fragment = new InformateFragment();
                         fTransaction = true;
                     }
 
+                    //Fragmento DATOS!
                      else if (id == R.id.nav_datos_personales) {
                         fragment = new DatosPersonalesFragment();
                         fTransaction = true;
 
-
+                        //Fragmento CALENDARIO!
                     } else if (id == R.id.nav_calendario) {
                         fragment = new CaledarioFragment();
                         fTransaction = true;
 
+                        //Fragmento ALARMAS!
                     } else if (id == R.id.nav_alarmas) {
                         fragment = new AlarmasFragment();
                         fTransaction = true;
 
-
+                        //Fragmento BILSTER!
                     }else if (id == R.id.nav_blister) {
+                        SharedPreferences tipos_pildoras_comprimidos = getSharedPreferences("tipos_pildoras_comprimidos", Context.MODE_PRIVATE);
+                        String texto= tipos_pildoras_comprimidos.getString("tipo_pildora", "zz"); // por defecto es true
 
-                            fragment = new BlisterFragment();
-
-                        fTransaction = true;
+                     if (texto.equals("28")||texto.equals("21+7")||texto.equals("24+4")){
+                         fragment = new BlisterFragment();
+                         fTransaction = true;
+                       }
+                     else {
+                         fragment = new Blister21Fragment();
+                         fTransaction = true;
+                     }
 
                     } /*else if (id == R.id.nav_profile) {
                         Intent i = new Intent(MainLoginActivity.this, Profile.class);
