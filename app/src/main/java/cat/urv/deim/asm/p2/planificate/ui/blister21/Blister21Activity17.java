@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.R;
-import cat.urv.deim.asm.p2.planificate.ui.blister28.BlisterActivity18;
 
 public class Blister21Activity17 extends AppCompatActivity {
     ImageButton cargarBlisterSiguiente;
@@ -19,7 +18,7 @@ public class Blister21Activity17 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bliste46);
+        setContentView(R.layout.activity_blister46);
         cargarBlisterSiguiente=findViewById(R.id.boton_blister46);
 
         SharedPreferences preferences=getSharedPreferences("datos", Context.MODE_PRIVATE);

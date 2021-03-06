@@ -1,7 +1,5 @@
 package cat.urv.deim.asm.p2.planificate.ui.blister21;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,9 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.R;
-import cat.urv.deim.asm.p2.planificate.ui.blister28.BlisterActivity12;
 
 public class Blister21Activity11 extends AppCompatActivity {
     ImageButton cargarBlisterSiguiente;
@@ -32,7 +31,7 @@ public class Blister21Activity11 extends AppCompatActivity {
         if(cargarBlisterSiguiente.isClickable()){
 
 
-            Intent x = new Intent(this, BlisterActivity12.class);
+            Intent x = new Intent(this, Blister21Activity12.class);
             startActivity(x);
             finish();
             Intent i = new Intent(this, Popup.class);
