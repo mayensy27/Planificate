@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import cat.urv.deim.asm.p2.planificate.MainActivity;
-import cat.urv.deim.asm.p2.planificate.Popup;
+import cat.urv.deim.asm.p2.planificate.Popup2;
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class Blister21Activity20 extends AppCompatActivity {
@@ -35,7 +35,7 @@ public class Blister21Activity20 extends AppCompatActivity {
             Intent x = new Intent(this, MainActivity.class);
             startActivity(x);
             finish();
-            Intent i = new Intent(this, Popup.class);
+            Intent i = new Intent(this, Popup2.class);
             startActivity(i);
             finish();
 
