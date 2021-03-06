@@ -97,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
                         //Fragmento BILSTER!
                     }else if (id == R.id.nav_blister) {
                         SharedPreferences tipos_pildoras_comprimidos = getSharedPreferences("tipos_pildoras_comprimidos", Context.MODE_PRIVATE);
-                        String texto= tipos_pildoras_comprimidos.getString("tipo_pildora", "zz"); // por defecto es true
+                        String texto= tipos_pildoras_comprimidos.getString("tipo_comprimidos", "zz"); // por defecto es true
 
-                     if (texto.equals("28")||texto.equals("21+7")||texto.equals("24+4")){
+                     if (texto.equals("Blíster 28.")||texto.equals("Blíster 21+7.")||texto.equals("Blíster 24+4.")){
                          fragment = new BlisterFragment();
                          fTransaction = true;
                        }
