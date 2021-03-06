@@ -51,6 +51,8 @@ public class InformateFragment extends Fragment {
 
 
         boton_catalan.setOnClickListener(v -> {
+            Intent x=new Intent(getContext(), VideoCatActivity_1.class);
+            startActivity(x);
                  //   Navigation.findNavController(v).navigate(R.id.nav_informate_catalan);
                 }
         );
@@ -58,6 +60,8 @@ public class InformateFragment extends Fragment {
 
 
         boton_ingles.setOnClickListener(v -> {
+            Intent x=new Intent(getContext(), VideoInglesActivity_1.class);
+            startActivity(x);
                  //   Navigation.findNavController(v).navigate(R.id.nav_informate_ingles);
                 }
         );
