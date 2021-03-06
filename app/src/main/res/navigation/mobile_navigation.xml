@@ -14,7 +14,8 @@
         android:name="cat.urv.deim.asm.p2.planificate.ui.informate.InformateFragment"
         android:label="@string/menu_informate"
         tools:layout="@layout/fragment_informate">
-        <action
+    </fragment>
+      <!--  <action
             android:id="@+id/action_nav_informate_to_nav_informate_espanol"
             app:destination="@id/nav_informate_espanol" />
         <action
@@ -54,7 +55,7 @@
         <action
             android:id="@+id/action_nav_informate_ingles_to_nav_informate"
             app:destination="@id/nav_informate" />
-    </fragment>
+    </fragment>-->
 
 
     <fragment

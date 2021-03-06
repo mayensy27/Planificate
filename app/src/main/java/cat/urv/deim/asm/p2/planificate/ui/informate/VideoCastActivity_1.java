@@ -1,4 +1,4 @@
-package cat.urv.deim.asm.p2.planificate;
+package cat.urv.deim.asm.p2.planificate.ui.informate;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,7 +10,9 @@ import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Prueba extends AppCompatActivity {
+import cat.urv.deim.asm.p2.planificate.R;
+
+public class VideoCastActivity_1 extends AppCompatActivity {
     VideoView videoCast_1;
     MediaController controladorVideo;
 
@@ -18,7 +20,7 @@ public class Prueba extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prueba);
+        setContentView(R.layout.activity_video_cast_1);
 
         controladorVideo= new MediaController( this);
         videoCast_1 = findViewById(R.id.videoCast_1);
@@ -37,9 +39,9 @@ public class Prueba extends AppCompatActivity {
 
     public void onclick(View view) {
         if(siguiente.isClickable()){
-        Intent video_siguiente= new Intent(this,Prueba2.class);
+        Intent video_siguiente= new Intent(this, VideoCastActivity_2.class);
         startActivity(video_siguiente);
-     finish();// me elimina la pantalla del prueba al tirar para atras!
+   //  finish();// me elimina la pantalla del prueba al tirar para atras!
     }
 
     }

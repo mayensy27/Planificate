@@ -1,4 +1,4 @@
-package cat.urv.deim.asm.p2.planificate;
+package cat.urv.deim.asm.p2.planificate.ui.informate;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,7 +8,9 @@ import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Prueba2 extends AppCompatActivity {
+import cat.urv.deim.asm.p2.planificate.R;
+
+public class VideoCastActivity_2 extends AppCompatActivity {
     VideoView videoCast_2;
     MediaController controladorVideo;
 
@@ -16,7 +18,7 @@ public class Prueba2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prueba2);
+        setContentView(R.layout.activity_video_cast_2);
 
         controladorVideo= new MediaController( this);
         videoCast_2 = findViewById(R.id.videoCast_2);
@@ -32,6 +34,12 @@ public class Prueba2 extends AppCompatActivity {
 
 
     }
+    /*  public void onclick(View view) {
+        if(siguiente.isClickable()){
+            Intent video_siguiente= new Intent(this, VideoCastActivity_3.class);
+            startActivity(video_siguiente);
+            //  finish();// me elimina la pantalla del prueba al tirar para atras!
+        }*/
 
 
 
