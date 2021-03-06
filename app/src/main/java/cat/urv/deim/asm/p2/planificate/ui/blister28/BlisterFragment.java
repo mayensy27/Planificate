@@ -1,18 +1,18 @@
 package cat.urv.deim.asm.p2.planificate.ui.blister28;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
-import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.R;
 
 /**
@@ -21,7 +21,7 @@ import cat.urv.deim.asm.p2.planificate.R;
  * create an instance of this fragment.
  */
 public class BlisterFragment extends Fragment {
-
+    Boolean primeraVez;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -79,18 +79,190 @@ public class BlisterFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ImageButton blister0=view.findViewById(R.id.boton_blister0);
+        Button blister=view.findViewById(R.id.boton_blister);
 
 
-        blister0.setOnClickListener(v -> {
+        blister.setOnClickListener(v -> {
 
-                    Intent i = new Intent(getContext(), Popup.class);
-                    startActivity(i);
+            SharedPreferences preferences= requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+            primeraVez = preferences.getBoolean("primeravez_blister1", true); // por defecto es true
 
-                    Navigation.findNavController(v).navigate(R.id.nav_blister1);
+            if (primeraVez) {
+
+                Intent x = new Intent(getContext(), BlisterActivity.class);
+                    startActivity(x);
+
         }
+            else {
+                primeraVez = preferences.getBoolean("primeravez_blister2", true); // por defecto es true
+                if (primeraVez) {
+                    Intent x = new Intent(getContext(), BlisterActivity1.class);
+                    startActivity(x);
+                } else {
+                    primeraVez = preferences.getBoolean("primeravez_blister3", true); // por defecto es true
+                    if (primeraVez) {
+                        Intent x = new Intent(getContext(), BlisterActivity2.class);
+                        startActivity(x);
+                    }
+                    else {
+                        primeraVez = preferences.getBoolean("primeravez_blister4", true); // por defecto es true
+                        if (primeraVez) {
+                            Intent x = new Intent(getContext(), BlisterActivity3.class);
+                            startActivity(x);
+                        } else {
+                            primeraVez = preferences.getBoolean("primeravez_blister5", true); // por defecto es true
+                            if (primeraVez) {
+                                Intent x = new Intent(getContext(), BlisterActivity4.class);
+                                startActivity(x);
+                            } else {
+                                primeraVez = preferences.getBoolean("primeravez_blister6", true); // por defecto es true
+                                if (primeraVez) {
+                                    Intent x = new Intent(getContext(), BlisterActivity5.class);
+                                    startActivity(x);
+                                } else {
+                                    primeraVez = preferences.getBoolean("primeravez_blister7", true); // por defecto es true
+                                    if (primeraVez) {
+                                        Intent x = new Intent(getContext(), BlisterActivity6.class);
+                                        startActivity(x);
+                                    } else {
+                                        primeraVez = preferences.getBoolean("primeravez_blister8", true); // por defecto es true
+                                        if (primeraVez) {
+                                            Intent x = new Intent(getContext(), BlisterActivity7.class);
+                                            startActivity(x);
+                                        } else {
+                                            primeraVez = preferences.getBoolean("primeravez_blister9", true); // por defecto es true
+                                            if (primeraVez) {
+                                                Intent x = new Intent(getContext(), BlisterActivity8.class);
+                                                startActivity(x);
+                                            } else {
+                                                primeraVez = preferences.getBoolean("primeravez_blister10", true); // por defecto es true
+                                                if (primeraVez) {
+                                                    Intent x = new Intent(getContext(), BlisterActivity9.class);
+                                                    startActivity(x);
+                                                } else {
+                                                    primeraVez = preferences.getBoolean("primeravez_blister11", true); // por defecto es true
+                                                    if (primeraVez) {
+                                                        Intent x = new Intent(getContext(), BlisterActivity10.class);
+                                                        startActivity(x);
+                                                    } else {
+                                                        primeraVez = preferences.getBoolean("primeravez_blister12", true); // por defecto es true
+                                                        if (primeraVez) {
+                                                            Intent x = new Intent(getContext(), BlisterActivity11.class);
+                                                            startActivity(x);
+                                                        } else {
+                                                            primeraVez = preferences.getBoolean("primeravez_blister13", true); // por defecto es true
+                                                            if (primeraVez) {
+                                                                Intent x = new Intent(getContext(), BlisterActivity12.class);
+                                                                startActivity(x);
+                                                            } else {
+                                                                primeraVez = preferences.getBoolean("primeravez_blister14", true); // por defecto es true
+                                                                if (primeraVez) {
+                                                                    Intent x = new Intent(getContext(), BlisterActivity13.class);
+                                                                    startActivity(x);
+                                                                } else {
+                                                                    primeraVez = preferences.getBoolean("primeravez_blister15", true); // por defecto es true
+                                                                    if (primeraVez) {
+                                                                        Intent x = new Intent(getContext(), BlisterActivity14.class);
+                                                                        startActivity(x);
+                                                                    } else {
+                                                                        primeraVez = preferences.getBoolean("primeravez_blister16", true); // por defecto es true
+                                                                        if (primeraVez) {
+                                                                            Intent x = new Intent(getContext(), BlisterActivity15.class);
+                                                                            startActivity(x);
+                                                                        } else {
+                                                                            primeraVez = preferences.getBoolean("primeravez_blister17", true); // por defecto es true
+                                                                            if (primeraVez) {
+                                                                                Intent x = new Intent(getContext(), BlisterActivity16.class);
+                                                                                startActivity(x);
+                                                                            } else {
+                                                                                primeraVez = preferences.getBoolean("primeravez_blister18", true); // por defecto es true
+                                                                                if (primeraVez) {
+                                                                                    Intent x = new Intent(getContext(), BlisterActivity17.class);
+                                                                                    startActivity(x);
+                                                                                } else {
+                                                                                    primeraVez = preferences.getBoolean("primeravez_blister19", true); // por defecto es true
+                                                                                    if (primeraVez) {
+                                                                                        Intent x = new Intent(getContext(), BlisterActivity18.class);
+                                                                                        startActivity(x);
+                                                                                    } else {
+                                                                                        primeraVez = preferences.getBoolean("primeravez_blister20", true); // por defecto es true
+                                                                                        if (primeraVez) {
+                                                                                            Intent x = new Intent(getContext(), BlisterActivity19.class);
+                                                                                            startActivity(x);
+                                                                                        }else {
+                                                                                            primeraVez = preferences.getBoolean("primeravez_blister21", true); // por defecto es true
+                                                                                            if (primeraVez) {
+                                                                                                Intent x = new Intent(getContext(), BlisterActivity20.class);
+                                                                                                startActivity(x);
+                                                                                            }else {
+                                                                                                primeraVez = preferences.getBoolean("primeravez_blister22", true); // por defecto es true
+                                                                                                if (primeraVez) {
+                                                                                                    Intent x = new Intent(getContext(), BlisterActivity21.class);
+                                                                                                    startActivity(x);
+                                                                                                } else {
+                                                                                                    primeraVez = preferences.getBoolean("primeravez_blister23", true); // por defecto es true
+                                                                                                    if (primeraVez) {
+                                                                                                        Intent x = new Intent(getContext(), BlisterActivity22.class);
+                                                                                                        startActivity(x);
+                                                                                                    } else {
+                                                                                                        primeraVez = preferences.getBoolean("primeravez_blister24", true); // por defecto es true
+                                                                                                        if (primeraVez) {
+                                                                                                            Intent x = new Intent(getContext(), BlisterActivity23.class);
+                                                                                                            startActivity(x);
+                                                                                                        } else {
+                                                                                                            primeraVez = preferences.getBoolean("primeravez_blister25", true); // por defecto es true
+                                                                                                            if (primeraVez) {
+                                                                                                                Intent x = new Intent(getContext(), BlisterActivity24.class);
+                                                                                                                startActivity(x);
+                                                                                                            } else {
+                                                                                                                primeraVez = preferences.getBoolean("primeravez_blister26", true); // por defecto es true
+                                                                                                                if (primeraVez) {
+                                                                                                                    Intent x = new Intent(getContext(), BlisterActivity25.class);
+                                                                                                                    startActivity(x);
+                                                                                                                } else {
+                                                                                                                    primeraVez = preferences.getBoolean("primeravez_blister27", true); // por defecto es true
+                                                                                                                    if (primeraVez) {
+                                                                                                                        Intent x = new Intent(getContext(), BlisterActivity26.class);
+                                                                                                                        startActivity(x);
+                                                                                                                    } else {
+                                                                                                                        primeraVez = preferences.getBoolean("primeravez_blister28", true); // por defecto es true
+                                                                                                                        if (primeraVez) {
+                                                                                                                            Intent x = new Intent(getContext(), BlisterActivity27.class);
+                                                                                                                            startActivity(x);
+                                                                                                                        } else {
+                                                                                                                            Intent x = new Intent(getContext(), BlisterActivity28.class);
+                                                                                                                            startActivity(x);
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
+
+    }
         );
-
     }
 }

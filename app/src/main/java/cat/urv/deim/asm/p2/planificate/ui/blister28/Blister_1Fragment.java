@@ -1,27 +1,26 @@
+/*
+
 package cat.urv.deim.asm.p2.planificate.ui.blister28;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
-import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.R;
 
+*/
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Blister_1Fragment#newInstance} factory method to
  * create an instance of this fragment.
- */
+ *//*
+
+
 public class Blister_1Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -38,14 +37,18 @@ public class Blister_1Fragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
+
+*/
+/**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
      * @return A new instance of fragment Blister_1Fragment.
-     */
+     *//*
+
+
     // TODO: Rename and change types and number of parameters
     public static Blister_1Fragment newInstance(String param1, String param2) {
         Blister_1Fragment fragment = new Blister_1Fragment();
@@ -77,7 +80,8 @@ public class Blister_1Fragment extends Fragment {
 
     }
 
-    @Override
+   */
+/* @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -85,14 +89,18 @@ public class Blister_1Fragment extends Fragment {
 
         blister1.setOnClickListener(v -> {
 
+            Intent x = new Intent(getContext(), BlisterActivity2.class);
+                    startActivity(x);
             Intent i = new Intent(getContext(), Popup.class);
             startActivity(i);
 
-                Navigation.findNavController(v).navigate(R.id.nav_blister2);
+               //Navigation.findNavController(v).navigate(R.id.nav_blister2);
 
 
         }
         );
 
-    }
+    }*//*
+
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package cat.urv.deim.asm.p2.planificate.ui.blister28;
 
 import android.content.Context;
@@ -17,11 +18,13 @@ import androidx.navigation.Navigation;
 import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.R;
 
+*/
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Blister_25Fragment#newInstance} factory method to
  * create an instance of this fragment.
- */
+ *//*
+
 public class Blister_25Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -37,14 +40,16 @@ public class Blister_25Fragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
+    */
+/**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
      * @return A new instance of fragment Blister_1Fragment.
-     */
+     *//*
+
     // TODO: Rename and change types and number of parameters
     public static Blister_25Fragment newInstance(String param1, String param2) {
         Blister_25Fragment fragment = new Blister_25Fragment();
@@ -86,8 +91,8 @@ public class Blister_25Fragment extends Fragment {
 
             Intent i = new Intent(getContext(), Popup.class);
             startActivity(i);
-                    Navigation.findNavController(v).navigate(R.id.nav_blister26);
+                 Navigation.findNavController(v).navigate(R.id.nav_blister26);
                 }
         );
     }
-}
+}*/

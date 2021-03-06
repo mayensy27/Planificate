@@ -14,35 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textoFragmentoBlister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="16dp"
-            android:text="@string/Texto_BlisterACOS"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/boton_blister0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/fondo"
-            android:contentDescription="@string/imagen_pildora_0"
-            android:src="@mipmap/boton_pildora_0"
+        <Button
+            android:id="@+id/boton_blister"
+            android:layout_width="260dp"
+            android:layout_height="76dp"
+            android:background="@drawable/boton_redondo"
+            android:text="@string/cargar_mi_blister"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

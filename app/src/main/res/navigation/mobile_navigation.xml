@@ -80,11 +80,11 @@
         android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.BlisterFragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister" >
-        <action
+        <!--<action
             android:id="@+id/action_nav_blister_to_nav_blister1"
-            app:destination="@id/nav_blister1" />
+            app:destination="@id/nav_blister1" />-->
     </fragment>
-
+<!--
     <fragment
         android:id="@+id/nav_blister1"
         android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_1Fragment"
@@ -361,5 +361,5 @@
         android:name="cat.urv.deim.asm.p2.planificate.ui.blister28.Blister_28Fragment"
         android:label="@string/Blister"
         tools:layout="@layout/fragment_blister_28" >
-    </fragment>
+    </fragment>-->
 </navigation>
