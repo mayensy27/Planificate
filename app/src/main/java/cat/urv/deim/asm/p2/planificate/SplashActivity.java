@@ -1,13 +1,12 @@
 package cat.urv.deim.asm.p2.planificate;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
     Boolean primeraVez;
@@ -34,9 +33,15 @@ public class SplashActivity extends AppCompatActivity {
 
             new Handler().postDelayed(() -> {
 
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                if(preferences.getBoolean("x",true)==true) {
+                    Intent intent = new Intent(SplashActivity.this, RegistroUsuariaActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else{
+                    Intent intent = new Intent(SplashActivity.this, DatosPersonalesUsuariaActivity.class);
+                    startActivity(intent);
+                }
 
             }, 2000);
 

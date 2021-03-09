@@ -15,8 +15,8 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-
-
+        <activity android:name=".DatosPersonalesUsuariaActivity" />
+        <activity android:name=".RegistroUsuariaActivity" />
         <activity android:name=".ui.blister21.Blister21Activity21" />
         <activity android:name=".ui.blister21.Blister21Activity20" />
         <activity android:name=".ui.blister21.Blister21Activity19" />
@@ -68,8 +68,6 @@
         <activity android:name=".ui.blister28.BlisterActivity2" />
         <activity android:name=".ui.blister28.BlisterActivity1" />
         <activity android:name=".ui.blister28.BlisterActivity" />
-
-
         <activity android:name=".ui.informate.VideoInglesActivity_2" />
         <activity android:name=".ui.informate.VideoInglesActivity_1" />
         <activity android:name=".ui.informate.VideoCatActivity_2" />

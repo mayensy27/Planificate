@@ -122,6 +122,16 @@
     <string name="imagen21_pildora_48">imagen21_pildora_48</string>
     <string name="imagen21_pildora_49">imagen21_pildora_49</string>
     <string name="imagen21_pildora_50">imagen21_pildora_50</string>
+    <string name="registrate">REGISTRATE</string>
+    <string name="nombre">Nombre</string>
+    <string name="email">Email</string>
+    <string name="movil">Móvil</string>
+    <string name="regristrarme">Regristrarme</string>
+    <string name="tus_datos_personales_registrados_son_los_siguientes_si_deseas_puedes_modificarlos">Tus datos personales registrados son los siguientes. Si deseas puedes modificarlos.</string>
+    <string name="tu_nombre_es">Tu nombre es:</string>
+    <string name="tu_email_es">Tu email es:</string>
+    <string name="tu_numero_es">Tu número es:</string>
+    <string name="actualizar">Actualizar</string>
 
 
 </resources>
