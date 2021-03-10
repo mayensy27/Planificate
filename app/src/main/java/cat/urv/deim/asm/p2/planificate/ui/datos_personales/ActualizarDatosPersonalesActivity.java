@@ -50,7 +50,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             } else {
-                Toast.makeText(this, "Tu movil es erroneo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Tu móvil es erroneo", Toast.LENGTH_SHORT).show();
             }
         }
     }
