@@ -33,15 +33,9 @@ public class SplashActivity extends AppCompatActivity {
 
             new Handler().postDelayed(() -> {
 
-                if(preferences.getBoolean("x",true)==true) {
-                    Intent intent = new Intent(SplashActivity.this, RegistroUsuariaActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
-                }
-                else{
-                    Intent intent = new Intent(SplashActivity.this, DatosPersonalesUsuariaActivity.class);
-                    startActivity(intent);
-                }
 
             }, 2000);
 

@@ -1,12 +1,11 @@
 package cat.urv.deim.asm.p2.planificate.ui.datos_personales;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,16 +32,29 @@ public class DatosPersonalesFragment extends Fragment {
     }
 
 
-    @SuppressLint("SetJavaScriptEnabled")
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+/*
 
         WebView webView = view.findViewById(R.id.web_decisiones_compartidas);
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("http://decisionscompartides.gencat.cat/es/decidir-sobre/anticoncepcio_hormonal/opcions_tractament/anticonceptius_orals_combinats/");
+*/
+        Button ver_datos =view.findViewById(R.id.vermisdatos);
+        Button actualizar_datos=view.findViewById(R.id.actualizarmisdatos);
 
+        ver_datos.setOnClickListener(v -> {
+            Intent i= new Intent(getContext(), DatosPersonalesUsuariaActivity.class);
+            startActivity(i);
+        });
+
+        actualizar_datos.setOnClickListener(v -> {
+            Intent i2=new Intent(getContext(),ActualizarDatosPersonalesActivity.class);
+            startActivity(i2);
+        });
     }
 
 }

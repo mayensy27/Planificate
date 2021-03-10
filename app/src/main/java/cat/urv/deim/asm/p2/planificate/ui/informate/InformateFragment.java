@@ -43,11 +43,11 @@ public class InformateFragment extends Fragment {
 
 
         boton_espanol.setOnClickListener(v -> {
-        Intent x=new Intent(getContext(), VideoCastActivity_1.class);
-        startActivity(x);
-                /*Navigation.findNavController(v).navigate(R.id.nav_informate_espanol);*/
-            }
-    );
+            Intent x = new Intent(InformateFragment.this.getContext(), VideoCastActivity_1.class);
+            InformateFragment.this.startActivity(x);
+            /*Navigation.findNavController(v).navigate(R.id.nav_informate_espanol);*/
+        }
+        );
 
 
         boton_catalan.setOnClickListener(v -> {

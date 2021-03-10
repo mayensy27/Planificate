@@ -12,6 +12,8 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import cat.urv.deim.asm.p2.planificate.ui.datos_personales.RegistroUsuariaActivity;
+
 
 public class SegudaPreguntaActivity extends AppCompatActivity {
 
@@ -96,7 +98,7 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
             objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
 
-           Intent intent = new Intent(SegudaPreguntaActivity.this, MainActivity.class);
+           Intent intent = new Intent(SegudaPreguntaActivity.this, RegistroUsuariaActivity.class);
            startActivity(intent);
         }
     }

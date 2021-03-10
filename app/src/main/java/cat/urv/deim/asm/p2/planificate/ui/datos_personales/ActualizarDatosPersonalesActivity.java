@@ -1,4 +1,4 @@
-package cat.urv.deim.asm.p2.planificate;
+package cat.urv.deim.asm.p2.planificate.ui.datos_personales;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,24 +9,29 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RegistroUsuariaActivity extends AppCompatActivity {
+import cat.urv.deim.asm.p2.planificate.MainActivity;
+import cat.urv.deim.asm.p2.planificate.R;
+
+public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
     EditText nombre, email,telefono;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro_usuaria);
-
+        setContentView(R.layout.activity_actualizar_datos_personales);
         nombre=findViewById(R.id.nombre);
         email=findViewById(R.id.email);
         telefono=findViewById(R.id.telefono);
 
-
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        nombre.setText(preferences.getString("nombre_usuaria","")); // por defecto es true
+        email.setText(preferences.getString("email_usuaria","")); // por defecto es true
+        telefono.setText(preferences.getString("telefono_usuaria","")); // por defecto es true
 
     }
 
 
-    public void registrar(View view) {
+    public void actualizar(View view) {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
         objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
@@ -37,7 +42,9 @@ public class RegistroUsuariaActivity extends AppCompatActivity {
 
         objEditor.putString("telefono_usuaria", telefono.getText().toString());
         objEditor.apply();
-            Intent i = new Intent(this, DatosPersonalesUsuariaActivity.class);
-            startActivity(i);
-        }
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
     }
+
+}

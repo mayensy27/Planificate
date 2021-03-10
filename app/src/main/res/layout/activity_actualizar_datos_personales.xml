@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fondo"
-    tools:context=".ui.datos_personales.RegistroUsuariaActivity">
+    android:background="@color/color_fragm_datosPersonales"
+    tools:context=".ui.datos_personales.ActualizarDatosPersonalesActivity">
+
 
     <TextView
-        android:id="@+id/registrarme"
+        android:id="@+id/actualizacion"
         android:layout_width="327dp"
         android:layout_height="40dp"
-        android:text="@string/registrate"
+        android:text="@string/actualizar_mis_datos"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,13 +32,13 @@
         android:autofillHints="@string/nombre"
         android:ems="16"
         android:hint="@string/nombre"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrarme" />
+        app:layout_constraintTop_toBottomOf="@+id/actualizacion" />
 
     <EditText
         android:id="@+id/email"
@@ -46,9 +47,9 @@
         android:layout_marginTop="52dp"
         android:autofillHints="@string/email"
         android:ems="16"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:hint="@string/email"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/colorPrimary"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
@@ -62,29 +63,32 @@
         android:layout_marginTop="52dp"
         android:autofillHints="@string/movil"
         android:ems="16"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:hint="@string/movil"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/colorPrimary"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
+
     <Button
-        android:id="@+id/button"
-        android:layout_width="264dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:id="@+id/actualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/boton_redondo"
-        android:text="@string/regristrarme"
-        android:textSize="25sp"
-        android:onClick="registrar"
+        android:text="@string/actualizar_mis_datos"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:onClick="actualizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telefono"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.246" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

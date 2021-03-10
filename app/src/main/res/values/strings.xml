@@ -131,7 +131,8 @@
     <string name="tu_nombre_es">Tu nombre es:</string>
     <string name="tu_email_es">Tu email es:</string>
     <string name="tu_numero_es">Tu número es:</string>
-    <string name="actualizar">Actualizar</string>
+    <string name="ver_mis_datos_actuales">Ver mis datos actuales</string>
+    <string name="actualizar_mis_datos">Actualizar mis datos</string>
 
 
 </resources>

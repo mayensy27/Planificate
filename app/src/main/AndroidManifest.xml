@@ -15,8 +15,9 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".DatosPersonalesUsuariaActivity" />
-        <activity android:name=".RegistroUsuariaActivity" />
+        <activity android:name=".ui.datos_personales.ActualizarDatosPersonalesActivity" />
+        <activity android:name=".ui.datos_personales.DatosPersonalesUsuariaActivity" />
+        <activity android:name=".ui.datos_personales.RegistroUsuariaActivity" />
         <activity android:name=".ui.blister21.Blister21Activity21" />
         <activity android:name=".ui.blister21.Blister21Activity20" />
         <activity android:name=".ui.blister21.Blister21Activity19" />
