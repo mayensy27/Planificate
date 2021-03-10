@@ -31,6 +31,8 @@ public class RegistroUsuariaActivity extends AppCompatActivity {
 
 
     public void registrar(View view) {
+
+        //VALIDACION DE DATOS EN REGISTRO
         if (!nombre.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !telefono.getText()
                 .toString().isEmpty()) {
             if(telefono.length()==9) {

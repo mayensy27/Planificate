@@ -33,6 +33,8 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
 
 
     public void actualizar(View view) {
+
+        //CONTROL DE ACTUALIZACION/VALIDACION DE DATOS PERSONALES
         if (!nombre.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !telefono.getText()
                 .toString().isEmpty()) {
             if (telefono.length() == 9) {

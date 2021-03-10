@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -47,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
                 .setAction("Action", null).show());*/
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+//ASIGNACION DEL NOMBRE DE LA USUARIA AL APARTADO DEL MENU
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        View hView=navigationView.getHeaderView(0);
+        TextView nombre=hView.findViewById(R.id.nombre_usuaria);
+
+        //el %s representa el string que viene acontinuacion (nombre de la usuaria)
+        nombre.setText(String.format("Hola %s", preferences.getString("nombre_usuaria", "")));
 
 //Se quita la tinta iconos; Permite visualizar los iconos del menu con sus respectivos colores (si no se pone, estos salen en negro)
         navigationView.setItemIconTintList(null);
@@ -101,12 +111,11 @@ public class MainActivity extends AppCompatActivity {
 
                      if (texto.equals("Blíster 28.")||texto.equals("Blíster 21+7.")||texto.equals("Blíster 24+4.")){
                          fragment = new BlisterFragment();
-                         fTransaction = true;
-                       }
+                     }
                      else {
                          fragment = new Blister21Fragment();
-                         fTransaction = true;
                      }
+                        fTransaction = true;
 
                     } /*else if (id == R.id.nav_profile) {
                         Intent i = new Intent(MainLoginActivity.this, Profile.class);
