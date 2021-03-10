@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         TextView nombre=hView.findViewById(R.id.nombre_usuaria);
 
         //el %s representa el string que viene acontinuacion (nombre de la usuaria)
-        nombre.setText(String.format("Hola %s", preferences.getString("nombre_usuaria", "")));
+        nombre.setText(String.format("¡ Hola %s !", preferences.getString("nombre_usuaria", "")));
 
 //Se quita la tinta iconos; Permite visualizar los iconos del menu con sus respectivos colores (si no se pone, estos salen en negro)
         navigationView.setItemIconTintList(null);
