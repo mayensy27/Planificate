@@ -133,6 +133,8 @@
     <string name="tu_numero_es">Tu número es:</string>
     <string name="ver_mis_datos_actuales">Ver mis datos actuales</string>
     <string name="actualizar_mis_datos">Actualizar mis datos</string>
+    <string name="abrir_calendario">Abrir calendario</string>
+    <string name="textoCalendario">A continuación, te enseñaremos tu calendario junto con tus estados de ánimo en los días que llevas tomando los ACOs…</string>
 
 
 </resources>

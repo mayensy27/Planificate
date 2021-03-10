@@ -15,6 +15,7 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
+        <activity android:name=".ui.calendario.CalendarioActivity"></activity>
         <activity android:name=".ui.datos_personales.ActualizarDatosPersonalesActivity" />
         <activity android:name=".ui.datos_personales.DatosPersonalesUsuariaActivity" />
         <activity android:name=".ui.datos_personales.RegistroUsuariaActivity" />
