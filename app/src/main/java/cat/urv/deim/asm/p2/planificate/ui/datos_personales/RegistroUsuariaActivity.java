@@ -46,8 +46,12 @@ public class RegistroUsuariaActivity extends AppCompatActivity {
                 objEditor.apply();
 
 
+                objEditor.putBoolean("registrada", false);
+                objEditor.apply();
+
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
+                finish();
             }
             else {
                 Toast.makeText(this,"Tu movil es erroneo",Toast.LENGTH_SHORT).show();

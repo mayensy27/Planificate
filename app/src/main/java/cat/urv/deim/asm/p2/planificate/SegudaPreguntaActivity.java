@@ -98,8 +98,15 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
             objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
 
-           Intent intent = new Intent(SegudaPreguntaActivity.this, RegistroUsuariaActivity.class);
-           startActivity(intent);
+            if(preferences.getBoolean("registrada", true)) {
+
+                Intent intent = new Intent(SegudaPreguntaActivity.this, RegistroUsuariaActivity.class);
+                startActivity(intent);
+            }else{
+                Intent intent = new Intent(SegudaPreguntaActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+
         }
     }
 

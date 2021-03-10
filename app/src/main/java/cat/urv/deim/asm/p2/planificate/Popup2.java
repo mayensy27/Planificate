@@ -6,12 +6,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Popup2 extends AppCompatActivity {
-    Button boton_si,boton_no;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +33,11 @@ public class Popup2 extends AppCompatActivity {
 
     public void onClick(View view) {
 
-   if(MainActivity.contador_blsiter28==28) {
+  /* if(MainActivity.contador_blsiter28==28) {*/
 
        Intent i = new Intent(this, EstadoDeAnimoActivity.class);
        startActivity(i);
        finish();
-   }
+  /* }*/
     }
 }

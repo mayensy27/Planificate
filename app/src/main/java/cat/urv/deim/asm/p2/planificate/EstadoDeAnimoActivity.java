@@ -95,6 +95,7 @@ public class EstadoDeAnimoActivity extends AppCompatActivity {
             if( preferences.getInt("nivel_animo", 0)!=0 && enviar.isClickable()){
                 Intent enviar_datos= new Intent(this, MainActivity.class);
                 startActivity(enviar_datos);
+                finish();
 
                 SharedPreferences.Editor objEditor = preferences.edit();
                 objEditor.putInt("nivel_animo", 0);
