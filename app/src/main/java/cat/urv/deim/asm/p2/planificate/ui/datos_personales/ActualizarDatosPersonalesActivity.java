@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,19 +33,26 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
 
 
     public void actualizar(View view) {
-        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor objEditor = preferences.edit();
-        objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-        objEditor.apply();
+        if (!nombre.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !telefono.getText()
+                .toString().isEmpty()) {
+            if (telefono.length() == 9) {
+                SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                SharedPreferences.Editor objEditor = preferences.edit();
+                objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
 
-        objEditor.putString("email_usuaria", email.getText().toString());
-        objEditor.apply();
+                objEditor.putString("email_usuaria", email.getText().toString());
+                objEditor.apply();
 
-        objEditor.putString("telefono_usuaria", telefono.getText().toString());
-        objEditor.apply();
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-        finish();
+                objEditor.putString("telefono_usuaria", telefono.getText().toString());
+                objEditor.apply();
+                Intent i = new Intent(this, MainActivity.class);
+                startActivity(i);
+                finish();
+            } else {
+                Toast.makeText(this, "Tu movil es erroneo", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
 }
