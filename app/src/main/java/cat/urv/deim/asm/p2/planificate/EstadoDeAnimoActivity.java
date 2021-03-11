@@ -13,6 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hsalf.smilerating.BaseRating;
 import com.hsalf.smilerating.SmileRating;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class EstadoDeAnimoActivity extends AppCompatActivity {
 
  //   TextView estadoAnimo,salida;
@@ -84,6 +88,25 @@ public class EstadoDeAnimoActivity extends AppCompatActivity {
             SharedPreferences.Editor objEditor = preferences.edit();
             objEditor.putInt("nivel_animo", level);
             objEditor.apply();
+
+
+            //Añadido hoy!!!!!!!!!!!!!!!!!!!!!!!
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-dd", Locale.getDefault()); //Cambiado para que concuerde con la fecha que me proporciona el Calendar
+            Date date = new Date();
+            String fecha = dateFormat.format(date);
+            if(fecha.equals(preferences.getString("tomaBlister_1", ""))
+                    && !preferences.getBoolean("primeravez_blister1", true)) {
+
+                objEditor.putInt("nivel_animo_1", level);
+                objEditor.apply();
+            }
+               if (fecha.equals(preferences.getString("tomaBlister_2", ""))
+                        && !preferences.getBoolean("primeravez_blister2", true)) {
+
+                    objEditor.putInt("nivel_animo_2", level);
+                    objEditor.apply();
+                }
 
         });
 

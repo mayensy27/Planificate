@@ -12,7 +12,14 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/colorPrimary</item> //color de las lineas, radiobuttons, calendario..
     </style>
+
+//para cambiar el color del calendario
+<!--
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/purple_700</item>
+    </style>-->
 
     <style name="Theme.Planificate.NoActionBar">
         <item name="windowActionBar">false</item>
