@@ -9,9 +9,12 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.R;
-import cat.urv.deim.asm.p2.planificate.ui.blister28.BlisterActivity16;
 
 public class Blister21Activity15 extends AppCompatActivity {
     ImageButton cargarBlisterSiguiente;
@@ -38,6 +41,22 @@ public class Blister21Activity15 extends AppCompatActivity {
             Intent i = new Intent(this, Popup.class);
             startActivity(i);
             finish();
+
+
+            // TOMA 16 DIA DE LA PILDRA
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-dd", Locale.getDefault()); //Cambiado para que concuerde con la fecha que me proporciona el Calendar
+            Date date = new Date();
+
+            String fecha = dateFormat.format(date);
+
+            SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+            SharedPreferences.Editor objEditor = preferences.edit();
+            objEditor.putString("tomaBlister_16", fecha); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();
+            objEditor.putInt("dia_16", 16); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();
+
         }
     }
 }

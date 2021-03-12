@@ -51,7 +51,8 @@ public class Blister21Activity extends AppCompatActivity {
             SharedPreferences.Editor objEditor = preferences.edit();
             objEditor.putString("tomaBlister_1", fecha); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
-
+            objEditor.putInt("dia_1", 1); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();
 
         }
 

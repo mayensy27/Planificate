@@ -100,7 +100,7 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
 
             if(preferences.getBoolean("registrada", true)) {
 
-                Intent intent = new Intent(SegudaPreguntaActivity.this, RegistroUsuariaActivity.class);
+                Intent intent = new Intent(SegudaPreguntaActivity.this, MainActivity.class);
                 startActivity(intent);
             }else{
                 Intent intent = new Intent(SegudaPreguntaActivity.this, MainActivity.class);
