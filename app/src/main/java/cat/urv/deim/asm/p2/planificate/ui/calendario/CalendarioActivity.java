@@ -166,6 +166,14 @@ public class CalendarioActivity extends AppCompatActivity {
                             //  retorno_texto_calendario.setText(preferences.getString("tomaBlister21_1", ""));
                             retorno_texto_calendario.setText("Te has tomado la píldora: dia 21\n" + "El estado de ánimo" +
                                     "ha sido: " + preferences.getInt("nivel_animo_21", 0));
+
+                            SharedPreferences.Editor objEditor = preferences.edit();
+                            objEditor.putBoolean("primeravez_blister21", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                            objEditor.apply();
+                            objEditor.putString("tomaBlister_21", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                            objEditor.apply();
+                            objEditor.putInt("dia_21", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                            objEditor.apply();
                         }
                         //TOMA 22 DIA DE LA PILDORA
                         if (fecha.equals(preferences.getString("tomaBlister_22", "")) && !preferences.getBoolean("primeravez_blister22", true) && preferences.getInt("dia_22", 0) == 22) {
@@ -208,6 +216,14 @@ public class CalendarioActivity extends AppCompatActivity {
                             //  retorno_texto_calendario.setText(preferences.getString("tomaBlister21_1", ""));
                             retorno_texto_calendario.setText("Te has tomado la píldora: dia 28\n" + "El estado de ánimo" +
                                     "ha sido: " + preferences.getInt("nivel_animo_28", 0));
+
+                            SharedPreferences.Editor objEditor = preferences.edit();
+                            objEditor.putBoolean("primeravez_blister28", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                            objEditor.apply();
+                            objEditor.putString("tomaBlister_28", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                            objEditor.apply();
+                            objEditor.putInt("dia_28", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                            objEditor.apply();
                         }
                         //TOMA 29 DIA DE LA PILDORA
                         if (fecha.equals(preferences.getString("tomaBlister_29", "")) && !preferences.getBoolean("primeravez_blister29", true) && preferences.getInt("dia_29", 0) == 29) {

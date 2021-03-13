@@ -1,3 +1,4 @@
+
 package cat.urv.deim.asm.p2.planificate.ui.blister21;
 
 import android.content.Context;
@@ -26,8 +27,12 @@ public class Blister21Activity20 extends AppCompatActivity {
         setContentView(R.layout.activity_blister49);
         cargarBlisterSiguiente=findViewById(R.id.boton_blister49);
 
+
+
         SharedPreferences preferences=getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
+
+
         objEditor.putBoolean("primeravez_blister20", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
         objEditor.putBoolean("primeravez_blister21", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
@@ -36,11 +41,11 @@ public class Blister21Activity20 extends AppCompatActivity {
     public void cargarBlister(View view) {
         if(cargarBlisterSiguiente.isClickable()){
 
-
+          /*  Intent x = new Intent(this, Blister21Activity21.class);
+            startActivity(x);
+            finish();*/
             Intent x2 = new Intent(this, MainActivity.class);
             startActivity(x2);
-            finish();Intent x = new Intent(this, Blister21Activity21.class);
-            startActivity(x);
             finish();
             Intent i = new Intent(this, Popup2.class);
             startActivity(i);

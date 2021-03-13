@@ -22,10 +22,10 @@ public class Blister21Activity21 extends AppCompatActivity {
         SharedPreferences.Editor objEditor = preferences.edit();
         objEditor.putBoolean("primeravez_blister21", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
-        objEditor.putString("tomaBlister_21", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+       /* objEditor.putString("tomaBlister_21", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
         objEditor.putInt("dia_21", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-        objEditor.apply();
+        objEditor.apply();*/
 
 
 
