@@ -219,7 +219,7 @@ public class EstadoDeAnimoActivity extends AppCompatActivity {
                                                                                            objEditor.apply();
                                                                                        }
                if (fecha.equals(preferences.getString("tomaBlister_21", ""))
-                                                                                                   && !preferences.getBoolean("primeravez_blister21", true)) {
+                                                                                                   && (!preferences.getBoolean("primeravez21_blister21", true)||!preferences.getBoolean("primeravez_blister21", true))) {
 
                                                                                                objEditor.putInt("nivel_animo_21", level);
                                                                                                objEditor.apply();

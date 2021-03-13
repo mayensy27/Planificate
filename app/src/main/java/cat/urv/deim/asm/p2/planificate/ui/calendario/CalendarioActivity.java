@@ -162,13 +162,14 @@ public class CalendarioActivity extends AppCompatActivity {
                                     "ha sido: " + preferences.getInt("nivel_animo_20", 0));
                         }
                         //TOMA 21 DIA DE LA PILDORA
-                        if (fecha.equals(preferences.getString("tomaBlister_21", "")) && !preferences.getBoolean("primeravez_blister21", true) && preferences.getInt("dia_21", 0) == 21) {
+                        if (fecha.equals(preferences.getString("tomaBlister_21", "")) && (!preferences.getBoolean("primeravez21_blister21", true)||!preferences.getBoolean("primeravez_blister21", true))
+                                && preferences.getInt("dia_21", 0) == 21) {
                             //  retorno_texto_calendario.setText(preferences.getString("tomaBlister21_1", ""));
                             retorno_texto_calendario.setText("Te has tomado la píldora: dia 21\n" + "El estado de ánimo" +
                                     "ha sido: " + preferences.getInt("nivel_animo_21", 0));
 
                             SharedPreferences.Editor objEditor = preferences.edit();
-                            objEditor.putBoolean("primeravez_blister21", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                            objEditor.putBoolean("primeravez21_blister21", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                             objEditor.apply();
                             objEditor.putString("tomaBlister_21", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                             objEditor.apply();

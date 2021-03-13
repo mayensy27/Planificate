@@ -35,7 +35,7 @@ public class Blister21Activity20 extends AppCompatActivity {
 
         objEditor.putBoolean("primeravez_blister20", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
-        objEditor.putBoolean("primeravez_blister21", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.putBoolean("primeravez21_blister21", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
     }
     public void cargarBlister(View view) {
@@ -211,47 +211,6 @@ public class Blister21Activity20 extends AppCompatActivity {
             objEditor.putString("tomaBlister_20", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
             objEditor.putInt("dia_20", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-
-
-            objEditor.putString("tomaBlister_22", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-            objEditor.putInt("dia_22", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-
-            objEditor.putString("tomaBlister_23", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-            objEditor.putInt("dia_23", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-
-            objEditor.putString("tomaBlister_24", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-            objEditor.putInt("dia_24", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-
-            objEditor.putString("tomaBlister_25", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-            objEditor.putInt("dia_25", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-
-            objEditor.putString("tomaBlister_26", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-            objEditor.putInt("dia_25", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-
-            objEditor.putString("tomaBlister_27", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-            objEditor.putInt("dia_27", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-
-            objEditor.putString("tomaBlister_28", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-            objEditor.putInt("dia_28", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-
-            objEditor.putString("tomaBlister_29", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-            objEditor.putInt("dia_29", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
 
 
