@@ -3,6 +3,7 @@ package cat.urv.deim.asm.p2.planificate.ui.calendario;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.DatePicker;
@@ -37,14 +38,16 @@ public class CalendarioActivity extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         String fecha = year + "-" + (month + 1) + "-" + dayOfMonth;
 
-
                         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+
 
                         //TOMA PRIMER DIA DE LA PILDORA
                         if (fecha.equals(preferences.getString("tomaBlister_1", "")) && !preferences.getBoolean("primeravez_blister1", true) && preferences.getInt("dia_1", 0) == 1) {
                             //  retorno_texto_calendario.setText(preferences.getString("tomaBlister21_1", ""));
-                            retorno_texto_calendario.setText("Te has tomado la píldora: dia 1\n" + "El estado de ánimo" +
+                            /*retorno_texto_calendario.setText("Te has tomado la píldora: dia 1\n" + "El estado de ánimo" +
                                     "ha sido: " + preferences.getInt("nivel_animo_1", 0));
+*/
+                        niveles_animo(preferences.getInt("nivel_animo_1", 0),preferences.getInt("dia_1", 0));
                         }
 
                         //TOMA 2 DIA DE LA PILDORA
@@ -245,7 +248,53 @@ public class CalendarioActivity extends AppCompatActivity {
             Toast.makeText(CalendarioActivity.this,fecha,Toast.LENGTH_LONG).show();
         });*/
 
+    }
 
+
+    public void niveles_animo (int nivel_animo,int dia_animo){
+
+       Bundle extras= new Bundle();
+        extras.putInt("dia",dia_animo);
+
+
+        switch(nivel_animo)
+        {
+            case 1:
+                Intent i1= new Intent(this,TerribleActivity.class);
+               i1.putExtras(extras);
+                startActivity(i1);
+                finish();
+            break;
+/*
+            case 2:
+                Intent i2= new Intent(this,MalActivity.class);
+                i2.putExtras(extras);
+                startActivity(i2);
+                finish();
+            break;
+
+            case 3:
+                Intent i3= new Intent(this,BienActivity.class);
+                i3.putExtras(extras);
+                startActivity(i3);
+                finish();
+                break;
+
+            case 4:
+                Intent i4= new Intent(this,MuyBienActivity.class);
+                i4.putExtras(extras);
+                startActivity(i4);
+                finish();
+                break;
+
+            case 5:
+                Intent i5= new Intent(this,GenialActivity.class);
+                i5.putExtras(extras);
+                startActivity(i5);
+                finish();
+                break;*/
+
+        }
 
     }
 }

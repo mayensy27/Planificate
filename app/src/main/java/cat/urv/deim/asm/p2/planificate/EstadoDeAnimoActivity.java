@@ -48,8 +48,8 @@ public class EstadoDeAnimoActivity extends AppCompatActivity {
         valoracion_estado = findViewById(R.id.valoracion_estado);
         valoracion_estado.setNameForSmile(BaseRating.TERRIBLE, "TERRIBLE");
         valoracion_estado.setNameForSmile(BaseRating.BAD, "MAL");
-        valoracion_estado.setNameForSmile(BaseRating.GOOD, "BIEN");
-        valoracion_estado.setNameForSmile(BaseRating.OKAY, "MUY BIEN");
+        valoracion_estado.setNameForSmile(BaseRating.OKAY, "BIEN");
+        valoracion_estado.setNameForSmile(BaseRating.GOOD, "MUY BIEN");
         valoracion_estado.setNameForSmile(BaseRating.GREAT, "GENIAL");
         valoracion_estado.setPlaceholderBackgroundColor(getColor(R.color.colorPrimary));
         valoracion_estado.setTextNonSelectedColor(getColor(R.color.colorPrimary));
