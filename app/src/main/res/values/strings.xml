@@ -137,6 +137,13 @@
     <string name="textoCalendario">A continuación, te enseñaremos tu calendario junto con tus estados de ánimo en los días que llevas tomando los ACOs…</string>
     <string name="te_has_tomado_la_pildora">Te has tomado la píldora del dia:</string>
     <string name="tu_estado_de_animo_ha_sido">Tu estado de ánimo ha sido:</string>
+    <string name="emoticonomal">emoticonoMal</string>
+    <string name="emoticonoterrible">emoticonoTerrible</string>
+    <string name="muy_bien">MUY BIEN</string>
+    <string name="bien">BIEN</string>
+    <string name="genial">GENIAL</string>
+    <string name="terrible">TERRIBLE</string>
+    <string name="mal">MAL</string>
 
 
 </resources>

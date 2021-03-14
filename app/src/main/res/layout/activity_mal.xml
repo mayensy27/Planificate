@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_fragm_calendario"
-    tools:context=".ui.calendario.TerribleActivity">
+    tools:context=".ui.calendario.MalActivity">
 
     <LinearLayout
         android:id="@+id/linearH"
@@ -75,15 +75,16 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/emoticonoTerrible"
+        android:id="@+id/emoticonoMal"
         android:layout_width="179dp"
         android:layout_height="173dp"
-        android:contentDescription="@string/emoticonoterrible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/estado_animo"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/terrible" />
+        app:layout_constraintTop_toBottomOf="@+id/linearH"
+        app:layout_constraintVertical_bias="0.182"
+        app:srcCompat="@mipmap/mal"
+        android:contentDescription="@string/emoticonomal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

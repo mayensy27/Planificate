@@ -7,14 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import cat.urv.deim.asm.p2.planificate.R;
 
-public class TerribleActivity extends AppCompatActivity {
-
+public class BienActivity extends AppCompatActivity {
     TextView dia_animo,estado_animo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_terrible);
-
+        setContentView(R.layout.activity_bien);
         //Recepcion del dia
         dia_animo=findViewById(R.id.dia_animo);
         estado_animo=findViewById(R.id.estado_animo);
@@ -29,6 +27,5 @@ public class TerribleActivity extends AppCompatActivity {
             String x2=dia.getString("estado");
             estado_animo.setText(x2);
         }
-
     }
 }

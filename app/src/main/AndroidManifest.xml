@@ -15,7 +15,11 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.calendario.TerribleActivity"></activity>
+        <activity android:name=".ui.calendario.GenialActivity"></activity>
+        <activity android:name=".ui.calendario.MuyBienActivity" />
+        <activity android:name=".ui.calendario.BienActivity" />
+        <activity android:name=".ui.calendario.MalActivity" />
+        <activity android:name=".ui.calendario.TerribleActivity" />
         <activity android:name=".ui.calendario.CalendarioActivity" />
         <activity android:name=".ui.datos_personales.ActualizarDatosPersonalesActivity" />
         <activity android:name=".ui.datos_personales.DatosPersonalesUsuariaActivity" />
