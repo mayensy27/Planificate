@@ -333,7 +333,7 @@ public class CalendarioActivity extends AppCompatActivity {
                 Intent i3= new Intent(this,BienActivity.class);
                 i3.putExtras(extras);
                 startActivity(i3);
-                finish();
+
                 break;
 
             case 4:
@@ -341,7 +341,7 @@ public class CalendarioActivity extends AppCompatActivity {
                 Intent i4= new Intent(this,MuyBienActivity.class);
                 i4.putExtras(extras);
                 startActivity(i4);
-                finish();
+
                 break;
 
             case 5:
@@ -349,7 +349,7 @@ public class CalendarioActivity extends AppCompatActivity {
                 Intent i5= new Intent(this,GenialActivity.class);
                 i5.putExtras(extras);
                 startActivity(i5);
-                finish();
+
                 break;
 
         }
