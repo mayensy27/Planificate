@@ -38,7 +38,7 @@
     <ListView
         android:id="@+id/registro_pildoras"
         android:layout_width="match_parent"
-        android:layout_height="499dp">
+        android:layout_height="405dp">
 
     </ListView>
 </LinearLayout>

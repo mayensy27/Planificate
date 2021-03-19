@@ -14,8 +14,8 @@ import java.util.Date;
 import java.util.Locale;
 
 import cat.urv.deim.asm.p2.planificate.Popup;
+import cat.urv.deim.asm.p2.planificate.Popup3;
 import cat.urv.deim.asm.p2.planificate.R;
-import cat.urv.deim.asm.p2.planificate.SegudaPreguntaActivity;
 
 public class Blister21Activity1 extends AppCompatActivity {
     ImageButton cargarBlisterSiguiente;
@@ -43,23 +43,22 @@ public class Blister21Activity1 extends AppCompatActivity {
             String fecha = dateFormat.format(date);
             SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-            Intent x = new Intent(this, Blister21Activity2.class);
-            startActivity(x);
-            finish();
+
 
             //CONTROL DE LAS TOMAS EL MISMO DIA (PARA EVITAR LAS TOMAS EN UN MISMO DIA)
             if(fecha.equals(preferences.getString("tomaBlister_1", ""))){
-                Intent i = new Intent(this, SegudaPreguntaActivity.class);
+                Intent i = new Intent(this, Popup3.class);
                 startActivity(i);
                 finish();
             }
             else{
+                Intent x = new Intent(this, Blister21Activity2.class);
+                startActivity(x);
+                finish();
                 Intent i = new Intent(this, Popup.class);
                 startActivity(i);
                 finish();
                 // TOMA 2 DIA DE LA PILDRA
-
-
 
                 SharedPreferences.Editor objEditor = preferences.edit();
                 objEditor.putString("tomaBlister_2", fecha); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
