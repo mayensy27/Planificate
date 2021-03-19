@@ -77,6 +77,7 @@ public class Blister21Fragment extends Fragment {
         Button blister=view.findViewById(R.id.boton_blister);
         SharedPreferences preferences= requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
 
+
 if(!preferences.getBoolean("final", true)){
            //INICIALIZACION DE LAS VARIABLES
 
@@ -121,24 +122,11 @@ if(!preferences.getBoolean("final", true)){
                 objEditor.apply();
                 objEditor.putBoolean("primeravez_blister20", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
-                objEditor.putBoolean("primeravez_blister21", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
+                /*objEditor.putBoolean("primeravez_blister21", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();*/
     objEditor.putBoolean("primeravez21_blister21", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
     objEditor.apply();
-    objEditor.putBoolean("primeravez_blister22", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putBoolean("primeravez_blister23", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putBoolean("primeravez_blister24", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putBoolean("primeravez_blister25", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putBoolean("primeravez_blister26", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putBoolean("primeravez_blister27", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putBoolean("primeravez_blister28", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
+
 
                 objEditor.putString("tomaBlister_1", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
@@ -245,38 +233,8 @@ if(!preferences.getBoolean("final", true)){
                 objEditor.putInt("dia_21", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
 
-    objEditor.putString("tomaBlister_22", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putInt("dia_22", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
 
-    objEditor.putString("tomaBlister_23", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putInt("dia_23", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-
-    objEditor.putString("tomaBlister_24", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putInt("dia_24", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-
-    objEditor.putString("tomaBlister_25", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putInt("dia_25", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-
-    objEditor.putString("tomaBlister_26", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putInt("dia_25", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-
-    objEditor.putString("tomaBlister_27", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putInt("dia_27", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putString("tomaBlister_28", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-    objEditor.putInt("dia_28", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+    objEditor.putBoolean("final", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
     objEditor.apply();
 }
         blister.setOnClickListener(v -> {
@@ -386,7 +344,7 @@ if(!preferences.getBoolean("final", true)){
                                                                                                     Intent x = new Intent(getContext(), Blister21Activity19.class);
                                                                                                     startActivity(x);
                                                                                                 }else {
-                                                                                                    primeraVez = preferences.getBoolean("primeravez_blister21", true); // por defecto es true
+                                                                                                    primeraVez = preferences.getBoolean("primeravez21_blister21", true); // por defecto es true
                                                                                                     if (primeraVez) {
                                                                                                         Intent x = new Intent(getContext(), Blister21Activity20.class);
                                                                                                         startActivity(x);

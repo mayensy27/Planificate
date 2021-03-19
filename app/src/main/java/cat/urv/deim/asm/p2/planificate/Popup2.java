@@ -28,6 +28,9 @@ public class Popup2 extends AppCompatActivity {
         SharedPreferences.Editor objEditor = preferences.edit();
         objEditor.putInt("contador_blister28", 28); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
+        objEditor.putBoolean("final", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.apply();
+
     }
 
 
