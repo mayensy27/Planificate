@@ -285,6 +285,68 @@ public class BlisterFragment extends Fragment {
             objEditor.putInt("dia_28", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
 
+            objEditor.putInt("nivel_animo_1", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_2", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_3", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo4", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_5", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_6", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_7", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_8", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_9", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_10", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_11", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_12", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_13", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_14", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_15", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_16", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_17", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_18", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_19", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_20", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_21", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_22", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_23", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_24", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_25", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_26", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_27", 0);
+            objEditor.apply();
+            objEditor.putInt("nivel_animo_28", 0);
+            objEditor.apply();
+
+
+
+
+
+
             objEditor.putBoolean("final", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
         }

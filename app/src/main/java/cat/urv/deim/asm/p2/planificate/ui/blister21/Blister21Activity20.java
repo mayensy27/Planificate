@@ -36,7 +36,8 @@ public class Blister21Activity20 extends AppCompatActivity {
 
         objEditor.putBoolean("primeravez_blister20", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
-
+        objEditor.putBoolean("primeravez_blister21", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.apply();
     }
     public void cargarBlister(View view) {
         if(cargarBlisterSiguiente.isClickable()){
