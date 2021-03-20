@@ -273,7 +273,7 @@ public class BlisterFragment extends Fragment {
 
             objEditor.putString("tomaBlister_26", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
-            objEditor.putInt("dia_25", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.putInt("dia_26", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
 
             objEditor.putString("tomaBlister_27", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
