@@ -150,6 +150,8 @@
     <string name="registro_de_las_tomas_de_la_pildora">Registro de las tomas de la píldora.</string>
     <string name="toca_el_registro_para_ver_como_te_has_sentido_ese_dia">
         Toca el registro para ver como te has sentido ese dia.</string>
+    <string name="ojo_ya_has_tomado_la_pildora_de_este_dia">¡ OJO, ya has tomado la píldora de este día !</string>
+    <string name="clica_para_salir">Clica para salir.</string>
 
 
 </resources>
