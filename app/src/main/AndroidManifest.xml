@@ -15,7 +15,8 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.calendario.GenialActivity"></activity>
+        <activity android:name=".Popup3" />
+        <activity android:name=".ui.calendario.GenialActivity" />
         <activity android:name=".ui.calendario.MuyBienActivity" />
         <activity android:name=".ui.calendario.BienActivity" />
         <activity android:name=".ui.calendario.MalActivity" />
