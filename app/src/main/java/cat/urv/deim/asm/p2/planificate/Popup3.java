@@ -1,8 +1,6 @@
 package cat.urv.deim.asm.p2.planificate;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -25,8 +23,7 @@ public class Popup3 extends AppCompatActivity {
         int alto=medidasVentana.heightPixels;
 
         getWindow().setLayout((int) (ancho*0.85),(int)(alto*0.5));
-        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor objEditor = preferences.edit();
+
 
     }
 
