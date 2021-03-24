@@ -16,7 +16,7 @@ public class AlertReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         NotificationHelper notificationHelper = new NotificationHelper(context);
-        NotificationCompat.Builder nb = notificationHelper.getChannelNotification("!Es hora de PLANIFÍCATE!", "Tómate la píldora");
+        NotificationCompat.Builder nb = notificationHelper.getChannelNotification("!Es hora de Pill Plan!", "Tómate la píldora");
         notificationHelper.getManager().notify(NOTIFICATION_ID, nb.build());
 
     }

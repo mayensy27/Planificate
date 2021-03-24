@@ -10,26 +10,22 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import cat.urv.deim.asm.p2.planificate.MainActivity;
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.TimePickerDialog;
 
 public class RegistroUsuariaActivity extends AppCompatActivity {
     EditText nombre, email,telefono;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuaria);
 
-        nombre=findViewById(R.id.nombre);
-        email=findViewById(R.id.email);
-        telefono=findViewById(R.id.telefono);
-
+        nombre = findViewById(R.id.nombre);
+        email = findViewById(R.id.email);
+        telefono = findViewById(R.id.telefono);
 
 
     }
-
-
     public void registrar(View view) {
 
         //VALIDACION DE DATOS EN REGISTRO
@@ -51,7 +47,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity {
                 objEditor.putBoolean("registrada", false);
                 objEditor.apply();
 
-                Intent i = new Intent(this, MainActivity.class);
+                Intent i = new Intent(this, TimePickerDialog.class);
                 startActivity(i);
                 finish();
             }
