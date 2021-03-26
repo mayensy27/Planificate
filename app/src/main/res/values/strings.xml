@@ -152,6 +152,21 @@
         Toca el registro para ver como te has sentido ese dia.</string>
     <string name="ojo_ya_has_tomado_la_pildora_de_este_dia">¡ OJO, ya has tomado la píldora de este día !</string>
     <string name="clica_para_salir">Clica para salir.</string>
+    <string name="title_activity_alarm">AlarmActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="changed_to">Notificacion cambiada a las %s</string>
+    <string name="time_selected_is">La hora selecciona ha sido:</string>
+    <string name="change_time">Cambia la hora</string>
+    <string name="select_time">Selecciona la hora</string>
+    <string name="_12_00">12:00 h</string>
+    <string name="new_notification">Nueva notificación</string>
 
 
 </resources>

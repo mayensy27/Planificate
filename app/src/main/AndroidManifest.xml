@@ -4,7 +4,14 @@
     package="cat.urv.deim.asm.p2.planificate">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- ALARMA -->
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +22,7 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
+        <activity android:name=".ui.alarmas.AlarmActivity" />
         <activity
             android:name=".Popup3"
             android:theme="@style/Theme.Planificate.Popup" />
@@ -117,7 +125,16 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".AlertReceiver" />
+<!--        <receiver android:name=".AlertReceiver" />-->
+
+        <receiver
+            android:name="cat.urv.deim.asm.p2.planificate.ui.alarmas.AlarmReceiver"
+            android:enabled="true" />
+
+        <service
+            android:name="cat.urv.deim.asm.p2.planificate.ui.alarmas.NotificationService"
+            android:enabled="true" />
+
     </application>
 
 </manifest>

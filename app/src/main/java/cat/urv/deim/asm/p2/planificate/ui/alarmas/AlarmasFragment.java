@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import cat.urv.deim.asm.p2.planificate.R;
-import cat.urv.deim.asm.p2.planificate.TimePickerDialog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -73,7 +72,7 @@ public class AlarmasFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Intent x=new Intent(getContext(), TimePickerDialog.class);
+        Intent x=new Intent(getContext(), AlarmActivity.class);
         startActivity(x);
     }
 }

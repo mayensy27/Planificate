@@ -77,8 +77,9 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
             c.add(Calendar.DATE,1);
         }
         assert alarmManager != null;
+        alarmManager.setRepeating( AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),1000*60,pendingIntent);
     //  alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(), pendingIntent); //1 VEZ, HORA EXACTA
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),120000, pendingIntent); //se repite cada 24h
+      //  alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),120000, pendingIntent); //se repite cada 24h
         Intent intent2=new Intent (this,MainActivity.class);
         startActivity(intent2);
 
