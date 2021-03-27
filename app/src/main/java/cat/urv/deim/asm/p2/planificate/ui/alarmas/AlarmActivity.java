@@ -1,12 +1,10 @@
 package cat.urv.deim.asm.p2.planificate.ui.alarmas;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,12 +17,27 @@ import cat.urv.deim.asm.p2.planificate.R;
 public class AlarmActivity extends AppCompatActivity {
     private TextView notificationsTime;
     private final int alarmID=1;
+    private SharedPreferences settings;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
+
+        settings=getSharedPreferences("Pill plan",Context.MODE_PRIVATE);
+        String houR, minutE;
+
+        houR=settings.getString("hour","");
+        minutE=settings.getString("minute","");
+
         notificationsTime=findViewById(R.id.notifications_time);
-        findViewById(R.id.change_notification).setOnClickListener(v -> {
+        if(houR.length()>0)
+        {
+            notificationsTime.setText(houR+":"+minutE);
+        }
+
+        findViewById(R.id.change_notification).setOnClickListener((View v) -> {
             Calendar mcurrentTime=Calendar.getInstance();
             int hour =mcurrentTime.get(Calendar.HOUR_OF_DAY);
             int minute=mcurrentTime.get(Calendar.MINUTE);
@@ -44,8 +57,24 @@ public class AlarmActivity extends AppCompatActivity {
                 today.set(Calendar.MINUTE, minute1);
                 today.set(Calendar.SECOND, 0);
 
+                SharedPreferences.Editor edit=settings.edit();
+                edit.putString("hour",finalHour);
+                edit.putString("minute",finalMinute);
+
+                //SAVE ALARM TIME TO USE IT IN CASE OF REBOOT
+                    edit.putInt("alarmID",alarmID);
+                    edit.putLong("alarmTime",today.getTimeInMillis());
+
+                    edit.apply();
+
                 Toast.makeText(AlarmActivity.this, getString(R.string.changed_to, finalHour + ":" + finalMinute), Toast.LENGTH_LONG).show();
-                setAlarm(alarmID, today.getTimeInMillis(), AlarmActivity.this);
+
+                int i=0;
+                while(i<=20){
+                    Utils.setAlarm(alarmID, today.getTimeInMillis(), AlarmActivity.this);
+                    i++;
+                }
+
             },hour,minute,true); //Yes 24 hour time
             mTimePicker.setTitle(getString(R.string.select_time));
             mTimePicker.show();
@@ -53,14 +82,4 @@ public class AlarmActivity extends AppCompatActivity {
 
 }
 
-    private static void setAlarm (int i, long timestamp, Context ctx){
-        AlarmManager alarmManager=(AlarmManager) ctx.getSystemService(ALARM_SERVICE);
-        Intent  alarmIntent =new Intent(ctx, AlarmReceiver.class);
-        PendingIntent pendingIntent;
-        pendingIntent =PendingIntent.getBroadcast(ctx,i,alarmIntent,PendingIntent.FLAG_ONE_SHOT);
-        alarmIntent.setData(Uri.parse("custom://"+System.currentTimeMillis()));
-        assert alarmManager != null;
-        alarmManager.set(AlarmManager.RTC_WAKEUP,timestamp,pendingIntent);
-
-    }
 }

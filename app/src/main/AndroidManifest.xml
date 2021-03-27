@@ -12,6 +12,8 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- MAKE ALARMS RESTART ON REBOOT -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
         android:allowBackup="true"
@@ -134,6 +136,14 @@
         <service
             android:name="cat.urv.deim.asm.p2.planificate.ui.alarmas.NotificationService"
             android:enabled="true" />
+
+        <!-- MAKE ALARMS RESTART ON REBOOT -->
+        <service android:name="cat.urv.deim.asm.p2.planificate.ui.alarmas.ReinicioService"/>
+        <receiver android:name="cat.urv.deim.asm.p2.planificate.ui.alarmas.MiReinicioReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
 
     </application>
 
