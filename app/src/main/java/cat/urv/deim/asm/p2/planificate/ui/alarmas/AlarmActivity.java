@@ -69,11 +69,7 @@ public class AlarmActivity extends AppCompatActivity {
 
                 Toast.makeText(AlarmActivity.this, getString(R.string.changed_to, finalHour + ":" + finalMinute), Toast.LENGTH_LONG).show();
 
-                int i=0;
-                while(i<=20){
                     Utils.setAlarm(alarmID, today.getTimeInMillis(), AlarmActivity.this);
-                    i++;
-                }
 
             },hour,minute,true); //Yes 24 hour time
             mTimePicker.setTitle(getString(R.string.select_time));
@@ -83,3 +79,13 @@ public class AlarmActivity extends AppCompatActivity {
 }
 
 }
+/*
+
+    int i=0;
+                while(i<=20){
+                        today.set(Calendar.DAY_OF_MONTH,Calendar.DAY_OF_MONTH+i);
+                        Utils.setAlarm(alarmID, today.getTimeInMillis(), AlarmActivity.this);
+                        edit.putLong("alarmTime",today.getTimeInMillis());
+                        edit.apply();
+                        i++;
+                        }*/
