@@ -10,15 +10,13 @@ import static android.content.Context.ALARM_SERVICE;
 
 public class Utils {
 
-    public static void setAlarm (int i, long timestamp, Context ctx){
-        AlarmManager alarmManager=(AlarmManager) ctx.getSystemService(ALARM_SERVICE);
-        Intent alarmIntent =new Intent(ctx, AlarmReceiver.class);
+    public static void setAlarm(int i, Long timestamp, Context ctx) {
+        AlarmManager alarmManager = (AlarmManager) ctx.getSystemService(ALARM_SERVICE);
+        Intent alarmIntent = new Intent(ctx, AlarmReceiver.class);
         PendingIntent pendingIntent;
-        pendingIntent =PendingIntent.getBroadcast(ctx,i,alarmIntent,PendingIntent.FLAG_ONE_SHOT);
-        alarmIntent.setData(Uri.parse("custom://"+System.currentTimeMillis()));
+        pendingIntent = PendingIntent.getBroadcast(ctx, i, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
+        alarmIntent.setData((Uri.parse("custom://" + System.currentTimeMillis())));
         assert alarmManager != null;
-        alarmManager.set(AlarmManager.RTC_WAKEUP,timestamp,pendingIntent);
-
+        alarmManager.set(AlarmManager.RTC_WAKEUP, timestamp,pendingIntent);
     }
-
 }

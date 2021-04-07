@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import androidx.annotation.Nullable;
-
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class ReinicioService extends IntentService {
@@ -21,21 +19,23 @@ public class ReinicioService extends IntentService {
         super(name);
         startForeground(1, new Notification());
     }
-    public ReinicioService(){
+
+    public ReinicioService() {
         super("ReinicioService");
     }
 
-    public void onCreate(){
+    @Override
+    public void onCreate() {
         super.onCreate();
     }
 
     @Override
-    protected void onHandleIntent(@Nullable Intent intent) {
-        String intentType=intent.getExtras().getString("caller");
-        if(intentType==null) return;
-        if(intentType.equals("ReinicioReceiver")){
-            SharedPreferences settings=getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
-            Utils.setAlarm(settings.getInt("alarmID",0),settings.getLong("alarmTime",0),this);
+    protected void onHandleIntent(Intent intent) {
+        String intentType = intent.getExtras().getString("caller");
+        if (intentType == null) return;
+        if (intentType.equals("RebootReceiver")) {
+            SharedPreferences settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+            Utils.setAlarm(settings.getInt("alarmID", 0), settings.getLong("alarmTime", 0), this);
         }
     }
 }
