@@ -75,7 +75,7 @@ public class DocumentCat_2Fragment extends Fragment {
         pdfView= view.findViewById(R.id.documentacion_inf_cat_2);
 
         //funcion para leer pdf desde Assets
-        pdfView.fromAsset("oblits_cat.pdf").load();
+        pdfView.fromAsset("oblits_catala.pdf").load();
 
     }
 }

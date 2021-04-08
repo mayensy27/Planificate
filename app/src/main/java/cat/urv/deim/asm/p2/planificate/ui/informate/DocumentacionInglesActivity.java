@@ -13,10 +13,13 @@ public class DocumentacionInglesActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_documentacion_ingles);
+        setUpView();
+        setUpViewPagerAdapter();
     }
 
     private void setUpViewPagerAdapter() {
