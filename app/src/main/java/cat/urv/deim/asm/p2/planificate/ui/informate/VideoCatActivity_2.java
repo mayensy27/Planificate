@@ -49,7 +49,7 @@ public class VideoCatActivity_2 extends AppCompatActivity {
 
     public void verDocumentacion(View view) {
         if (documentacion.isClickable()) {
-            Intent ver_documentacion = new Intent(this, DocumentacionCastActivity.class);
+            Intent ver_documentacion = new Intent(this, DocumentacionCatActivity.class);
             startActivity(ver_documentacion);
         }
     }

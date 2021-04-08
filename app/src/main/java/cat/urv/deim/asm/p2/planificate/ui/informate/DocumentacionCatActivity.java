@@ -9,9 +9,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import cat.urv.deim.asm.p2.planificate.R;
 
-public class DocumentacionCastActivity extends AppCompatActivity{
-
-   // PDFView  pdfView;
+public class DocumentacionCatActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
@@ -19,19 +17,15 @@ public class DocumentacionCastActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_documentacion_cast);
+        setContentView(R.layout.activity_documentacion_cat);
 
-        /*pdfView= findViewById(R.id.documentacion_inf_cast);
-
-        //funcion para leer pdf desde Assets
-        pdfView.fromAsset("olvidos_cast.pdf").load();*/
         setUpView();
         setUpViewPagerAdapter();
     }
 
     private void setUpViewPagerAdapter() {
-        viewPagerAdapter.addFragment(new DocumentCast_1Fragment(), "Olvido_1");
-        viewPagerAdapter.addFragment(new DocumentCast_2Fragment(), "Olvido_2");
+        viewPagerAdapter.addFragment(new DocumentCat_1Fragment(), "Oblit_1");
+        viewPagerAdapter.addFragment(new DocumentCat_2Fragment(), "Oblit_2");
 
         viewPager.setAdapter(viewPagerAdapter);
 

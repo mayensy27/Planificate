@@ -3,15 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cat.urv.deim.asm.p2.planificate">
 
-    <uses-permission android:name="android.permission.INTERNET" /> <!--leer informacion de internet/Externa-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!--leer informacion de internet/Externa/pdf-->
-    <uses-permission android:name="android.permission.WRITE_CALENDAR" /><!-- ALARMA -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- leer informacion de internet/Externa -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- leer informacion de internet/Externa/pdf -->
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" /> <!-- ALARMA -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
-
     <uses-permission android:name="android.permission.VIBRATE" /> <!-- MAKE ALARMS RESTART ON REBOOT -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
@@ -23,6 +22,8 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
+        <activity android:name=".ui.informate.DocumentacionInglesActivity" />
+        <activity android:name=".ui.informate.DocumentacionCatActivity" />
         <activity android:name=".ui.informate.DocumentacionCastActivity" />
         <activity android:name=".ui.alarmas.AlarmActivity" />
         <activity
