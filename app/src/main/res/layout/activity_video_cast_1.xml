@@ -12,18 +12,30 @@
      android:background="@color/color_fragm_videos"
      android:orientation="vertical">
 
-    <VideoView
-        android:id="@+id/videoCast_1"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        android:layout_height="282dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="123dp">
 
-    </VideoView>
+        <VideoView
+            android:id="@+id/videoCast_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+        </VideoView>
+    </FrameLayout>
 
     <Button
         android:id="@+id/video_siguiente"
@@ -45,6 +57,7 @@
         app:layout_constraintTop_toBottomOf="parent">
 
     </Button>
+
 </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
