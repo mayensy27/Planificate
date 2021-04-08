@@ -3,18 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cat.urv.deim.asm.p2.planificate">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- ALARMA -->
-    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!--leer informacion de internet/Externa-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!--leer informacion de internet/Externa/pdf-->
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" /><!-- ALARMA -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
-    <uses-permission android:name="android.permission.VIBRATE" />
 
-    <!-- MAKE ALARMS RESTART ON REBOOT -->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- MAKE ALARMS RESTART ON REBOOT -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:icon="@mipmap/icono_plan_pill_foreground"
@@ -24,9 +23,8 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.alarmas.AlarmActivity">
-        </activity>
-
+        <activity android:name=".ui.informate.DocumentacionCastActivity" />
+        <activity android:name=".ui.alarmas.AlarmActivity" />
         <activity
             android:name=".Popup3"
             android:theme="@style/Theme.Planificate.Popup" />
@@ -127,27 +125,21 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-<!--        <receiver android:name=".AlertReceiver" />-->
-
+        </activity> <!-- <receiver android:name=".AlertReceiver" /> -->
         <receiver
-            android:name="cat.urv.deim.asm.p2.planificate.ui.alarmas.AlarmReceiver"
+            android:name=".ui.alarmas.AlarmReceiver"
             android:enabled="true" />
 
         <service
-            android:name="cat.urv.deim.asm.p2.planificate.ui.alarmas.NotificationService"
-            android:enabled="true" />
+            android:name=".ui.alarmas.NotificationService"
+            android:enabled="true" /> <!-- MAKE ALARMS RESTART ON REBOOT -->
+        <service android:name=".ui.alarmas.ReinicioService" />
 
-        <!-- MAKE ALARMS RESTART ON REBOOT -->
-        <service android:name="cat.urv.deim.asm.p2.planificate.ui.alarmas.ReinicioService" />
-
-        <receiver android:name="cat.urv.deim.asm.p2.planificate.ui.alarmas.MiReinicioReceiver">
+        <receiver android:name=".ui.alarmas.MiReinicioReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>

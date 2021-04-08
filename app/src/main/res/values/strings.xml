@@ -99,7 +99,12 @@
     <string name="catalan">Catalán</string>
     <string name="ingles">Inglés</string>
     <string name="escoge_en_qu_idioma_ver_la_informacion">Escoge en qué idioma ver la información:</string>
-    <string name="ver_sigiuente_video">Ver sigiuente video</string>
+    <string name="ver_sigiuente_video_cast">Ver sigiuente video</string>
+    <string name="ver_sigiuente_video_cat">Veure següent video</string>
+    <string name="ver_sigiuente_video_ingles">See next video</string>
+    <string name="ver_documentacion_cast">Ver Doumentación</string>
+    <string name="ver_documentacion_cat">Veure Doumentació</string>
+    <string name="ver_documentacion_ingles">See Doumentation</string>
     <string name="cargar_mi_blister">CARGAR MI BLÍSTER</string>
     <string name="imagen21_pildora_29">imagen21_pildora_29</string>
     <string name="imagen21_pildora_30">imagen21_pildora_30</string>

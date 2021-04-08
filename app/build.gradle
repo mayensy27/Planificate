@@ -45,6 +45,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2' //PDF
+    implementation 'org.apache.commons:commons-io:1.3.2' //PDF
+
+   // implementation 'com.androidx.support:design:1.2.0' //TabLayout (misma version que el appcompat)
 }
 
 //    testImplementation 'junit:junit:4.+'

@@ -16,7 +16,7 @@ public class VideoCatActivity_1 extends AppCompatActivity {
     VideoView videoCat_1;
     MediaController controladorVideo;
 
-    Button siguiente;
+    Button siguiente,documentacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,7 @@ public class VideoCatActivity_1 extends AppCompatActivity {
         controladorVideo= new MediaController( this);
         videoCat_1 = findViewById(R.id.videoCat_1);
         siguiente=findViewById(R.id.video_siguiente);
+        documentacion=findViewById(R.id.documentacion_cat);
 
 
         //video 1
@@ -44,5 +45,12 @@ public class VideoCatActivity_1 extends AppCompatActivity {
             //  finish();// me elimina la pantalla del prueba al tirar para atras!
         }
 
+    }
+
+    public void verDocumentacion(View view) {
+        if (documentacion.isClickable()) {
+            Intent ver_documentacion = new Intent(this, DocumentacionCastActivity.class);
+            startActivity(ver_documentacion);
+        }
     }
 }
