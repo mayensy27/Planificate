@@ -27,8 +27,10 @@ public class CalendarioActivity extends AppCompatActivity {
 
        registro_dias = findViewById(R.id.registro_pildoras);
 
-
+       //SE DEBE LEER AQUI PARA QUE FUNCIONE!!!!!!!!!!!!!!!!!
        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+       SharedPreferences efectos = getSharedPreferences("efectos", Context.MODE_PRIVATE);
+
        fechas = new ArrayList<>();
        dias = new ArrayList<>();
 
@@ -211,102 +213,103 @@ public class CalendarioActivity extends AppCompatActivity {
            registro_dias.setOnItemClickListener((parent, view, position, id) -> {
 
                if (position == 0 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_1", 0), "1");
+                   niveles_animo(preferences.getInt("nivel_animo_1", 0), "1",efectos.getString("efecto_animo_1", ""));
                }
-               if (position == 1 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_2", 0), "2");
+             if (position == 1 ) {
+                   niveles_animo(preferences.getInt("nivel_animo_2", 0), "2",efectos.getString("efecto_animo_2", ""));
                }
                if (position == 2) {
-                   niveles_animo(preferences.getInt("nivel_animo_3", 0), "3");
+                   niveles_animo(preferences.getInt("nivel_animo_3", 0), "3",efectos.getString("efecto_animo_3", ""));
                }
                if (position == 3 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_4", 0), "4");
+                   niveles_animo(preferences.getInt("nivel_animo_4", 0), "4",efectos.getString("efecto_animo_4", ""));
                }
                if (position == 4 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_5", 0), "5");
+                   niveles_animo(preferences.getInt("nivel_animo_5", 0), "5",efectos.getString("efecto_animo_5", ""));
                }
                if (position == 5 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_6", 0), "6");
+                   niveles_animo(preferences.getInt("nivel_animo_6", 0), "6",efectos.getString("efecto_animo_6", ""));
                }
                if (position == 6 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_7", 0), "7");
+                   niveles_animo(preferences.getInt("nivel_animo_7", 0), "7",efectos.getString("efecto_animo_7", ""));
                }
                if (position == 7 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_8", 0), "8");
+                   niveles_animo(preferences.getInt("nivel_animo_8", 0), "8",efectos.getString("efecto_animo_8", ""));
                }
                if (position == 8 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_9", 0), "9");
+                   niveles_animo(preferences.getInt("nivel_animo_9", 0), "9",efectos.getString("efecto_animo_9", ""));
                }
                if (position == 9 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_10", 0), "10");
+                   niveles_animo(preferences.getInt("nivel_animo_10", 0), "10",efectos.getString("efecto_animo_10", ""));
                }
                if (position == 10 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_11", 0), "11");
+                   niveles_animo(preferences.getInt("nivel_animo_11", 0), "11",efectos.getString("efecto_animo_11", ""));
                }
                if (position == 11 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_12", 0), "12");
+                   niveles_animo(preferences.getInt("nivel_animo_12", 0), "12",efectos.getString("efecto_animo_12", ""));
                }
                if (position == 12 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_13", 0), "13");
+                   niveles_animo(preferences.getInt("nivel_animo_13", 0), "13",efectos.getString("efecto_animo_13", ""));
                }
                if (position == 13) {
-                   niveles_animo(preferences.getInt("nivel_animo_14", 0), "14");
+                   niveles_animo(preferences.getInt("nivel_animo_14", 0), "14",efectos.getString("efecto_animo_14", ""));
                }
                if (position == 14 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_15", 0), "15");
+                   niveles_animo(preferences.getInt("nivel_animo_15", 0), "15",efectos.getString("efecto_animo_15", ""));
                }
                if (position == 15 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_16", 0), "16");
+                   niveles_animo(preferences.getInt("nivel_animo_16", 0), "16",efectos.getString("efecto_animo_16", ""));
                }
                if (position == 16 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_17", 0), "17");
+                   niveles_animo(preferences.getInt("nivel_animo_17", 0), "17",efectos.getString("efecto_animo_17", ""));
                }
                if (position == 17 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_18", 0), "18");
+                   niveles_animo(preferences.getInt("nivel_animo_18", 0), "18",efectos.getString("efecto_animo_18", ""));
                }
                if (position == 18 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_19", 0), "19");
+                   niveles_animo(preferences.getInt("nivel_animo_19", 0), "19",efectos.getString("efecto_animo_19", ""));
                }
                if (position == 19 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_20", 0), "20");
+                   niveles_animo(preferences.getInt("nivel_animo_20", 0), "20",efectos.getString("efecto_animo_20", ""));
                }
                if (position == 20) {
-                   niveles_animo(preferences.getInt("nivel_animo_21", 0), "21");
+                   niveles_animo(preferences.getInt("nivel_animo_21", 0), "21",efectos.getString("efecto_animo_21", ""));
                }
 
                if (position == 21 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_22", 0), "22");
+                   niveles_animo(preferences.getInt("nivel_animo_22", 0), "22",efectos.getString("efecto_animo_22", ""));
                }
                if (position == 22 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_23", 0), "23");
+                   niveles_animo(preferences.getInt("nivel_animo_23", 0), "23",efectos.getString("efecto_animo_23", ""));
                }
                if (position == 23 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_24", 0), "24");
+                   niveles_animo(preferences.getInt("nivel_animo_24", 0), "24",efectos.getString("efecto_animo_24", ""));
                }
                if (position == 24 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_25", 0), "25");
+                   niveles_animo(preferences.getInt("nivel_animo_25", 0), "25",efectos.getString("efecto_animo_25", ""));
                }
                if (position == 25 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_26", 0), "26");
+                   niveles_animo(preferences.getInt("nivel_animo_26", 0), "26",efectos.getString("efecto_animo_26", ""));
                }
                if (position == 26 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_27", 0), "27");
+                   niveles_animo(preferences.getInt("nivel_animo_27", 0), "27",efectos.getString("efecto_animo_27", ""));
                }
                if (position == 27 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_28", 0), "28");
+                   niveles_animo(preferences.getInt("nivel_animo_28", 0), "28",efectos.getString("efecto_animo_28", ""));
                }
 
            });
 
 
    }
+  //
 
-
-    public void niveles_animo (int nivel_animo,String dia_animo){
+    public void niveles_animo (int nivel_animo,String dia_animo,String efecto_animo){
 
        Bundle extras= new Bundle();
         extras.putString("dia",dia_animo);
         extras.putString("estado","");
+        extras.putString("efecto",efecto_animo);
 
 
         switch(nivel_animo)

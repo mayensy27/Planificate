@@ -34,6 +34,7 @@ public class InfInglesActivity extends AppCompatActivity {
                     Intent i=new Intent(InfInglesActivity.this, DocumentacionInglesActivity.class);
                     startActivity(i);
 
+
                 }
             }
         });
