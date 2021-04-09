@@ -3,31 +3,32 @@ package cat.urv.deim.asm.p2.planificate.ui.informate;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.tabs.TabLayout;
+import com.github.barteksc.pdfviewer.PDFView;
 
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class DocumentacionCastActivity extends AppCompatActivity{
 
-   // PDFView  pdfView;
-    private TabLayout tabLayout;
+    PDFView pdfView;
+    /*private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_documentacion_cast);
 
-        /*pdfView= findViewById(R.id.documentacion_inf_cast);
+        pdfView= findViewById(R.id.documentacion_inf_cast_1);
 
         //funcion para leer pdf desde Assets
-        pdfView.fromAsset("olvidos_cast.pdf").load();*/
-        setUpView();
-        setUpViewPagerAdapter();
+        pdfView.fromAsset("olvidos_cast.pdf").load();
+
+       /* setUpView();
+        setUpViewPagerAdapter();*/
     }
+/*
 
     private void setUpViewPagerAdapter() {
         viewPagerAdapter.addFragment(new DocumentCast_1Fragment(), "Olvido_1");
@@ -60,5 +61,6 @@ public class DocumentacionCastActivity extends AppCompatActivity{
         viewPagerAdapter= new ViewPagerAdapter(getSupportFragmentManager());
 
     }
+*/
 
 }

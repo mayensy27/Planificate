@@ -8,6 +8,8 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/*ADAPTADOR PARA EL APARTADO DE DOCUMENTACION (FORMA DESLIZANTE)*/
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     @NonNull
 

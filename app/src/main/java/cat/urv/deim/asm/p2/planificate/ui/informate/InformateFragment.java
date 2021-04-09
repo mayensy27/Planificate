@@ -43,7 +43,8 @@ public class InformateFragment extends Fragment {
 
 
         boton_espanol.setOnClickListener(v -> {
-            Intent x = new Intent(InformateFragment.this.getContext(), VideoCastActivity_1.class);
+//            Intent x = new Intent(InformateFragment.this.getContext(), VideoCastActivity_1.class);
+            Intent x = new Intent(InformateFragment.this.getContext(), InfCastActivity.class);
             InformateFragment.this.startActivity(x);
             /*Navigation.findNavController(v).navigate(R.id.nav_informate_espanol);*/
         }
@@ -51,7 +52,7 @@ public class InformateFragment extends Fragment {
 
 
         boton_catalan.setOnClickListener(v -> {
-            Intent x=new Intent(getContext(), VideoCatActivity_1.class);
+            Intent x=new Intent(getContext(), InfCatActivity.class);
             startActivity(x);
                  //   Navigation.findNavController(v).navigate(R.id.nav_informate_catalan);
                 }
@@ -60,7 +61,7 @@ public class InformateFragment extends Fragment {
 
 
         boton_ingles.setOnClickListener(v -> {
-            Intent x=new Intent(getContext(), VideoInglesActivity_1.class);
+            Intent x=new Intent(getContext(), InfInglesActivity.class);
             startActivity(x);
                  //   Navigation.findNavController(v).navigate(R.id.nav_informate_ingles);
                 }

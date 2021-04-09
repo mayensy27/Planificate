@@ -1,10 +1,7 @@
 package cat.urv.deim.asm.p2.planificate.ui.informate;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
@@ -16,7 +13,7 @@ public class VideoCatActivity_1 extends AppCompatActivity {
     VideoView videoCat_1;
     MediaController controladorVideo;
 
-    Button siguiente,documentacion;
+  //  Button siguiente,documentacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +21,8 @@ public class VideoCatActivity_1 extends AppCompatActivity {
 
         controladorVideo= new MediaController( this);
         videoCat_1 = findViewById(R.id.videoCat_1);
-        siguiente=findViewById(R.id.video_siguiente);
-        documentacion=findViewById(R.id.documentacion_cat);
+       /* siguiente=findViewById(R.id.video_siguiente);
+        documentacion=findViewById(R.id.documentacion_cat);*/
 
 
         //video 1
@@ -38,7 +35,7 @@ public class VideoCatActivity_1 extends AppCompatActivity {
 
     }
 
-    public void onclick(View view) {
+ /*   public void onclick(View view) {
         if(siguiente.isClickable()){
             Intent video_siguiente= new Intent(this, VideoCatActivity_2.class);
             startActivity(video_siguiente);
@@ -52,5 +49,5 @@ public class VideoCatActivity_1 extends AppCompatActivity {
             Intent ver_documentacion = new Intent(this, DocumentacionCatActivity.class);
             startActivity(ver_documentacion);
         }
-    }
+    }*/
 }

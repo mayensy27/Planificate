@@ -6,22 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".ui.informate.VideoCatActivity_1">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout_inf_cat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@color/color_fragm_videos"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="153dp">
+
+        </TextView>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="282dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginBottom="123dp">
+            android:layout_marginBottom="123dp"
+            tools:ignore="UselessParent">
 
         <VideoView
             android:id="@+id/videoCat_1"
@@ -37,7 +46,7 @@
         </VideoView>
         </FrameLayout>
 
-        <Button
+    <!--    <Button
             android:id="@+id/video_siguiente"
             android:layout_width="247dp"
             android:layout_height="96dp"
@@ -78,8 +87,8 @@
             app:layout_constraintTop_toBottomOf="parent">
 
         </Button>
-
-    </RelativeLayout>
+-->
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

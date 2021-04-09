@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lista_opciones_ingles">
+        <item>How do AOCs work?</item>
+        <item>Forgetfulness</item>
+    </string-array>
+</resources>

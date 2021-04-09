@@ -3,26 +3,32 @@ package cat.urv.deim.asm.p2.planificate.ui.informate;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.tabs.TabLayout;
+import com.github.barteksc.pdfviewer.PDFView;
 
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class DocumentacionInglesActivity extends AppCompatActivity {
-    private TabLayout tabLayout;
+    /*private TabLayout tabLayout;
     private ViewPager viewPager;
-    private ViewPagerAdapter viewPagerAdapter;
+    private ViewPagerAdapter viewPagerAdapter;*/
+    PDFView pdfView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_documentacion_ingles);
-        setUpView();
-        setUpViewPagerAdapter();
+
+        pdfView= findViewById(R.id.documentacion_inf_ingles_1);
+
+        //funcion para leer pdf desde Assets
+        pdfView.fromAsset("oblits_ingles.pdf").load();
+
+       /* setUpView();
+        setUpViewPagerAdapter();*/
     }
 
-    private void setUpViewPagerAdapter() {
+   /* private void setUpViewPagerAdapter() {
         viewPagerAdapter.addFragment(new DocumentIngles_1Fragment(), "forgetfulness_1");
         viewPagerAdapter.addFragment(new DocumentIngles_2Fragment(), "forgetfulness_2");
 
@@ -53,5 +59,5 @@ public class DocumentacionInglesActivity extends AppCompatActivity {
         viewPagerAdapter= new ViewPagerAdapter(getSupportFragmentManager());
 
     }
-
+*/
 }

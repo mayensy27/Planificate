@@ -22,6 +22,9 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
+        <activity android:name=".ui.informate.InfCastActivity" />
+        <activity android:name=".ui.informate.InfCatActivity" />
+        <activity android:name=".ui.informate.InfInglesActivity" />
         <activity android:name=".ui.informate.DocumentacionInglesActivity" />
         <activity android:name=".ui.informate.DocumentacionCatActivity" />
         <activity android:name=".ui.informate.DocumentacionCastActivity" />
