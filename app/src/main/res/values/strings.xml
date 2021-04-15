@@ -172,7 +172,9 @@
     <string name="select_time">Selecciona la hora</string>
     <string name="_12_00">12:00 h</string>
     <string name="new_notification">TÓMATE LA PÍLDORA</string>
-
+    <string name="not_long_in">No puedo iniciar sesión</string>
+    <string name="borrar_mis_datos">Borrar mis datos</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
 
 
 </resources>

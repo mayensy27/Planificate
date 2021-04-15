@@ -20,13 +20,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252" />
+        app:layout_constraintVertical_bias="0.102" />
 
     <Button
         android:id="@+id/actualizarmisdatos"
         android:layout_width="233dp"
         android:layout_height="88dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="90dp"
         android:background="@drawable/boton_redondo"
         android:text="@string/actualizar_mis_datos"
         android:textColor="@color/white"
@@ -34,4 +34,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vermisdatos" />
+
+    <Button
+        android:id="@+id/borrarmisdatos"
+        android:layout_width="233dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/boton_redondo"
+        android:text="@string/borrar_mis_datos"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actualizarmisdatos" />
 </androidx.constraintlayout.widget.ConstraintLayout>
