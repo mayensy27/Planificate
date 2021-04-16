@@ -94,10 +94,9 @@ public class SegudaPreguntaActivity extends AppCompatActivity {
 
             //SE QUITA SI SE EMPLEA LA ALARMA
             SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-            SharedPreferences.Editor objEditor = preferences.edit();
+          /*  SharedPreferences.Editor objEditor = preferences.edit();
             objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-
+            objEditor.apply();*/
             if(preferences.getBoolean("registrada", true)) {
 
                 Intent intent = new Intent(SegudaPreguntaActivity.this, RegistroUsuariaActivity.class);

@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Objects;
 
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.SplashActivity;
 
 public class DatosPersonalesUsuariaActivity extends AppCompatActivity {
 
@@ -73,8 +74,15 @@ Button logout;
                        .addOnSuccessListener(new OnSuccessListener<Void>() {
                            @Override
                            public void onSuccess(Void aVoid) {
-                               Intent i=new Intent(getApplicationContext(),RegistroUsuariaActivity.class);
+                               Intent i=new Intent(getApplicationContext(), SplashActivity.class);
                                startActivity(i);
+
+                               SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                               SharedPreferences.Editor objEditor = preferences.edit();
+                               objEditor.putBoolean("primeravez", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                               objEditor.apply();
+                               objEditor.putBoolean("registrada", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                               objEditor.apply();
                            }
                        }).addOnFailureListener(new OnFailureListener() {
                    @Override

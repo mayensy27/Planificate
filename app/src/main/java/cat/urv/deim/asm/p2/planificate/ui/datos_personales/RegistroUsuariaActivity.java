@@ -66,6 +66,15 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                SharedPreferences.Editor objEditor = preferences.edit();
+
+                objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
+
+                objEditor.putBoolean("registrada", false);
+                objEditor.apply();
+
                 Intent intent =mGoogleSignInClient.getSignInIntent();
                 startActivityForResult(intent,SIGN_IN_CODE);
             }
@@ -89,8 +98,8 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
                 objEditor.apply();
 
 
-               /* objEditor.putBoolean("registrada", false);
-                objEditor.apply();*/
+                objEditor.putBoolean("registrada", false);
+                objEditor.apply();
 
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
