@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.SegudaPreguntaActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -75,11 +76,22 @@ public class Blister21Fragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Button blister=view.findViewById(R.id.boton_blister);
+        Button cambiar_blister=view.findViewById(R.id.boton_cambiar_blister);
+
         SharedPreferences preferences= requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
 
+        cambiar_blister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent i= new Intent(getContext(), SegudaPreguntaActivity.class);
+               startActivity(i);
+            }
+        });
 
-if(!preferences.getBoolean("final", true)){
-           //INICIALIZACION DE LAS VARIABLES
+
+        blister.setOnClickListener(v -> {
+            if(!preferences.getBoolean("final", true)){
+                //INICIALIZACION DE LAS VARIABLES
 
                 SharedPreferences.Editor objEditor = preferences.edit();
                 objEditor.putBoolean("primeravez_blister1", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
@@ -124,8 +136,8 @@ if(!preferences.getBoolean("final", true)){
                 objEditor.apply();
                 /*objEditor.putBoolean("primeravez_blister21", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();*/
-    objEditor.putBoolean("primeravez21_blister21", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
+                objEditor.putBoolean("primeravez21_blister21", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
 
 
                 objEditor.putString("tomaBlister_1", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
@@ -233,112 +245,110 @@ if(!preferences.getBoolean("final", true)){
                 objEditor.putInt("dia_21", 0); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
 
-    objEditor.putInt("nivel_animo_1", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_2", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_3", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_4", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_5", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_6", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_7", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_8", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_9", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_10", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_11", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_12", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_13", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_14", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_15", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_16", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_17", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_18", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_19", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_20", 0);
-    objEditor.apply();
-    objEditor.putInt("nivel_animo_21", 0);
-    objEditor.apply();
+                objEditor.putInt("nivel_animo_1", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_2", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_3", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_4", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_5", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_6", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_7", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_8", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_9", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_10", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_11", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_12", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_13", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_14", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_15", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_16", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_17", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_18", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_19", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_20", 0);
+                objEditor.apply();
+                objEditor.putInt("nivel_animo_21", 0);
+                objEditor.apply();
 
-    objEditor.putString("efecto_animo_1", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_2", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_3", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_4", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_5", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_6", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_7", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_8", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_9", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_10", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_11", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_12", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_13", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_14", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_15", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_16", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_17", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_18", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_19", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_20", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_21", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_22", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_23", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_24", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_25", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_26", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_27", "");
-    objEditor.apply();
-    objEditor.putString("efecto_animo_28", "");
-    objEditor.apply();
+                objEditor.putString("efecto_animo_1", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_2", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_3", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_4", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_5", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_6", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_7", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_8", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_9", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_10", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_11", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_12", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_13", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_14", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_15", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_16", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_17", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_18", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_19", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_20", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_21", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_22", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_23", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_24", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_25", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_26", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_27", "");
+                objEditor.apply();
+                objEditor.putString("efecto_animo_28", "");
+                objEditor.apply();
 
 
-    objEditor.putBoolean("final", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-    objEditor.apply();
-}
-        blister.setOnClickListener(v -> {
-
+                objEditor.putBoolean("final", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
+            }
                     primeraVez = preferences.getBoolean("primeravez_blister1", true); // por defecto es true
 
                     if (primeraVez) {

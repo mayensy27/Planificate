@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.SegudaPreguntaActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,11 +81,20 @@ public class BlisterFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Button blister=view.findViewById(R.id.boton_blister);
+        Button cambiar_blister=view.findViewById(R.id.boton_cambiar_blister);
+
         SharedPreferences preferences= requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
 
       /*  if(!preferences.getBoolean("final", true)) {
             Toast.makeText(requireActivity(),"Revisa el Registro ANTES de abrir el nuevo blíster",Toast.LENGTH_SHORT).show();
         }*/
+        cambiar_blister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getContext(), SegudaPreguntaActivity.class);
+                startActivity(i);
+            }
+        });
 
         blister.setOnClickListener(v -> {
 
