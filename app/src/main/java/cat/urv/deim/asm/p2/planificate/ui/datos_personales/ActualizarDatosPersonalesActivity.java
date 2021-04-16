@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,6 +43,8 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
             email.setText(firebaseAuth.getCurrentUser().getEmail());
             email.setFocusable(false);  //para NO modificar
             nombre.setFocusable(false);  //para NO modificar
+            telefono.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true
+
         }
     }
 
@@ -52,6 +55,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
 
         //CONTROL DE ACTUALIZACION/VALIDACION DE DATOS PERSONALES
         if(!preferences.getString("nombre_usuaria","").isEmpty()){
+            if(telefono.length()==9) {
                 objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
 
@@ -63,10 +67,15 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
                 finish();
-        }else{
-            FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+            }
+                else {
+                    Toast.makeText(this,"¡Revisa tus datos, son erroneos!",Toast.LENGTH_SHORT).show();
+                }
+            }
+        else{
+          /*  FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
             nombre.setText(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName());
-            objEditor.putString("nombre_usuaria", email.getText().toString());
+            objEditor.putString("nombre_usuaria", nombre.getText().toString());
             objEditor.apply();
 
             email.setText(firebaseAuth.getCurrentUser().getEmail());
@@ -74,13 +83,17 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
             objEditor.apply();
 
             email.setFocusable(false);  //para NO modificar
-            nombre.setFocusable(false);  //para NO modificar
-
-            objEditor.putString("telefono_usuaria", telefono.getText().toString());
-            objEditor.apply();
-            Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
-            finish();
+            nombre.setFocusable(false);  //para NO modificar*/
+            if(telefono.length()==9) {
+                objEditor.putString("telefono_usuaria", telefono.getText().toString());
+                objEditor.apply();
+                Intent i = new Intent(this, MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+            else {
+                Toast.makeText(this,"¡Tu móvil es incorrecto!",Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

@@ -58,6 +58,7 @@ Button logout;
 
                 nombre_u.setText(firebaseAuth.getCurrentUser().getDisplayName());
                 email_u.setText(firebaseAuth.getCurrentUser().getEmail());
+                telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true
 
             }
 
