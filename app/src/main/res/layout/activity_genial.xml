@@ -82,9 +82,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearH"
-        app:layout_constraintVertical_bias="0.182"
+        app:layout_constraintTop_toBottomOf="@+id/estado_animo"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/genial"
         android:contentDescription="@string/genial" />
+
+    <TextView
+        android:id="@+id/efecto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emoticonoGenial"
+        app:layout_constraintVertical_bias="0.207" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
