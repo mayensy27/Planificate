@@ -23,18 +23,18 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@mipmap/icono_plan_pill_foreground" />
 
-    <TextView
+  <!--  <TextView
         android:id="@+id/espaciado"
-        android:layout_width="10dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content">
-    </TextView>
+    </TextView>-->
 
 
 <!--
     Linear Vertical
 -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="248dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -49,14 +49,15 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/nombre_usuaria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="@string/nombre_persona" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/nombre_usuaria"
+            android:layout_width="165dp"
+            android:layout_height="67dp"
+            android:text="@string/nombre_persona"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -91,8 +91,9 @@ public class Blister21Fragment extends Fragment {
 
         blister.setOnClickListener(v -> {
             if(!preferences.getBoolean("final", true)){
-                //INICIALIZACION DE LAS VARIABLES
+                sendMail();
 
+                //INICIALIZACION DE LAS VARIABLES
                 SharedPreferences.Editor objEditor = preferences.edit();
                 objEditor.putBoolean("primeravez_blister1", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
@@ -352,7 +353,7 @@ public class Blister21Fragment extends Fragment {
                     primeraVez = preferences.getBoolean("primeravez_blister1", true); // por defecto es true
 
                     if (primeraVez) {
-
+                        sendMail();
                         Intent x = new Intent(getContext(), Blister21Activity.class);
                         startActivity(x);
 
@@ -486,5 +487,30 @@ public class Blister21Fragment extends Fragment {
 
                 }
         );
+    }
+
+//ENVIO DE MAIL
+    private void sendMail(){
+        SharedPreferences preferences = requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+
+        String mail= "mayteediseny@gmail.com";    //preferences.getString("email_usuaria", "");
+        //FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+        //firebaseAuth.getCurrentUser().getEmail()
+        String mensaje="Resumen mensual de tues estados";
+        String asunto= getString(R.string.app_name);
+
+         /*MailAPI mailAPI= new MailAPI(getContext(),mail,asunto, mensaje);
+            mailAPI.execute();*/
+
+       //PARA ABRIR INTERFAZ Y DECIRDIR POR DONDE ENVIAR (WHATS, GMAIL,BLE)
+       Intent intent=new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL,new String []{mail});
+        intent.putExtra(Intent.EXTRA_SUBJECT,asunto);
+        intent.putExtra(Intent.EXTRA_TEXT,mensaje);
+
+        intent.setType("message/plain");
+       startActivity(Intent.createChooser(intent, "Choose an email client"));
+
+
     }
 }

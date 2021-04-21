@@ -75,8 +75,14 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
                 objEditor.putBoolean("registrada", false);
                 objEditor.apply();
 
+                objEditor.putBoolean("signup_google", false);
+                objEditor.apply();
+
                 Intent intent =mGoogleSignInClient.getSignInIntent();
                 startActivityForResult(intent,SIGN_IN_CODE);
+
+
+
             }
         });
     }

@@ -31,7 +31,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
 
-        if(!preferences.getString("nombre_usuaria","").isEmpty()){
+        if(preferences.getBoolean("signup_google",true)){
             nombre.setText(preferences.getString("nombre_usuaria", "")); // por defecto es true
             email.setText(preferences.getString("email_usuaria", "")); // por defecto es true
             telefono.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true

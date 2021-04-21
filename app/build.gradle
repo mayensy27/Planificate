@@ -51,6 +51,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:20.0.4' //autentificacion Firebase
     implementation 'com.google.android.gms:play-services-auth:19.0.0' //auth google
 
+    implementation files('libs/activation.jar') //ennvio de mail
+    implementation files('libs/additionnal.jar') //envio de mail
+    implementation files('libs/mail.jar')   // envio de mail
     // implementation 'com.androidx.support:design:1.2.0' //TabLayout (misma version que el appcompat)
 }
 apply plugin: 'com.google.gms.google-services' //servicios Google

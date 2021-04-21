@@ -19,6 +19,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
@@ -55,8 +56,13 @@ public class MainActivity extends AppCompatActivity {
         View hView=navigationView.getHeaderView(0);
         TextView nombre=hView.findViewById(R.id.nombre_usuaria);
 
-        //el %s representa el string que viene acontinuacion (nombre de la usuaria)
-        nombre.setText(String.format("¡ Hola %s !", preferences.getString("nombre_usuaria", "")));
+        if(preferences.getBoolean("signup_google",true)){
+            nombre.setText(String.format("¡ Hola \n%s!",preferences.getString("nombre_usuaria","")));
+        }else{
+            //el %s representa el string que viene acontinuacion (nombre de la usuaria)
+            FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+            nombre.setText(String.format("¡ Hola %s !", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()));
+        }
 
 //Se quita la tinta iconos; Permite visualizar los iconos del menu con sus respectivos colores (si no se pone, estos salen en negro)
         navigationView.setItemIconTintList(null);

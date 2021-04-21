@@ -47,7 +47,7 @@ Button logout;
         objEditor.apply();
 
 */
-            if(!preferences.getString("nombre_usuaria","").equals("")){
+            if(preferences.getBoolean("signup_google",true)){
 
                 nombre_u.setText(preferences.getString("nombre_usuaria","")); // por defecto es true
                 email_u.setText(preferences.getString("email_usuaria", "")); // por defecto es true
@@ -60,7 +60,11 @@ Button logout;
                 nombre_u.setText(firebaseAuth.getCurrentUser().getDisplayName());
                 email_u.setText(firebaseAuth.getCurrentUser().getEmail());
                 telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true
-
+                SharedPreferences.Editor objEditor = preferences.edit();
+                 objEditor.putString("nombre_usuaria", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
+                objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
             }
 
 
@@ -82,6 +86,8 @@ Button logout;
                                objEditor.putBoolean("primeravez", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                                objEditor.apply();
                                objEditor.putBoolean("registrada", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                               objEditor.apply();
+                               objEditor.putBoolean("signup_google", true);
                                objEditor.apply();
                            }
                        }).addOnFailureListener(new OnFailureListener() {
