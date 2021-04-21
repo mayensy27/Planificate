@@ -8,21 +8,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
 import cat.urv.deim.asm.p2.planificate.R;
-import cat.urv.deim.asm.p2.planificate.SplashActivity;
 
 public class DatosPersonalesUsuariaActivity extends AppCompatActivity {
 
@@ -72,30 +65,19 @@ Button logout;
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
+                SharedPreferences.Editor objEditor = preferences.edit();
 
-               GoogleSignIn.getClient(getApplicationContext(), new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()).signOut()
-                       .addOnSuccessListener(new OnSuccessListener<Void>() {
-                           @Override
-                           public void onSuccess(Void aVoid) {
-                               Intent i=new Intent(getApplicationContext(), SplashActivity.class);
-                               startActivity(i);
+                //fuerzo a que al iniciar la app, me vaya desde la splah a Login
+                objEditor.putBoolean("primeravez",false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
 
-                               SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-                               SharedPreferences.Editor objEditor = preferences.edit();
-                               objEditor.putBoolean("primeravez", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                               objEditor.apply();
-                               objEditor.putBoolean("registrada", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                               objEditor.apply();
-                               objEditor.putBoolean("signup_google", true);
-                               objEditor.apply();
-                           }
-                       }).addOnFailureListener(new OnFailureListener() {
-                   @Override
-                   public void onFailure(@NonNull Exception e) {
-                       Toast.makeText(getApplicationContext(),"Signout Failed",Toast.LENGTH_SHORT).show();
-                   }
-               });
+                //fuerzo a que al iniciar la app, me vaya desde la splah a Login (cerrado de sesion)
+                objEditor.putBoolean("login",false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
+
+                Intent i=new Intent(getApplicationContext(), LoginUsuariaActivity.class);
+                startActivity(i);
+                finish();
             }
         });
 

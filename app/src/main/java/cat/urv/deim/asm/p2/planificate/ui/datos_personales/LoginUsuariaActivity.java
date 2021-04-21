@@ -26,29 +26,21 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import java.util.Objects;
-
 import cat.urv.deim.asm.p2.planificate.MainActivity;
 import cat.urv.deim.asm.p2.planificate.R;
-public class RegistroUsuariaActivity extends AppCompatActivity  {
-    EditText nombre, email,telefono;
+
+public class LoginUsuariaActivity extends AppCompatActivity {
+    EditText email,telefono;
 
     private static final int SIGN_IN_CODE=777;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth firebaseAuth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro_usuaria);
+        setContentView(R.layout.activity_login_usuaria);
 
-       /* //de splash a Registro
-        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor objEditor = preferences.edit();
-        objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-        objEditor.apply();*/
 
-        nombre = findViewById(R.id.nombre);
         email = findViewById(R.id.email);
         telefono = findViewById(R.id.telefono);
 
@@ -66,11 +58,6 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
 
         GoogleSignInAccount signInAccount=GoogleSignIn.getLastSignedInAccount(this);
 
-        if(signInAccount!=null || firebaseAuth.getCurrentUser()!=null){
-          //  Toast.makeText(this,"User is Logged in Already",Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +74,10 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
                 objEditor.putBoolean("signup_google", false);
                 objEditor.apply();
 
+                //si una vez cerrada sesion, se abre nuevamente se pasa de splash-main
+                objEditor.putBoolean("login", true);
+                objEditor.apply();
+
                 Intent intent =mGoogleSignInClient.getSignInIntent();
                 startActivityForResult(intent,SIGN_IN_CODE);
 
@@ -95,37 +86,38 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
             }
         });
     }
-    public void registrar(View view) {
+    public void iniciar_sesion(View view) {
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor objEditor = preferences.edit();
 
         //VALIDACION DE DATOS EN REGISTRO
-        if (!nombre.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !telefono.getText()
-                .toString().isEmpty()) {
-            if(telefono.length()==9) {
-                SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-                SharedPreferences.Editor objEditor = preferences.edit();
-                objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
+        if (!email.getText().toString().isEmpty() || !telefono.getText().toString().isEmpty()) {
+            if(!email.getText().toString().isEmpty()){
+                if (email.getText().toString().equals(preferences.getString("email_usuaria", ""))) {
+                    objEditor.putBoolean("login", true);
+                    objEditor.apply();
+                    Intent i = new Intent(this, MainActivity.class);
+                    startActivity(i);
+                } else {
+                    Toast.makeText(this, "Comprueba tu correo electrónico", Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                if(!telefono.getText().toString().isEmpty()) {
+                    if (telefono.getText().toString().equals(preferences.getString("telefono_usuaria", ""))) {
+                        objEditor.putBoolean("login", true);
+                        objEditor.apply();
+                        Intent i = new Intent(this, MainActivity.class);
+                        startActivity(i);
 
-                objEditor.putString("email_usuaria", email.getText().toString());
-                objEditor.apply();
-
-                objEditor.putString("telefono_usuaria", telefono.getText().toString());
-                objEditor.apply();
-
-                objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
-                objEditor.putBoolean("registrada", false);
-                objEditor.apply();
-
-                Intent i = new Intent(this, MainActivity.class);
-                startActivity(i);
-
+                    } else {
+                        Toast.makeText(this, "Comprueba tu número de telefono", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                }
             }
-            else {
-                Toast.makeText(this,"Tu movil es erroneo",Toast.LENGTH_SHORT).show();
-                            }
-        }else{
-            Toast.makeText(this, "Introduce tus datos para posibles notificaciones", Toast.LENGTH_SHORT).show();
+        else{
+            Toast.makeText(this, "Introduce alguno de tus datos", Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -134,7 +126,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == SIGN_IN_CODE) {
-            Task<GoogleSignInAccount>signInTask= GoogleSignIn.getSignedInAccountFromIntent(data);
+            Task<GoogleSignInAccount> signInTask= GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount signInAccount=signInTask.getResult(ApiException.class);
 
@@ -143,16 +135,6 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Toast.makeText(getApplicationContext(),"Your Google Account is Connected to Our Application.",Toast.LENGTH_SHORT).show();
-
-                        //guardado del correo (google)
-                        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor objEditor = preferences.edit();
-                        objEditor.putString("nombre_usuaria",Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                        objEditor.apply();
-
-                        objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail());
-                        objEditor.apply();
-
                         Intent intent=new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }

@@ -8,6 +8,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import cat.urv.deim.asm.p2.planificate.ui.datos_personales.LoginUsuariaActivity;
+
 public class SplashActivity extends AppCompatActivity {
     Boolean primeraVez;
     @Override
@@ -33,9 +35,15 @@ public class SplashActivity extends AppCompatActivity {
 
             new Handler().postDelayed(() -> {
 
+                if(preferences.getBoolean("login", true)){
                     Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
+                }else{
+                    Intent intent = new Intent(SplashActivity.this, LoginUsuariaActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
 
             }, 2000);
 

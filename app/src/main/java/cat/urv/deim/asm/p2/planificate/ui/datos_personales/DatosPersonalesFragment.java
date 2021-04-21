@@ -86,12 +86,17 @@ public class DatosPersonalesFragment extends Fragment {
                             objEditor.putBoolean("signup_google", true);
                             objEditor.apply();
 
+                            //elimino la sesion iniciada
+                            objEditor.putBoolean("login",true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                            objEditor.apply();
+
                             objEditor.putString("nombre_usuaria",""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                             objEditor.apply();
                             objEditor.putString("email_usuaria",""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                             objEditor.apply();
                             objEditor.putString("telefono_usuaria",""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                             objEditor.apply();
+
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                 @Override
