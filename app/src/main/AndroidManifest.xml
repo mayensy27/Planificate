@@ -117,6 +117,7 @@
                 android:value=".TimePickerDialog" />
         </activity>
         <activity android:name=".SegudaPreguntaActivity" />
+        <activity android:name=".MailAPI" />
         <activity android:name=".WebDecisionesCompartidas" />
         <activity android:name=".PrimeraPreguntaActivity" />
         <activity

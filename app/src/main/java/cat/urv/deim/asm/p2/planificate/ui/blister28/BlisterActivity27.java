@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import cat.urv.deim.asm.p2.planificate.MainActivity;
+import cat.urv.deim.asm.p2.planificate.MailAPI;
 import cat.urv.deim.asm.p2.planificate.Popup2;
 import cat.urv.deim.asm.p2.planificate.Popup3;
 import cat.urv.deim.asm.p2.planificate.R;
@@ -50,9 +50,14 @@ public class BlisterActivity27 extends AppCompatActivity {
                 finish();
             }
             else {
-                Intent x = new Intent(this, MainActivity.class);
+              /*  Intent x = new Intent(this, MainActivity.class);
                 startActivity(x);
+                finish();*/
+
+                Intent z = new Intent(this, MailAPI.class);
+                startActivity(z);
                 finish();
+
                 Intent i = new Intent(this, Popup2.class);
                 startActivity(i);
                 finish();

@@ -32,6 +32,7 @@ public class Blister21Activity extends AppCompatActivity {
 
         if(cargarBlisterSiguiente.isClickable()) {
 
+
             Intent x = new Intent(this, Blister21Activity1.class);
             startActivity(x);
             finish();
