@@ -462,10 +462,19 @@ public class EstadoDeAnimoActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
       // "nivel_animo" -> por defecto es 0
             if( preferences.getInt("nivel_animo", 0)!=0 && enviar.isClickable()){
-                Intent enviar_datos= new Intent(this, MainActivity.class);
-                startActivity(enviar_datos);
-                finish();
 
+                if(!preferences.getBoolean("mail_21", true)
+                        ||!preferences.getBoolean("mail_28", true)){
+                    Intent enviar_datos = new Intent(this, MailAPI.class);
+                    startActivity(enviar_datos);
+                    finish();
+                }
+                else {
+                    Intent enviar_datos = new Intent(this, MainActivity.class);
+                    startActivity(enviar_datos);
+                    finish();
+
+                }
                 SharedPreferences.Editor objEditor = preferences.edit();
                 objEditor.putInt("nivel_animo", 0);
                 objEditor.apply();

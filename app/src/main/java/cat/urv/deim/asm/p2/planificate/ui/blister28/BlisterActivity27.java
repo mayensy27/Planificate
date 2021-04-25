@@ -32,6 +32,7 @@ public class BlisterActivity27 extends AppCompatActivity {
         objEditor.putBoolean("primeravez_blister27", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
 
+
     }
     public void cargarBlister(View view) {
         if(cargarBlisterSiguiente.isClickable()){
@@ -62,9 +63,13 @@ public class BlisterActivity27 extends AppCompatActivity {
                 startActivity(i);
                 finish();
 
+                SharedPreferences.Editor objEditor = preferences.edit();
+                objEditor.putBoolean("mail_28", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
+
                 /// TOMA 28 DIA DE LA PILDRA
 
-                SharedPreferences.Editor objEditor = preferences.edit();
+ //               SharedPreferences.Editor objEditor = preferences.edit();
                 objEditor.putString("tomaBlister_28", fecha); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
                 objEditor.putInt("dia_28", 28); // dado que a partir de ahora no será la pirmera vez, lo ponemos false

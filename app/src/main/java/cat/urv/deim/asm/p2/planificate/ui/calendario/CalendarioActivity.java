@@ -210,7 +210,7 @@ public class CalendarioActivity extends AppCompatActivity {
            registro_dias.setAdapter(adapter);
 
            registro_dias.setOnItemClickListener((parent, view, position, id) -> {
-               SharedPreferences efectos = getSharedPreferences("efectos", Context.MODE_PRIVATE);
+              // SharedPreferences efectos = getSharedPreferences("efectos", Context.MODE_PRIVATE);
 
                if (position == 0 ) {
                    niveles_animo(preferences.getInt("nivel_animo_1", 0),"1");
