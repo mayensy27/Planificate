@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MailAPI">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/correo"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </TextView>
 
     <EditText
         android:ems="10"
@@ -20,19 +38,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:ems="10"
-        android:hint="Enter Message text"
-        android:id="@+id/et_text"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPostalAddress" />
+        android:layout_height="50dp">
+
+    </TextView>
 
     <Button
         android:id="@+id/btn_submit"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dip"
         android:layout_width="wrap_content"
-        android:text="Send Mail" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/boton_redondo"
+        android:text="Enviar Mail" />
 
 </LinearLayout>

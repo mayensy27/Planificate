@@ -22,7 +22,7 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.datos_personales.LoginUsuariaActivity"></activity>
+        <activity android:name=".ui.datos_personales.LoginUsuariaActivity" />
         <activity android:name=".ui.informate.InfCastActivity" />
         <activity android:name=".ui.informate.InfCatActivity" />
         <activity android:name=".ui.informate.InfInglesActivity" />

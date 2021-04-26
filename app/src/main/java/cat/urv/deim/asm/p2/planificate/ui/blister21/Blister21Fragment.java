@@ -349,6 +349,9 @@ public class Blister21Fragment extends Fragment {
 
                 objEditor.putBoolean("final", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
+
+                objEditor.putBoolean("mail_21", true);
+                objEditor.apply();
             }
                     primeraVez = preferences.getBoolean("primeravez_blister1", true); // por defecto es true
 
