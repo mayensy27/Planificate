@@ -1,8 +1,10 @@
 package cat.urv.deim.asm.p2.planificate.ui.datos_personales;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -42,6 +45,16 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuaria);
 
+        //envio SMS
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]
+                    {
+                            Manifest.permission.SEND_SMS,
+                    }, 1000);
+        }else{
+
+        }
        /* //de splash a Registro
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();

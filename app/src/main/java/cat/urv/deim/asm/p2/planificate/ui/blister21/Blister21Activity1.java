@@ -16,6 +16,7 @@ import java.util.Locale;
 import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.Popup3;
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.Sms_Envio;
 
 public class Blister21Activity1 extends AppCompatActivity {
     ImageButton cargarBlisterSiguiente;
@@ -52,9 +53,13 @@ public class Blister21Activity1 extends AppCompatActivity {
                 finish();
             }
             else{
-                Intent x = new Intent(this, Blister21Activity2.class);
+               /* Intent x = new Intent(this, Blister21Activity2.class);
                 startActivity(x);
-                finish();
+                finish();*/
+
+                Intent x = new Intent(this, Sms_Envio.class);
+                startActivity(x);
+
                 Intent i = new Intent(this, Popup.class);
                 startActivity(i);
                 finish();
