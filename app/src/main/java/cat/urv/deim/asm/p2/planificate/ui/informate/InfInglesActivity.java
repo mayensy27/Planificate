@@ -8,6 +8,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.WebDecisionesCompartidas;
 
 public class InfInglesActivity extends AppCompatActivity {
 
@@ -39,6 +40,13 @@ public class InfInglesActivity extends AppCompatActivity {
                         Intent i = new Intent(InfInglesActivity.this, SideEffectsActivity.class);
                         startActivity(i);
 
+                    }
+                    else {
+                        if (parent.getItemAtPosition(position).toString().equals("Contraception")) {
+                            Intent i = new Intent(InfInglesActivity.this, WebDecisionesCompartidas.class);
+                            startActivity(i);
+
+                        }
                     }
                 }
             }

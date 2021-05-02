@@ -16,6 +16,7 @@ import java.util.Locale;
 import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.Popup3;
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.Sms_Envio;
 
 public class BlisterActivity24 extends AppCompatActivity {
     ImageButton cargarBlisterSiguiente;
@@ -49,6 +50,10 @@ public class BlisterActivity24 extends AppCompatActivity {
                 finish();
             }
             else {
+                //Quedan 3 tomas!!
+                Intent z = new Intent(this, Sms_Envio.class);
+                startActivity(z);
+
                 Intent x = new Intent(this, BlisterActivity25.class);
                 startActivity(x);
                 finish();

@@ -8,6 +8,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.WebDecisionesCompartidas;
 
 public class InfCatActivity extends AppCompatActivity {
 
@@ -39,6 +40,12 @@ public class InfCatActivity extends AppCompatActivity {
                         Intent i = new Intent(InfCatActivity.this, EfectesSecundarisActivity.class);
                         startActivity(i);
 
+                    } else {
+                        if (parent.getItemAtPosition(position).toString().equals("Anticoncepció")) {
+                            Intent i = new Intent(InfCatActivity.this, WebDecisionesCompartidas.class);
+                            startActivity(i);
+
+                        }
                     }
                 }
             }
