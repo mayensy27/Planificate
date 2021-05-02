@@ -26,7 +26,10 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".Sms_Envio"></activity>
+        <activity android:name=".ui.informate.SideEffectsActivity"></activity>
+        <activity android:name=".ui.informate.EfectesSecundarisActivity" />
+        <activity android:name=".ui.informate.EfectosSecundariosActivity" />
+        <activity android:name=".Sms_Envio" />
         <activity android:name=".ui.datos_personales.LoginUsuariaActivity" />
         <activity android:name=".ui.informate.InfCastActivity" />
         <activity android:name=".ui.informate.InfCatActivity" />

@@ -3,5 +3,6 @@
     <string-array name="lista_opciones_cat">
         <item>¿Com funcionen els ACOs?</item>
         <item>Oblits</item>
+        <item>Efectes Secundaris</item>
     </string-array>
 </resources>

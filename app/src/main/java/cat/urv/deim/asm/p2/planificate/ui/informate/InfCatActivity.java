@@ -34,6 +34,12 @@ public class InfCatActivity extends AppCompatActivity {
                     Intent i=new Intent(InfCatActivity.this, DocumentacionCatActivity.class);
                     startActivity(i);
 
+                }else {
+                    if (parent.getItemAtPosition(position).toString().equals("Efectes Secundaris")) {
+                        Intent i = new Intent(InfCatActivity.this, EfectesSecundarisActivity.class);
+                        startActivity(i);
+
+                    }
                 }
             }
         });

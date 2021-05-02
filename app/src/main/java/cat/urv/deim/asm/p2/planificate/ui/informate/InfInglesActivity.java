@@ -34,7 +34,12 @@ public class InfInglesActivity extends AppCompatActivity {
                     Intent i=new Intent(InfInglesActivity.this, DocumentacionInglesActivity.class);
                     startActivity(i);
 
+                }else {
+                    if (parent.getItemAtPosition(position).toString().equals("Side Effects")) {
+                        Intent i = new Intent(InfInglesActivity.this, SideEffectsActivity.class);
+                        startActivity(i);
 
+                    }
                 }
             }
         });

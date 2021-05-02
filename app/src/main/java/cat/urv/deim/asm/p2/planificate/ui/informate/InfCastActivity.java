@@ -34,6 +34,12 @@ public class InfCastActivity extends AppCompatActivity {
                     Intent i=new Intent(InfCastActivity.this, DocumentacionCastActivity.class);
                     startActivity(i);
 
+                }else {
+                    if (parent.getItemAtPosition(position).toString().equals("Efectos Secundarios")) {
+                        Intent i = new Intent(InfCastActivity.this, EfectosSecundariosActivity.class);
+                        startActivity(i);
+
+                    }
                 }
             }
         });

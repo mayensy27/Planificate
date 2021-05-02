@@ -3,5 +3,6 @@
     <string-array name="lista_opciones_cast">
         <item>¿Cómo funcionan los ACOs?</item>
         <item>Olvidos</item>
+        <item>Efectos Secundarios</item>
     </string-array>
 </resources>

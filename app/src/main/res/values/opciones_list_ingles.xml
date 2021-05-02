@@ -3,5 +3,6 @@
     <string-array name="lista_opciones_ingles">
         <item>How do AOCs work?</item>
         <item>Forgetfulness</item>
+        <item>Side Effects</item>
     </string-array>
 </resources>
