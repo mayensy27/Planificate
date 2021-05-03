@@ -123,7 +123,7 @@ public class NotificationService extends IntentService {
           Calendar today = Calendar.getInstance();
 
           today.set(Calendar.HOUR_OF_DAY, hour);
-          today.set(Calendar.MINUTE, minute+3); // +24h=1440min
+          today.set(Calendar.MINUTE, minute+1); // +24h=1440min
           today.set(Calendar.SECOND, 0);
           Utils.setAlarm(alarmID, today.getTimeInMillis(), NotificationService.this);
 
