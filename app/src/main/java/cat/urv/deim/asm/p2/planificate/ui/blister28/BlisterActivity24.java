@@ -50,14 +50,14 @@ public class BlisterActivity24 extends AppCompatActivity {
                 finish();
             }
             else {
-                //Quedan 3 tomas!!
-                Intent z = new Intent(this, Notificacion_3_dias.class);
-                startActivity(z);
 
                 Intent x = new Intent(this, BlisterActivity25.class);
                 startActivity(x);
-                finish();
 
+                //Quedan 3 tomas!!
+                Intent z = new Intent(this, Notificacion_3_dias.class);
+                startActivity(z);
+                finish();
 
                 Intent i = new Intent(this, Popup.class);
                 startActivity(i);

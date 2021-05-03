@@ -65,10 +65,6 @@ public class Blister21Activity17 extends AppCompatActivity {
 
 
 
-
-
-
-
                 // TOMA 18 DIA DE LA PILDRA
 
 
