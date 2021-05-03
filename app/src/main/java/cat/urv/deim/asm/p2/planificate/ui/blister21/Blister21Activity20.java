@@ -62,7 +62,7 @@ public class Blister21Activity20 extends AppCompatActivity {
 */
                 Intent z = new Intent(this, MailAPI.class);
                 startActivity(z);
-
+                finish();
 
                 Intent i = new Intent(this, Popup2.class);
                 startActivity(i);

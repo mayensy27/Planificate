@@ -70,7 +70,7 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
 
 
         AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this,AlertReceiver.class);
+        Intent intent = new Intent(this, AlertReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
 
         if(c.before(Calendar.getInstance())){
@@ -80,11 +80,11 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
         alarmManager.setRepeating( AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),1000*60,pendingIntent);
     //  alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(), pendingIntent); //1 VEZ, HORA EXACTA
       //  alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),120000, pendingIntent); //se repite cada 24h
-        Intent intent2=new Intent (this,MainActivity.class);
+        Intent intent2=new Intent (this, MainActivity.class);
         startActivity(intent2);
 
         //OJO
-        Intent intent1=new Intent (this,MainActivity.class);
+        Intent intent1=new Intent (this, MainActivity.class);
         TaskStackBuilder stackBuilder =TaskStackBuilder.create(this);
         stackBuilder.addParentStack(MainActivity.class);
         stackBuilder.addNextIntent(intent1);
@@ -100,7 +100,7 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
     @SuppressLint("SetTextI18n")
     private void cancelAlarm(){
         AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this,AlertReceiver.class);
+        Intent intent = new Intent(this, AlertReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(this,1,intent,PendingIntent.FLAG_NO_CREATE);
 
         assert alarmManager != null;

@@ -117,17 +117,16 @@ public class NotificationService extends IntentService {
         Calendar mcurrentTime = Calendar.getInstance();
         int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
         int minute = mcurrentTime.get(Calendar.MINUTE);
-        if(settings.getString("hour", "").equals(Integer.toString(hour))&&
-                settings.getString("minute", "").equals(Integer.toString(minute)))
-        {
+      /*if(settings.getString("hour", "").equals(Integer.toString(hour))&&
+                settings.getString("minute", "").equals(Integer.toString(minute))) {*/
 
-            Calendar today = Calendar.getInstance();
+          Calendar today = Calendar.getInstance();
 
-            today.set(Calendar.HOUR_OF_DAY, hour);
-            today.set(Calendar.MINUTE, minute+1440); // +24h
-            today.set(Calendar.SECOND, 0);
-            Utils.setAlarm(alarmID, today.getTimeInMillis(), NotificationService.this);
-        }
+          today.set(Calendar.HOUR_OF_DAY, hour);
+          today.set(Calendar.MINUTE, minute+3); // +24h=1440min
+          today.set(Calendar.SECOND, 0);
+          Utils.setAlarm(alarmID, today.getTimeInMillis(), NotificationService.this);
+
 
     }
 }

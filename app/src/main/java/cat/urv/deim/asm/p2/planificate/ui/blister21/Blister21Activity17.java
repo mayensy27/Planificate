@@ -13,10 +13,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import cat.urv.deim.asm.p2.planificate.Notificacion_3_dias;
 import cat.urv.deim.asm.p2.planificate.Popup;
 import cat.urv.deim.asm.p2.planificate.Popup3;
 import cat.urv.deim.asm.p2.planificate.R;
-import cat.urv.deim.asm.p2.planificate.Sms_Envio;
 
 public class Blister21Activity17 extends AppCompatActivity {
     ImageButton cargarBlisterSiguiente;
@@ -50,17 +50,25 @@ public class Blister21Activity17 extends AppCompatActivity {
                 finish();
             }else {
 
-                //Quedan 3 tomas!!
-                Intent z = new Intent(this, Sms_Envio.class);
-                startActivity(z);
-
-                Intent x = new Intent(this, Blister21Activity18.class);
+               Intent x = new Intent(this, Blister21Activity18.class);
                 startActivity(x);
+
+
+                //Quedan 3 tomas!!
+                Intent z = new Intent(this, Notificacion_3_dias.class);
+                startActivity(z);
                 finish();
 
                 Intent i = new Intent(this, Popup.class);
                 startActivity(i);
                 finish();
+
+
+
+
+
+
+
                 // TOMA 18 DIA DE LA PILDRA
 
 

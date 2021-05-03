@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public static  int contador_blsiter28=0;
-   // public static int contador_blsiter21=0;
+    // public static int contador_blsiter21=0;
 
 
     @Override
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     //Fragmento DATOS!
-                     else if (id == R.id.nav_datos_personales) {
+                    else if (id == R.id.nav_datos_personales) {
                         fragment = new DatosPersonalesFragment();
                         fTransaction = true;
 
@@ -115,12 +115,12 @@ public class MainActivity extends AppCompatActivity {
                         SharedPreferences tipos_pildoras_comprimidos = getSharedPreferences("tipos_pildoras_comprimidos", Context.MODE_PRIVATE);
                         String texto= tipos_pildoras_comprimidos.getString("tipo_comprimidos", "zz"); // por defecto es true
 
-                     if (texto.equals("Blíster 28.")||texto.equals("Blíster 21+7.")||texto.equals("Blíster 24+4.")){
-                         fragment = new BlisterFragment();
-                     }
-                     else {
-                         fragment = new Blister21Fragment();
-                     }
+                        if (texto.equals("Blíster 28.")||texto.equals("Blíster 21+7.")||texto.equals("Blíster 24+4.")){
+                            fragment = new BlisterFragment();
+                        }
+                        else {
+                            fragment = new Blister21Fragment();
+                        }
                         fTransaction = true;
 
                     } /*else if (id == R.id.nav_profile) {
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     item.setChecked(false);
                     Objects.requireNonNull(getSupportActionBar()).setTitle(item.getTitle());
 
-                   // DrawerLayout drawer = findViewById(R.id.drawer_layout);
+                    // DrawerLayout drawer = findViewById(R.id.drawer_layout);
                     drawer.closeDrawer(GravityCompat.START);
                     return true;
                 }
