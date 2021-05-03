@@ -1,14 +1,21 @@
 package cat.urv.deim.asm.p2.planificate.ui.alarmas;
 
-import android.content.Intent;
+import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import java.util.Calendar;
 
 import cat.urv.deim.asm.p2.planificate.R;
 
@@ -72,7 +79,69 @@ public class AlarmasFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Intent x=new Intent(getContext(), AlarmActivity.class);
-        startActivity(x);
+         TextView notificationsTime;
+         int alarmID = 1;
+         SharedPreferences settings;
+
+        settings = requireActivity().getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+
+        String hour, minute;
+
+        hour = settings.getString("hour","");
+        minute = settings.getString("minute","");
+
+        notificationsTime =view.findViewById(R.id.notifications_time);
+
+        if(hour.length() > 0)
+        {
+            notificationsTime.setText(hour + ":" + minute);
+        }
+
+        view.findViewById(R.id.change_notification).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+                TimePickerDialog mTimePicker = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        String finalHour, finalMinute;
+
+                        finalHour = "" + selectedHour;
+                        finalMinute = "" + selectedMinute;
+                        if (selectedHour < 10) finalHour = "0" + selectedHour;
+                        if (selectedMinute < 10) finalMinute = "0" + selectedMinute;
+                        notificationsTime.setText(finalHour + ":" + finalMinute);
+
+                        Calendar today = Calendar.getInstance();
+
+                        today.set(Calendar.HOUR_OF_DAY, selectedHour);
+                        today.set(Calendar.MINUTE, selectedMinute);
+                        today.set(Calendar.SECOND, 0);
+
+                        SharedPreferences.Editor edit = settings.edit();
+                        edit.putString("hour", finalHour);
+                        edit.putString("minute", finalMinute);
+
+                        //SAVE ALARM TIME TO USE IT IN CASE OF REBOOT
+                        edit.putInt("alarmID", alarmID);
+                        edit.putLong("alarmTime", today.getTimeInMillis());
+
+                        edit.apply();
+
+                        Toast.makeText(getContext(), getString(R.string.changed_to, finalHour + ":" + finalMinute), Toast.LENGTH_LONG).show();
+
+                        Utils.setAlarm(alarmID, today.getTimeInMillis(), getContext());
+
+                    }
+                }, hour, minute, true);//Yes 24 hour time
+                mTimePicker.setTitle(getString(R.string.select_time));
+                mTimePicker.show();
+
+            }
+        });
+/*        Intent x=new Intent(getContext(), AlarmActivity.class);
+        startActivity(x);*/
     }
 }

@@ -1,4 +1,4 @@
-package cat.urv.deim.asm.p2.planificate.ui.alarmas;
+/*package cat.urv.deim.asm.p2.planificate.ui.alarmas;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -85,4 +85,4 @@ public class AlarmActivity extends AppCompatActivity {
         });
     }
 
-}
+}*/

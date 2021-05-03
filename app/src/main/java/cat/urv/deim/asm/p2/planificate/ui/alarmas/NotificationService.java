@@ -20,6 +20,7 @@ import androidx.core.app.NotificationCompat;
 
 import java.util.Calendar;
 
+import cat.urv.deim.asm.p2.planificate.MainActivity;
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class NotificationService extends IntentService {
@@ -47,7 +48,7 @@ public class NotificationService extends IntentService {
         String NOTIFICATION_CHANNEL_ID = getApplicationContext().getString(R.string.app_name);
         Context context = this.getApplicationContext();
         notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        Intent mIntent = new Intent(this, AlarmActivity.class);
+        Intent mIntent = new Intent(this, MainActivity.class);
         Resources res = this.getResources();
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
 
@@ -123,7 +124,7 @@ public class NotificationService extends IntentService {
           Calendar today = Calendar.getInstance();
 
           today.set(Calendar.HOUR_OF_DAY, hour);
-          today.set(Calendar.MINUTE, minute+1); // +24h=1440min
+          today.set(Calendar.MINUTE, minute+2); // +24h=1440min
           today.set(Calendar.SECOND, 0);
           Utils.setAlarm(alarmID, today.getTimeInMillis(), NotificationService.this);
 
