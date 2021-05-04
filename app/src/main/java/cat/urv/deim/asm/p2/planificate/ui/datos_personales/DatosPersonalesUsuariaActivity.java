@@ -19,8 +19,8 @@ import cat.urv.deim.asm.p2.planificate.R;
 
 public class DatosPersonalesUsuariaActivity extends AppCompatActivity {
 
-TextView nombre_u,email_u,telefono_u;
-Button logout;
+    TextView nombre_u,email_u,telefono_u;
+    Button logout;
 
 
     @Override
@@ -40,25 +40,25 @@ Button logout;
         objEditor.apply();
 
 */
-            if(preferences.getBoolean("signup_google",true)){
+        if(preferences.getBoolean("signup_google",true)){
 
-                nombre_u.setText(preferences.getString("nombre_usuaria","")); // por defecto es true
-                email_u.setText(preferences.getString("email_usuaria", "")); // por defecto es true
-                telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true
-          }else {
-                FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
-                Log.d("tag","onCreate"+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); //el log.d se utiliza para ver mediante el logcat el valor de ese paramentro
-                Log.d("tag","onCreate"+ firebaseAuth.getCurrentUser().getEmail());
+            nombre_u.setText(preferences.getString("nombre_usuaria","")); // por defecto es true
+            email_u.setText(preferences.getString("email_usuaria", "")); // por defecto es true
+            telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true
+        }else {
+            FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+            Log.d("tag","onCreate"+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); //el log.d se utiliza para ver mediante el logcat el valor de ese paramentro
+            Log.d("tag","onCreate"+ firebaseAuth.getCurrentUser().getEmail());
 
-                nombre_u.setText(firebaseAuth.getCurrentUser().getDisplayName());
-                email_u.setText(firebaseAuth.getCurrentUser().getEmail());
-                telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true
-                SharedPreferences.Editor objEditor = preferences.edit();
-                 objEditor.putString("nombre_usuaria", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
-                objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
-            }
+            nombre_u.setText(firebaseAuth.getCurrentUser().getDisplayName());
+            email_u.setText(firebaseAuth.getCurrentUser().getEmail());
+            telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true
+            SharedPreferences.Editor objEditor = preferences.edit();
+            objEditor.putString("nombre_usuaria", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();
+            objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();
+        }
 
 
 

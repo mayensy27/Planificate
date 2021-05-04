@@ -1,10 +1,8 @@
 package cat.urv.deim.asm.p2.planificate.ui.datos_personales;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -13,8 +11,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -29,12 +32,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import java.util.Objects;
+import org.json.JSONObject;
 
 import cat.urv.deim.asm.p2.planificate.MainActivity;
 import cat.urv.deim.asm.p2.planificate.R;
-public class RegistroUsuariaActivity extends AppCompatActivity  {
+
+public class RegistroUsuariaActivity extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener  {
+
     EditText nombre, email,telefono;
+    RequestQueue request;
+    JsonObjectRequest jsonObjectRequest;
 
     private static final int SIGN_IN_CODE=777;
     private GoogleSignInClient mGoogleSignInClient;
@@ -45,7 +52,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuaria);
 
-        //envio SMS
+       /* //envio SMS
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]
@@ -54,7 +61,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
                     }, 1000);
         }else{
 
-        }
+        }*/
        /* //de splash a Registro
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
@@ -64,6 +71,8 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
         nombre = findViewById(R.id.nombre);
         email = findViewById(R.id.email);
         telefono = findViewById(R.id.telefono);
+
+        request= Volley.newRequestQueue(getApplicationContext());
 
         firebaseAuth=FirebaseAuth.getInstance();
         SignInButton signInButton = findViewById(R.id.signInButton);
@@ -80,7 +89,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
         GoogleSignInAccount signInAccount=GoogleSignIn.getLastSignedInAccount(this);
 
         if(signInAccount!=null || firebaseAuth.getCurrentUser()!=null){
-          //  Toast.makeText(this,"User is Logged in Already",Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(this,"User is Logged in Already",Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(this, MainActivity.class);
             startActivity(intent);
         }
@@ -107,41 +116,75 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
 
             }
         });
+
     }
+
     public void registrar(View view) {
+
+        cargarWebService();
 
         //VALIDACION DE DATOS EN REGISTRO
         if (!nombre.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !telefono.getText()
                 .toString().isEmpty()) {
             if(telefono.length()==9) {
-                SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-                SharedPreferences.Editor objEditor = preferences.edit();
-                objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
 
-                objEditor.putString("email_usuaria", email.getText().toString());
-                objEditor.apply();
 
-                objEditor.putString("telefono_usuaria", telefono.getText().toString());
-                objEditor.apply();
+                    /*  SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor objEditor = preferences.edit();
+                                    objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                                    objEditor.apply();
 
-                objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
-                objEditor.putBoolean("registrada", false);
-                objEditor.apply();
+                                    objEditor.putString("email_usuaria", email.getText().toString());
+                                    objEditor.apply();
 
+                                    objEditor.putString("telefono_usuaria", telefono.getText().toString());
+                                    objEditor.apply();
+
+                                    objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                                    objEditor.apply();
+                                    objEditor.putBoolean("registrada", false);
+                                    objEditor.apply();
+                    */
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
 
             }
             else {
                 Toast.makeText(this,"Tu movil es erroneo",Toast.LENGTH_SHORT).show();
-                            }
+            }
         }else{
             Toast.makeText(this, "Introduce tus datos para posibles notificaciones", Toast.LENGTH_SHORT).show();
         }
     }
 
+    private void cargarWebService() {
+        String url="http://192.168.43.88/usuarias/conexion.php?email="+email.getText().toString()+
+                "&nombre="+nombre.getText().toString()+
+                "&telefono="+telefono.getText().toString();
+        
+        url=url.replace(" ","%20");
+
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        request.add(jsonObjectRequest);
+
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(this,"No se pudo registrar"+error.toString(),Toast.LENGTH_SHORT).show();
+
+
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+
+        Toast.makeText(this,"Se ha registrado exitosamente",Toast.LENGTH_SHORT).show();
+        email.setText("");
+        nombre.setText("");
+        telefono.setText("");
+
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -158,14 +201,14 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
                         Toast.makeText(getApplicationContext(),"Your Google Account is Connected to Our Application.",Toast.LENGTH_SHORT).show();
 
                         //guardado del correo (google)
-                        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                       /* SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
                         SharedPreferences.Editor objEditor = preferences.edit();
                         objEditor.putString("nombre_usuaria",Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                         objEditor.apply();
 
                         objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail());
                         objEditor.apply();
-
+*/
                         Intent intent=new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     }
@@ -181,4 +224,6 @@ public class RegistroUsuariaActivity extends AppCompatActivity  {
             }
         }
     }
+
+
 }
