@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,11 +23,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
@@ -55,6 +51,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
     Boolean consulta=true;
     Boolean duplicado=true;
 
+    String boton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,36 +92,39 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
         // Build a GoogleSignClient with the options specified by gso.
         mGoogleSignInClient= GoogleSignIn.getClient(this,gso);
 
-        GoogleSignInAccount signInAccount=GoogleSignIn.getLastSignedInAccount(this);
+       /* GoogleSignInAccount signInAccount=GoogleSignIn.getLastSignedInAccount(this);
 
         //YA FUE SESION INICIADA CON GOOGLE
         if(signInAccount!=null || firebaseAuth.getCurrentUser()!=null){
             //  Toast.makeText(this,"User is Logged in Already",Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(this, MainActivity.class);
             startActivity(intent);
-        }
+        }*/
 
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-                SharedPreferences.Editor objEditor = preferences.edit();
+        signInButton.setOnClickListener(v -> {
+            boton="google";
 
-                objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
-
-                objEditor.putBoolean("registrada", false);
-                objEditor.apply();
-
-                objEditor.putBoolean("signup_google", false);
-                objEditor.apply();
-
-                Intent intent =mGoogleSignInClient.getSignInIntent();
-                startActivityForResult(intent,SIGN_IN_CODE);
+            Intent intent =mGoogleSignInClient.getSignInIntent();
+            startActivityForResult(intent,SIGN_IN_CODE);
 
 
 
-            }
+            /*SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+            SharedPreferences.Editor objEditor = preferences.edit();
+
+            objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();
+
+            objEditor.putBoolean("registrada", false);
+            objEditor.apply();
+
+            objEditor.putBoolean("signup_google", false);
+            objEditor.apply();
+
+            Intent intent =mGoogleSignInClient.getSignInIntent();
+            startActivityForResult(intent,SIGN_IN_CODE);
+
+*/
         });
 
     }
@@ -134,7 +134,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
         if (!nombre.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !telefono.getText()
                 .toString().isEmpty()) {
             if(telefono.length()==9) {
-
+                boton="manual";
                 cargarDatos();
               /*  SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
                 SharedPreferences.Editor objEditor = preferences.edit();
@@ -167,11 +167,18 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
     private void cargarDatos() {
         consulta=false;
 
-        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+email.getText().toString();
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
     }
+
+    private void cargarDatosGoolgle() {
+        consulta=false;
+        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail();
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        request.add(jsonObjectRequest);
+    }
+
 
     private void cargarWebService() {
         duplicado=false;
@@ -186,6 +193,20 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
     }
 
+    private void cargarWebServiceGoogle() {
+        duplicado=false;
+        String url="http://192.168.0.100/usuarias/conexion.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail()+
+                "&nombre="+firebaseAuth.getCurrentUser().getDisplayName()+
+                "&telefono="+firebaseAuth.getCurrentUser().getPhoneNumber();
+
+        url=url.replace(" ","%20");
+
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        request.add(jsonObjectRequest);
+
+    }
+
+
     @Override
     public void onErrorResponse(VolleyError error) {
         Toast.makeText(this,"No se pudo registrar"+error.toString(),Toast.LENGTH_SHORT).show();
@@ -199,9 +220,10 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
         if(!consulta&& duplicado) {
             Usuaria miUsuaria = new Usuaria();
             JSONArray json = response.optJSONArray("usuarias");
-            JSONObject jsonObject = null;
+            JSONObject jsonObject;
 
             try {
+                assert json != null;
                 jsonObject = json.getJSONObject(0);
                 miUsuaria.setNombre(jsonObject.optString("nombre"));
                 miUsuaria.setTelefono(jsonObject.optString("telefono"));
@@ -214,46 +236,74 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
             if (miUsuaria.getEmail().equals("0")) {
                 SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
                 SharedPreferences.Editor objEditor = preferences.edit();
-                objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
 
-                objEditor.putString("email_usuaria", email.getText().toString());
-                objEditor.apply();
 
-                objEditor.putString("telefono_usuaria", telefono.getText().toString());
-                objEditor.apply();
+                if(boton.equals("manual")) {
 
-                objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
-                objEditor.putBoolean("registrada", false);
-                objEditor.apply();
-                cargarWebService();
+                    objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                    objEditor.apply();
+
+                    objEditor.putString("email_usuaria", email.getText().toString());
+                    objEditor.apply();
+
+                    objEditor.putString("telefono_usuaria", telefono.getText().toString());
+                    objEditor.apply();
+
+                    objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                    objEditor.apply();
+                    objEditor.putBoolean("registrada", false);
+                    objEditor.apply();
+                    cargarWebService();
+                }
+
+                if(boton.equals("google")) {
+
+                    objEditor.putString("nombre_usuaria", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                    objEditor.apply();
+
+                    objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail());
+                    objEditor.apply();
+
+                    objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                    objEditor.apply();
+
+                    objEditor.putBoolean("registrada", false);
+                    objEditor.apply();
+
+                    objEditor.putBoolean("signup_google", false);
+                    objEditor.apply();
+
+
+                    cargarWebServiceGoogle();
+
+
+                }
 
 
             } else {
                 Toast.makeText(this, "DUPLICADO", Toast.LENGTH_SHORT).show();
+                email.setText("");
+                nombre.setText("");
+                telefono.setText("");
                 Intent i = new Intent(this, RegistroUsuariaActivity.class);
                 startActivity(i);
+               // finish();
             }
         }
-            if(!consulta&& !duplicado){
-                Toast.makeText(this,"Se ha registrado exitosamente",Toast.LENGTH_SHORT).show();
+            if (!consulta && !duplicado) {
+                Toast.makeText(this, "Se ha registrado exitosamente", Toast.LENGTH_SHORT).show();
                 email.setText("");
                 nombre.setText("");
                 telefono.setText("");
 
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
-            }
-
-
-
-
-        else {
-            Toast.makeText(this,"DUPLICADO",Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(this, RegistroUsuariaActivity.class);
-            startActivity(i);
-        }
+                finish();
+            } /*else {
+                Toast.makeText(this, "DUPLICADO", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(this, RegistroUsuariaActivity.class);
+                startActivity(i);
+            }*/
 
 
     }
@@ -266,51 +316,36 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
             try {
                 GoogleSignInAccount signInAccount=signInTask.getResult(ApiException.class);
 
+                assert signInAccount != null;
                 AuthCredential authCredential= GoogleAuthProvider.getCredential(signInAccount.getIdToken(),null);
-                firebaseAuth.signInWithCredential(authCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        //  Toast.makeText(getApplicationContext(),"Your Google Account is Connected to Our Application.",Toast.LENGTH_SHORT).show();
+                firebaseAuth.signInWithCredential(authCredential).addOnCompleteListener(task -> {
+                    //  Toast.makeText(getApplicationContext(),"Your Google Account is Connected to Our Application.",Toast.LENGTH_SHORT).show();
+                    //guardado del correo (google)
 
-                        //guardado del correo (google)
-                        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor objEditor = preferences.edit();
-                        objEditor.putString("nombre_usuaria", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                        objEditor.apply();
 
-                        objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail());
-                        objEditor.apply();
 
-                        cargarWebServiceGoogle();
+                   /* SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor objEditor = preferences.edit();
+                    objEditor.putString("nombre_usuaria", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                    objEditor.apply();
 
-                        Intent intent=new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
+                    objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail());
+                    objEditor.apply();*/
+                   cargarDatosGoolgle();
+                   // cargarWebServiceGoogle();
 
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
 
-                    }
+                    /*Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);*/
+
+                }).addOnFailureListener(e -> {
+
                 });
 
             } catch (ApiException e) {
                 e.printStackTrace();
             }
         }
-    }
-    private void cargarWebServiceGoogle() {
-
-        FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
-        String url="http://192.168.0.100/usuarias/conexion.php?email="+firebaseAuth.getCurrentUser().getEmail()+
-                "&nombre="+firebaseAuth.getCurrentUser().getDisplayName()+
-                "&telefono="+firebaseAuth.getCurrentUser().getPhoneNumber();
-
-        url=url.replace(" ","%20");
-
-        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
-        request.add(jsonObjectRequest);
-
     }
 
 }
