@@ -120,8 +120,8 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
     }
 
     public void registrar(View view) {
-
         cargarWebService();
+
 
         //VALIDACION DE DATOS EN REGISTRO
         if (!nombre.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !telefono.getText()
@@ -158,7 +158,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
     }
 
     private void cargarWebService() {
-        String url="http://192.168.43.88/usuarias/conexion.php?email="+email.getText().toString()+
+        String url="http://192.168.0.100/usuarias/conexion.php?email="+email.getText().toString()+
                 "&nombre="+nombre.getText().toString()+
                 "&telefono="+telefono.getText().toString();
         

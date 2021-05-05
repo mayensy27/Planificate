@@ -18,9 +18,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.entidades.Usuaria;
 
 public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener {
 
@@ -93,7 +96,7 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
     }
 
     private void cargarWebService() {
-        String url="http://192.168.43.88/usuarias/consultarUsuaria.php?email="+"maygd27@gmail.com";
+        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+"maygd27@gmail.com";
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
 
@@ -102,13 +105,30 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(this,"No se pudo consultar"+error.toString(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"No se pudo consultar"+error.toString(),Toast.LENGTH_LONG).show();
 
     }
 
     @Override
     public void onResponse(JSONObject response) {
-        Toast.makeText(this,"Mensaje "+response,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,"Mensaje "+response,Toast.LENGTH_LONG).show();
 
+        Usuaria miUsuaria=new Usuaria();
+        JSONArray json=response.optJSONArray("usuarias");
+        JSONObject jsonObject=null;
+
+        try {
+            jsonObject=json.getJSONObject(0);
+            miUsuaria.setNombre(jsonObject.optString("nombre"));
+            miUsuaria.setTelefono(jsonObject.optString("telefono"));
+            miUsuaria.setEmail(jsonObject.optString("email"));
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+            nombre_u.setText(miUsuaria.getNombre());
+            telefono_u.setText(miUsuaria.getTelefono());
+            email_u.setText(miUsuaria.getEmail());
     }
 }
