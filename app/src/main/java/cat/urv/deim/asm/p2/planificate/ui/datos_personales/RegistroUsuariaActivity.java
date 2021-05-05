@@ -32,12 +32,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Objects;
 
 import cat.urv.deim.asm.p2.planificate.MainActivity;
 import cat.urv.deim.asm.p2.planificate.R;
+import cat.urv.deim.asm.p2.planificate.entidades.Usuaria;
 
 public class RegistroUsuariaActivity extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener  {
 
@@ -48,6 +51,9 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
     private static final int SIGN_IN_CODE=777;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth firebaseAuth;
+
+    Boolean consulta=true;
+    Boolean duplicado=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +68,6 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
                             Manifest.permission.SEND_SMS,
                     }, 1000);
         }else{
-
         }*/
        /* //de splash a Registro
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
@@ -129,24 +134,26 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
         if (!nombre.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !telefono.getText()
                 .toString().isEmpty()) {
             if(telefono.length()==9) {
-                                    SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor objEditor = preferences.edit();
-                                    objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                                    objEditor.apply();
 
-                                    objEditor.putString("email_usuaria", email.getText().toString());
-                                    objEditor.apply();
+                cargarDatos();
+              /*  SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                SharedPreferences.Editor objEditor = preferences.edit();
+                objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
 
-                                    objEditor.putString("telefono_usuaria", telefono.getText().toString());
-                                    objEditor.apply();
+                objEditor.putString("email_usuaria", email.getText().toString());
+                objEditor.apply();
 
-                                    objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                                    objEditor.apply();
-                                    objEditor.putBoolean("registrada", false);
-                                    objEditor.apply();
+                objEditor.putString("telefono_usuaria", telefono.getText().toString());
+                objEditor.apply();
+
+                objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
+                objEditor.putBoolean("registrada", false);
+                objEditor.apply();
                 cargarWebService();
                 Intent i = new Intent(this, MainActivity.class);
-                startActivity(i);
+                startActivity(i);*/
 
             }
             else {
@@ -157,11 +164,21 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
         }
     }
 
+    private void cargarDatos() {
+        consulta=false;
+
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+email.getText().toString();
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        request.add(jsonObjectRequest);
+    }
+
     private void cargarWebService() {
+        duplicado=false;
         String url="http://192.168.0.100/usuarias/conexion.php?email="+email.getText().toString()+
                 "&nombre="+nombre.getText().toString()+
                 "&telefono="+telefono.getText().toString();
-        
+
         url=url.replace(" ","%20");
 
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
@@ -179,10 +196,65 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
     @Override
     public void onResponse(JSONObject response) {
 
-        Toast.makeText(this,"Se ha registrado exitosamente",Toast.LENGTH_SHORT).show();
-        email.setText("");
-        nombre.setText("");
-        telefono.setText("");
+        if(!consulta&& duplicado) {
+            Usuaria miUsuaria = new Usuaria();
+            JSONArray json = response.optJSONArray("usuarias");
+            JSONObject jsonObject = null;
+
+            try {
+                jsonObject = json.getJSONObject(0);
+                miUsuaria.setNombre(jsonObject.optString("nombre"));
+                miUsuaria.setTelefono(jsonObject.optString("telefono"));
+                miUsuaria.setEmail(jsonObject.optString("email"));
+
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (miUsuaria.getEmail().equals("0")) {
+                SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                SharedPreferences.Editor objEditor = preferences.edit();
+                objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
+
+                objEditor.putString("email_usuaria", email.getText().toString());
+                objEditor.apply();
+
+                objEditor.putString("telefono_usuaria", telefono.getText().toString());
+                objEditor.apply();
+
+                objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
+                objEditor.putBoolean("registrada", false);
+                objEditor.apply();
+                cargarWebService();
+
+
+            } else {
+                Toast.makeText(this, "DUPLICADO", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(this, RegistroUsuariaActivity.class);
+                startActivity(i);
+            }
+        }
+            if(!consulta&& !duplicado){
+                Toast.makeText(this,"Se ha registrado exitosamente",Toast.LENGTH_SHORT).show();
+                email.setText("");
+                nombre.setText("");
+                telefono.setText("");
+
+                Intent i = new Intent(this, MainActivity.class);
+                startActivity(i);
+            }
+
+
+
+
+        else {
+            Toast.makeText(this,"DUPLICADO",Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this, RegistroUsuariaActivity.class);
+            startActivity(i);
+        }
+
 
     }
     @Override
@@ -198,7 +270,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
                 firebaseAuth.signInWithCredential(authCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                      //  Toast.makeText(getApplicationContext(),"Your Google Account is Connected to Our Application.",Toast.LENGTH_SHORT).show();
+                        //  Toast.makeText(getApplicationContext(),"Your Google Account is Connected to Our Application.",Toast.LENGTH_SHORT).show();
 
                         //guardado del correo (google)
                         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
