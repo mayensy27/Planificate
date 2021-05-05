@@ -4,24 +4,30 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
-import java.util.Objects;
+import org.json.JSONObject;
 
 import cat.urv.deim.asm.p2.planificate.R;
 
-public class DatosPersonalesUsuariaActivity extends AppCompatActivity {
+public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener {
 
     TextView nombre_u,email_u,telefono_u;
     Button logout;
-
+    RequestQueue request;
+    JsonObjectRequest jsonObjectRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,21 +38,24 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity {
         email_u=findViewById(R.id.text_email);
         telefono_u=findViewById(R.id.text_telefono);
         logout=findViewById(R.id.log_out);
+        request= Volley.newRequestQueue(getApplicationContext());
 
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-       /* SharedPreferences.Editor objEditor = preferences.edit();
-        objEditor.putBoolean("x", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-        objEditor.apply();
 
-*/
         if(preferences.getBoolean("signup_google",true)){
 
-            nombre_u.setText(preferences.getString("nombre_usuaria","")); // por defecto es true
+            cargarWebService();
+            
+
+            /*nombre_u.setText(preferences.getString("nombre_usuaria","")); // por defecto es true
             email_u.setText(preferences.getString("email_usuaria", "")); // por defecto es true
-            telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true
+            telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true*/
         }else {
-            FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+
+
+
+           /* FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
             Log.d("tag","onCreate"+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); //el log.d se utiliza para ver mediante el logcat el valor de ese paramentro
             Log.d("tag","onCreate"+ firebaseAuth.getCurrentUser().getEmail());
 
@@ -57,7 +66,7 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity {
             objEditor.putString("nombre_usuaria", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
             objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
+            objEditor.apply();*/
         }
 
 
@@ -83,5 +92,23 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity {
 
     }
 
+    private void cargarWebService() {
+        String url="http://192.168.43.88/usuarias/consultarUsuaria.php?email="+"maygd27@gmail.com";
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        request.add(jsonObjectRequest);
 
+    }
+
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(this,"No se pudo consultar"+error.toString(),Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+        Toast.makeText(this,"Mensaje "+response,Toast.LENGTH_SHORT).show();
+
+    }
 }
