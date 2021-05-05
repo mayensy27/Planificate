@@ -119,9 +119,10 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
 
         Usuaria miUsuaria=new Usuaria();
         JSONArray json=response.optJSONArray("usuarias");
-        JSONObject jsonObject=null;
+        JSONObject jsonObject;
 
         try {
+            assert json != null;
             jsonObject=json.getJSONObject(0);
             miUsuaria.setNombre(jsonObject.optString("nombre"));
             miUsuaria.setTelefono(jsonObject.optString("telefono"));
