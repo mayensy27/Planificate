@@ -56,7 +56,7 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
             telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true*/
         }else {
 
-
+            cargarWebServiceGoogle();
 
            /* FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
             Log.d("tag","onCreate"+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); //el log.d se utiliza para ver mediante el logcat el valor de ese paramentro
@@ -96,12 +96,19 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
     }
 
     private void cargarWebService() {
-        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+"maygd27@gmail.com";
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
 
     }
+    private void cargarWebServiceGoogle() {
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        request.add(jsonObjectRequest);
 
+    }
 
     @Override
     public void onErrorResponse(VolleyError error) {

@@ -34,6 +34,8 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 import org.json.JSONObject;
 
+import java.util.Objects;
+
 import cat.urv.deim.asm.p2.planificate.MainActivity;
 import cat.urv.deim.asm.p2.planificate.R;
 
@@ -68,6 +70,8 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
         objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();*/
 
+
+        //INICIALIZACION VARIABLES
         nombre = findViewById(R.id.nombre);
         email = findViewById(R.id.email);
         telefono = findViewById(R.id.telefono);
@@ -88,6 +92,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
         GoogleSignInAccount signInAccount=GoogleSignIn.getLastSignedInAccount(this);
 
+        //YA FUE SESION INICIADA CON GOOGLE
         if(signInAccount!=null || firebaseAuth.getCurrentUser()!=null){
             //  Toast.makeText(this,"User is Logged in Already",Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(this, MainActivity.class);
@@ -120,16 +125,11 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
     }
 
     public void registrar(View view) {
-        cargarWebService();
-
-
         //VALIDACION DE DATOS EN REGISTRO
         if (!nombre.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !telefono.getText()
                 .toString().isEmpty()) {
             if(telefono.length()==9) {
-
-
-                    /*  SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                                    SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
                                     SharedPreferences.Editor objEditor = preferences.edit();
                                     objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                                     objEditor.apply();
@@ -144,7 +144,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
                                     objEditor.apply();
                                     objEditor.putBoolean("registrada", false);
                                     objEditor.apply();
-                    */
+                cargarWebService();
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
 
@@ -198,19 +198,22 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
                 firebaseAuth.signInWithCredential(authCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(getApplicationContext(),"Your Google Account is Connected to Our Application.",Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(getApplicationContext(),"Your Google Account is Connected to Our Application.",Toast.LENGTH_SHORT).show();
 
                         //guardado del correo (google)
-                       /* SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+                        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
                         SharedPreferences.Editor objEditor = preferences.edit();
-                        objEditor.putString("nombre_usuaria",Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                        objEditor.putString("nombre_usuaria", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                         objEditor.apply();
 
                         objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail());
                         objEditor.apply();
-*/
+
+                        cargarWebServiceGoogle();
+
                         Intent intent=new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -224,6 +227,18 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
             }
         }
     }
+    private void cargarWebServiceGoogle() {
 
+        FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+        String url="http://192.168.0.100/usuarias/conexion.php?email="+firebaseAuth.getCurrentUser().getEmail()+
+                "&nombre="+firebaseAuth.getCurrentUser().getDisplayName()+
+                "&telefono="+firebaseAuth.getCurrentUser().getPhoneNumber();
+
+        url=url.replace(" ","%20");
+
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        request.add(jsonObjectRequest);
+
+    }
 
 }
