@@ -1,11 +1,8 @@
 package cat.urv.deim.asm.p2.planificate.ui.datos_personales;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +25,7 @@ import cat.urv.deim.asm.p2.planificate.entidades.Usuaria;
 public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener {
 
     TextView nombre_u,email_u,telefono_u;
-    Button logout;
+   // Button logout;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
 
@@ -40,7 +37,7 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
         nombre_u=findViewById(R.id.text_nombre);
         email_u=findViewById(R.id.text_email);
         telefono_u=findViewById(R.id.text_telefono);
-        logout=findViewById(R.id.log_out);
+      //  logout=findViewById(R.id.log_out);
         request= Volley.newRequestQueue(getApplicationContext());
 
 
@@ -74,7 +71,7 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
 
 
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        /*logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor objEditor = preferences.edit();
@@ -91,7 +88,7 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
                 startActivity(i);
                 finish();
             }
-        });
+        });*/
 
     }
 
