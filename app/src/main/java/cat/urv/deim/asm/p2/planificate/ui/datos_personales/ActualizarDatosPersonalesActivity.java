@@ -46,7 +46,6 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
         telefono=findViewById(R.id.telefono);
 
         request= Volley.newRequestQueue(getApplicationContext());
-/*
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
@@ -59,7 +58,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
 
             cargarDatosGoogle();
 
-        }*/
+        }
     }
 
     private void cargarDatosGoogle() {
@@ -91,7 +90,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                 nombre.setText(miUsuaria.getNombre());
                 email.setText(miUsuaria.getEmail());
                 email.setFocusable(false);  //para NO modificar
-                nombre.setFocusable(false);  //para NO modificar
+              //  nombre.setFocusable(false);  //para NO modificar
                 telefono.setText(miUsuaria.getTelefono());
 
                 // nombre.setText(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName());
@@ -232,23 +231,14 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
 
             nombre.setFocusable(false);  //para NO modificar*/
             email.setFocusable(false);  //para NO modificar
-                if (telefono.length() == 9) {
+                if (telefono.length() == 9&& nombre.getText().toString() != null) {
 
-                    //String url="http://192.168.0.100/usuarias/actualizarUsuaria.php?";
 
                     stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
 
-                            if (response.trim().equalsIgnoreCase("actualiza")){
-                                // etiNombre.setText("");
-                                //  txtDocumento.setText("");
-                                //   etiProfesion.setText("");
-                                Toast.makeText(getApplicationContext(),"Se ha Actualizado con exito",Toast.LENGTH_SHORT).show();
-                            }else{
-                                Toast.makeText(getApplicationContext(),"No se ha Actualizado ",Toast.LENGTH_SHORT).show();
-                            }
-
+                            Toast.makeText(getApplicationContext(), "Se ha Actualizado con exito", Toast.LENGTH_SHORT).show();
                         }
                     }, new Response.ErrorListener() {
                         @Override
