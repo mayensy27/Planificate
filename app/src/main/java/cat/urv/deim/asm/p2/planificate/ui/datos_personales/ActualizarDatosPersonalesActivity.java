@@ -139,8 +139,10 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                 }
 
                 nombre.setText(miUsuaria.getNombre());
-                telefono.setText(miUsuaria.getTelefono());
                 email.setText(miUsuaria.getEmail());
+                email.setFocusable(false);  //para NO modificar
+                telefono.setText(miUsuaria.getTelefono());
+
 
             }
         }, new Response.ErrorListener() {
