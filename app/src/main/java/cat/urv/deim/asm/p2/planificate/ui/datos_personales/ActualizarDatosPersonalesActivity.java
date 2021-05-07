@@ -65,7 +65,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
+        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -116,7 +116,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
+        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -165,7 +165,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
 
-        String url="http://192.168.0.100/usuarias/actualizarUsuaria.php";
+        String url="https://pillplan.000webhostapp.com/actualizarUsuaria.php";
         //CONTROL DE ACTUALIZACION/VALIDACION DE DATOS PERSONALES
         if (preferences.getBoolean("signup_google", true)) {
             if (!preferences.getString("nombre_usuaria", "").isEmpty() && !preferences.getString("email_usuaria", "").isEmpty()) {

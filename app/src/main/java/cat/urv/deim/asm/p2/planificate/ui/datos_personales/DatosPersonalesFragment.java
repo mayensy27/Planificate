@@ -85,7 +85,7 @@ public class DatosPersonalesFragment extends Fragment {
                         public void onSuccess(Void aVoid) {*/
             SharedPreferences preferences = requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-            String url="http://192.168.0.100/usuarias/eliminarUsuaria.php?email="+preferences.getString("email_usuaria", "");
+            String url="https://pillplan.000webhostapp.com/eliminarUsuaria.php?email="+preferences.getString("email_usuaria", "");
            // Log.d("URL: ",""+url);
             stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                 @Override

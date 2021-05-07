@@ -167,14 +167,14 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
     private void cargarDatos() {
         consulta=false;
 
-        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+email.getText().toString();
+        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+email.getText().toString();
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
     }
 
     private void cargarDatosGoolgle() {
         consulta=false;
-        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail();
+        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail();
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
     }
@@ -182,7 +182,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
     private void cargarWebService() {
         duplicado=false;
-        String url="http://192.168.0.100/usuarias/conexion.php?email="+email.getText().toString()+
+        String url="https://pillplan.000webhostapp.com/conexion.php?email="+email.getText().toString()+
                 "&nombre="+nombre.getText().toString()+
                 "&telefono="+telefono.getText().toString();
 
@@ -195,7 +195,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
     private void cargarWebServiceGoogle() {
         duplicado=false;
-        String url="http://192.168.0.100/usuarias/conexion.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail()+
+        String url="https://pillplan.000webhostapp.com/conexion.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail()+
                 "&nombre="+firebaseAuth.getCurrentUser().getDisplayName()+
                 "&telefono="+firebaseAuth.getCurrentUser().getPhoneNumber();
 
