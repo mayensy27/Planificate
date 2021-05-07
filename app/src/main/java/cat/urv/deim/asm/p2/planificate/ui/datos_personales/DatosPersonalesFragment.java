@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -22,9 +22,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import cat.urv.deim.asm.p2.planificate.R;
 import cat.urv.deim.asm.p2.planificate.SplashActivity;
@@ -86,37 +83,36 @@ public class DatosPersonalesFragment extends Fragment {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {*/
-            String url = "http://192.168.0.100/usuarias/eliminarUsuaria.php";
-
             SharedPreferences preferences = requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
-            SharedPreferences.Editor objEditor = preferences.edit();
 
-            stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            String url="http://192.168.0.100/usuarias/eliminarUsuaria.php?email="+preferences.getString("email_usuaria", "");
+           // Log.d("URL: ",""+url);
+            stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Toast.makeText(getContext(), "Se han borrado los datos", Toast.LENGTH_SHORT).show();
+                    Log.d("URL: ",""+url);
+                    Log.d("RESPUESTA: ",""+response);
+                 //   if (response.equals("elimina")){
+
+                        Toast.makeText(getContext(),"Se ha Eliminado con exito",Toast.LENGTH_SHORT).show();
+
+              /*      }
+                    else{
+                        Toast.makeText(getContext(),"Estoy aqui",Toast.LENGTH_SHORT).show();
+
+                    }
+*/
 
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(getContext(), "No se ha podido conectar", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(getContext(),"No se ha podido conectar",Toast.LENGTH_SHORT).show();
                 }
-            }) {
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    String email2 = preferences.getString("email_usuaria", "");
-
-                    Map<String, String> parametros = new HashMap<>();
-                    parametros.put("email", email2);
-
-                    return parametros;
-                }
-            };
-
+            });
             request.add(stringRequest);
 
+            SharedPreferences.Editor objEditor = preferences.edit();
 
             objEditor.putBoolean("primeravez", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
