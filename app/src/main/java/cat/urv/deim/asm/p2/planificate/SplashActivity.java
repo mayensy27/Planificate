@@ -35,12 +35,12 @@ public class SplashActivity extends AppCompatActivity {
 
             new Handler().postDelayed(() -> {
 
-                if(preferences.getBoolean("login", true)){
+                if(!preferences.getBoolean("registrada", true)){
                     Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }else{
-                    Intent intent = new Intent(SplashActivity.this, LoginUsuariaActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, InformacionActivity.class);
                     startActivity(intent);
                     finish();
                 }
