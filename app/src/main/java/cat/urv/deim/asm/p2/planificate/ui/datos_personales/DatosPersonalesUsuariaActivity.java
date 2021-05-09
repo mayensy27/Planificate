@@ -94,14 +94,14 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
 
     private void cargarWebService() {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
+        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
 
     }
     private void cargarWebServiceGoogle() {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        String url="http://192.168.0.100/usuarias/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
+        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
 
