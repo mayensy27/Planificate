@@ -23,11 +23,11 @@ public class Popup2 extends AppCompatActivity {
         int alto=medidasVentana.heightPixels;
 
         getWindow().setLayout((int) (ancho*0.85),(int)(alto*0.5));
-        MainActivity.contador_blsiter28=28;
+       // MainActivity.contador_blsiter28=28;
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
-        objEditor.putInt("contador_blister28", 28); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-        objEditor.apply();
+        /*objEditor.putInt("contador_blister28", 28); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+        objEditor.apply();*/
         objEditor.putBoolean("final", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
 

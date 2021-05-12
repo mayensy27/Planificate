@@ -25,13 +25,13 @@
         app:layout_constraintVertical_bias="0.068" />
 
     <TextView
-        android:id="@+id/nombre"
+        android:id="@+id/edad"
         android:layout_width="149dp"
         android:layout_height="36dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        android:text="@string/tu_nombre_es"
+        android:text="@string/tu_edad_es"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/enunciadoDatos" />
 
     <TextView
-        android:id="@+id/text_nombre"
+        android:id="@+id/text_edad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        app:layout_constraintTop_toBottomOf="@+id/edad" />
 
     <TextView
         android:id="@+id/email"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_nombre" />
+        app:layout_constraintTop_toBottomOf="@+id/text_edad" />
 
     <TextView
         android:id="@+id/text_email"
@@ -80,34 +80,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
-    <TextView
-        android:id="@+id/telefono"
-        android:layout_width="149dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="36dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:text="@string/tu_numero_es"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_email" />
-
-    <TextView
-        android:id="@+id/text_telefono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="2dp"
-        android:textColorHint="@color/colorPrimary"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefono" />
 
   <!--  <Button
         android:id="@+id/log_out"

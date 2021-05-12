@@ -26,7 +26,6 @@
         <activity android:name=".ui.informate.EfectesSecundarisActivity" />
         <activity android:name=".ui.informate.EfectosSecundariosActivity" />
 
-        <activity android:name=".ui.datos_personales.LoginUsuariaActivity" />
         <activity android:name=".ui.informate.InfCastActivity" />
         <activity android:name=".ui.informate.InfCatActivity" />
         <activity android:name=".ui.informate.InfInglesActivity" />
@@ -99,11 +98,8 @@
         <activity android:name=".ui.blister28.BlisterActivity2" />
         <activity android:name=".ui.blister28.BlisterActivity1" />
         <activity android:name=".ui.blister28.BlisterActivity" />
-        <activity android:name=".ui.informate.VideoInglesActivity_2" />
         <activity android:name=".ui.informate.VideoInglesActivity_1" />
-        <activity android:name=".ui.informate.VideoCatActivity_2" />
         <activity android:name=".ui.informate.VideoCatActivity_1" />
-        <activity android:name=".ui.informate.VideoCastActivity_2" />
         <activity android:name=".ui.informate.VideoCastActivity_1" />
         <activity android:name=".EstadoDeAnimoActivity" />
         <activity

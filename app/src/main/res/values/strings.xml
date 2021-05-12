@@ -2,7 +2,7 @@
     <string name="app_name">Pill Plan</string>
     <string name="bienvenida">Bienvenida a</string>
     <string name="Explicacion">Hola, ¿Qué tal?
-    Hemos creado esta aplicación para ti y, para ayudarte e informarte sobre la toma de las pildoras (ACOs).
+    Hemos creado esta aplicación para ti, y para ayudarte e informarte sobre la toma de las píldoras (ACOs).
     Para ello, te realizaremos algunas preguntas para poder conocerte e indicarte correctamente… </string>
     <string name="ADELANTE">¡ADELANTE!</string>
     <string name="SIGUIENTE">SIGUIENTE</string>
@@ -10,11 +10,11 @@
     <string name="eliminar_alarma">ELIMINAR ALARMA</string>
 
 
-    <string name="primera_pregunta">¿Has elegido tomar los ACOs por Decisión Propia o Recomendación Sanitaria? </string>
+    <string name="primera_pregunta">Has elegido tomar los ACOs por: </string>
     <!--    <string name="segunda_pregunta">¿Qué tipo de Anticonceptivos Orales Combinados utilizas? </string>-->
-    <string name="tercera_pregunta">¿Que formato de Anticonceptivos Orales Combinados tomas? </string>
+    <string name="tercera_pregunta">¿Qué formato de Anticonceptivos Orales Combinados tomas? </string>
     <string name="decision_propia">Decisión Propia</string>
-    <string name="recomendacion_sanitaria">Recomendación Sanitaria</string>
+    <string name="recomendacion_sanitaria">Recomendación Clínica</string>
     <string name="iconocentral">iconoCentral</string>
 
 
@@ -83,12 +83,12 @@
     <string name="imagen_pildora_28">imagen_pildora_28</string>
     <string name="establece_tu_alarma_diaria">Establece tu alarma diaria</string>
     <string name="tomate_la_p_ldora">¡ Tómate la píldora !</string>
-    <string name="acabado_blister">¡ Ole, Has acabado tu Blíster! Ahora te cargaremos uno nuevo.</string>
+    <string name="acabado_blister">¡ Genial, has acabado tu Blíster! Ahora te cargaremos uno nuevo.</string>
     <string name="imagen_popup">imagen_popup</string>
     <string name="si">Sí</string>
     <string name="no">No</string>
     <string name="imagen_afirmacion">imagen_afirmacion</string>
-    <string name="indicaEstado">Clica para indicar tu estado de ánimo.</string>
+    <string name="indicaEstado">Pulsa, para indicar tu estado de ánimo.</string>
     <string name="provisional">PROVISIONAL</string>
     <string name="selecciona_en_que_estado_de_animo_te_encuentras">
         Selecciona en que estado de ánimo te encuentras: </string>
@@ -129,24 +129,23 @@
     <string name="imagen21_pildora_48">imagen21_pildora_48</string>
     <string name="imagen21_pildora_49">imagen21_pildora_49</string>
     <string name="imagen21_pildora_50">imagen21_pildora_50</string>
-    <string name="registrate">REGISTRATE</string>
+    <string name="registrate">REGÍSTRATE</string>
     <string name="login">INICIA SESIÓN</string>
-    <string name="nombre">Nombre</string>
+    <string name="edad">Edad</string>
     <string name="email">Email</string>
     <string name="movil">Móvil</string>
     <string name="regristrarme">Regristrarme</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="tus_datos_personales_registrados_son_los_siguientes_si_deseas_puedes_modificarlos">
         Tus datos personales registrados son los siguientes. Si deseas puedes modificarlos.</string>
-    <string name="tu_nombre_es">Tu nombre es:</string>
+    <string name="tu_edad_es">Tu edad es:</string>
     <string name="tu_email_es">Tu email es:</string>
-    <string name="tu_numero_es">Tu número es:</string>
     <string name="ver_mis_datos_actuales">Ver mis datos actuales</string>
     <string name="actualizar_mis_datos">Actualizar mis datos</string>
     <string name="abrir_calendario">Abrir calendario</string>
-    <string name="textoCalendario">A continuación, te enseñaremos un registro de los dias que has tomado los ACOs.
-        Ademas, podras revisar tus estados de ánimo en cualquiera de estos dias."</string>
-    <string name="te_has_tomado_la_pildora">Te has tomado la píldora del dia:</string>
+    <string name="textoCalendario">A continuación, te enseñaremos un registro de los días que has tomado los ACOs.
+        Ademas, podras revisar tus estados de ánimo en cualquiera de estos días."</string>
+    <string name="te_has_tomado_la_pildora">Te has tomado la píldora del día:</string>
     <string name="tu_estado_de_animo_ha_sido">Tu estado de ánimo ha sido:</string>
     <string name="emoticonomal">emoticonoMal</string>
     <string name="emoticonoterrible">emoticonoTerrible</string>
@@ -179,7 +178,7 @@
     <string name="borrar_mis_datos">Borrar mis datos</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="o">o</string>
-    <string name="correo">Pulsa el botón de enviar para que se te envie el registro de las tomas a tu correo electrónico.¡ Piensa que se reiniciará el registro y no podrás visualizarlo en la sección de Mi Calendario!</string>
+    <string name="correo">Pulsa el botón de "enviar" para que se te envie el registro de las tomas a tu correo electrónico.¡ Piensa que se reiniciará el registro y no podrás visualizarlo en la sección de Mi Calendario!</string>
 
 
 </resources>

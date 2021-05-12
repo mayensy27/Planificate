@@ -31,7 +31,7 @@ import cat.urv.deim.asm.p2.planificate.R;
 import cat.urv.deim.asm.p2.planificate.entidades.Usuaria;
 
 public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
-    EditText nombre, email,telefono;
+    EditText edad, email;
 
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
@@ -41,9 +41,8 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actualizar_datos_personales);
-        nombre=findViewById(R.id.nombre);
+        edad=findViewById(R.id.edad);
         email=findViewById(R.id.email);
-        telefono=findViewById(R.id.telefono);
 
         request= Volley.newRequestQueue(getApplicationContext());
 
@@ -65,7 +64,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
+        String url="https://pillplanusuarias.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -78,8 +77,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                 try {
                     assert json != null;
                     jsonObject=json.getJSONObject(0);
-                    miUsuaria.setNombre(jsonObject.optString("nombre"));
-                    miUsuaria.setTelefono(jsonObject.optString("telefono"));
+                    miUsuaria.setEdad(jsonObject.optInt("edad"));
                     miUsuaria.setEmail(jsonObject.optString("email"));
 
                 }
@@ -87,11 +85,10 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                     e.printStackTrace();
                 }
 
-                nombre.setText(miUsuaria.getNombre());
+                edad.setText(miUsuaria.getEdad());
                 email.setText(miUsuaria.getEmail());
                 email.setFocusable(false);  //para NO modificar
               //  nombre.setFocusable(false);  //para NO modificar
-                telefono.setText(miUsuaria.getTelefono());
 
                 // nombre.setText(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName());
                 //  email.setText(firebaseAuth.getCurrentUser().getEmail());
@@ -116,7 +113,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
+        String url="https://pillplanusuarias.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -129,8 +126,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                 try {
                     assert json != null;
                     jsonObject=json.getJSONObject(0);
-                    miUsuaria.setNombre(jsonObject.optString("nombre"));
-                    miUsuaria.setTelefono(jsonObject.optString("telefono"));
+                    miUsuaria.setEdad(jsonObject.optInt("edad"));
                     miUsuaria.setEmail(jsonObject.optString("email"));
 
                 }
@@ -138,10 +134,9 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                     e.printStackTrace();
                 }
 
-                nombre.setText(miUsuaria.getNombre());
+                edad.setText(miUsuaria.getEdad());
                 email.setText(miUsuaria.getEmail());
                 email.setFocusable(false);  //para NO modificar
-                telefono.setText(miUsuaria.getTelefono());
 
 
             }
@@ -165,37 +160,33 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
 
-        String url="https://pillplan.000webhostapp.com/actualizarUsuaria.php";
+        String url="https://pillplanusuarias.000webhostapp.com/actualizarUsuaria.php";
         //CONTROL DE ACTUALIZACION/VALIDACION DE DATOS PERSONALES
         if (preferences.getBoolean("signup_google", true)) {
-            if (!preferences.getString("nombre_usuaria", "").isEmpty() && !preferences.getString("email_usuaria", "").isEmpty()) {
-                if (telefono.length() == 9) {
-
+            if (!preferences.getString("edad_usuaria", "").isEmpty() && !preferences.getString("email_usuaria", "").isEmpty()) {
 
                     stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Toast.makeText(getApplicationContext(), "Se ha Actualizado con exito", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Se ha actualizado con exito.", Toast.LENGTH_SHORT).show();
 
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(getApplicationContext(), "No se ha podido conectar", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "No se ha podido conectar.", Toast.LENGTH_SHORT).show();
 
                         }
                     }){
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError {
                             String email2=email.getText().toString();
-                            String nombre2=nombre.getText().toString();
-                            String telefono2=telefono.getText().toString();
+                            String edad2=edad.getText().toString();
 
 
                             Map<String,String> parametros=new HashMap<>();
                             parametros.put("email",email2);
-                            parametros.put("nombre",nombre2);
-                            parametros.put("telefono",telefono2);
+                            parametros.put("edad",edad2);
 
                             return parametros;
                         }
@@ -204,23 +195,20 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                     request.add(stringRequest);
 
 
-                    objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                    objEditor.putString("edad_usuaria", edad.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                     objEditor.apply();
 
                     objEditor.putString("email_usuaria", email.getText().toString());
                     objEditor.apply();
 
-                    objEditor.putString("telefono_usuaria", telefono.getText().toString());
-                    objEditor.apply();
+
                     Intent i = new Intent(this, MainActivity.class);
                     startActivity(i);
                     finish();
-                } else {
-                    Toast.makeText(this, "¡Revisa tus datos, son erroneos!", Toast.LENGTH_SHORT).show();
-                }
+
             }
         } else {
-            if (!preferences.getString("nombre_usuaria", "").isEmpty() && !preferences.getString("email_usuaria", "").isEmpty()) {
+            if (!preferences.getString("edad_usuaria", "").isEmpty() && !preferences.getString("email_usuaria", "").isEmpty()) {
 
           /*  FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
             nombre.setText(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName());
@@ -233,32 +221,30 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
 
             nombre.setFocusable(false);  //para NO modificar*/
             email.setFocusable(false);  //para NO modificar
-                if (telefono.length() == 9&& nombre.getText().toString() != null) {
+                if (edad.getText().toString() != null) {
 
 
                     stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
 
-                            Toast.makeText(getApplicationContext(), "Se ha Actualizado con exito", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Se ha actualizado con exito.", Toast.LENGTH_SHORT).show();
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(getApplicationContext(),"No se ha podido conectar",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"No se ha podido conectar.",Toast.LENGTH_SHORT).show();
                         }
                     }){
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError {
                             String email2=email.getText().toString();
-                            String nombre2=nombre.getText().toString();
-                            String telefono2=telefono.getText().toString();
+                            String edad2=edad.getText().toString();
 
 
                             Map<String,String> parametros=new HashMap<>();
                             parametros.put("email",email2);
-                            parametros.put("nombre",nombre2);
-                            parametros.put("telefono",telefono2);
+                            parametros.put("edad",edad2);
 
                             return parametros;
                         }
@@ -266,16 +252,15 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
 
                     request.add(stringRequest);
 
-                    objEditor.putString("nombre_usuaria", nombre.getText().toString());
+                    objEditor.putString("edad_usuaria", edad.getText().toString());
                     objEditor.apply();
-                    objEditor.putString("telefono_usuaria", telefono.getText().toString());
-                    objEditor.apply();
+
                     Intent i = new Intent(this, MainActivity.class);
                     startActivity(i);
                     finish();
 
                 } else {
-                    Toast.makeText(this, "¡Tu móvil es incorrecto!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "¡Hay datos en blanco!", Toast.LENGTH_SHORT).show();
                 }
             }
         }

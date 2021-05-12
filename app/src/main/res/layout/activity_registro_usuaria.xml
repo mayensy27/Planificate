@@ -24,13 +24,13 @@
         app:layout_constraintVertical_bias="0.029" />
 
     <EditText
-        android:id="@+id/nombre"
+        android:id="@+id/edad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:autofillHints="@string/nombre"
+        android:autofillHints="@string/edad"
         android:ems="16"
-        android:hint="@string/nombre"
+        android:hint="@string/edad"
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -53,9 +53,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        app:layout_constraintTop_toBottomOf="@+id/edad" />
 
-    <EditText
+   <!-- <EditText
         android:id="@+id/telefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,6 +70,7 @@
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
+-->
 
     <Button
         android:id="@+id/button"
@@ -82,9 +83,10 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefono"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintVertical_bias="0.121" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/signInButton"

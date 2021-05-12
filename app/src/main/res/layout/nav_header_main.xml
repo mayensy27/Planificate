@@ -51,7 +51,7 @@
 
 
         <TextView
-            android:id="@+id/nombre_usuaria"
+            android:id="@+id/hola"
             android:layout_width="165dp"
             android:layout_height="67dp"
             android:text="@string/nombre_persona"

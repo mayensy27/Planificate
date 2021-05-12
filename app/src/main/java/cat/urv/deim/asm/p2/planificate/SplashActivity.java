@@ -8,8 +8,6 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import cat.urv.deim.asm.p2.planificate.ui.datos_personales.LoginUsuariaActivity;
-
 public class SplashActivity extends AppCompatActivity {
     Boolean primeraVez;
     @Override

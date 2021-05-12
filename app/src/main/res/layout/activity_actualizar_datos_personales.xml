@@ -25,13 +25,13 @@
         app:layout_constraintVertical_bias="0.029" />
 
     <EditText
-        android:id="@+id/nombre"
+        android:id="@+id/edad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:autofillHints="@string/nombre"
+        android:autofillHints="@string/edad"
         android:ems="16"
-        android:hint="@string/nombre"
+        android:hint="@string/edad"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
         android:inputType="textPersonName"
@@ -54,23 +54,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        app:layout_constraintTop_toBottomOf="@+id/edad" />
 
-    <EditText
-        android:id="@+id/telefono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:autofillHints="@string/movil"
-        android:ems="16"
-        android:textColor="@color/colorPrimary"
-        android:hint="@string/movil"
-        android:textColorHint="@color/colorPrimary"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
 
 
     <Button
@@ -87,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefono"
+        app:layout_constraintTop_toBottomOf="@+id/email"
         app:layout_constraintVertical_bias="0.246" />
 
 

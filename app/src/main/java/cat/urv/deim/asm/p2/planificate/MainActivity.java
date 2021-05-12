@@ -19,7 +19,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
@@ -35,7 +34,7 @@ import static cat.urv.deim.asm.p2.planificate.NotificationHelper.NOTIFICATION_ID
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    public static  int contador_blsiter28=0;
+    //public static  int contador_blsiter28=0;
     // public static int contador_blsiter21=0;
 
 
@@ -54,15 +53,11 @@ public class MainActivity extends AppCompatActivity {
 //ASIGNACION DEL NOMBRE DE LA USUARIA AL APARTADO DEL MENU
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         View hView=navigationView.getHeaderView(0);
-        TextView nombre=hView.findViewById(R.id.nombre_usuaria);
+        TextView hola=hView.findViewById(R.id.hola);
 
-        if(preferences.getBoolean("signup_google",true)){
-            nombre.setText(String.format("¡ Hola \n%s!",preferences.getString("nombre_usuaria","")));
-        }else{
-            //el %s representa el string que viene acontinuacion (nombre de la usuaria)
-            FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-            nombre.setText(String.format("¡ Hola %s !", preferences.getString("nombre_usuaria","")));
-        }
+
+            hola.setText("¡ Hola, bienvenida!");
+
 
 //Se quita la tinta iconos; Permite visualizar los iconos del menu con sus respectivos colores (si no se pone, estos salen en negro)
         navigationView.setItemIconTintList(null);
@@ -115,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                         SharedPreferences tipos_pildoras_comprimidos = getSharedPreferences("tipos_pildoras_comprimidos", Context.MODE_PRIVATE);
                         String texto= tipos_pildoras_comprimidos.getString("tipo_comprimidos", "zz"); // por defecto es true
 
-                        if (texto.equals("Blíster 28.")||texto.equals("Blíster 21+7.")||texto.equals("Blíster 24+4.")){
+                        if (texto.equals("Blíster 28.")){ //||texto.equals("Blíster 21+7.")||texto.equals("Blíster 24+4.")
                             fragment = new BlisterFragment();
                         }
                         else {

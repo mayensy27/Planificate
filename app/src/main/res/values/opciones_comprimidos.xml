@@ -3,8 +3,8 @@
 
         <string-array name="tipos_comprimidos">
             <item>Blíster 21.</item>
-            <item>Blíster 21+7.</item>
-            <item>Blíster 24+4.</item>
+        <!--    <item>Blíster 21+7.</item>
+            <item>Blíster 24+4.</item>-->
             <item>Blíster 28.</item>
         </string-array>
 

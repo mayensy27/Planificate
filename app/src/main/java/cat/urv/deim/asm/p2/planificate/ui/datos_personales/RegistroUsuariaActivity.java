@@ -40,7 +40,7 @@ import cat.urv.deim.asm.p2.planificate.entidades.Usuaria;
 
 public class RegistroUsuariaActivity extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener  {
 
-    EditText nombre, email,telefono;
+    EditText edad, email;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
 
@@ -74,9 +74,8 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
 
         //INICIALIZACION VARIABLES
-        nombre = findViewById(R.id.nombre);
+        edad = findViewById(R.id.edad);
         email = findViewById(R.id.email);
-        telefono = findViewById(R.id.telefono);
 
         request= Volley.newRequestQueue(getApplicationContext());
 
@@ -131,9 +130,8 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
     public void registrar(View view) {
         //VALIDACION DE DATOS EN REGISTRO
-        if (!nombre.getText().toString().isEmpty() && !email.getText().toString().isEmpty() && !telefono.getText()
-                .toString().isEmpty()) {
-            if(telefono.length()==9) {
+        if (!edad.getText().toString().isEmpty() && !email.getText().toString().isEmpty()) {
+
                 boton="manual";
                 cargarDatos();
               /*  SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
@@ -155,10 +153,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);*/
 
-            }
-            else {
-                Toast.makeText(this,"Tu movil es erroneo",Toast.LENGTH_SHORT).show();
-            }
+
         }else{
             Toast.makeText(this, "Introduce tus datos para posibles notificaciones", Toast.LENGTH_SHORT).show();
         }
@@ -167,14 +162,14 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
     private void cargarDatos() {
         consulta=false;
 
-        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+email.getText().toString();
+        String url="https://pillplanusuarias.000webhostapp.com/consultarUsuaria.php?email="+email.getText().toString();
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
     }
 
     private void cargarDatosGoolgle() {
         consulta=false;
-        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail();
+        String url="https://pillplanusuarias.000webhostapp.com/consultarUsuaria.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail();
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
     }
@@ -182,9 +177,8 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
     private void cargarWebService() {
         duplicado=false;
-        String url="https://pillplan.000webhostapp.com/conexion.php?email="+email.getText().toString()+
-                "&nombre="+nombre.getText().toString()+
-                "&telefono="+telefono.getText().toString();
+        String url="https://pillplanusuarias.000webhostapp.com/conexion.php?email="+email.getText().toString()+
+                "&edad="+edad.getText().toString();
 
         url=url.replace(" ","%20");
 
@@ -195,9 +189,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
     private void cargarWebServiceGoogle() {
         duplicado=false;
-        String url="https://pillplan.000webhostapp.com/conexion.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail()+
-                "&nombre="+firebaseAuth.getCurrentUser().getDisplayName()+
-                "&telefono="+firebaseAuth.getCurrentUser().getPhoneNumber();
+        String url="https://pillplanusuarias.000webhostapp.com/conexion.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail();
 
         url=url.replace(" ","%20");
 
@@ -225,8 +217,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
             try {
                 assert json != null;
                 jsonObject = json.getJSONObject(0);
-                miUsuaria.setNombre(jsonObject.optString("nombre"));
-                miUsuaria.setTelefono(jsonObject.optString("telefono"));
+                miUsuaria.setEdad(jsonObject.optInt("edad"));
                 miUsuaria.setEmail(jsonObject.optString("email"));
 
 
@@ -240,14 +231,12 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
                 if(boton.equals("manual")) {
 
-                    objEditor.putString("nombre_usuaria", nombre.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                    objEditor.putString("edad_usuaria", edad.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                     objEditor.apply();
 
                     objEditor.putString("email_usuaria", email.getText().toString());
                     objEditor.apply();
 
-                    objEditor.putString("telefono_usuaria", telefono.getText().toString());
-                    objEditor.apply();
 
                     objEditor.putBoolean("primeravez", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                     objEditor.apply();
@@ -258,8 +247,6 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
                 if(boton.equals("google")) {
 
-                    objEditor.putString("nombre_usuaria", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                    objEditor.apply();
 
                     objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail());
                     objEditor.apply();
@@ -283,8 +270,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
             } else {
                 Toast.makeText(this, "DUPLICADO", Toast.LENGTH_SHORT).show();
                 email.setText("");
-                nombre.setText("");
-                telefono.setText("");
+                edad.setText("");
                 Intent i = new Intent(this, RegistroUsuariaActivity.class);
                 startActivity(i);
                // finish();
@@ -293,8 +279,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
             if (!consulta && !duplicado) {
                 Toast.makeText(this, "Se ha registrado exitosamente", Toast.LENGTH_SHORT).show();
                 email.setText("");
-                nombre.setText("");
-                telefono.setText("");
+                edad.setText("");
 
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);

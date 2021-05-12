@@ -26,30 +26,31 @@
         android:layout_height="136dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/primerapregunta"
-        app:layout_constraintVertical_bias="0.276"
+        app:layout_constraintVertical_bias="0.156"
         tools:ignore="MissingConstraints">
 
         <RadioButton
             android:id="@+id/decision_propia"
             android:layout_width="281dp"
             android:layout_height="62dp"
-            android:textStyle="bold"
+            android:onClick="onclick"
             android:text="@string/decision_propia"
             android:textColor="@color/colorPrimary"
-            android:onClick="onclick"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/recomendacion_sanitaria"
             android:layout_width="283dp"
             android:layout_height="75dp"
+            android:onClick="onclick"
             android:text="@string/recomendacion_sanitaria"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
-            android:onClick="onclick"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

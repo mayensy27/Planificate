@@ -19,7 +19,6 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -30,8 +29,8 @@ public class DatosPersonalesFragment extends Fragment {
 
 //    private DatosPersonalesViewModel galleryViewModel;
     RequestQueue request;
-    JsonObjectRequest jsonObjectRequest;
-    StringRequest stringRequest;//SE MODIFICA
+   // JsonObjectRequest jsonObjectRequest;
+    StringRequest stringRequest;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -85,7 +84,7 @@ public class DatosPersonalesFragment extends Fragment {
                         public void onSuccess(Void aVoid) {*/
             SharedPreferences preferences = requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-            String url="https://pillplan.000webhostapp.com/eliminarUsuaria.php?email="+preferences.getString("email_usuaria", "");
+            String url="https://pillplanusuarias.000webhostapp.com/eliminarUsuaria.php?email="+preferences.getString("email_usuaria", "");
            // Log.d("URL: ",""+url);
             stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                 @Override
@@ -125,11 +124,9 @@ public class DatosPersonalesFragment extends Fragment {
                             objEditor.putBoolean("login",true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                             objEditor.apply();*/
 
-            objEditor.putString("nombre_usuaria", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.putString("edad_usuaria", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
             objEditor.putString("email_usuaria", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-            objEditor.putString("telefono_usuaria", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
 
             //INICIALIZACION DE LAS VARIABLES TOMAS/CALENDARIO

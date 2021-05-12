@@ -24,7 +24,7 @@ import cat.urv.deim.asm.p2.planificate.entidades.Usuaria;
 
 public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener {
 
-    TextView nombre_u,email_u,telefono_u;
+    TextView edad_u,email_u;
    // Button logout;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
@@ -34,9 +34,8 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_personales_usuaria);
 
-        nombre_u=findViewById(R.id.text_nombre);
+        edad_u=findViewById(R.id.text_edad);
         email_u=findViewById(R.id.text_email);
-        telefono_u=findViewById(R.id.text_telefono);
       //  logout=findViewById(R.id.log_out);
         request= Volley.newRequestQueue(getApplicationContext());
 
@@ -94,14 +93,14 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
 
     private void cargarWebService() {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
+        String url="https://pillplanusuarias.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
 
     }
     private void cargarWebServiceGoogle() {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        String url="https://pillplan.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
+        String url="https://pillplanusuarias.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);
 
@@ -124,16 +123,14 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
         try {
             assert json != null;
             jsonObject=json.getJSONObject(0);
-            miUsuaria.setNombre(jsonObject.optString("nombre"));
-            miUsuaria.setTelefono(jsonObject.optString("telefono"));
+            miUsuaria.setEdad(jsonObject.optInt("edad"));
             miUsuaria.setEmail(jsonObject.optString("email"));
 
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-            nombre_u.setText(miUsuaria.getNombre());
-            telefono_u.setText(miUsuaria.getTelefono());
+            edad_u.setText(miUsuaria.getEdad());
             email_u.setText(miUsuaria.getEmail());
     }
 }
