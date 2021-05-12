@@ -77,7 +77,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                 try {
                     assert json != null;
                     jsonObject=json.getJSONObject(0);
-                    miUsuaria.setEdad(jsonObject.optInt("edad"));
+                    miUsuaria.setEdad(jsonObject.optString("edad"));
                     miUsuaria.setEmail(jsonObject.optString("email"));
 
                 }
@@ -126,7 +126,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                 try {
                     assert json != null;
                     jsonObject=json.getJSONObject(0);
-                    miUsuaria.setEdad(jsonObject.optInt("edad"));
+                    miUsuaria.setEdad(jsonObject.optString("edad"));
                     miUsuaria.setEmail(jsonObject.optString("email"));
 
                 }
@@ -221,7 +221,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
 
             nombre.setFocusable(false);  //para NO modificar*/
             email.setFocusable(false);  //para NO modificar
-                if (edad.getText().toString() != null) {
+                if (!edad.getText().toString().equals("")) {
 
 
                     stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {

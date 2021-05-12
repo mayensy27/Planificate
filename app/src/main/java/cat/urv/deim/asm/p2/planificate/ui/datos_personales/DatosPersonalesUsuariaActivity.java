@@ -123,7 +123,7 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
         try {
             assert json != null;
             jsonObject=json.getJSONObject(0);
-            miUsuaria.setEdad(jsonObject.optInt("edad"));
+            miUsuaria.setEdad(jsonObject.optString("edad"));
             miUsuaria.setEmail(jsonObject.optString("email"));
 
 

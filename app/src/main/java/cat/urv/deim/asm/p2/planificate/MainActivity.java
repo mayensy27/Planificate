@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         TextView hola=hView.findViewById(R.id.hola);
 
 
-            hola.setText("¡ Hola, bienvenida!");
+            hola.setText("¡ Hola,\n"+" bienvenida!");
 
 
 //Se quita la tinta iconos; Permite visualizar los iconos del menu con sus respectivos colores (si no se pone, estos salen en negro)

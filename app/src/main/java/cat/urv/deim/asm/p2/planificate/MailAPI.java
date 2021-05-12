@@ -127,7 +127,7 @@ public class MailAPI extends Activity implements OnClickListener{
 
         session = Session.getDefaultInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("maygd27@gmail.com", "Delffin0327..");
+                return new PasswordAuthentication("pillplanusuarias@gmail.com", "Pillplan0327..");
             }
         });
 
