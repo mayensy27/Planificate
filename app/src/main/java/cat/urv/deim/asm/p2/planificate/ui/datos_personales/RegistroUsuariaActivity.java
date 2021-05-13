@@ -131,7 +131,7 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
     public void registrar(View view) {
         //VALIDACION DE DATOS EN REGISTRO
         if (!edad.getText().toString().isEmpty() && !email.getText().toString().isEmpty()) {
-
+            if(edad.length()==2) {
                 boton="manual";
                 cargarDatos();
               /*  SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
@@ -152,7 +152,10 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
                 cargarWebService();
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);*/
-
+            }
+            else {
+                Toast.makeText(this,"Tu edad es errónea",Toast.LENGTH_SHORT).show();
+            }
 
         }else{
             Toast.makeText(this, "Introduce tus datos para posibles notificaciones", Toast.LENGTH_SHORT).show();

@@ -164,7 +164,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
         //CONTROL DE ACTUALIZACION/VALIDACION DE DATOS PERSONALES
         if (preferences.getBoolean("signup_google", true)) {
             if (!preferences.getString("edad_usuaria", "").isEmpty() && !preferences.getString("email_usuaria", "").isEmpty()) {
-
+                if(edad.length()==2) {
                     stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
@@ -205,7 +205,9 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                     Intent i = new Intent(this, MainActivity.class);
                     startActivity(i);
                     finish();
-
+                } else {
+                    Toast.makeText(this,"Tu edad es errónea",Toast.LENGTH_SHORT).show();
+                }
             }
         } else {
             if (!preferences.getString("edad_usuaria", "").isEmpty() && !preferences.getString("email_usuaria", "").isEmpty()) {
