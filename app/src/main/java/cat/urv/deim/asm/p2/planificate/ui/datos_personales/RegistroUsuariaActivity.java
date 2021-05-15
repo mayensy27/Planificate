@@ -192,7 +192,8 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
 
     private void cargarWebServiceGoogle() {
         duplicado=false;
-        String url="https://pillplanusuarias.000webhostapp.com/conexion.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail();
+        String url="https://pillplanusuarias.000webhostapp.com/conexion.php?email="+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail()+
+                "&edad="+edad.getText().toString();
 
         url=url.replace(" ","%20");
 

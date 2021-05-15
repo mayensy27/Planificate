@@ -210,7 +210,7 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity  {
                 }
             }
         } else {
-            if (!preferences.getString("edad_usuaria", "").isEmpty() && !preferences.getString("email_usuaria", "").isEmpty()) {
+            if (!preferences.getString("email_usuaria", "").isEmpty()) {
 
           /*  FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
             nombre.setText(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName());

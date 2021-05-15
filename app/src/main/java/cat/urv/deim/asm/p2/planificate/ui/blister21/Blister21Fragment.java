@@ -91,7 +91,7 @@ public class Blister21Fragment extends Fragment {
 
         blister.setOnClickListener(v -> {
             if(!preferences.getBoolean("final", true)){
-                sendMail();
+               // sendMail();
 
                 //INICIALIZACION DE LAS VARIABLES
                 SharedPreferences.Editor objEditor = preferences.edit();
@@ -356,7 +356,7 @@ public class Blister21Fragment extends Fragment {
                     primeraVez = preferences.getBoolean("primeravez_blister1", true); // por defecto es true
 
                     if (primeraVez) {
-                        sendMail();
+                       // sendMail();
                         Intent x = new Intent(getContext(), Blister21Activity.class);
                         startActivity(x);
 
@@ -491,7 +491,7 @@ public class Blister21Fragment extends Fragment {
                 }
         );
     }
-
+/*
 //ENVIO DE MAIL
     private void sendMail(){
         SharedPreferences preferences = requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
@@ -502,8 +502,8 @@ public class Blister21Fragment extends Fragment {
         String mensaje="Resumen mensual de tues estados";
         String asunto= getString(R.string.app_name);
 
-         /*MailAPI mailAPI= new MailAPI(getContext(),mail,asunto, mensaje);
-            mailAPI.execute();*/
+         *//*MailAPI mailAPI= new MailAPI(getContext(),mail,asunto, mensaje);
+            mailAPI.execute();*//*
 
        //PARA ABRIR INTERFAZ Y DECIRDIR POR DONDE ENVIAR (WHATS, GMAIL,BLE)
        Intent intent=new Intent(Intent.ACTION_SEND);
@@ -515,5 +515,5 @@ public class Blister21Fragment extends Fragment {
        startActivity(Intent.createChooser(intent, "Choose an email client"));
 
 
-    }
+    }*/
 }
