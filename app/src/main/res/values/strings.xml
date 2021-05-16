@@ -178,7 +178,7 @@
     <string name="borrar_mis_datos">Borrar mis datos</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="o">o</string>
-    <string name="correo">Pulsa el botón de "enviar" para que se te envie el registro de las tomas a tu correo electrónico.¡ Piensa que se reiniciará el registro y no podrás visualizarlo en la sección de Mi Calendario!</string>
+    <string name="correo">Pulsa el botón de "enviar" para quese registren las tomas a tu correo electrónico.¡ Recuerda que se reiniciará el registro y no podrás visualizarlo en la sección de Mi Calendario!</string>
 
 
 </resources>
