@@ -74,12 +74,12 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="264dp"
-        android:layout_height="80dp"
+        android:layout_width="246dp"
+        android:layout_height="69dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/boton_redondo"
         android:onClick="registrar"
-        android:text="@string/regristrarme"
+        android:text="@string/registrarme"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,8 +94,10 @@
         android:layout_height="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.274">
 
     </com.google.android.gms.common.SignInButton>
 

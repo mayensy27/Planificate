@@ -29,7 +29,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="Texto_AlarmasACOS">Alarmas ACOS</string>
-    <string name="Texto_BlisterACOS">! Ei, toca el blíster para indicar toma de la píldora !</string>
+    <string name="Texto_BlisterACOS">! Ei, toca el blíster para indicar la toma de la píldora !</string>
     <string name="Texto_Calendario_EstadosACOS">Calendario de Estados/Tomas</string>
     <string name="Texto_Datos_PersolaesACOS">Datos Personales</string>
     <string name="Texto_Informacion_WEBACOS">Página gencat</string>
@@ -96,8 +96,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="espanol">Español</string>
-    <string name="catalan">Catalán</string>
-    <string name="ingles">Inglés</string>
+    <string name="catalan">Català</string>
+    <string name="ingles">English</string>
     <string name="escoge_en_qu_idioma_ver_la_informacion">Escoge en qué idioma ver la información:</string>
     <string name="ver_sigiuente_video_cast">Ver sigiuente video</string>
     <string name="ver_sigiuente_video_cat">Veure següent video</string>
@@ -134,7 +134,7 @@
     <string name="edad">Edad</string>
     <string name="email">Email</string>
     <string name="movil">Móvil</string>
-    <string name="regristrarme">Regristrarme</string>
+    <string name="registrarme">Registrarme</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="tus_datos_personales_registrados_son_los_siguientes_si_deseas_puedes_modificarlos">
         Tus datos personales registrados son los siguientes. Si deseas puedes modificarlos.</string>
@@ -144,7 +144,7 @@
     <string name="actualizar_mis_datos">Actualizar mis datos</string>
     <string name="abrir_calendario">Abrir calendario</string>
     <string name="textoCalendario">A continuación, te enseñaremos un registro de los días que has tomado los ACOs.
-        Ademas, podras revisar tus estados de ánimo en cualquiera de estos días."</string>
+        Además, podras revisar tus estados de ánimo en cualquiera de estos días."</string>
     <string name="te_has_tomado_la_pildora">Te has tomado la píldora del día:</string>
     <string name="tu_estado_de_animo_ha_sido">Tu estado de ánimo ha sido:</string>
     <string name="emoticonomal">emoticonoMal</string>
@@ -156,7 +156,7 @@
     <string name="mal">MAL</string>
     <string name="registro_de_las_tomas_de_la_pildora">Registro de las tomas de la píldora.</string>
     <string name="toca_el_registro_para_ver_como_te_has_sentido_ese_dia">
-        Toca el registro para ver como te has sentido ese dia.</string>
+        Toca el registro para ver cómo te has sentido ese día.</string>
     <string name="ojo_ya_has_tomado_la_pildora_de_este_dia">¡ OJO, ya has tomado la píldora de este día !</string>
     <string name="clica_para_salir">Clica para salir.</string>
     <string name="title_activity_alarm">AlarmActivity</string>

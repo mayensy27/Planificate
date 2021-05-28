@@ -131,7 +131,7 @@ public class MailAPI extends Activity implements OnClickListener{
             }
         });
 
-        pdialog = ProgressDialog.show(context, "", "Sending Mail...", true);
+        pdialog = ProgressDialog.show(context, "", "Enviando email...", true);
 
         RetreiveFeedTask task = new RetreiveFeedTask();
         task.execute();
@@ -186,7 +186,7 @@ public class MailAPI extends Activity implements OnClickListener{
           /*  reciep.setText("");
             msg.setText("");
             sub.setText("");*/
-            Toast.makeText(getApplicationContext(), "Message sent", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Mensaje enviado", Toast.LENGTH_LONG).show();
             Intent z = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(z);
             finish();

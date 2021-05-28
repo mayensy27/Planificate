@@ -27,7 +27,7 @@ public class Notificacion_3_dias extends AppCompatActivity {
 
     private void createNotificationChannel(){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            CharSequence name = "Noticacion";
+            CharSequence name = "Noticación";
             NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(notificationChannel);
@@ -36,10 +36,10 @@ public class Notificacion_3_dias extends AppCompatActivity {
 
     private void createNotification(){
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
-        builder.setSmallIcon(R.drawable.ic_confirmacion_toma_pildora);
+        builder.setSmallIcon(R.drawable.ic_notificacion);
         builder.setContentTitle("Pill Plan");
         builder.setContentText("!OJO! Te quedan 3 tomas.");
-        builder.setColor(Color.BLUE);
+        builder.setColor(Color.MAGENTA);
         builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
         builder.setLights(Color.MAGENTA, 1000, 1000);
         builder.setVibrate(new long[]{1000,1000,1000,1000,1000});
