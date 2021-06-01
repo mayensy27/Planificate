@@ -45,6 +45,7 @@ public class MailAPI extends Activity implements OnClickListener{
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         reciep.setText(preferences.getString("email_usuaria",""));
+        reciep.setFocusable(false);
 
         sub.setText("Pill Plan");
         sub.setFocusable(false);  //para NO modificar

@@ -50,7 +50,7 @@
     <string name="menu_informate">Infórmate</string>
     <string name="menu_datos">Datos Personales</string>
     <string name="menu_Calendario">Mi Calendario</string>
-    <string name="menu_alarmas">Mis Alarmas</string>
+    <string name="menu_alarmas">Mi Alarmas</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -143,8 +143,7 @@
     <string name="ver_mis_datos_actuales">Ver mis datos actuales</string>
     <string name="actualizar_mis_datos">Actualizar mis datos</string>
     <string name="abrir_calendario">Abrir calendario</string>
-    <string name="textoCalendario">A continuación, te enseñaremos un registro de los días que has tomado los ACOs.
-        Además, podras revisar tus estados de ánimo en cualquiera de estos días."</string>
+    <string name="textoCalendario">Aquí encontrarás  tus datos registrados: Toma de la pastilla, Estado de ánimo y si has tenido algún síntoma. "</string>
     <string name="te_has_tomado_la_pildora">Te has tomado la píldora del día:</string>
     <string name="tu_estado_de_animo_ha_sido">Tu estado de ánimo ha sido:</string>
     <string name="emoticonomal">emoticonoMal</string>
