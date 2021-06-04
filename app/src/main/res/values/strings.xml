@@ -178,6 +178,8 @@
     <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="o">o</string>
     <string name="correo">Pulsa el botón de "enviar" para quese registren las tomas a tu correo electrónico.¡ Recuerda que se reiniciará el registro y no podrás visualizarlo en la sección de Mi Calendario!</string>
+    <string name="filtrar_por_estado_de_nimo_o_molestia">Filtrar por estado de ánimo o molestia</string>
+    <string name="dias_olvido">Ver los días de olvido</string>
 
 
 </resources>

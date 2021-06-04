@@ -10,8 +10,8 @@
 
     <Button
         android:id="@+id/boton_calendario"
-        android:layout_width="190dp"
-        android:layout_height="68dp"
+        android:layout_width="221dp"
+        android:layout_height="59dp"
         android:background="@drawable/boton_redondo"
         android:text="@string/ver_registro"
         android:textAllCaps="true"
@@ -22,6 +22,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.084" />
+
+    <Button
+        android:id="@+id/boton_calendario3"
+        android:layout_width="221dp"
+        android:layout_height="75dp"
+        android:background="@drawable/boton_redondo"
+        android:text="@string/dias_olvido"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_calendario2"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <Button
+        android:id="@+id/boton_calendario2"
+        android:layout_width="221dp"
+        android:layout_height="126dp"
+        android:background="@drawable/boton_redondo"
+        android:text="@string/filtrar_por_estado_de_nimo_o_molestia"
+        android:textAllCaps="true"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_calendario"
+        app:layout_constraintVertical_bias="0.145" />
 
     <TextView
         android:id="@+id/textView"
@@ -35,8 +64,8 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
+        app:layout_constraintVertical_bias="0.08" />
 </androidx.constraintlayout.widget.ConstraintLayout>

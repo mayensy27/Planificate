@@ -22,19 +22,17 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
+        <activity android:name=".ui.calendario.VerEstadosActivity" />
         <activity android:name=".ui.informate.SideEffectsActivity" />
         <activity android:name=".ui.informate.EfectesSecundarisActivity" />
         <activity android:name=".ui.informate.EfectosSecundariosActivity" />
-
         <activity android:name=".ui.informate.InfCastActivity" />
         <activity android:name=".ui.informate.InfCatActivity" />
         <activity android:name=".ui.informate.InfInglesActivity" />
         <activity android:name=".ui.informate.DocumentacionInglesActivity" />
         <activity android:name=".ui.informate.DocumentacionCatActivity" />
         <activity android:name=".ui.informate.DocumentacionCastActivity" />
-<!--
-        <activity android:name=".ui.alarmas.AlarmActivity" />
--->
+        <!--         <activity android:name=".ui.alarmas.AlarmActivity" /> -->
         <activity
             android:name=".Popup3"
             android:theme="@style/Theme.Planificate.Popup" />
@@ -122,9 +120,9 @@
         <activity android:name=".MailAPI" />
         <activity android:name=".WebDecisionesCompartidas" />
         <activity android:name=".PrimeraPreguntaActivity" />
-        <activity android:name=".Notificacion_3_dias"
+        <activity
+            android:name=".Notificacion_3_dias"
             android:theme="@style/Theme.Planificate.Sms" />
-
         <activity
             android:name=".InformacionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <string-array name="desplegable_estados">
+            <item>Estado:Terrible.</item>
+            <item>Estado:Mal.</item>
+            <item>Estado:Bien.</item>
+            <item>Estado:Muy Bien.</item>
+            <item>Estado:Genial.</item>
+            <item>Molestia:Cambios de humor.</item>
+            <item>Molestia:Aparición de acné.</item>
+            <item>Molestia:Dolor mamario.</item>
+            <item>Molestia:Dolor menstrual.</item>
+            <item>Molestia:Cambio en el ritmo deposicional (diarrea,estreñimiento…).</item>
+            <item>Otros.</item>
+        </string-array>
+
+
+</resources>

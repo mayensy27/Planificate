@@ -22,14 +22,27 @@ public class CaledarioFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+
+
 
         Button abrir_calendario= view.findViewById(R.id.boton_calendario);
         abrir_calendario.setOnClickListener(v -> {
+
             Intent i= new Intent(getContext(),CalendarioActivity.class);
             startActivity(i);
+        });
 
+        Button ver_estados_molestias= view.findViewById(R.id.boton_calendario2);
+        ver_estados_molestias.setOnClickListener(v -> {
 
+            Intent i= new Intent(getContext(),VerEstadosActivity.class);
+            startActivity(i);
+        });
+
+        Button dias_olvidos= view.findViewById(R.id.boton_calendario3);
+        dias_olvidos.setOnClickListener(v -> {
+                       Intent i= new Intent(getContext(),CalendarioActivity.class);
+            startActivity(i);
         });
 
     }
