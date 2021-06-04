@@ -2,6 +2,7 @@
 <resources>
 
         <string-array name="desplegable_estados">
+            <item>-</item>
             <item>Estado:Terrible.</item>
             <item>Estado:Mal.</item>
             <item>Estado:Bien.</item>

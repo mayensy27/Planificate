@@ -34,23 +34,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_calendario2"
+        app:layout_constraintTop_toBottomOf="@+id/estados"
         app:layout_constraintVertical_bias="0.244" />
 
-    <Button
-        android:id="@+id/boton_calendario2"
-        android:layout_width="221dp"
-        android:layout_height="126dp"
-        android:background="@drawable/boton_redondo"
-        android:text="@string/filtrar_por_estado_de_nimo_o_molestia"
-        android:textAllCaps="true"
-        android:textSize="20sp"
+    <Spinner
+        android:id="@+id/estados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_calendario"
-        app:layout_constraintVertical_bias="0.145" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.573" />
 
     <TextView
         android:id="@+id/textView"

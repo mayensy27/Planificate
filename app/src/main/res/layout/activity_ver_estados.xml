@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.073" />
 
 
-    <Spinner
+   <!-- <Spinner
         android:id="@+id/estados"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -31,12 +31,12 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202" />
+        app:layout_constraintVertical_bias="0.131" />-->
 
     <ListView
         android:id="@+id/registro_estados"
-        android:layout_width="0dp"
-        android:layout_height="405dp"
+        android:layout_width="match_parent"
+        android:layout_height="476dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
