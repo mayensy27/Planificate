@@ -62,7 +62,7 @@ public class VerEstadosActivity extends AppCompatActivity {
 
        // lista_estados.add(preferences.getString("tomaBlister_1", "") + " Día de píldora: 1");
 
-        nivel = 0;
+        nivel = 1;
         if (preferences.getInt("nivel_animo_1", 0) == nivel) {
             lista_estados.add(preferences.getString("tomaBlister_1", "") + " Día de píldora: 1");
             // dias.add("Día " + preferences.getInt("dia_1", 0));
