@@ -143,7 +143,7 @@
     <string name="ver_mis_datos_actuales">Ver mis datos actuales</string>
     <string name="actualizar_mis_datos">Actualizar mis datos</string>
     <string name="ver_registro">Ver registro</string>
-    <string name="textoCalendario">Aquí encontrarás  tus datos registrados: Toma de la pastilla, Estado de ánimo y si has tenido algún síntoma. "</string>
+    <string name="textoCalendario">Aquí encontrarás  tus datos registrados: Toma de la pastilla, Estado de ánimo y si has tenido algún síntoma.</string>
     <string name="te_has_tomado_la_pildora">Te has tomado la píldora del día:</string>
     <string name="tu_estado_de_animo_ha_sido">Tu estado de ánimo ha sido:</string>
     <string name="emoticonomal">emoticonoMal</string>
@@ -180,6 +180,8 @@
     <string name="correo">Pulsa el botón de "enviar" para quese registren las tomas a tu correo electrónico.¡ Recuerda que se reiniciará el registro y no podrás visualizarlo en la sección de Mi Calendario!</string>
     <string name="filtrar_por_estado_de_nimo_o_molestia">Filtrar por estado de ánimo o molestia</string>
     <string name="dias_olvido">Ver los días de olvido</string>
+    <string name="filtrar">También, puedes filtrar por estados de ánimo o molestias:</string>
+    <string name="filtrado_eleccion">Registro de fechas asociadas con el  estado de ánimo o molestia que has elegido:</string>
 
 
 </resources>

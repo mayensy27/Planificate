@@ -1,7 +1,6 @@
 package cat.urv.deim.asm.p2.planificate.ui.calendario;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -27,9 +26,9 @@ public class VerEstadosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ver_estados);
 
         registro_dias = findViewById(R.id.registro_estados);
-       // spinner = findViewById(R.id.estados);
+        // spinner = findViewById(R.id.estados);
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor estados = preferences.edit();
+     //   SharedPreferences.Editor estados = preferences.edit();
 /*
         //Desplegable comprimidos
         ArrayAdapter<CharSequence> adapter_estados = ArrayAdapter.createFromResource(this,
@@ -235,7 +234,6 @@ public class VerEstadosActivity extends AppCompatActivity {
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
             }
-
         }
         if (preferences.getString("registro_estado", "").equals("Estado:Mal.")) {
             nivel = 2;
@@ -939,6 +937,7 @@ public class VerEstadosActivity extends AppCompatActivity {
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
             }
+
 
         }
 
@@ -1649,6 +1648,8 @@ public class VerEstadosActivity extends AppCompatActivity {
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
             }
+
+
         }
 
         if (preferences.getString("registro_estado", "").equals("Molestia:Cambio en el ritmo deposicional (diarrea,estreñimiento…).")) {
@@ -1718,7 +1719,7 @@ public class VerEstadosActivity extends AppCompatActivity {
 
             }
             //TOMA 11 DIA DE LA PILDORA
-            if (efecto.equals(efectos.getString("efecto_animo_2", ""))) {
+            if (efecto.equals(efectos.getString("efecto_animo_11", ""))) {
                 lista_estados.add(preferences.getString("tomaBlister11", "") + " Día de píldora: 11");
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
@@ -1825,6 +1826,8 @@ public class VerEstadosActivity extends AppCompatActivity {
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
             }
+
+
         }
 
         if (preferences.getString("registro_estado", "").equals("Otros.")) {
@@ -2002,111 +2005,463 @@ public class VerEstadosActivity extends AppCompatActivity {
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
             }
+
+
         }
 
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_estados);
+        registro_dias.setAdapter(adapter);
+
+       /* registro_dias.setOnItemClickListener((parent, view, position, id) -> {
+            // SharedPreferences efectos = getSharedPreferences("efectos", Context.MODE_PRIVATE);
+
+            if (position == 0) {
+
+                if(preferences.getInt("nivel_animo_1", 0)==1){
+                    niveles_animo(1,preferences.getString("tomaBlister_1", "") );
+                }
+                if(preferences.getInt("nivel_animo_1", 0)==2){
+                    niveles_animo(2,preferences.getString("tomaBlister_1", "") );
+
+                }
+            *//*    if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(1, "1");
 
 
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_estados);
-            registro_dias.setAdapter(adapter);
+                }
+                if( preferences.getInt("nivel_animo_1", 0)==2||preferences.getInt("nivel_animo_2", 0)==2||preferences.getInt("nivel_animo_3", 0)==2
+                        ||preferences.getInt("nivel_animo_4", 0)==2||preferences.getInt("nivel_animo_5", 0)==2||preferences.getInt("nivel_animo_6", 0)==2
+                        ||preferences.getInt("nivel_animo_7", 0)==2||preferences.getInt("nivel_animo_8", 0)==2||preferences.getInt("nivel_animo_9", 0)==2
+                        ||preferences.getInt("nivel_animo_10", 0)==2||preferences.getInt("nivel_animo_11", 0)==2||preferences.getInt("nivel_animo_12", 0)==2
+                        ||preferences.getInt("nivel_animo_13", 0)==2||preferences.getInt("nivel_animo_14", 0)==2||preferences.getInt("nivel_animo_15", 0)==2
+                        ||preferences.getInt("nivel_animo_16", 0)==2||preferences.getInt("nivel_animo_17", 0)==2||preferences.getInt("nivel_animo_18", 0)==2
+                        ||preferences.getInt("nivel_animo_19", 0)==2||preferences.getInt("nivel_animo_20", 0)==2||preferences.getInt("nivel_animo_21", 0)==2
+                        ||preferences.getInt("nivel_animo_22", 0)==2||preferences.getInt("nivel_animo_23", 0)==2||preferences.getInt("nivel_animo_24", 0)==2
+                        ||preferences.getInt("nivel_animo_25", 0)==2||preferences.getInt("nivel_animo_26", 0)==2||preferences.getInt("nivel_animo_27", 0)==2
+                        ||preferences.getInt("nivel_animo_28", 0)==2){
+                    niveles_animo(2, "1");
+                }
+                if( preferences.getInt("nivel_animo_1", 0)==3||preferences.getInt("nivel_animo_2", 0)==3||preferences.getInt("nivel_animo_3", 0)==3
+                        ||preferences.getInt("nivel_animo_4", 0)==3||preferences.getInt("nivel_animo_5", 0)==3||preferences.getInt("nivel_animo_6", 0)==3
+                        ||preferences.getInt("nivel_animo_7", 0)==3||preferences.getInt("nivel_animo_8", 0)==3||preferences.getInt("nivel_animo_9", 0)==3
+                        ||preferences.getInt("nivel_animo_10", 0)==3||preferences.getInt("nivel_animo_11", 0)==3||preferences.getInt("nivel_animo_12", 0)==3
+                        ||preferences.getInt("nivel_animo_13", 0)==3||preferences.getInt("nivel_animo_14", 0)==3||preferences.getInt("nivel_animo_15", 0)==3
+                        ||preferences.getInt("nivel_animo_16", 0)==3||preferences.getInt("nivel_animo_17", 0)==3||preferences.getInt("nivel_animo_18", 0)==3
+                        ||preferences.getInt("nivel_animo_19", 0)==3||preferences.getInt("nivel_animo_20", 0)==3||preferences.getInt("nivel_animo_21", 0)==3
+                        ||preferences.getInt("nivel_animo_22", 0)==3||preferences.getInt("nivel_animo_23", 0)==3||preferences.getInt("nivel_animo_24", 0)==3
+                        ||preferences.getInt("nivel_animo_25", 0)==3||preferences.getInt("nivel_animo_26", 0)==3||preferences.getInt("nivel_animo_27", 0)==3
+                        ||preferences.getInt("nivel_animo_28", 0)==3){
+                    niveles_animo(3, "1");
+                }*//*
+            }
+            if (position == 1) {
 
-            registro_dias.setOnItemClickListener((parent, view, position, id) -> {
-                // SharedPreferences efectos = getSharedPreferences("efectos", Context.MODE_PRIVATE);
+                if(preferences.getInt("nivel_animo_2", 0)==1){
+                    niveles_animo(2,preferences.getString("tomaBlister_2", "")) ;
+                }
+                if(preferences.getInt("nivel_animo_2", 0)==2) {
+                    niveles_animo(2,preferences.getString("tomaBlister_2", "") );
+                }
+                *//*if( preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                   niveles_animo(1, "2");
 
-                if (position == 0) {
-                    niveles_animo(preferences.getInt("nivel_animo_1", 0), "1");
-                }
-                if (position == 1) {
-                    niveles_animo(preferences.getInt("nivel_animo_2", 0), "2");
-                }
-                if (position == 2) {
-                    niveles_animo(preferences.getInt("nivel_animo_3", 0), "3");
-                }
-                if (position == 3) {
-                    niveles_animo(preferences.getInt("nivel_animo_4", 0), "4");
-                }
-                if (position == 4) {
-                    niveles_animo(preferences.getInt("nivel_animo_5", 0), "5");
-                }
-                if (position == 5) {
-                    niveles_animo(preferences.getInt("nivel_animo_6", 0), "6");
-                }
-                if (position == 6) {
-                    niveles_animo(preferences.getInt("nivel_animo_7", 0), "7");
-                }
-                if (position == 7) {
-                    niveles_animo(preferences.getInt("nivel_animo_8", 0), "8");
-                }
-                if (position == 8) {
-                    niveles_animo(preferences.getInt("nivel_animo_9", 0), "9");
-                }
-                if (position == 9) {
-                    niveles_animo(preferences.getInt("nivel_animo_10", 0), "10");
-                }
-                if (position == 10) {
-                    niveles_animo(preferences.getInt("nivel_animo_11", 0), "11");
-                }
-                if (position == 11) {
-                    niveles_animo(preferences.getInt("nivel_animo_12", 0), "12");
-                }
-                if (position == 12) {
-                    niveles_animo(preferences.getInt("nivel_animo_13", 0), "13");
-                }
-                if (position == 13) {
-                    niveles_animo(preferences.getInt("nivel_animo_14", 0), "14");
-                }
-                if (position == 14) {
-                    niveles_animo(preferences.getInt("nivel_animo_15", 0), "15");
-                }
-                if (position == 15) {
-                    niveles_animo(preferences.getInt("nivel_animo_16", 0), "16");
-                }
-                if (position == 16) {
-                    niveles_animo(preferences.getInt("nivel_animo_17", 0), "17");
-                }
-                if (position == 17) {
-                    niveles_animo(preferences.getInt("nivel_animo_18", 0), "18");
-                }
-                if (position == 18) {
-                    niveles_animo(preferences.getInt("nivel_animo_19", 0), "19");
-                }
-                if (position == 19) {
-                    niveles_animo(preferences.getInt("nivel_animo_20", 0), "20");
-                }
-                if (position == 20) {
-                    niveles_animo(preferences.getInt("nivel_animo_21", 0), "21");
-                }
 
-                if (position == 21) {
-                    niveles_animo(preferences.getInt("nivel_animo_22", 0), "22");
                 }
-                if (position == 22) {
-                    niveles_animo(preferences.getInt("nivel_animo_23", 0), "23");
+                if(preferences.getInt("nivel_animo_2", 0)==2||preferences.getInt("nivel_animo_3", 0)==2
+                        ||preferences.getInt("nivel_animo_4", 0)==2||preferences.getInt("nivel_animo_5", 0)==2||preferences.getInt("nivel_animo_6", 0)==2
+                        ||preferences.getInt("nivel_animo_7", 0)==2||preferences.getInt("nivel_animo_8", 0)==2||preferences.getInt("nivel_animo_9", 0)==2
+                        ||preferences.getInt("nivel_animo_10", 0)==2||preferences.getInt("nivel_animo_11", 0)==2||preferences.getInt("nivel_animo_12", 0)==2
+                        ||preferences.getInt("nivel_animo_13", 0)==2||preferences.getInt("nivel_animo_14", 0)==2||preferences.getInt("nivel_animo_15", 0)==2
+                        ||preferences.getInt("nivel_animo_16", 0)==2||preferences.getInt("nivel_animo_17", 0)==2||preferences.getInt("nivel_animo_18", 0)==2
+                        ||preferences.getInt("nivel_animo_19", 0)==2||preferences.getInt("nivel_animo_20", 0)==2||preferences.getInt("nivel_animo_21", 0)==2
+                        ||preferences.getInt("nivel_animo_22", 0)==2||preferences.getInt("nivel_animo_23", 0)==2||preferences.getInt("nivel_animo_24", 0)==2
+                        ||preferences.getInt("nivel_animo_25", 0)==2||preferences.getInt("nivel_animo_26", 0)==2||preferences.getInt("nivel_animo_27", 0)==2
+                        ||preferences.getInt("nivel_animo_28", 0)==2){
+                   niveles_animo(2, "2");
                 }
-                if (position == 23) {
-                    niveles_animo(preferences.getInt("nivel_animo_24", 0), "24");
-                }
-                if (position == 24) {
-                    niveles_animo(preferences.getInt("nivel_animo_25", 0), "25");
-                }
-                if (position == 25) {
-                    niveles_animo(preferences.getInt("nivel_animo_26", 0), "26");
-                }
-                if (position == 26) {
-                    niveles_animo(preferences.getInt("nivel_animo_27", 0), "27");
-                }
-                if (position == 27) {
-                    niveles_animo(preferences.getInt("nivel_animo_28", 0), "28");
-                }
+                if( preferences.getInt("nivel_animo_2", 0)==3||preferences.getInt("nivel_animo_3", 0)==3
+                        ||preferences.getInt("nivel_animo_4", 0)==3||preferences.getInt("nivel_animo_5", 0)==3||preferences.getInt("nivel_animo_6", 0)==3
+                        ||preferences.getInt("nivel_animo_7", 0)==3||preferences.getInt("nivel_animo_8", 0)==3||preferences.getInt("nivel_animo_9", 0)==3
+                        ||preferences.getInt("nivel_animo_10", 0)==3||preferences.getInt("nivel_animo_11", 0)==3||preferences.getInt("nivel_animo_12", 0)==3
+                        ||preferences.getInt("nivel_animo_13", 0)==3||preferences.getInt("nivel_animo_14", 0)==3||preferences.getInt("nivel_animo_15", 0)==3
+                        ||preferences.getInt("nivel_animo_16", 0)==3||preferences.getInt("nivel_animo_17", 0)==3||preferences.getInt("nivel_animo_18", 0)==3
+                        ||preferences.getInt("nivel_animo_19", 0)==3||preferences.getInt("nivel_animo_20", 0)==3||preferences.getInt("nivel_animo_21", 0)==3
+                        ||preferences.getInt("nivel_animo_22", 0)==3||preferences.getInt("nivel_animo_23", 0)==3||preferences.getInt("nivel_animo_24", 0)==3
+                        ||preferences.getInt("nivel_animo_25", 0)==3||preferences.getInt("nivel_animo_26", 0)==3||preferences.getInt("nivel_animo_27", 0)==3
+                        ||preferences.getInt("nivel_animo_28", 0)==3){
+                   niveles_animo(3, "2");
+                }*//*
+            }
+            if (position == 2) {
+               *//* if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1) {
+                    niveles_animo(3, "3");
+                }*//*
+            }
+           *//* if (position == 3) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(4, "4");}
+            }
+            if (position == 4) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(5, "5");}
+            }
+            if (position == 5) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(6, "6");}
+            }
+            if (position == 6) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(7, "7");}
+            }
+            if (position == 7) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(8, "8");}
+            }
+            if (position == 8) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(9, "9");}
+            }
+            if (position == 9) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(10, "10");}
+            }
+            if (position == 10) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(11, "11");}
+            }
+            if (position == 11) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(12, "12");}
+            }
+            if (position == 12) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(13, "13");}
+            }
+            if (position == 13) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(14, "14");}
+            }
+            if (position == 14) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(15, "15");}
+            }
+            if (position == 15) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(16, "16");}
+            }
+            if (position == 16) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(17, "17");}
+            }
+            if (position == 17) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(18, "18");}
+            }
+            if (position == 18) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(19, "19");}
+            }
+            if (position == 19) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(20, "20");}
+            }
+            if (position == 20) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(21, "21");}
+            }
 
-            });
-        /*estados.putString("registro_estado", "");
-        estados.apply();*/
+            if (position == 21) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(22, "22");}
+            }
+            if (position == 22) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(23, "23");}
+            }
+            if (position == 23) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(24, "24");}
+            }
+            if (position == 24) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(25, "25");}
+            }
+            if (position == 25) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(26, "26");}
+            }
+            if (position == 26) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(27, "27");}
+            }
+            if (position == 27) {
+                if( preferences.getInt("nivel_animo_1", 0)==1||preferences.getInt("nivel_animo_2", 0)==1||preferences.getInt("nivel_animo_3", 0)==1
+                        ||preferences.getInt("nivel_animo_4", 0)==1||preferences.getInt("nivel_animo_5", 0)==1||preferences.getInt("nivel_animo_6", 0)==1
+                        ||preferences.getInt("nivel_animo_7", 0)==1||preferences.getInt("nivel_animo_8", 0)==1||preferences.getInt("nivel_animo_9", 0)==1
+                        ||preferences.getInt("nivel_animo_10", 0)==1||preferences.getInt("nivel_animo_11", 0)==1||preferences.getInt("nivel_animo_12", 0)==1
+                        ||preferences.getInt("nivel_animo_13", 0)==1||preferences.getInt("nivel_animo_14", 0)==1||preferences.getInt("nivel_animo_15", 0)==1
+                        ||preferences.getInt("nivel_animo_16", 0)==1||preferences.getInt("nivel_animo_17", 0)==1||preferences.getInt("nivel_animo_18", 0)==1
+                        ||preferences.getInt("nivel_animo_19", 0)==1||preferences.getInt("nivel_animo_20", 0)==1||preferences.getInt("nivel_animo_21", 0)==1
+                        ||preferences.getInt("nivel_animo_22", 0)==1||preferences.getInt("nivel_animo_23", 0)==1||preferences.getInt("nivel_animo_24", 0)==1
+                        ||preferences.getInt("nivel_animo_25", 0)==1||preferences.getInt("nivel_animo_26", 0)==1||preferences.getInt("nivel_animo_27", 0)==1
+                        ||preferences.getInt("nivel_animo_28", 0)==1){
+                    niveles_animo(28, "28");}
+            }
+*//*
+        });
+    *//*    estados.putString("registro_estado", "");
+        estados.apply();*//*
     }
- public void niveles_animo (int nivel_animo,String dia_animo){
+
+
+    public void niveles_animo (int nivel_animo,String fecha){
 
         Bundle extras= new Bundle();
-        extras.putString("dia",dia_animo);
+        extras.putString("feche",fecha);
         extras.putString("estado","");
 
 
@@ -2114,7 +2469,7 @@ public class VerEstadosActivity extends AppCompatActivity {
         {
             case 1:
                 extras.putString("estado","¡ Me siento TERRIBLE !");
-                Intent i1= new Intent(this,TerribleActivity.class);
+                Intent i1= new Intent(this,Nivel1Activity.class);
                 i1.putExtras(extras);
                 startActivity(i1);
 
@@ -2153,7 +2508,7 @@ public class VerEstadosActivity extends AppCompatActivity {
                 break;
 
         }
-
+*/
     }
 
 }
