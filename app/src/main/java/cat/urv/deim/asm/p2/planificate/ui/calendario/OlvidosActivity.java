@@ -35,6 +35,18 @@ public class OlvidosActivity extends AppCompatActivity {
 
         aux=preferences.getString("tomaBlister_1", "");
 
+
+
+        //xxx
+        if(aux.equals(preferences.getString("tomaBlister_1", ""))){
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+            registro_olvidos.setAdapter(adapter);
+        }
+///xxx
+
+
+
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-dd", Locale.getDefault());
         try {
             Date date = dateFormat.parse(aux);
