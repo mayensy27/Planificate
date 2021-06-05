@@ -655,7 +655,7 @@ public class OlvidosActivity extends AppCompatActivity {
                 }
 
 //OJITOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOoo
-            } else { //OLVIDO
+            } else { //OLVIDO 1
                 lista_olvidos.add(aux2);
                 date = dateFormat.parse(aux2);
                 assert date != null;
@@ -671,9 +671,21 @@ public class OlvidosActivity extends AppCompatActivity {
                     c.add(Calendar.DATE, 1);
                     aux2 = dateFormat.format(c.getTime());
                 }
-
-
-
+                //OLVIDO 2
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_3", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
             }
 
         }
