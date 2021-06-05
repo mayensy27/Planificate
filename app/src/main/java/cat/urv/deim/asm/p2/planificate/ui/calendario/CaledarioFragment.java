@@ -76,19 +76,13 @@ public class CaledarioFragment extends Fragment {
         });*/
 
 
-
-
-
-
-
-
-
-
-
         /////////////////
+
+
+
         Button dias_olvidos= view.findViewById(R.id.boton_calendario3);
         dias_olvidos.setOnClickListener(v -> {
-                       Intent i= new Intent(getContext(),CalendarioActivity.class);
+                       Intent i= new Intent(getContext(),OlvidosActivity.class);
             startActivity(i);
         });
 

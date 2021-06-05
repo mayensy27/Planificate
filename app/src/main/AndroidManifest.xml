@@ -22,6 +22,7 @@
         android:theme="@style/Theme.Planificate"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
+        <activity android:name=".ui.calendario.OlvidosActivity"></activity>
         <activity android:name=".ui.calendario.VerEstadosActivity" />
         <activity android:name=".ui.informate.SideEffectsActivity" />
         <activity android:name=".ui.informate.EfectesSecundarisActivity" />
