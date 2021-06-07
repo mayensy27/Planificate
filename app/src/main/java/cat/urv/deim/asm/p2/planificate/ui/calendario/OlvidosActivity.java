@@ -685,6 +685,585 @@ public class OlvidosActivity extends AppCompatActivity {
                     aux2 = dateFormat.format(c.getTime());
                 }
             }
+
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_3", ""))||preferences.getString("tomaBlister_3", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 2
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_3", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_4", ""))||preferences.getString("tomaBlister_4", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 3
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_4", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_5", ""))||preferences.getString("tomaBlister_5", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 4
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_5", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_6", ""))||preferences.getString("tomaBlister_6", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 5
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_6", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_7", ""))||preferences.getString("tomaBlister_7", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 6
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_7", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_8", ""))||preferences.getString("tomaBlister_8", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 7
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_8", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_9", ""))||preferences.getString("tomaBlister_9", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 8
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_9", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_10", ""))||preferences.getString("tomaBlister_10", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 9
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_10", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_11", ""))||preferences.getString("tomaBlister_11", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 10
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_11", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_12", ""))||preferences.getString("tomaBlister_12", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 11
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_12", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_13", ""))||preferences.getString("tomaBlister_13", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 12
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_13", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_14", ""))||preferences.getString("tomaBlister_14", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 13
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_14", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_15", ""))||preferences.getString("tomaBlister_15", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 14
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_15", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_16", ""))||preferences.getString("tomaBlister_16", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 15
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_16", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_17", ""))||preferences.getString("tomaBlister_17", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 16
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_17", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_18", ""))||preferences.getString("tomaBlister_18", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 17
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_18", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_19", ""))||preferences.getString("tomaBlister_19", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 18
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_19", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_20", ""))||preferences.getString("tomaBlister_20", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 19
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_20", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_21", ""))||preferences.getString("tomaBlister_21", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 20
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_21", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_22", ""))||preferences.getString("tomaBlister_22", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 21
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_22", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_23", ""))||preferences.getString("tomaBlister_23", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 22
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_23", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_24", ""))||preferences.getString("tomaBlister_24", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 23
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_24", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_25", ""))||preferences.getString("tomaBlister_25", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 24
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_25", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_26", ""))||preferences.getString("tomaBlister_26", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 25
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_26", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_27", ""))||preferences.getString("tomaBlister_27", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 26
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_27", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+
+            if(aux2.equals(preferences.getString("tomaBlister_28", ""))||preferences.getString("tomaBlister_28", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 27
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_28", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
+
+            if(aux2.equals(preferences.getString("tomaBlister_29", ""))||preferences.getString("tomaBlister_29", "").equals("")) {
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
+                registro_olvidos.setAdapter(adapter);
+            } else { //OLVIDO 28
+                //lista_olvidos.add(aux2);
+                date = dateFormat.parse(aux2);
+                assert date != null;
+                c.setTime(date);
+                c.add(Calendar.DATE, 1);
+                aux2 = dateFormat.format(c.getTime());
+                while (!aux2.equals(preferences.getString("tomaBlister_29", ""))) {
+                    //Toast.makeText(this,aux2,Toast.LENGTH_SHORT).show(); //OLVIDO
+                    lista_olvidos.add(aux2);
+                    date = dateFormat.parse(aux2);
+                    assert date != null;
+                    c.setTime(date);
+                    c.add(Calendar.DATE, 1);
+                    aux2 = dateFormat.format(c.getTime());
+                }
+            }
               /*  //OLVIDO 2
                 date = dateFormat.parse(aux2);
                 assert date != null;
