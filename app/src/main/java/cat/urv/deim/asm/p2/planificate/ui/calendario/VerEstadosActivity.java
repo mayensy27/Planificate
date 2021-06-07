@@ -1011,7 +1011,7 @@ public class VerEstadosActivity extends AppCompatActivity {
 
             }
             //TOMA 11 DIA DE LA PILDORA
-            if (efecto.equals(efectos.getString("efecto_animo_2", ""))) {
+            if (efecto.equals(efectos.getString("efecto_animo_11", ""))) {
                 lista_estados.add(preferences.getString("tomaBlister11", "") + " Día de píldora: 11");
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
@@ -1188,7 +1188,7 @@ public class VerEstadosActivity extends AppCompatActivity {
 
             }
             //TOMA 11 DIA DE LA PILDORA
-            if (efecto.equals(efectos.getString("efecto_animo_2", ""))) {
+            if (efecto.equals(efectos.getString("efecto_animo_11", ""))) {
                 lista_estados.add(preferences.getString("tomaBlister11", "") + " Día de píldora: 11");
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
@@ -1364,7 +1364,7 @@ public class VerEstadosActivity extends AppCompatActivity {
 
             }
             //TOMA 11 DIA DE LA PILDORA
-            if (efecto.equals(efectos.getString("efecto_animo_2", ""))) {
+            if (efecto.equals(efectos.getString("efecto_animo_11", ""))) {
                 lista_estados.add(preferences.getString("tomaBlister11", "") + " Día de píldora: 11");
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
@@ -1541,7 +1541,7 @@ public class VerEstadosActivity extends AppCompatActivity {
 
             }
             //TOMA 11 DIA DE LA PILDORA
-            if (efecto.equals(efectos.getString("efecto_animo_2", ""))) {
+            if (efecto.equals(efectos.getString("efecto_animo_11", ""))) {
                 lista_estados.add(preferences.getString("tomaBlister11", "") + " Día de píldora: 11");
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
@@ -1898,7 +1898,7 @@ public class VerEstadosActivity extends AppCompatActivity {
 
             }
             //TOMA 11 DIA DE LA PILDORA
-            if (efecto.equals(efectos.getString("efecto_animo_2", ""))) {
+            if (efecto.equals(efectos.getString("efecto_animo_11", ""))) {
                 lista_estados.add(preferences.getString("tomaBlister11", "") + " Día de píldora: 11");
                 // dias.add("Día " + preferences.getInt("dia_1", 0));
 
