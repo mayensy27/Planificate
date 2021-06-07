@@ -18,7 +18,7 @@ import java.util.Locale;
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class OlvidosActivity extends AppCompatActivity {
-    ListView registro_olvidos;
+   public static ListView registro_olvidos; ///////////////---------cambiada a globar hoy! Antes no era global
     ArrayList<String> lista_olvidos; //estos vectores deben tener la misma longitud.*/
     String aux,aux2;
 

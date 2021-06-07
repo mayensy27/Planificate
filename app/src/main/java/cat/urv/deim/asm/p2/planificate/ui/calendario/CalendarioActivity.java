@@ -210,92 +210,92 @@ public class CalendarioActivity extends AppCompatActivity {
            registro_dias.setAdapter(adapter);
 
            registro_dias.setOnItemClickListener((parent, view, position, id) -> {
-              // SharedPreferences efectos = getSharedPreferences("efectos", Context.MODE_PRIVATE);
+               // SharedPreferences efectos = getSharedPreferences("efectos", Context.MODE_PRIVATE);
 
-               if (position == 0 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_1", 0),"1");
+               if (position == 0) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_1", 0), "1");
                }
-            if (position == 1 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_2", 0), "2");
+               if (position == 1) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_2", 0), "2");
                }
                if (position == 2) {
-                   niveles_animo(preferences.getInt("nivel_animo_3", 0), "3");
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_3", 0), "3");
                }
-               if (position == 3 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_4", 0), "4");
+               if (position == 3) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_4", 0), "4");
                }
-               if (position == 4 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_5", 0), "5");
+               if (position == 4) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_5", 0), "5");
                }
-               if (position == 5 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_6", 0), "6");
+               if (position == 5) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_6", 0), "6");
                }
-               if (position == 6 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_7", 0), "7");
+               if (position == 6) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_7", 0), "7");
                }
-               if (position == 7 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_8", 0), "8");
+               if (position == 7) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_8", 0), "8");
                }
-               if (position == 8 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_9", 0), "9");
+               if (position == 8) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_9", 0), "9");
                }
-               if (position == 9 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_10", 0), "10");
+               if (position == 9) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_10", 0), "10");
                }
-               if (position == 10 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_11", 0), "11");
+               if (position == 10) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_11", 0), "11");
                }
-               if (position == 11 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_12", 0), "12");
+               if (position == 11) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_12", 0), "12");
                }
-               if (position == 12 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_13", 0), "13");
+               if (position == 12) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_13", 0), "13");
                }
                if (position == 13) {
-                   niveles_animo(preferences.getInt("nivel_animo_14", 0), "14");
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_14", 0), "14");
                }
-               if (position == 14 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_15", 0), "15");
+               if (position == 14) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_15", 0), "15");
                }
-               if (position == 15 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_16", 0), "16");
+               if (position == 15) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_16", 0), "16");
                }
-               if (position == 16 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_17", 0), "17");
+               if (position == 16) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_17", 0), "17");
                }
-               if (position == 17 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_18", 0), "18");
+               if (position == 17) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_18", 0), "18");
                }
-               if (position == 18 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_19", 0), "19");
+               if (position == 18) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_19", 0), "19");
                }
-               if (position == 19 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_20", 0), "20");
+               if (position == 19) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_20", 0), "20");
                }
                if (position == 20) {
-                   niveles_animo(preferences.getInt("nivel_animo_21", 0), "21");
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_21", 0), "21");
                }
 
-               if (position == 21 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_22", 0), "22");
+               if (position == 21) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_22", 0), "22");
                }
-               if (position == 22 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_23", 0), "23");
+               if (position == 22) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_23", 0), "23");
                }
-               if (position == 23 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_24", 0), "24");
+               if (position == 23) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_24", 0), "24");
                }
-               if (position == 24 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_25", 0), "25");
+               if (position == 24) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_25", 0), "25");
                }
-               if (position == 25 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_26", 0), "26");
+               if (position == 25) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_26", 0), "26");
                }
-               if (position == 26 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_27", 0), "27");
+               if (position == 26) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_27", 0), "27");
                }
-               if (position == 27 ) {
-                   niveles_animo(preferences.getInt("nivel_animo_28", 0), "28");
+               if (position == 27) {
+                   CalendarioActivity.this.niveles_animo(preferences.getInt("nivel_animo_28", 0), "28");
                }
 
            });

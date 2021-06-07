@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.Properties;
@@ -22,6 +23,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import cat.urv.deim.asm.p2.planificate.ui.calendario.OlvidosActivity;
+
 
 public class MailAPI extends Activity implements OnClickListener{
 
@@ -30,6 +33,15 @@ public class MailAPI extends Activity implements OnClickListener{
     Context context = null;
     EditText reciep, sub;
     String rec, subject, textMessage;
+
+
+    ////////////////////----------------agregado hoy!
+
+    ListView aux= OlvidosActivity.registro_olvidos;
+
+
+    //////////////////////---------------------
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,60 +74,83 @@ public class MailAPI extends Activity implements OnClickListener{
         SharedPreferences efectos = getSharedPreferences("efectos", Context.MODE_PRIVATE);
         if(!preferences.getBoolean("mail_21", true)) {
             textMessage = "Hola, como ya se te ha informado anteriormente te enviamos desde Pill Plan el registro de las tomas " +
-                    "de los anticonceptivos junto con los estados de ánimo y molestias provocadas por estos.\n\n" +
-                    "Día 1: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_1", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_1", "") + "\n" +
-                    "Día 2: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_2", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_2", "") + "\n" +
-                    "Día 3: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_3", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_3", "") + "\n" +
-                    "Día 4: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_4", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_4", "") + "\n" +
-                    "Día 5: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_5", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_5", "") + "\n" +
-                    "Día 6: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_6", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_6", "") + "\n" +
-                    "Día 7: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_7", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_7", "") + "\n" +
-                    "Día 8: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_8", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_8", "") + "\n" +
-                    "Día 9: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_9", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_9", "") + "\n" +
-                    "Día 10: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_10", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_10", "") + "\n" +
-                    "Día 11: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_11", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_11", "") + "\n" +
-                    "Día 12: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_12", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_12", "") + "\n" +
-                    "Día 13: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_13", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_13", "") + "\n" +
-                    "Día 14: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_14", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_14", "") + "\n" +
-                    "Día 15: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_15", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_15", "") + "\n" +
-                    "Día 16: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_16", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_16", "") + "\n" +
-                    "Día 17: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_17", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_17", "") + "\n" +
-                    "Día 18: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_18", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_18", "") + "\n" +
-                    "Día 19: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_19", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_19", "") + "\n" +
-                    "Día 20: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_20", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_20", "") + "\n" +
-                    "Día 21: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_21", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_21", "");
+                    "de los anticonceptivos junto con los estados de ánimo y molestias provocadas por estos.                                                                                                                                                                             " +
+                    "Día 1: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_1", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_1", "") + "                                            " +
+                    "Día 2: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_2", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_2", "") + "                                            " +
+                    "Día 3: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_3", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_3", "") + "                                            " +
+                    "Día 4: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_4", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_4", "") + "                                            " +
+                    "Día 5: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_5", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_5", "") + "                                            " +
+                    "Día 6: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_6", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_6", "") + "                                            " +
+                    "Día 7: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_7", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_7", "") + "                                            " +
+                    "Día 8: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_8", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_8", "") + "                                            " +
+                    "Día 9: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_9", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_9", "") + "                                            " +
+                    "Día 10: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_10", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_10", "") + "                                         " +
+                    "Día 11: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_11", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_11", "") + "                                         " +
+                    "Día 12: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_12", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_12", "") + "                                         " +
+                    "Día 13: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_13", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_13", "") + "                                         " +
+                    "Día 14: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_14", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_14", "") + "                                         " +
+                    "Día 15: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_15", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_15", "") + "                                         " +
+                    "Día 16: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_16", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_16", "") + "                                         " +
+                    "Día 17: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_17", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_17", "") + "                                         " +
+                    "Día 18: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_18", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_18", "") + "                                         " +
+                    "Día 19: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_19", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_19", "") + "                                         " +
+                    "Día 20: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_20", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_20", "") + "                                         " +
+                    "Día 21: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_21", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_21", "") + "                                         " +
+                    "FECHAS DE LOS OLVIDOS DE LAS TOMAS DE LA PÍLDORA:                                                                            " +
+                    aux.getItemAtPosition(0)+", "+aux.getItemAtPosition(1)+", "+aux.getItemAtPosition(2)+", "+aux.getItemAtPosition(3)+
+                    aux.getItemAtPosition(4)+", "+aux.getItemAtPosition(5)+", "+aux.getItemAtPosition(6)+", "+aux.getItemAtPosition(7)+
+                    aux.getItemAtPosition(8)+", "+aux.getItemAtPosition(9)+", "+aux.getItemAtPosition(10)+", "+aux.getItemAtPosition(11)+
+                    aux.getItemAtPosition(12)+", "+aux.getItemAtPosition(13)+", "+aux.getItemAtPosition(14)+", "+aux.getItemAtPosition(15)+
+                    aux.getItemAtPosition(16)+", "+aux.getItemAtPosition(17)+", "+aux.getItemAtPosition(18)+", "+aux.getItemAtPosition(19)+
+                    aux.getItemAtPosition(20);
+
+
+
+
+
         }
         if(!preferences.getBoolean("mail_28", true)){
             textMessage = "Hola, como ya se te ha informado anteriormente te enviamos desde Pill Plan el registro de las tomas " +
-                    "de los anticonceptivos junto con los estados de ánimo y molestias provocadas por estos.\n\n" +
-                    "Día 1: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_1", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_1", "") + "\n" +
-                    "Día 2: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_2", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_2", "") + "\n" +
-                    "Día 3: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_3", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_3", "") + "\n" +
-                    "Día 4: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_4", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_4", "") + "\n" +
-                    "Día 5: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_5", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_5", "") + "\n" +
-                    "Día 6: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_6", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_6", "") + "\n" +
-                    "Día 7: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_7", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_7", "") + "\n" +
-                    "Día 8: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_8", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_8", "") + "\n" +
-                    "Día 9: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_9", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_9", "") + "\n" +
-                    "Día 10: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_10", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_10", "") + "\n" +
-                    "Día 11: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_11", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_11", "") + "\n" +
-                    "Día 12: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_12", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_12", "") + "\n" +
-                    "Día 13: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_13", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_13", "") + "\n" +
-                    "Día 14: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_14", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_14", "") + "\n" +
-                    "Día 15: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_15", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_15", "") + "\n" +
-                    "Día 16: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_16", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_16", "") + "\n" +
-                    "Día 17: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_17", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_17", "") + "\n" +
-                    "Día 18: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_18", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_18", "") + "\n" +
-                    "Día 19: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_19", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_19", "") + "\n" +
-                    "Día 20: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_20", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_20", "") + "\n" +
-                    "Día 21: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_21", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_21", "") + "\n" +
-                    "Día 22: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_22", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_22", "") + "\n" +
-                    "Día 23: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_23", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_23", "") + "\n" +
-                    "Día 24: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_24", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_24", "") + "\n" +
-                    "Día 25: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_25", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_25", "") + "\n" +
-                    "Día 26: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_26", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_26", "") + "\n" +
-                    "Día 27: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_27", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_27", "") + "\n" +
-                    "Día 28: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_28", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_28", "");
+                    "de los anticonceptivos junto con los estados de ánimo y molestias provocadas por estos.                                                                                                                                                                             " +
+                    "Día 1: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_1", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_1", "") + "                                            " +
+                    "Día 2: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_2", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_2", "") + "                                            " +
+                    "Día 3: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_3", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_3", "") + "                                            " +
+                    "Día 4: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_4", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_4", "") + "                                            " +
+                    "Día 5: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_5", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_5", "") + "                                            " +
+                    "Día 6: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_6", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_6", "") + "                                            " +
+                    "Día 7: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_7", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_7", "") + "                                            " +
+                    "Día 8: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_8", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_8", "") + "                                            " +
+                    "Día 9: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_9", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_9", "") + "                                            " +
+                    "Día 10: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_10", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_10", "") + "                                         " +
+                    "Día 11: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_11", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_11", "") + "                                         " +
+                    "Día 12: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_12", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_12", "") + "                                         " +
+                    "Día 13: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_13", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_13", "") + "                                         " +
+                    "Día 14: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_14", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_14", "") + "                                         " +
+                    "Día 15: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_15", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_15", "") + "                                         " +
+                    "Día 16: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_16", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_16", "") + "                                         " +
+                    "Día 17: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_17", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_17", "") + "                                         " +
+                    "Día 18: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_18", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_18", "") + "                                         " +
+                    "Día 19: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_19", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_19", "") + "                                         " +
+                    "Día 20: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_20", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_20", "") + "                                         " +
+                    "Día 21: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_21", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_21", "") + "                                         " +
+                    "Día 22: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_22", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_22", "") + "                                         " +
+                    "Día 23: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_23", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_23", "") + "                                         " +
+                    "Día 24: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_24", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_24", "") + "                                         " +
+                    "Día 25: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_25", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_25", "") + "                                         " +
+                    "Día 26: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_26", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_26", "") + "                                         " +
+                    "Día 27: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_27", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_27", "") + "                                         " +
+                    "Día 28: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_28", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_28", "") + "                                         " +
+                    "FECHAS DE LOS OLVIDOS DE LAS TOMAS DE LA PÍLDORA:                                                                            " +
+                    aux.getItemAtPosition(0)+", "+aux.getItemAtPosition(1)+", "+aux.getItemAtPosition(2)+", "+aux.getItemAtPosition(3)+
+                    aux.getItemAtPosition(4)+", "+aux.getItemAtPosition(5)+", "+aux.getItemAtPosition(6)+", "+aux.getItemAtPosition(7)+
+                    aux.getItemAtPosition(8)+", "+aux.getItemAtPosition(9)+", "+aux.getItemAtPosition(10)+", "+aux.getItemAtPosition(11)+
+                    aux.getItemAtPosition(12)+", "+aux.getItemAtPosition(13)+", "+aux.getItemAtPosition(14)+", "+aux.getItemAtPosition(15)+
+                    aux.getItemAtPosition(16)+", "+aux.getItemAtPosition(17)+", "+aux.getItemAtPosition(18)+", "+aux.getItemAtPosition(19)+
+                    aux.getItemAtPosition(20)+", "+aux.getItemAtPosition(21)+", "+aux.getItemAtPosition(22)+", "+aux.getItemAtPosition(23)+
+                    aux.getItemAtPosition(24)+", "+aux.getItemAtPosition(25)+", "+aux.getItemAtPosition(26)+", "+aux.getItemAtPosition(27);
+
+
+
         }
 
 
