@@ -99,7 +99,7 @@ public class EstadoDeAnimoActivity extends AppCompatActivity {
                 }
                 if(fecha.equals(preferences.getString("tomaBlister_9", ""))
                         && !preferences.getBoolean("primeravez_blister9", true)) {
-                    efecto.putString("efecto_animo_8", efectos.getString("efectos_cast", "zz"));
+                    efecto.putString("efecto_animo_9", efectos.getString("efectos_cast", "zz"));
                     efecto.apply();
                 }
                 if(fecha.equals(preferences.getString("tomaBlister_10", ""))
