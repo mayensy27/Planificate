@@ -4,7 +4,7 @@ package cat.urv.deim.asm.p2.planificate.entidades;
 //Contiene la informacion de las usuarias
 public class Usuaria {
     private String edad;
-    private  String email;
+    private String email;
 
     public String getEdad() {
         return edad;

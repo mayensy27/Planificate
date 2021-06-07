@@ -32,9 +32,9 @@
         android:autofillHints="@string/edad"
         android:ems="16"
         android:hint="@string/edad"
+        android:inputType="textPersonName"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
-        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,15 +47,14 @@
         android:layout_marginTop="52dp"
         android:autofillHints="@string/email"
         android:ems="16"
-        android:textColor="@color/colorPrimary"
         android:hint="@string/email"
-        android:textColorHint="@color/colorPrimary"
         android:inputType="textEmailAddress"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edad" />
-
 
 
     <Button
@@ -64,10 +63,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:background="@drawable/boton_redondo"
+        android:onClick="actualizar"
         android:text="@string/actualizar_mis_datos"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:onClick="actualizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

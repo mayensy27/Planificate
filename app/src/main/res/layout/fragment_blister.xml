@@ -14,7 +14,6 @@
         android:layout_height="match_parent">
 
 
-
         <Button
             android:id="@+id/boton_blister"
             android:layout_width="260dp"

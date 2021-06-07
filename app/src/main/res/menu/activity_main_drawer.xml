@@ -7,9 +7,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:theme="@style/Theme.Planificate.ModificarLetraNavDrawer"
             android:id="@+id/nav_informate"
             android:icon="@mipmap/icono_informacion"
+            android:theme="@style/Theme.Planificate.ModificarLetraNavDrawer"
             android:title="@string/menu_informate" />
 
         <item

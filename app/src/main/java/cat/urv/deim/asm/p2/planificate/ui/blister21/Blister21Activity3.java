@@ -42,11 +42,11 @@ public class Blister21Activity3 extends AppCompatActivity {
 
             SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-            if(fecha.equals(preferences.getString("tomaBlister_3", ""))) {
+            if (fecha.equals(preferences.getString("tomaBlister_3", ""))) {
                 Intent i = new Intent(this, Popup3.class);
                 startActivity(i);
                 finish();
-            }else {
+            } else {
                 Intent x = new Intent(this, Blister21Activity4.class);
                 startActivity(x);
                 finish();

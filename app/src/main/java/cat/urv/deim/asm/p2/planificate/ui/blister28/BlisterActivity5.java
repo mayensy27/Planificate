@@ -25,16 +25,16 @@ public class BlisterActivity5 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blister5);
 
-        cargarBlisterSiguiente=findViewById(R.id.boton_blister5);
+        cargarBlisterSiguiente = findViewById(R.id.boton_blister5);
 
-        SharedPreferences preferences=getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
         objEditor.putBoolean("primeravez_blister5", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
         objEditor.apply();
     }
 
     public void cargarBlister(View view) {
-        if(cargarBlisterSiguiente.isClickable()){
+        if (cargarBlisterSiguiente.isClickable()) {
 
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-dd", Locale.getDefault()); //Cambiado para que concuerde con la fecha que me proporciona el Calendar
             Date date = new Date();
@@ -44,11 +44,11 @@ public class BlisterActivity5 extends AppCompatActivity {
             SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
             //CONTROL DE LAS TOMAS EL MISMO DIA (PARA EVITAR LAS TOMAS EN UN MISMO DIA)
-            if(fecha.equals(preferences.getString("tomaBlister_5", ""))){
+            if (fecha.equals(preferences.getString("tomaBlister_5", ""))) {
                 Intent i = new Intent(this, Popup3.class);
                 startActivity(i);
                 finish();
-            }else {
+            } else {
                 Intent x = new Intent(this, BlisterActivity6.class);
                 startActivity(x);
                 finish();

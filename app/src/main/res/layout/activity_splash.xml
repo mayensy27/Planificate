@@ -12,7 +12,7 @@
         android:layout_width="327dp"
         android:layout_height="377dp"
         android:backgroundTint="@color/fondo"
-        android:contentDescription="@string/iconocentral"
+        android:contentDescription="@string/icono_central"
         android:src="@mipmap/pill_plan_icono"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -15,14 +15,13 @@ public class Popup3 extends AppCompatActivity {
         setContentView(R.layout.activity_popup3);
 
 
-
-        DisplayMetrics medidasVentana= new DisplayMetrics();
+        DisplayMetrics medidasVentana = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(medidasVentana);
 
-        int ancho=medidasVentana.widthPixels;
-        int alto=medidasVentana.heightPixels;
+        int ancho = medidasVentana.widthPixels;
+        int alto = medidasVentana.heightPixels;
 
-        getWindow().setLayout((int) (ancho*0.85),(int)(alto*0.5));
+        getWindow().setLayout((int) (ancho * 0.85), (int) (alto * 0.5));
 
 
     }

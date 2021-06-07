@@ -68,6 +68,7 @@ public class NotificationService extends IntentService {
                 notifManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             }
             int importance = NotificationManager.IMPORTANCE_HIGH;
+            assert notifManager != null;
             NotificationChannel mChannel = notifManager.getNotificationChannel(id);
             if (mChannel == null) {
                 mChannel = new NotificationChannel(id, title, importance);
@@ -94,8 +95,6 @@ public class NotificationService extends IntentService {
             startForeground(1, notification);
 
 
-
-
         } else {
 
             pendingIntent = PendingIntent.getActivity(context, 1, mIntent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -118,15 +117,15 @@ public class NotificationService extends IntentService {
         Calendar mcurrentTime = Calendar.getInstance();
         int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
         int minute = mcurrentTime.get(Calendar.MINUTE);
-     if(settings.getString("hour", "").equals(Integer.toString(hour))&&
+        if (settings.getString("hour", "").equals(Integer.toString(hour)) &&
                 settings.getString("minute", "").equals(Integer.toString(minute))) {
 
-         Calendar today = Calendar.getInstance();
+            Calendar today = Calendar.getInstance();
 
-         today.set(Calendar.HOUR_OF_DAY, hour);
-         today.set(Calendar.MINUTE, minute + 1440); // +24h=1440min
-         today.set(Calendar.SECOND, 0);
-         Utils.setAlarm(alarmID, today.getTimeInMillis(), NotificationService.this);
-     }
+            today.set(Calendar.HOUR_OF_DAY, hour);
+            today.set(Calendar.MINUTE, minute + 1440); // +24h=1440min
+            today.set(Calendar.SECOND, 0);
+            Utils.setAlarm(alarmID, today.getTimeInMillis(), NotificationService.this);
+        }
     }
 }

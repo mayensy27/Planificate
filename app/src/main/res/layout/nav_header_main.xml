@@ -14,7 +14,6 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-<!--Linear Horizontal-->
     <ImageView
         android:id="@+id/imagen_menu_pillPlan"
         android:layout_width="wrap_content"
@@ -23,16 +22,7 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@mipmap/icono_plan_pill_foreground" />
 
-  <!--  <TextView
-        android:id="@+id/espaciado"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content">
-    </TextView>-->
 
-
-<!--
-    Linear Vertical
--->
     <LinearLayout
         android:layout_width="248dp"
         android:layout_height="wrap_content"

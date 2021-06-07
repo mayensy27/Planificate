@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/fondo"
     tools:context=".ui.blister21.Blister21Activity17">
+
     <TextView
         android:id="@+id/textoBlister"
         android:layout_width="match_parent"

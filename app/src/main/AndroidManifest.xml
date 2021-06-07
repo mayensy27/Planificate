@@ -32,7 +32,7 @@
         <activity android:name=".ui.informate.InfInglesActivity" />
         <activity android:name=".ui.informate.DocumentacionInglesActivity" />
         <activity android:name=".ui.informate.DocumentacionCatActivity" />
-        <activity android:name=".ui.informate.DocumentacionCastActivity" /> <!-- <activity android:name=".ui.alarmas.AlarmActivity" /> -->
+        <activity android:name=".ui.informate.DocumentacionCastActivity" />
         <activity
             android:name=".Popup3"
             android:theme="@style/Theme.Planificate.Popup" />

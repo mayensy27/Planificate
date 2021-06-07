@@ -64,8 +64,8 @@
         android:id="@+id/estado_animo"
         android:layout_width="0dp"
         android:layout_height="64dp"
-        android:textColor="@color/colorPrimary"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,14 +78,14 @@
         android:id="@+id/emoticonoMal"
         android:layout_width="179dp"
         android:layout_height="173dp"
+        android:contentDescription="@string/emoticonomal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/estado_animo"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/mal"
-        android:contentDescription="@string/emoticonomal" />
+        app:srcCompat="@mipmap/mal" />
 
     <TextView
         android:id="@+id/efecto"

@@ -14,15 +14,7 @@ public class BlisterActivity28 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blister28);
-        cargarBlisterSiguiente=findViewById(R.id.boton_blister28);
-
-      /*  SharedPreferences preferences=getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor objEditor = preferences.edit();
-        objEditor.putBoolean("primeravez_blister28", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-        objEditor.apply();*/
-
-
-
+        cargarBlisterSiguiente = findViewById(R.id.boton_blister28);
 
 
     }

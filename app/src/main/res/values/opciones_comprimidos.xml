@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-        <string-array name="tipos_comprimidos">
-            <item>Blíster 21.</item>
-        <!--    <item>Blíster 21+7.</item>
-            <item>Blíster 24+4.</item>-->
-            <item>Blíster 28.</item>
-        </string-array>
+    <string-array name="tipos_comprimidos">
+        <item>Blíster 21.</item>
+        <item>Blíster 28.</item>
+    </string-array>
 
 
 </resources>

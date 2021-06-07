@@ -15,7 +15,7 @@ public class SideEffectsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_side_effects);
-        pdfView= findViewById(R.id.side_effects);
+        pdfView = findViewById(R.id.side_effects);
 
         //funcion para leer pdf desde Assets
         pdfView.fromAsset("side_effects.pdf").load();

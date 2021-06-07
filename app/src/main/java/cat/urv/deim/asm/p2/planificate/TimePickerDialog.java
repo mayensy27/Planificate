@@ -20,7 +20,8 @@ import java.util.Calendar;
 
 public class TimePickerDialog extends AppCompatActivity implements android.app.TimePickerDialog.OnTimeSetListener {
     public static PendingIntent pendingIntent;
-    private  TextView establecer_alarma;
+    private TextView establecer_alarma;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
 
         boton_hora.setOnClickListener(v -> {
             DialogFragment timePicker = new TimePickerFragment();
-            timePicker.show(getSupportFragmentManager(),"time picker");
+            timePicker.show(getSupportFragmentManager(), "time picker");
         });
 
         boton_cancelar.setOnClickListener(v -> cancelAlarm());
@@ -44,13 +45,11 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
     @SuppressLint("SetTextI18n")
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-       /* TextView textView=(TextView)findViewById(R.id.establecer_alarma);
-        textView.setText("Hour: "+ hourOfDay+ "Minute: "+minute);*/
 
-        Calendar c= Calendar.getInstance();
-        c.set(Calendar.HOUR_OF_DAY,hourOfDay);
-        c.set(Calendar.MINUTE,minute);
-        c.set(Calendar.SECOND,0);
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+        c.set(Calendar.MINUTE, minute);
+        c.set(Calendar.SECOND, 0);
 
         updateTimeText(c);
         startAlarm(c);
@@ -58,38 +57,37 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
     }
 
 
-    private void updateTimeText (Calendar c){
-        String timeText ="Tu alarma de Planifícate está puesta a las: \n";
-        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime())+" h";
+    private void updateTimeText(Calendar c) {
+        String timeText = "Tu alarma de Planifícate está puesta a las: \n";
+        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime()) + " h";
 
         establecer_alarma.setText(timeText);
     }
 
     @SuppressLint("ShortAlarm")
-    private void startAlarm(Calendar c){
+    private void startAlarm(Calendar c) {
 
 
-        AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlertReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
+        pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
 
-        if(c.before(Calendar.getInstance())){
-            c.add(Calendar.DATE,1);
+        if (c.before(Calendar.getInstance())) {
+            c.add(Calendar.DATE, 1);
         }
         assert alarmManager != null;
-        alarmManager.setRepeating( AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),1000*60,pendingIntent);
-    //  alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(), pendingIntent); //1 VEZ, HORA EXACTA
-      //  alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),120000, pendingIntent); //se repite cada 24h
-        Intent intent2=new Intent (this, MainActivity.class);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), 1000 * 60, pendingIntent);
+        //  alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(), pendingIntent); //1 VEZ, HORA EXACTA
+        //  alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),120000, pendingIntent); //se repite cada 24h
+        Intent intent2 = new Intent(this, MainActivity.class);
         startActivity(intent2);
 
-        //OJO
-        Intent intent1=new Intent (this, MainActivity.class);
-        TaskStackBuilder stackBuilder =TaskStackBuilder.create(this);
+
+        Intent intent1 = new Intent(this, MainActivity.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
         stackBuilder.addParentStack(MainActivity.class);
         stackBuilder.addNextIntent(intent1);
-        pendingIntent=stackBuilder.getPendingIntent(1, PendingIntent.FLAG_UPDATE_CURRENT);
-        ///////////
+        pendingIntent = stackBuilder.getPendingIntent(1, PendingIntent.FLAG_UPDATE_CURRENT);
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences.Editor objEditor = preferences.edit();
@@ -98,10 +96,10 @@ public class TimePickerDialog extends AppCompatActivity implements android.app.T
     }
 
     @SuppressLint("SetTextI18n")
-    private void cancelAlarm(){
-        AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+    private void cancelAlarm() {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlertReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(this,1,intent,PendingIntent.FLAG_NO_CREATE);
+        pendingIntent = PendingIntent.getBroadcast(this, 1, intent, PendingIntent.FLAG_NO_CREATE);
 
         assert alarmManager != null;
         alarmManager.cancel(pendingIntent);

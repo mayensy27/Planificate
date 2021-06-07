@@ -6,20 +6,19 @@
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_700</item> //puntero EditText
-        <item name="colorSecondaryVariant">@color/teal_700</item> //linea EditText
+        <item name="colorSecondary">@color/teal_700</item>
+        //puntero EditText
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        //linea EditText
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="colorAccent">@color/colorPrimary</item> //color de las lineas, radiobuttons, calendario..
+        <item name="colorAccent">@color/colorPrimary</item>
+        //color de las lineas, radiobuttons, calendario..
     </style>
 
-//para cambiar el color del calendario
-<!--
-    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">@color/purple_700</item>
-    </style>-->
+    //para cambiar el color del calendario
 
     <style name="Theme.Planificate.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -27,8 +26,7 @@
     </style>
 
 
-
-<!--    tema para modificar el tamaño de la letra del menu lateral-->
+    <!--    tema para modificar el tamaño de la letra del menu lateral-->
     <style name="Theme.Planificate.ModificarLetraNavDrawer">
         <item name="android:textSize">100sp</item>
 
@@ -44,6 +42,7 @@
 
 
     //actividad transparente
+
     <style name="Theme.Planificate.Sms">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>

@@ -8,27 +8,14 @@
     tools:context=".ui.calendario.VerEstadosActivity">
 
 
-    <!-- <Spinner
-         android:id="@+id/estados"
-         android:layout_width="0dp"
-         android:layout_height="wrap_content"
-         android:layout_marginStart="1dp"
-         android:layout_marginEnd="1dp"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintHorizontal_bias="1.0"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toTopOf="parent"
-         app:layout_constraintVertical_bias="0.131" />-->
-
     <TextView
         android:id="@+id/lista_filtrada"
         android:layout_width="291dp"
         android:layout_height="90dp"
         android:text="@string/filtrado_eleccion"
+        android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -16,12 +16,6 @@ public class Blister21Activity21 extends AppCompatActivity {
         setContentView(R.layout.activity_blister50);
         cargarBlisterSiguiente = findViewById(R.id.boton_blister50);
 
-      /*  SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor objEditor = preferences.edit();
-        objEditor.putBoolean("primeravez_blister21", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-        objEditor.apply();*/
-
-
 
     }
 }

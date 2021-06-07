@@ -1,11 +1,11 @@
 package cat.urv.deim.asm.p2.planificate;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class InformacionActivity extends AppCompatActivity {
 
@@ -16,11 +16,11 @@ public class InformacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_informacion);
 
-        boton_adelante= findViewById(R.id.adelante);
+        boton_adelante = findViewById(R.id.adelante);
     }
 
     public void eventoBotonAdelante(View view) {
-        Intent miIntent= new Intent(InformacionActivity.this,
+        Intent miIntent = new Intent(InformacionActivity.this,
                 PrimeraPreguntaActivity.class);
         startActivity(miIntent);
 

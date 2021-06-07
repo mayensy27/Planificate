@@ -1,6 +1,7 @@
 package cat.urv.deim.asm.p2.planificate.ui.alarmas;
 
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.os.Build;
 
 public class MiReinicioReceiver extends BroadcastReceiver {
 
+    @SuppressLint("UnsafeProtectedBroadcastReceiver")
     @Override
     public void onReceive(Context context, Intent intent) {
         Intent serviceIntent = new Intent(context, ReinicioService.class);

@@ -19,29 +19,28 @@ public class InfCastActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inf_cast);
 
-        lista_opciones_cast=findViewById(R.id.lista_opciones_cast);
+        lista_opciones_cast = findViewById(R.id.lista_opciones_cast);
 
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.lista_opciones_cast
-        , R.layout.list_opciones_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.lista_opciones_cast
+                , R.layout.list_opciones_item);
 
         lista_opciones_cast.setAdapter(adapter);
 
         lista_opciones_cast.setOnItemClickListener((parent, view, position, id) -> {
-            if(parent.getItemAtPosition(position).toString().equals("¿Cómo funcionan los ACOs?")){
-                Intent i=new Intent(InfCastActivity.this, VideoCastActivity_1.class);
+            if (parent.getItemAtPosition(position).toString().equals("¿Cómo funcionan los ACOs?")) {
+                Intent i = new Intent(InfCastActivity.this, VideoCastActivity_1.class);
                 startActivity(i);
-            }else{
-                if (parent.getItemAtPosition(position).toString().equals("Olvidos")){
-                    Intent i=new Intent(InfCastActivity.this, DocumentacionCastActivity.class);
+            } else {
+                if (parent.getItemAtPosition(position).toString().equals("Olvidos")) {
+                    Intent i = new Intent(InfCastActivity.this, DocumentacionCastActivity.class);
                     startActivity(i);
 
-                }else {
+                } else {
                     if (parent.getItemAtPosition(position).toString().equals("Efectos Secundarios")) {
                         Intent i = new Intent(InfCastActivity.this, EfectosSecundariosActivity.class);
                         startActivity(i);
 
-                    }
-                    else {
+                    } else {
                         if (parent.getItemAtPosition(position).toString().equals("Anticoncepción")) {
                             Intent i = new Intent(InfCastActivity.this, WebDecisionesCompartidas.class);
                             startActivity(i);

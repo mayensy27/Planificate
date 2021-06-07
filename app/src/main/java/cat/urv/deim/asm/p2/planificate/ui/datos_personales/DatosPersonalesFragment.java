@@ -17,8 +17,6 @@ import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -27,88 +25,50 @@ import cat.urv.deim.asm.p2.planificate.SplashActivity;
 
 public class DatosPersonalesFragment extends Fragment {
 
-//    private DatosPersonalesViewModel galleryViewModel;
     RequestQueue request;
-   // JsonObjectRequest jsonObjectRequest;
     StringRequest stringRequest;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-       /* galleryViewModel =
-                new ViewModelProvider(this).get(DatosPersonalesViewModel.class);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });*/
+
         return inflater.inflate(R.layout.fragment_datos_personales, container, false);
     }
-
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-/*
 
-        WebView webView = view.findViewById(R.id.web_decisiones_compartidas);
-        webView.setWebViewClient(new WebViewClient());
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("http://decisionscompartides.gencat.cat/es/decidir-sobre/anticoncepcio_hormonal/opcions_tractament/anticonceptius_orals_combinats/");
-*/
-        Button ver_datos =view.findViewById(R.id.vermisdatos);
-        Button actualizar_datos=view.findViewById(R.id.actualizarmisdatos);
-        Button borrar_datos=view.findViewById(R.id.borrarmisdatos);
+        Button ver_datos = view.findViewById(R.id.vermisdatos);
+        Button actualizar_datos = view.findViewById(R.id.actualizarmisdatos);
+        Button borrar_datos = view.findViewById(R.id.borrarmisdatos);
 
-       request= Volley.newRequestQueue(requireContext());
+        request = Volley.newRequestQueue(requireContext());
 
 
         ver_datos.setOnClickListener(v -> {
-            Intent i= new Intent(getContext(), DatosPersonalesUsuariaActivity.class);
+            Intent i = new Intent(getContext(), DatosPersonalesUsuariaActivity.class);
             startActivity(i);
         });
 
         actualizar_datos.setOnClickListener(v -> {
-            Intent i2=new Intent(getContext(),ActualizarDatosPersonalesActivity.class);
+            Intent i2 = new Intent(getContext(), ActualizarDatosPersonalesActivity.class);
             startActivity(i2);
         });
 
         borrar_datos.setOnClickListener(v -> {
-            //  FirebaseAuth.getInstance().signOut();
 
-           /* GoogleSignIn.getClient(requireActivity().getApplicationContext(), new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()).signOut()
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {*/
             SharedPreferences preferences = requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-            String url="https://pillplanusuarias.000webhostapp.com/eliminarUsuaria.php?email="+preferences.getString("email_usuaria", "");
-           // Log.d("URL: ",""+url);
-            stringRequest=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    Log.d("URL: ",""+url);
-                    Log.d("RESPUESTA: ",""+response);
-                 //   if (response.equals("elimina")){
+            String url = "https://pillplanusuarias.000webhostapp.com/eliminarUsuaria.php?email=" + preferences.getString("email_usuaria", "");
+            stringRequest = new StringRequest(Request.Method.GET, url, response -> {
+                Log.d("URL: ", "" + url);
+                Log.d("RESPUESTA: ", "" + response);
 
-                        Toast.makeText(getContext(),"Se ha Eliminado con exito",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Se ha Eliminado con exito", Toast.LENGTH_SHORT).show();
 
-              /*      }
-                    else{
-                        Toast.makeText(getContext(),"Estoy aqui",Toast.LENGTH_SHORT).show();
 
-                    }
-*/
-
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(getContext(),"No se ha podido conectar",Toast.LENGTH_SHORT).show();
-                }
-            });
+            }, error -> Toast.makeText(getContext(), "No se ha podido conectar", Toast.LENGTH_SHORT).show());
             request.add(stringRequest);
 
             SharedPreferences.Editor objEditor = preferences.edit();
@@ -119,11 +79,6 @@ public class DatosPersonalesFragment extends Fragment {
             objEditor.apply();
             objEditor.putBoolean("signup_google", true);
             objEditor.apply();
-
-                            /*//elimino la sesion iniciada
-                            objEditor.putBoolean("login",true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                            objEditor.apply();*/
-
             objEditor.putString("edad_usuaria", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
             objEditor.apply();
             objEditor.putString("email_usuaria", ""); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
@@ -455,13 +410,7 @@ public class DatosPersonalesFragment extends Fragment {
             Intent i = new Intent(requireContext().getApplicationContext(), SplashActivity.class);
             startActivity(i);
 
-                     /*   }
-                    }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(requireContext().getApplicationContext(),"Signout Failed",Toast.LENGTH_SHORT).show();
-                }
-            });*/
+
         });
 
     }

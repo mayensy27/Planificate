@@ -1,4 +1,6 @@
 package cat.urv.deim.asm.p2.planificate;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -26,7 +28,7 @@ import javax.mail.internet.MimeMessage;
 import cat.urv.deim.asm.p2.planificate.ui.calendario.OlvidosActivity;
 
 
-public class MailAPI extends Activity implements OnClickListener{
+public class MailAPI extends Activity implements OnClickListener {
 
     Session session = null;
     ProgressDialog pdialog = null;
@@ -37,11 +39,12 @@ public class MailAPI extends Activity implements OnClickListener{
 
     ////////////////////----------------agregado hoy!
 
-    ListView aux= OlvidosActivity.registro_olvidos;
+    ListView aux = OlvidosActivity.registro_olvidos;
 
 
     //////////////////////---------------------
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,13 +53,13 @@ public class MailAPI extends Activity implements OnClickListener{
         context = this;
 
         Button login = findViewById(R.id.btn_submit);
-        reciep =findViewById(R.id.et_to);
+        reciep = findViewById(R.id.et_to);
         sub = findViewById(R.id.et_sub);
 
         login.setOnClickListener(this);
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        reciep.setText(preferences.getString("email_usuaria",""));
+        reciep.setText(preferences.getString("email_usuaria", ""));
         reciep.setFocusable(false);
 
         sub.setText("Pill Plan");
@@ -72,7 +75,7 @@ public class MailAPI extends Activity implements OnClickListener{
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         SharedPreferences efectos = getSharedPreferences("efectos", Context.MODE_PRIVATE);
-        if(!preferences.getBoolean("mail_21", true)) {
+        if (!preferences.getBoolean("mail_21", true)) {
             textMessage = "Hola, como ya se te ha informado anteriormente te enviamos desde Pill Plan el registro de las tomas " +
                     "de los anticonceptivos junto con los estados de ánimo y molestias provocadas por estos.                                                                                                                                                                             " +
                     "Día 1: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_1", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_1", "") + "                                            " +
@@ -97,19 +100,16 @@ public class MailAPI extends Activity implements OnClickListener{
                     "Día 20: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_20", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_20", "") + "                                         " +
                     "Día 21: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_21", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_21", "") + "                                         " +
                     "FECHAS DE LOS OLVIDOS DE LAS TOMAS DE LA PÍLDORA:                                                                            " +
-                    aux.getItemAtPosition(0)+", "+aux.getItemAtPosition(1)+", "+aux.getItemAtPosition(2)+", "+aux.getItemAtPosition(3)+
-                    aux.getItemAtPosition(4)+", "+aux.getItemAtPosition(5)+", "+aux.getItemAtPosition(6)+", "+aux.getItemAtPosition(7)+
-                    aux.getItemAtPosition(8)+", "+aux.getItemAtPosition(9)+", "+aux.getItemAtPosition(10)+", "+aux.getItemAtPosition(11)+
-                    aux.getItemAtPosition(12)+", "+aux.getItemAtPosition(13)+", "+aux.getItemAtPosition(14)+", "+aux.getItemAtPosition(15)+
-                    aux.getItemAtPosition(16)+", "+aux.getItemAtPosition(17)+", "+aux.getItemAtPosition(18)+", "+aux.getItemAtPosition(19)+
+                    aux.getItemAtPosition(0) + ", " + aux.getItemAtPosition(1) + ", " + aux.getItemAtPosition(2) + ", " + aux.getItemAtPosition(3) +
+                    aux.getItemAtPosition(4) + ", " + aux.getItemAtPosition(5) + ", " + aux.getItemAtPosition(6) + ", " + aux.getItemAtPosition(7) +
+                    aux.getItemAtPosition(8) + ", " + aux.getItemAtPosition(9) + ", " + aux.getItemAtPosition(10) + ", " + aux.getItemAtPosition(11) +
+                    aux.getItemAtPosition(12) + ", " + aux.getItemAtPosition(13) + ", " + aux.getItemAtPosition(14) + ", " + aux.getItemAtPosition(15) +
+                    aux.getItemAtPosition(16) + ", " + aux.getItemAtPosition(17) + ", " + aux.getItemAtPosition(18) + ", " + aux.getItemAtPosition(19) +
                     aux.getItemAtPosition(20);
 
 
-
-
-
         }
-        if(!preferences.getBoolean("mail_28", true)){
+        if (!preferences.getBoolean("mail_28", true)) {
             textMessage = "Hola, como ya se te ha informado anteriormente te enviamos desde Pill Plan el registro de las tomas " +
                     "de los anticonceptivos junto con los estados de ánimo y molestias provocadas por estos.                                                                                                                                                                             " +
                     "Día 1: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_1", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_1", "") + "                                            " +
@@ -141,20 +141,19 @@ public class MailAPI extends Activity implements OnClickListener{
                     "Día 27: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_27", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_27", "") + "                                         " +
                     "Día 28: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_28", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_28", "") + "                                         " +
                     "FECHAS DE LOS OLVIDOS DE LAS TOMAS DE LA PÍLDORA:                                                                            " +
-                    aux.getItemAtPosition(0)+", "+aux.getItemAtPosition(1)+", "+aux.getItemAtPosition(2)+", "+aux.getItemAtPosition(3)+
-                    aux.getItemAtPosition(4)+", "+aux.getItemAtPosition(5)+", "+aux.getItemAtPosition(6)+", "+aux.getItemAtPosition(7)+
-                    aux.getItemAtPosition(8)+", "+aux.getItemAtPosition(9)+", "+aux.getItemAtPosition(10)+", "+aux.getItemAtPosition(11)+
-                    aux.getItemAtPosition(12)+", "+aux.getItemAtPosition(13)+", "+aux.getItemAtPosition(14)+", "+aux.getItemAtPosition(15)+
-                    aux.getItemAtPosition(16)+", "+aux.getItemAtPosition(17)+", "+aux.getItemAtPosition(18)+", "+aux.getItemAtPosition(19)+
-                    aux.getItemAtPosition(20)+", "+aux.getItemAtPosition(21)+", "+aux.getItemAtPosition(22)+", "+aux.getItemAtPosition(23)+
-                    aux.getItemAtPosition(24)+", "+aux.getItemAtPosition(25)+", "+aux.getItemAtPosition(26)+", "+aux.getItemAtPosition(27);
-
+                    aux.getItemAtPosition(0) + ", " + aux.getItemAtPosition(1) + ", " + aux.getItemAtPosition(2) + ", " + aux.getItemAtPosition(3) +
+                    aux.getItemAtPosition(4) + ", " + aux.getItemAtPosition(5) + ", " + aux.getItemAtPosition(6) + ", " + aux.getItemAtPosition(7) +
+                    aux.getItemAtPosition(8) + ", " + aux.getItemAtPosition(9) + ", " + aux.getItemAtPosition(10) + ", " + aux.getItemAtPosition(11) +
+                    aux.getItemAtPosition(12) + ", " + aux.getItemAtPosition(13) + ", " + aux.getItemAtPosition(14) + ", " + aux.getItemAtPosition(15) +
+                    aux.getItemAtPosition(16) + ", " + aux.getItemAtPosition(17) + ", " + aux.getItemAtPosition(18) + ", " + aux.getItemAtPosition(19) +
+                    aux.getItemAtPosition(20) + ", " + aux.getItemAtPosition(21) + ", " + aux.getItemAtPosition(22) + ", " + aux.getItemAtPosition(23) +
+                    aux.getItemAtPosition(24) + ", " + aux.getItemAtPosition(25) + ", " + aux.getItemAtPosition(26) + ", " + aux.getItemAtPosition(27);
 
 
         }
 
 
-                Properties props = new Properties();
+        Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.socketFactory.port", "465");
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
@@ -172,9 +171,7 @@ public class MailAPI extends Activity implements OnClickListener{
         RetreiveFeedTask task = new RetreiveFeedTask();
         task.execute();
 
-        /*Intent x = new Intent(this, MainActivity.class);
-        startActivity(x);
-        finish();*/
+
     }
 
     private String niveles_animo(int nivel_animo) {
@@ -198,19 +195,20 @@ public class MailAPI extends Activity implements OnClickListener{
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     class RetreiveFeedTask extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... params) {
 
-            try{
+            try {
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress("testfrom354@gmail.com"));
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(rec));
                 message.setSubject(subject);
                 message.setContent(textMessage, "text/html; charset=utf-8");
                 Transport.send(message);
-            } catch(Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
@@ -219,9 +217,6 @@ public class MailAPI extends Activity implements OnClickListener{
         @Override
         protected void onPostExecute(String result) {
             pdialog.dismiss();
-          /*  reciep.setText("");
-            msg.setText("");
-            sub.setText("");*/
             Toast.makeText(getApplicationContext(), "Mensaje enviado", Toast.LENGTH_LONG).show();
             Intent z = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(z);

@@ -8,7 +8,7 @@
     tools:showIn="@layout/app_bar_main">
 
 
-<!--    ES EL CONTENEDOR DE LOS DIFERENTES FRAGMENTS-->
+    <!--    ES EL CONTENEDOR DE LOS DIFERENTES FRAGMENTS-->
     <fragment
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -18,5 +18,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/mobile_navigation" />
+        app:navGraph="@navigation/mobile_navigation"
+        tools:ignore="FragmentTagUsage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -81,20 +81,4 @@
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
 
-  <!--  <Button
-        android:id="@+id/log_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cerrar_sesion"
-        android:background="@drawable/boton_redondo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_telefono"
-        app:layout_constraintVertical_bias="0.394" />-->
-
-    <!--
-            android:onClick="actualizar"
-    -->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

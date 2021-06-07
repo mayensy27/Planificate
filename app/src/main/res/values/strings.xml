@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Pill Plan</string>
     <string name="bienvenida">Bienvenida a</string>
     <string name="Explicacion">Hola, ¿Qué tal?
@@ -34,7 +34,7 @@
     <string name="Texto_Datos_PersolaesACOS">Datos Personales</string>
     <string name="Texto_Informacion_WEBACOS">Página gencat</string>
     <string name="imagen_pildora_0">imagen_pildora_0</string>
-    <string name="imagen_pildora_1">imagen_pildora_1</string>
+    <string name="imagen_pildora_1" tools:ignore="Typos">imagen_pildora_1</string>
     <string name="imagen_pildora_2">imagen_pildora_2</string>
     <string name="fab">fab</string>
     <string name="title_activity_main3">MainActivity</string>
@@ -63,7 +63,7 @@
     <string name="imagen_pildora_8">imagen_pildora_8</string>
     <string name="imagen_pildora_9">imagen_pildora_9</string>
     <string name="imagen_pildora_10">imagen_pildora_10</string>
-    <string name="imagen_pildora_11">imagen_pildora_11</string>
+    <string name="imagen_pildora_11" tools:ignore="Typos">imagen_pildora_11</string>
     <string name="imagen_pildora_12">imagen_pildora_12</string>
     <string name="imagen_pildora_13">imagen_pildora_13</string>
     <string name="imagen_pildora_14">imagen_pildora_14</string>
@@ -167,7 +167,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="changed_to">Notificacion cambiada a las %s</string>
+    <string name="changed_to">Notificación cambiada a las %s</string>
     <string name="time_selected_is">La hora seleccionada ha sido:</string>
     <string name="change_time">Programa tu alarma</string>
     <string name="select_time">Selecciona la hora:</string>
@@ -179,9 +179,13 @@
     <string name="o">o</string>
     <string name="correo">Pulsa el botón de "enviar" para quese registren las tomas a tu correo electrónico.¡ Recuerda que se reiniciará el registro y no podrás visualizarlo en la sección de Mi Calendario!</string>
     <string name="filtrar_por_estado_de_nimo_o_molestia">Filtrar por estado de ánimo o molestia</string>
-    <string name="dias_olvido">Ver los días de olvido</string>
+    <string name="dias_olvido">Ver fechas de olvidos</string>
     <string name="filtrar">También, puedes filtrar por estados de ánimo o molestias:</string>
     <string name="filtrado_eleccion">Registro de fechas asociadas con el  estado de ánimo o molestia que has elegido:</string>
+    <string name="enter_gmail_id">Enter gmail-id</string>
+    <string name="enter_subject">Enter Subject</string>
+    <string name="enviar_mail">Enviar Mail</string>
+    <string name="icono_central">iconoCentral</string>
 
 
 </resources>

@@ -15,8 +15,8 @@ public class WebDecisionesCompartidas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_decisiones_compartidas);
 
-       WebView webView = findViewById(R.id.web_decisiones_compartidas);
-       webView.setWebViewClient(new WebViewClient());
+        WebView webView = findViewById(R.id.web_decisiones_compartidas);
+        webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("http://decisionscompartides.gencat.cat/ca/decidir-sobre/anticoncepcio/");
 

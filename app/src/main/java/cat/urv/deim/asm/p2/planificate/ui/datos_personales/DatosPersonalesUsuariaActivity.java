@@ -22,10 +22,9 @@ import org.json.JSONObject;
 import cat.urv.deim.asm.p2.planificate.R;
 import cat.urv.deim.asm.p2.planificate.entidades.Usuaria;
 
-public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener {
+public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
 
-    TextView edad_u,email_u;
-   // Button logout;
+    TextView edad_u, email_u;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
 
@@ -34,95 +33,60 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_personales_usuaria);
 
-        edad_u=findViewById(R.id.text_edad);
-        email_u=findViewById(R.id.text_email);
-      //  logout=findViewById(R.id.log_out);
-        request= Volley.newRequestQueue(getApplicationContext());
+        edad_u = findViewById(R.id.text_edad);
+        email_u = findViewById(R.id.text_email);
+        request = Volley.newRequestQueue(getApplicationContext());
 
 
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-        if(preferences.getBoolean("signup_google",true)){
+        if (preferences.getBoolean("signup_google", true)) {
 
             cargarWebService();
-            
 
-            /*nombre_u.setText(preferences.getString("nombre_usuaria","")); // por defecto es true
-            email_u.setText(preferences.getString("email_usuaria", "")); // por defecto es true
-            telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true*/
-        }else {
+
+        } else {
 
             cargarWebServiceGoogle();
 
-           /* FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
-            Log.d("tag","onCreate"+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); //el log.d se utiliza para ver mediante el logcat el valor de ese paramentro
-            Log.d("tag","onCreate"+ firebaseAuth.getCurrentUser().getEmail());
 
-            nombre_u.setText(firebaseAuth.getCurrentUser().getDisplayName());
-            email_u.setText(firebaseAuth.getCurrentUser().getEmail());
-            telefono_u.setText(preferences.getString("telefono_usuaria", "")); // por defecto es true
-            SharedPreferences.Editor objEditor = preferences.edit();
-            objEditor.putString("nombre_usuaria", Objects.requireNonNull(firebaseAuth.getCurrentUser()).getDisplayName()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();
-            objEditor.putString("email_usuaria", firebaseAuth.getCurrentUser().getEmail()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-            objEditor.apply();*/
         }
 
-
-
-        /*logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences.Editor objEditor = preferences.edit();
-
-                //fuerzo a que al iniciar la app, me vaya desde la splah a Login
-                objEditor.putBoolean("primeravez",false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
-
-                //fuerzo a que al iniciar la app, me vaya desde la splah a Login (cerrado de sesion)
-                objEditor.putBoolean("login",false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                objEditor.apply();
-
-                Intent i=new Intent(getApplicationContext(), LoginUsuariaActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });*/
 
     }
 
     private void cargarWebService() {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        String url="https://pillplanusuarias.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
-        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        String url = "https://pillplanusuarias.000webhostapp.com/consultarUsuaria.php?email=" + preferences.getString("email_usuaria", "");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         request.add(jsonObjectRequest);
 
     }
+
     private void cargarWebServiceGoogle() {
         SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        String url="https://pillplanusuarias.000webhostapp.com/consultarUsuaria.php?email="+preferences.getString("email_usuaria","");
-        jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        String url = "https://pillplanusuarias.000webhostapp.com/consultarUsuaria.php?email=" + preferences.getString("email_usuaria", "");
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         request.add(jsonObjectRequest);
 
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(this,"No se pudo consultar"+error.toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "No se pudo consultar" + error.toString(), Toast.LENGTH_LONG).show();
 
     }
 
     @Override
     public void onResponse(JSONObject response) {
-        //Toast.makeText(this,"Mensaje "+response,Toast.LENGTH_LONG).show();
 
-        Usuaria miUsuaria=new Usuaria();
-        JSONArray json=response.optJSONArray("usuarias");
+        Usuaria miUsuaria = new Usuaria();
+        JSONArray json = response.optJSONArray("usuarias");
         JSONObject jsonObject;
 
         try {
             assert json != null;
-            jsonObject=json.getJSONObject(0);
+            jsonObject = json.getJSONObject(0);
             miUsuaria.setEdad(jsonObject.optString("edad"));
             miUsuaria.setEmail(jsonObject.optString("email"));
 
@@ -130,7 +94,7 @@ public class DatosPersonalesUsuariaActivity extends AppCompatActivity implements
         } catch (JSONException e) {
             e.printStackTrace();
         }
-            edad_u.setText(miUsuaria.getEdad());
-            email_u.setText(miUsuaria.getEmail());
+        edad_u.setText(miUsuaria.getEdad());
+        email_u.setText(miUsuaria.getEmail());
     }
 }

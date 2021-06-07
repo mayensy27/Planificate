@@ -13,7 +13,7 @@ import java.util.Objects;
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class MuyBienActivity extends AppCompatActivity {
-    TextView dia_animo,estado_animo,efecto_animo;
+    TextView dia_animo, estado_animo, efecto_animo;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -21,12 +21,12 @@ public class MuyBienActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_muy_bien);
         //Recepcion del dia
-        dia_animo=findViewById(R.id.dia_animo);
-        estado_animo=findViewById(R.id.estado_animo);
+        dia_animo = findViewById(R.id.dia_animo);
+        estado_animo = findViewById(R.id.estado_animo);
         efecto_animo = findViewById(R.id.efecto);
 
-        Bundle  dia=this.getIntent().getExtras();
-        Bundle estado=this.getIntent().getExtras();
+        Bundle dia = this.getIntent().getExtras();
+        Bundle estado = this.getIntent().getExtras();
 
 
         if (dia != null && estado != null) {

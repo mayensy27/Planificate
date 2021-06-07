@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -67,8 +66,8 @@
         android:id="@+id/estado_animo"
         android:layout_width="0dp"
         android:layout_height="64dp"
-        android:textColor="@color/colorPrimary"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,14 +80,14 @@
         android:id="@+id/emoticonoBien"
         android:layout_width="179dp"
         android:layout_height="173dp"
+        android:contentDescription="@string/bien"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/estado_animo"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/bien"
-        android:contentDescription="@string/bien" />
+        app:srcCompat="@mipmap/bien" />
 
     <TextView
         android:id="@+id/efecto"

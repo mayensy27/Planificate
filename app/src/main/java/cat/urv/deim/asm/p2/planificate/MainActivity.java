@@ -1,5 +1,6 @@
 package cat.urv.deim.asm.p2.planificate;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -34,29 +35,25 @@ import static cat.urv.deim.asm.p2.planificate.NotificationHelper.NOTIFICATION_ID
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    //public static  int contador_blsiter28=0;
-    // public static int contador_blsiter21=0;
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show());*/
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
 //ASIGNACION DEL NOMBRE DE LA USUARIA AL APARTADO DEL MENU
-        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        View hView=navigationView.getHeaderView(0);
-        TextView hola=hView.findViewById(R.id.hola);
+        View hView = navigationView.getHeaderView(0);
+        TextView hola = hView.findViewById(R.id.hola);
 
 
-            hola.setText("¡ Hola,\n"+" bienvenida!");
+        hola.setText("¡ Hola,\n" + " bienvenida!");
 
 
 //Se quita la tinta iconos; Permite visualizar los iconos del menu con sus respectivos colores (si no se pone, estos salen en negro)
@@ -66,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(         //Aqui si cargan los id de los fragmentos que seran mostrados en pantalla
-                R.id.nav_informate, R.id.nav_datos_personales, R.id.nav_calendario,R.id.nav_alarmas,R.id.nav_blister,R.id.nav_informate)
+                R.id.nav_informate, R.id.nav_datos_personales, R.id.nav_calendario, R.id.nav_alarmas, R.id.nav_blister, R.id.nav_informate)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -75,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         //*PARA QUE DESAPAREZCA LA NOTIFICACION
-        NotificationManagerCompat notificationManagerCompat= NotificationManagerCompat.from(getApplicationContext());
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
         notificationManagerCompat.cancel(NOTIFICATION_ID);
 
         navigationView.setNavigationItemSelectedListener(
@@ -106,28 +103,18 @@ public class MainActivity extends AppCompatActivity {
                         fTransaction = true;
 
                         //Fragmento BILSTER!
-                    }else if (id == R.id.nav_blister) {
+                    } else if (id == R.id.nav_blister) {
                         SharedPreferences tipos_pildoras_comprimidos = getSharedPreferences("tipos_pildoras_comprimidos", Context.MODE_PRIVATE);
-                        String texto= tipos_pildoras_comprimidos.getString("tipo_comprimidos", "zz"); // por defecto es true
+                        String texto = tipos_pildoras_comprimidos.getString("tipo_comprimidos", "zz"); // por defecto es true
 
-                        if (texto.equals("Blíster 28.")){ //||texto.equals("Blíster 21+7.")||texto.equals("Blíster 24+4.")
+                        if (texto.equals("Blíster 28.")) {
                             fragment = new BlisterFragment();
-                        }
-                        else {
+                        } else {
                             fragment = new Blister21Fragment();
                         }
                         fTransaction = true;
 
-                    } /*else if (id == R.id.nav_profile) {
-                        Intent i = new Intent(MainLoginActivity.this, Profile.class);
-                        startActivity(i);
-
-                    }else if (id == R.id.nav_faqs) {
-                        Intent i = new Intent(MainLoginActivity.this, FAQ.class);
-                        startActivity(i);
-
-                    }*/
-
+                    }
                     if (fTransaction) {
                         getSupportFragmentManager().beginTransaction().addToBackStack(null);
                         getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, fragment).commit();
@@ -136,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
                     item.setChecked(false);
                     Objects.requireNonNull(getSupportActionBar()).setTitle(item.getTitle());
 
-                    // DrawerLayout drawer = findViewById(R.id.drawer_layout);
                     drawer.closeDrawer(GravityCompat.START);
                     return true;
                 }

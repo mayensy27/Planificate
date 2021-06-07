@@ -19,23 +19,23 @@ public class InfCatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inf_cat);
 
-        lista_opciones_cat=findViewById(R.id.lista_opciones_cat);
+        lista_opciones_cat = findViewById(R.id.lista_opciones_cat);
 
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.lista_opciones_cat
-        , R.layout.list_opciones_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.lista_opciones_cat
+                , R.layout.list_opciones_item);
 
         lista_opciones_cat.setAdapter(adapter);
 
         lista_opciones_cat.setOnItemClickListener((parent, view, position, id) -> {
-            if(parent.getItemAtPosition(position).toString().equals("¿Com funcionen els ACOs?")){
-                Intent i=new Intent(InfCatActivity.this, VideoCatActivity_1.class);
+            if (parent.getItemAtPosition(position).toString().equals("¿Com funcionen els ACOs?")) {
+                Intent i = new Intent(InfCatActivity.this, VideoCatActivity_1.class);
                 startActivity(i);
-            }else{
-                if (parent.getItemAtPosition(position).toString().equals("Oblits")){
-                    Intent i=new Intent(InfCatActivity.this, DocumentacionCatActivity.class);
+            } else {
+                if (parent.getItemAtPosition(position).toString().equals("Oblits")) {
+                    Intent i = new Intent(InfCatActivity.this, DocumentacionCatActivity.class);
                     startActivity(i);
 
-                }else {
+                } else {
                     if (parent.getItemAtPosition(position).toString().equals("Efectes Secundaris")) {
                         Intent i = new Intent(InfCatActivity.this, EfectesSecundarisActivity.class);
                         startActivity(i);

@@ -14,7 +14,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Intent service1 = new Intent(context, NotificationService.class);
         service1.setData((Uri.parse("custom://" + System.currentTimeMillis())));
-        ContextCompat.startForegroundService(context, service1 );
+        ContextCompat.startForegroundService(context, service1);
         Log.d("PILL PLAN", " ALARM RECEIVED!!!");
 
     }

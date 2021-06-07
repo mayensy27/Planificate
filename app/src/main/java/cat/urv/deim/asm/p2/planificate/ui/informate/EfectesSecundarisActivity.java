@@ -15,7 +15,7 @@ public class EfectesSecundarisActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_efectes_secundaris);
-        pdfView= findViewById(R.id.efectes_secundaris);
+        pdfView = findViewById(R.id.efectes_secundaris);
 
         //funcion para leer pdf desde Assets
         pdfView.fromAsset("efectes_secundaris.pdf").load();

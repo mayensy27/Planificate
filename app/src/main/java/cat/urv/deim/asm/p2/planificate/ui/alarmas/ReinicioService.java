@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import java.util.Objects;
+
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class ReinicioService extends IntentService {
@@ -31,7 +33,8 @@ public class ReinicioService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        String intentType = intent.getExtras().getString("caller");
+        assert intent != null;
+        String intentType = Objects.requireNonNull(intent.getExtras()).getString("caller");
         if (intentType == null) return;
         if (intentType.equals("RebootReceiver")) {
             SharedPreferences settings = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);

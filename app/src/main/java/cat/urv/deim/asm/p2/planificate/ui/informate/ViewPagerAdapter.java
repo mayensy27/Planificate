@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +15,14 @@ import java.util.List;
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     @NonNull
 
-    private List<Fragment> fragments= new ArrayList<>();
-    private List<String> fragmentsTitles=new ArrayList<>();
+    private final List<Fragment> fragments = new ArrayList<>();
+    private final List<String> fragmentsTitles = new ArrayList<>();
 
-    public ViewPagerAdapter (FragmentManager fragmentManager){
+    public ViewPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
     }
+
+    @NotNull
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position);
@@ -29,11 +33,11 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         return fragments.size();
     }
 
-    public  CharSequence getPageTitle (int position){
+    public CharSequence getPageTitle(int position) {
         return fragmentsTitles.get(position);
     }
 
-    public void addFragment (Fragment fragment, String title){
+    public void addFragment(Fragment fragment, String title) {
         fragments.add(fragment);
         fragmentsTitles.add(title);
 

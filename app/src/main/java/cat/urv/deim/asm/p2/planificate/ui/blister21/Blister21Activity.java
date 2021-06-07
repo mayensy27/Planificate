@@ -23,14 +23,14 @@ public class Blister21Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blister29);
-        cargarBlisterSiguiente=findViewById(R.id.boton_blister29);
+        cargarBlisterSiguiente = findViewById(R.id.boton_blister29);
 
 
     }
 
     public void cargarBlister(View view) {
 
-        if(cargarBlisterSiguiente.isClickable()) {
+        if (cargarBlisterSiguiente.isClickable()) {
 
 
             Intent x = new Intent(this, Blister21Activity1.class);
