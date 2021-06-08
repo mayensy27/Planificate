@@ -27,7 +27,7 @@ public class InfCatActivity extends AppCompatActivity {
         lista_opciones_cat.setAdapter(adapter);
 
         lista_opciones_cat.setOnItemClickListener((parent, view, position, id) -> {
-            if (parent.getItemAtPosition(position).toString().equals("¿Com funcionen els ACOs?")) {
+            if (parent.getItemAtPosition(position).toString().equals("¿Com funcionen els AOCs?")) {
                 Intent i = new Intent(InfCatActivity.this, VideoCatActivity_1.class);
                 startActivity(i);
             } else {
