@@ -18,7 +18,6 @@ import android.os.Build;
 import androidx.core.app.NotificationCompat;
 
 import java.util.Calendar;
-import java.util.Random;
 
 import cat.urv.deim.asm.p2.planificate.MainActivity;
 import cat.urv.deim.asm.p2.planificate.R;
@@ -31,7 +30,6 @@ public class NotificationService extends IntentService {
     Notification notification;
     String id,title;
 
-    int alarmID = 1;
     SharedPreferences settings;
 
 
@@ -108,22 +106,38 @@ public class NotificationService extends IntentService {
 
         }
 
-        Random random= new Random();
-        int alarmID=random.nextInt(8000) ;
+       /* Random random= new Random();
+        int alarmID=random.nextInt(8000) ;*/
+        int alarmID=1;
 
         Calendar mcurrentTime = Calendar.getInstance();
         int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
         int minute = mcurrentTime.get(Calendar.MINUTE);
-        if (settings.getBoolean("alarma", true)) {
+
+        SharedPreferences settings;
+        settings = getApplicationContext().getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+
+        String hora = settings.getString("hour", "");
+        String minuto = settings.getString("minute", "");
+        if (hora.equals(Integer.toString(hour))&&minuto.equals(Integer.toString(minute))) {
 
             Calendar today = Calendar.getInstance();
 
-            today.set(Calendar.DAY_OF_YEAR,Calendar.DAY_OF_YEAR+1);
+            //today.set(Calendar.DAY_OF_MONTH,Calendar.DAY_OF_MONTH+1);
             today.set(Calendar.HOUR_OF_DAY, hour);
-            today.set(Calendar.MINUTE, minute); //
+            today.set(Calendar.MINUTE, minute+5); //24H=1440minutes
+            today.set(Calendar.SECOND, 0);
+            today.set(Calendar.MILLISECOND, 0);
+
+            Utils.setAlarm(alarmID, today.getTimeInMillis(), NotificationService.this);
+        }
+        else{
+            Calendar today = Calendar.getInstance();
+
+            today.set(Calendar.HOUR_OF_DAY, hour);
+            today.set(Calendar.MINUTE, minute+5); //24H=1440minutes
             today.set(Calendar.SECOND, 0);
             today.set(Calendar.MILLISECOND,0);
-
             Utils.setAlarm(alarmID, today.getTimeInMillis(), NotificationService.this);
         }
     }
