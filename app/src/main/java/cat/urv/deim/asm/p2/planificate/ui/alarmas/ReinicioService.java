@@ -22,10 +22,10 @@ public class ReinicioService extends IntentService {
         startForeground(1, new Notification());
     }
 
-    public ReinicioService() {
+  /*  public ReinicioService() {
         super("ReinicioService");
     }
-
+*/
     @Override
     public void onCreate() {
         super.onCreate();

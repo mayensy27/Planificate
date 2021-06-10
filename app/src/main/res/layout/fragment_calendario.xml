@@ -53,15 +53,16 @@
 
     <Spinner
         android:id="@+id/estados"
-        android:layout_width="375dp"
-        android:layout_height="24dp"
+        android:layout_width="366dp"
+        android:layout_height="76dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588" />
+        app:layout_constraintVertical_bias="0.626" />
 
     <TextView
         android:id="@+id/textView"

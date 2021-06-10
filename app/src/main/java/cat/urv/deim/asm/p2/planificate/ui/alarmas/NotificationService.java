@@ -14,29 +14,26 @@ import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
-import android.widget.TextView;
 
 import androidx.core.app.NotificationCompat;
 
 import java.util.Calendar;
+import java.util.Random;
 
 import cat.urv.deim.asm.p2.planificate.MainActivity;
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class NotificationService extends IntentService {
 
-    private NotificationManager notificationManager;
-    private PendingIntent pendingIntent;
-    private static int NOTIFICATION_ID = 1;
+    NotificationManager notificationManager;
+    PendingIntent pendingIntent;
+    static int NOTIFICATION_ID = 1;
     Notification notification;
+    String id,title;
 
-    private TextView notificationsTime;
-    private int alarmID = 1;
-    private SharedPreferences settings;
+    int alarmID = 1;
+    SharedPreferences settings;
 
-    public NotificationService(String name) {
-        super(name);
-    }
 
     public NotificationService() {
         super("SERVICE");
@@ -59,8 +56,8 @@ public class NotificationService extends IntentService {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
             final int NOTIFY_ID = 0; // ID of notification
-            String id = NOTIFICATION_CHANNEL_ID; // default_channel_id
-            String title = NOTIFICATION_CHANNEL_ID; // Default Channel
+           id = NOTIFICATION_CHANNEL_ID; // default_channel_id
+            title = NOTIFICATION_CHANNEL_ID; // Default Channel
             PendingIntent pendingIntent;
             NotificationCompat.Builder builder;
             NotificationManager notifManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -111,20 +108,22 @@ public class NotificationService extends IntentService {
 
         }
 
-
-        //Creacion de nueva alarma pasadas 24h (REPETICION ALARMA)
+        Random random= new Random();
+        int alarmID=random.nextInt(8000) ;
 
         Calendar mcurrentTime = Calendar.getInstance();
         int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
         int minute = mcurrentTime.get(Calendar.MINUTE);
-        if (settings.getString("hour", "").equals(Integer.toString(hour)) &&
-                settings.getString("minute", "").equals(Integer.toString(minute))) {
+        if (settings.getBoolean("alarma", true)) {
 
             Calendar today = Calendar.getInstance();
 
+            //today.set(Calendar.DAY_OF_YEAR,Calendar.DAY_OF_YEAR+1);
             today.set(Calendar.HOUR_OF_DAY, hour);
-            today.set(Calendar.MINUTE, minute + 1440); // +24h=1440min
+            today.set(Calendar.MINUTE, minute+1); // +24h=1440min
             today.set(Calendar.SECOND, 0);
+            today.set(Calendar.MILLISECOND,0);
+
             Utils.setAlarm(alarmID, today.getTimeInMillis(), NotificationService.this);
         }
     }
