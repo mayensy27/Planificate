@@ -39,7 +39,7 @@
 
     <TextView
         android:id="@+id/filtrar"
-        android:layout_width="312dp"
+        android:layout_width="322dp"
         android:layout_height="54dp"
         android:text="@string/filtrar"
         android:textColor="@color/colorPrimary"
