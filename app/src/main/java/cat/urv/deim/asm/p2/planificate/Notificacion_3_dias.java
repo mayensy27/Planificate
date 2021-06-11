@@ -47,5 +47,7 @@ public class Notificacion_3_dias extends AppCompatActivity {
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
         notificationManagerCompat.notify(NOTIFICACION_ID, builder.build());
+
+        builder.setOngoing(true);
     }
 }

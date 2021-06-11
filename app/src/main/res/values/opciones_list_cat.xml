@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="lista_opciones_cat">
-        <item>¿Com funcionen els ACOs?</item>
+        <item>¿Com funcionen els AOCs?</item>
         <item>Oblits</item>
         <item>Efectes Secundaris</item>
         <item>Anticoncepció</item>
