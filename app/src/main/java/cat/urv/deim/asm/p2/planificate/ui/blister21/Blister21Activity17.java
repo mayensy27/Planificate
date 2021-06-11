@@ -54,16 +54,15 @@ public class Blister21Activity17 extends AppCompatActivity {
                 Intent x = new Intent(this, Blister21Activity18.class);
                 startActivity(x);
 
-
                 //Quedan 3 tomas!!
                 Intent z = new Intent(this, Notificacion_3_dias.class);
                 startActivity(z);
                 finish();
 
+
                 Intent i = new Intent(this, Popup.class);
                 startActivity(i);
                 finish();
-
 
                 // TOMA 18 DIA DE LA PILDRA
 
@@ -72,6 +71,9 @@ public class Blister21Activity17 extends AppCompatActivity {
                 objEditor.putString("tomaBlister_18", fecha); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
                 objEditor.putInt("dia_18", 18); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
+
+                objEditor.putBoolean("notif3", true); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
             }
 

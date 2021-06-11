@@ -42,6 +42,10 @@ public class BlisterFragment extends Fragment {
         cambiar_blister.setOnClickListener(v -> {
             Intent i = new Intent(getContext(), SegudaPreguntaActivity.class);
             startActivity(i);
+
+            SharedPreferences.Editor objEditor = preferences.edit();
+            objEditor.putBoolean("notif3", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();
         });
 
         blister.setOnClickListener(v -> {

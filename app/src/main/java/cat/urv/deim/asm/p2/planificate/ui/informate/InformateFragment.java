@@ -1,6 +1,8 @@
 package cat.urv.deim.asm.p2.planificate.ui.informate;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import cat.urv.deim.asm.p2.planificate.Notificacion_3_dias;
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class InformateFragment extends Fragment {
@@ -50,5 +53,13 @@ public class InformateFragment extends Fragment {
                     startActivity(x);
                 }
         );
+        SharedPreferences preferences = requireActivity().getSharedPreferences("datos", Context.MODE_PRIVATE);
+
+        if(preferences.getBoolean("notif3", false)){
+            //Quedan 3 tomas!!
+            Intent z = new Intent(requireActivity(), Notificacion_3_dias.class);
+            startActivity(z);
+
+        }
     }
 }

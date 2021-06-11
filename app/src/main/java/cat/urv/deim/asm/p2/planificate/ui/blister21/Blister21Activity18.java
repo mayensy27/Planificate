@@ -63,6 +63,8 @@ public class Blister21Activity18 extends AppCompatActivity {
                 objEditor.apply();
                 objEditor.putInt("dia_19", 19); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
                 objEditor.apply();
+                objEditor.putBoolean("notif3", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                objEditor.apply();
             }
         }
     }
