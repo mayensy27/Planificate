@@ -133,34 +133,53 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
         if (preferences.getBoolean("signup_google", true)) {
             if (!preferences.getString("edad_usuaria", "").isEmpty() && !preferences.getString("email_usuaria", "").isEmpty()) {
                 if (edad.length() == 2) {
-                    stringRequest = new StringRequest(Request.Method.POST, url, response -> Toast.makeText(getApplicationContext(), "Se ha actualizado con exito.", Toast.LENGTH_SHORT).show(), error -> Toast.makeText(getApplicationContext(), "No se ha podido conectar.", Toast.LENGTH_SHORT).show()) {
-                        @Override
-                        protected Map<String, String> getParams() {
-                            String email2 = email.getText().toString();
-                            String edad2 = edad.getText().toString();
+
+                    String aux = edad.getText().toString();
+
+                    int i = 0;
+                    if (Character.isDigit(aux.charAt(0))) {
+                        i++;
+                    }
+                    if (Character.isDigit(aux.charAt(1))) {
+                        i++;
+                    }
+
+                    if (i == 2) {
+                        stringRequest = new StringRequest(Request.Method.POST, url, response -> Toast.makeText(getApplicationContext(), "Se ha actualizado con exito.", Toast.LENGTH_SHORT).show(), error -> Toast.makeText(getApplicationContext(), "No se ha podido conectar.", Toast.LENGTH_SHORT).show()) {
+                            @Override
+                            protected Map<String, String> getParams() {
+                                String email2 = email.getText().toString();
+                                String edad2 = edad.getText().toString();
 
 
-                            Map<String, String> parametros = new HashMap<>();
-                            parametros.put("email", email2);
-                            parametros.put("edad", edad2);
+                                Map<String, String> parametros = new HashMap<>();
+                                parametros.put("email", email2);
+                                parametros.put("edad", edad2);
 
-                            return parametros;
-                        }
-                    };
+                                return parametros;
+                            }
+                        };
 
-                    request.add(stringRequest);
-
-
-                    objEditor.putString("edad_usuaria", edad.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
-                    objEditor.apply();
-
-                    objEditor.putString("email_usuaria", email.getText().toString());
-                    objEditor.apply();
+                        request.add(stringRequest);
 
 
-                    Intent i = new Intent(this, MainActivity.class);
-                    startActivity(i);
-                    finish();
+                        objEditor.putString("edad_usuaria", edad.getText().toString()); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+                        objEditor.apply();
+
+                        objEditor.putString("email_usuaria", email.getText().toString());
+                        objEditor.apply();
+
+
+                        Intent x = new Intent(this, MainActivity.class);
+                        startActivity(x);
+                        finish();
+
+                    } else {
+                        Toast.makeText(this, "Tu edad es errónea", Toast.LENGTH_SHORT).show();
+
+                    }
+
+
                 } else {
                     Toast.makeText(this, "Tu edad es errónea", Toast.LENGTH_SHORT).show();
                 }
@@ -172,30 +191,52 @@ public class ActualizarDatosPersonalesActivity extends AppCompatActivity {
                 email.setFocusable(false);  //para NO modificar
                 if (!edad.getText().toString().equals("")) {
 
+                    if (edad.length() == 2) {
+                        String aux = edad.getText().toString();
 
-                    stringRequest = new StringRequest(Request.Method.POST, url, response -> Toast.makeText(getApplicationContext(), "Se ha actualizado con exito.", Toast.LENGTH_SHORT).show(), error -> Toast.makeText(getApplicationContext(), "No se ha podido conectar.", Toast.LENGTH_SHORT).show()) {
-                        @Override
-                        protected Map<String, String> getParams() {
-                            String email2 = email.getText().toString();
-                            String edad2 = edad.getText().toString();
-
-
-                            Map<String, String> parametros = new HashMap<>();
-                            parametros.put("email", email2);
-                            parametros.put("edad", edad2);
-
-                            return parametros;
+                        int i = 0;
+                        if (Character.isDigit(aux.charAt(0))) {
+                            i++;
                         }
-                    };
+                        if (Character.isDigit(aux.charAt(1))) {
+                            i++;
+                        }
 
-                    request.add(stringRequest);
+                        if (i == 2) {
+                            stringRequest = new StringRequest(Request.Method.POST, url, response -> Toast.makeText(getApplicationContext(), "Se ha actualizado con exito.", Toast.LENGTH_SHORT).show(), error -> Toast.makeText(getApplicationContext(), "No se ha podido conectar.", Toast.LENGTH_SHORT).show()) {
+                                @Override
+                                protected Map<String, String> getParams() {
+                                    String email2 = email.getText().toString();
+                                    String edad2 = edad.getText().toString();
 
-                    objEditor.putString("edad_usuaria", edad.getText().toString());
-                    objEditor.apply();
 
-                    Intent i = new Intent(this, MainActivity.class);
-                    startActivity(i);
-                    finish();
+                                    Map<String, String> parametros = new HashMap<>();
+                                    parametros.put("email", email2);
+                                    parametros.put("edad", edad2);
+
+                                    return parametros;
+                                }
+                            };
+
+                            request.add(stringRequest);
+
+                            objEditor.putString("edad_usuaria", edad.getText().toString());
+                            objEditor.apply();
+
+                            Intent x = new Intent(this, MainActivity.class);
+                            startActivity(x);
+                            finish();
+
+                        } else {
+                            Toast.makeText(this, "Tu edad es errónea", Toast.LENGTH_SHORT).show();
+
+                        }
+
+
+                    } else {
+                        Toast.makeText(this, "Tu edad es errónea", Toast.LENGTH_SHORT).show();
+                    }
+
 
                 } else {
                     Toast.makeText(this, "¡Hay datos en blanco!", Toast.LENGTH_SHORT).show();

@@ -93,8 +93,31 @@ public class RegistroUsuariaActivity extends AppCompatActivity implements Respon
         //VALIDACION DE DATOS EN REGISTRO
         if (!edad.getText().toString().isEmpty() && !email.getText().toString().isEmpty()) {
             if (edad.length() == 2) {
-                boton = "manual";
-                cargarDatos();
+                String aux = edad.getText().toString();
+
+                int i = 0;
+                if (Character.isDigit(aux.charAt(0))) {
+                    i++;
+                }
+                if (Character.isDigit(aux.charAt(1))) {
+                    i++;
+                }
+
+                // Log.d("XX",Integer.toString(i));
+                if (i == 2) {
+                    boton = "manual";
+                    cargarDatos();
+                    //Log.d("XX2",Integer.toString(i));
+
+                } else {
+                    Toast.makeText(this, "Tu edad es errónea", Toast.LENGTH_SHORT).show();
+
+                }
+
+
+
+               /* boton = "manual";
+                cargarDatos();*/
 
             } else {
                 Toast.makeText(this, "Tu edad es errónea", Toast.LENGTH_SHORT).show();
