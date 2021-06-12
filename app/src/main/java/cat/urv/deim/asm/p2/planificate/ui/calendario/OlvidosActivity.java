@@ -1,12 +1,14 @@
 package cat.urv.deim.asm.p2.planificate.ui.calendario;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.ParseException;
@@ -19,11 +21,12 @@ import java.util.Locale;
 import cat.urv.deim.asm.p2.planificate.R;
 
 public class OlvidosActivity extends AppCompatActivity {
-    @SuppressLint("StaticFieldLeak")
-    public static ListView registro_olvidos; ///////////////---------cambiada a globar hoy! Antes no era global
+
+    ListView registro_olvidos; ///////////////---------cambiada a globar hoy! Antes no era global
     ArrayList<String> lista_olvidos; //estos vectores deben tener la misma longitud.
     String aux, aux2;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,7 @@ public class OlvidosActivity extends AppCompatActivity {
             c.add(Calendar.DATE, 1);
             aux2 = dateFormat.format(c.getTime());
 
+            //  SharedPreferences.Editor objEditor = preferences.edit();
 
             if (aux2.equals(preferences.getString("tomaBlister_2", "")) || preferences.getString("tomaBlister_2", "").equals("")) {
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
@@ -59,6 +63,14 @@ public class OlvidosActivity extends AppCompatActivity {
 
             } else { //OLVIDO 1
                 lista_olvidos.add(aux2);
+
+                /*//12-06///
+                int i=0;
+                objEditor.putString("olvido1",lista_olvidos.get(i));
+                objEditor.apply();
+                i++;
+
+                ///////*/
                 date = dateFormat.parse(aux2);
                 assert date != null;
                 c.setTime(date);
@@ -66,6 +78,15 @@ public class OlvidosActivity extends AppCompatActivity {
                 aux2 = dateFormat.format(c.getTime());
                 while (!aux2.equals(preferences.getString("tomaBlister_2", ""))) {
                     lista_olvidos.add(aux2);
+
+                /*    //12-06///
+                    if(i<28){
+                        objEditor.putString("olvido1",lista_olvidos.get(i));
+                        objEditor.apply();
+                        i++;
+
+                       }////*/
+
                     date = dateFormat.parse(aux2);
                     assert date != null;
                     c.setTime(date);
@@ -598,12 +619,23 @@ public class OlvidosActivity extends AppCompatActivity {
                 }
             }
 
-
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.list_item_registro, lista_olvidos);
         registro_olvidos.setAdapter(adapter);
+
+
+        //12-06-21
+        String listaString = String.join(",", lista_olvidos);
+        SharedPreferences.Editor objEditor = preferences.edit();
+        objEditor.putString("olvidos", listaString);
+        objEditor.apply();
+
+        Log.d("olvidos", preferences.getString("olvidos", ""));
+        /////
+
     }
 }

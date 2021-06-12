@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.Properties;
@@ -25,8 +24,6 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import cat.urv.deim.asm.p2.planificate.ui.calendario.OlvidosActivity;
-
 
 public class MailAPI extends Activity implements OnClickListener {
 
@@ -36,13 +33,6 @@ public class MailAPI extends Activity implements OnClickListener {
     EditText reciep, sub;
     String rec, subject, textMessage;
 
-
-    ////////////////////----------------agregado hoy!
-
-    ListView aux = OlvidosActivity.registro_olvidos;
-
-
-    //////////////////////---------------------
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -100,12 +90,7 @@ public class MailAPI extends Activity implements OnClickListener {
                     "Día 20: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_20", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_20", "") + "                                         " +
                     "Día 21: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_21", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_21", "") + "                                         " +
                     "FECHAS DE LOS OLVIDOS DE LAS TOMAS DE LA PÍLDORA:                                                                            " +
-                    aux.getItemAtPosition(0) + ", " + aux.getItemAtPosition(1) + ", " + aux.getItemAtPosition(2) + ", " + aux.getItemAtPosition(3) +
-                    aux.getItemAtPosition(4) + ", " + aux.getItemAtPosition(5) + ", " + aux.getItemAtPosition(6) + ", " + aux.getItemAtPosition(7) +
-                    aux.getItemAtPosition(8) + ", " + aux.getItemAtPosition(9) + ", " + aux.getItemAtPosition(10) + ", " + aux.getItemAtPosition(11) +
-                    aux.getItemAtPosition(12) + ", " + aux.getItemAtPosition(13) + ", " + aux.getItemAtPosition(14) + ", " + aux.getItemAtPosition(15) +
-                    aux.getItemAtPosition(16) + ", " + aux.getItemAtPosition(17) + ", " + aux.getItemAtPosition(18) + ", " + aux.getItemAtPosition(19) +
-                    aux.getItemAtPosition(20);
+                    preferences.getString("olvidos", "");
 
 
         }
@@ -140,15 +125,7 @@ public class MailAPI extends Activity implements OnClickListener {
                     "Día 26: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_26", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_26", "") + "                                         " +
                     "Día 27: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_27", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_27", "") + "                                         " +
                     "Día 28: Tu estado de ánimo ha sido -> " + niveles_animo(preferences.getInt("nivel_animo_28", 0)) + " y ha tenido molestias de: " + efectos.getString("efecto_animo_28", "") + "                                         " +
-                    "FECHAS DE LOS OLVIDOS DE LAS TOMAS DE LA PÍLDORA:                                                                            " +
-                    aux.getItemAtPosition(0) + ", " + aux.getItemAtPosition(1) + ", " + aux.getItemAtPosition(2) + ", " + aux.getItemAtPosition(3) +
-                    aux.getItemAtPosition(4) + ", " + aux.getItemAtPosition(5) + ", " + aux.getItemAtPosition(6) + ", " + aux.getItemAtPosition(7) +
-                    aux.getItemAtPosition(8) + ", " + aux.getItemAtPosition(9) + ", " + aux.getItemAtPosition(10) + ", " + aux.getItemAtPosition(11) +
-                    aux.getItemAtPosition(12) + ", " + aux.getItemAtPosition(13) + ", " + aux.getItemAtPosition(14) + ", " + aux.getItemAtPosition(15) +
-                    aux.getItemAtPosition(16) + ", " + aux.getItemAtPosition(17) + ", " + aux.getItemAtPosition(18) + ", " + aux.getItemAtPosition(19) +
-                    aux.getItemAtPosition(20) + ", " + aux.getItemAtPosition(21) + ", " + aux.getItemAtPosition(22) + ", " + aux.getItemAtPosition(23) +
-                    aux.getItemAtPosition(24) + ", " + aux.getItemAtPosition(25) + ", " + aux.getItemAtPosition(26) + ", " + aux.getItemAtPosition(27);
-
+                    preferences.getString("olvidos", "");
 
         }
 

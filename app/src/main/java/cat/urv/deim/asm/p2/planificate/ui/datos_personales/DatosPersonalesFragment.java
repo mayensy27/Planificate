@@ -407,6 +407,12 @@ public class DatosPersonalesFragment extends Fragment {
             objEditor.putBoolean("mail_21", true);
             objEditor.apply();
 
+            objEditor.putBoolean("notif3", false); // dado que a partir de ahora no será la pirmera vez, lo ponemos false
+            objEditor.apply();
+
+            objEditor.putString("olvidos", "");
+            objEditor.apply();
+
             Intent i = new Intent(requireContext().getApplicationContext(), SplashActivity.class);
             startActivity(i);
 
