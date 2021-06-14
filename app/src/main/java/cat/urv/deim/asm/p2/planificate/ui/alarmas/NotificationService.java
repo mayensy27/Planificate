@@ -125,7 +125,7 @@ public class NotificationService extends IntentService {
 
             //today.set(Calendar.DAY_OF_MONTH,Calendar.DAY_OF_MONTH+1);
             today.set(Calendar.HOUR_OF_DAY, hour);
-            today.set(Calendar.MINUTE, minute+5); //24H=1440minutes
+            today.set(Calendar.MINUTE, minute+1440); //24H=1440minutes
             today.set(Calendar.SECOND, 0);
             today.set(Calendar.MILLISECOND, 0);
 

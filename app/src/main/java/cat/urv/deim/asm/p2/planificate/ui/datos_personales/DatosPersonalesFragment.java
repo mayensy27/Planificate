@@ -413,6 +413,9 @@ public class DatosPersonalesFragment extends Fragment {
             objEditor.putString("olvidos", "");
             objEditor.apply();
 
+            objEditor.putString("registro_estado","");
+            objEditor.apply();
+
             Intent i = new Intent(requireContext().getApplicationContext(), SplashActivity.class);
             startActivity(i);
 

@@ -315,6 +315,9 @@ public class Blister21Fragment extends Fragment {
 
                         objEditor.putString("olvidos", "");
                         objEditor.apply();
+
+                        objEditor.putString("registro_estado","");
+                        objEditor.apply();
                     }
                     primeraVez = preferences.getBoolean("primeravez_blister1", true); // por defecto es true
 
